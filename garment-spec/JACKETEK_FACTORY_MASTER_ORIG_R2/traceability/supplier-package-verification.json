@@ -1,0 +1,135 @@
+{
+ "checks": [
+  {
+   "check": "Chest girth on the DXF = the approved design (±1 %)",
+   "result": "PASS",
+   "detail": "DXF chest line 102.01 → 115.88 cm (design target 115.22 cm, Δ +0.66); B01 57.94 cm"
+  },
+  {
+   "check": "Silhouette verification vs the approved design (all levels, independent levels included)",
+   "result": "PASS",
+   "detail": "23 lines; worst 1.71 %; waistband +5 cm 108.32 vs 108.07 cm"
+  },
+  {
+   "check": "Lengths unchanged (every piece height = purchased)",
+   "result": "PASS",
+   "detail": "max height change 0.001 mm"
+  },
+  {
+   "check": "Sleeves: width × the solved scale, cap / armhole ease kept",
+   "result": "PASS",
+   "detail": "sleeve width ratio 1.0446, 1.0446 (scale 1.04457)"
+  },
+  {
+   "check": "Pocket welts unchanged",
+   "result": "PASS",
+   "detail": "worst point deviation 0.0005 mm"
+  },
+  {
+   "check": "Welt pockets mirror-symmetric L / R",
+   "result": "PASS",
+   "detail": "upper end 16.68 / 16.68 cm from CF, 41.98 / 41.98 cm below HPS"
+  },
+  {
+   "check": "Sewing-edge compatibility (armhole / cap ease, rib and tab ratios, all seams)",
+   "result": "PASS",
+   "detail": "{'OK': 106, 'CHECK': 6, 'OK (gather ratio kept)': 4, 'EXCLUDED (purchased appliqué)': 9}; CHECK seams re-verified: {'armhole (total cap ease)': 4, 'rib / tab length ratio kept (≤1.2 %)': 2}; armhole body − cap per sleeve (purchased → R2): JKT_SLEEVE_R_M +3.36 → +3.35 mm; JKT_SLEEVE_L_M +3.36 → +3.35 mm"
+  },
+  {
+   "check": "Engineering checks (widths, lengths, mirrors, notches, shoulder / side edges)",
+   "result": "PASS",
+   "detail": "CHG-04: chest / waistband-seam / shoulder widths follow the ; CHG-04: lengths, heights, closure, pocket size and sleeve le; Independent edge-length check (shoulder, side, underarm); Mirrored L/R pieces are true mirrors; Armhole ↔ sleeve-cap notches line up (body notches trued to "
+  },
+  {
+   "check": "Artwork size / centre = the approved design's placement (surface-mapped)",
+   "result": "PASS",
+   "detail": "7 artworks; failures: none"
+  },
+  {
+   "check": "Every dimension printed on the 1:1 sheets matches the DXF geometry",
+   "result": "PASS",
+   "detail": "97 printed values checked; failures: none"
+  },
+  {
+   "check": "Artwork sizes and chest positions = DXF artwork boxes; YO on the wearer's left, flag on the wearer's right",
+   "result": "PASS",
+   "detail": "7 artworks; failures: none"
+  },
+  {
+   "check": "Artwork masters = the design's own files, pixel-identical",
+   "result": "PASS",
+   "detail": "7 masters"
+  },
+  {
+   "check": "Artwork resolution at the finished size",
+   "result": "NOTE",
+   "detail": "ART-01 137 ppi; ART-02 445 ppi; ART-03 488 ppi; ART-04 668 ppi; ART-05 112 ppi; ART-06 581 ppi; ART-07 236 ppi — below 150 ppi: ART-01 137 ppi, ART-05 112 ppi (highest-resolution sources available; readable, edges soft at 1:1; ART-01 is plain text in a named font)"
+  },
+  {
+   "check": "No internal history, AI references, website details or obsolete revision content in the supplier PDFs",
+   "result": "PASS",
+   "detail": "{}"
+  },
+  {
+   "check": "All supplier PDFs carry the same style and revision (JKT-VJ-01 Rev R2)",
+   "result": "PASS",
+   "detail": "{\"JACKETEK_Supplier_Tech_Pack.pdf\": true, \"JACKETEK_Pattern_Sheets_1to1.pdf\": true, \"JACKETEK_Artwork_Placement_Diagrams.pdf\": true, \"JACKETEK_Artwork_Specification_Sheets_FULL-SIZE.pdf\": true, \"JACKETEK_Factory_Confirmation_Sheet.pdf\": true}"
+  },
+  {
+   "check": "Chest patch position identical in Tech Pack, artwork sheets and pattern sheets",
+   "result": "PASS",
+   "detail": "10.49 cm from CF, 18.32 cm below HPS"
+  },
+  {
+   "check": "Tech Pack never claims bulk approval or cut-ready patterns",
+   "result": "PASS",
+   "detail": "15 pages"
+  },
+  {
+   "check": "No obsolete chest T geometry and no resized geometry in the DXF",
+   "result": "PASS",
+   "detail": "T marks 0; pieces 9; back width 58.29 cm (resized pattern was 62.0)"
+  },
+  {
+   "check": "1:1 pattern sheets carry a true 100 mm verification square",
+   "result": "PASS",
+   "detail": "6/6 pages"
+  },
+  {
+   "check": "Full-size artwork sheets print at A2 1:1",
+   "result": "PASS",
+   "detail": "7 pages"
+  },
+  {
+   "check": "Supplier folder holds only supplier files",
+   "result": "PASS",
+   "detail": "19 files; unexpected: none"
+  },
+  {
+   "check": "ZIP = the supplier folder exactly",
+   "result": "PASS",
+   "detail": "19 entries, 33.3 MB"
+  }
+ ],
+ "files": [
+  "01_TECH_PACK/JACKETEK_Supplier_Tech_Pack.pdf",
+  "02_PATTERNS/JACKETEK_JKT-VJ-01_R2_Cutting_and_Piece_Inventory.xlsx",
+  "02_PATTERNS/JACKETEK_JKT-VJ-01_R2_Production_Pattern.dxf",
+  "02_PATTERNS/JACKETEK_Pattern_Sheets_1to1.pdf",
+  "03_ARTWORK/Artwork_Masters/ART-01_Back_Name_Text_COLOUR-IVORY.png",
+  "03_ARTWORK/Artwork_Masters/ART-01_Back_Name_Text_MASTER.png",
+  "03_ARTWORK/Artwork_Masters/ART-02_Left_Sleeve_Emblem_MASTER.png",
+  "03_ARTWORK/Artwork_Masters/ART-03_YO_Chest_Patch_MASTER.png",
+  "03_ARTWORK/Artwork_Masters/ART-04_Iraq_Flag_Chest_Patch_MASTER.png",
+  "03_ARTWORK/Artwork_Masters/ART-05_Back_SENIOR_2027_MASTER.png",
+  "03_ARTWORK/Artwork_Masters/ART-06_Right_Sleeve_Number_09_MASTER.png",
+  "03_ARTWORK/Artwork_Masters/ART-07_Right_Sleeve_Arabic_Text_COLOUR-IVORY.png",
+  "03_ARTWORK/Artwork_Masters/ART-07_Right_Sleeve_Arabic_Text_MASTER.png",
+  "03_ARTWORK/JACKETEK_Artwork_Placement_Diagrams.pdf",
+  "03_ARTWORK/JACKETEK_Artwork_Specification_Sheets_FULL-SIZE.pdf",
+  "04_MATERIALS/JACKETEK_Supplier_BOM.xlsx",
+  "05_FACTORY_CONFIRMATION/JACKETEK_Factory_Confirmation_Sheet.pdf",
+  "05_FACTORY_CONFIRMATION/JACKETEK_Factory_Confirmation_Sheet.xlsx",
+  "README.txt"
+ ]
+}

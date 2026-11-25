@@ -1,0 +1,3924 @@
+{
+  "schema": "jacketek.m-sample-request",
+  "revision": "MSR-01",
+  "issued": "2026-10-11",
+  "title": "JACKETEK SIZE M DEVELOPMENT SAMPLE REQUEST",
+  "marks": [
+    "DEVELOPMENT SAMPLE",
+    "NOT FOR BULK PRODUCTION",
+    "NOT PRODUCTION APPROVED"
+  ],
+  "documentType": "Development sample request — NOT a Production Tech Pack, NOT a customer RFQ",
+  "size": "M",
+  "sources": {
+    "masterSpec": "garment-spec/jacketek-master-spec-v0.2.json",
+    "masterSpecSha256": "6b2338e4bb94d28af6ad7f370d2a1fcf74ed11e3aea9a3d4a4508bd4f193276c",
+    "masterRevision": "v0.2 — measurement source matrix: per-POM source evidence, provisional M targets per POM, method definitions, sample plan; K2 materials / construction plan, PARTIALLY RESOLVED (no value approved; v0.1 statuses and provenance kept)",
+    "documents": [
+      "garment-spec/measurement-methods-v0.1.md",
+      "garment-spec/m-sample-validation-plan.md",
+      "garment-spec/material-construction-matrix-v0.1.md",
+      "garment-spec/factory-material-proposal-request.md"
+    ]
+  },
+  "purpose": [
+    "garment silhouette",
+    "relaxed / baggy fit",
+    "dropped shoulder construction",
+    "body length",
+    "chest width",
+    "shoulder-point location",
+    "sleeve geometry",
+    "armhole",
+    "rib proportions and recovery",
+    "pocket construction",
+    "lining construction",
+    "snap placement",
+    "cotton / leather material compatibility",
+    "embroidery compatibility",
+    "overall workmanship"
+  ],
+  "workflow": [
+    "JACKETEK sends this M Development Sample Request (MSR) to the factory.",
+    "Factory / pattern maker reviews the target silhouette and the open construction requirements.",
+    "Factory proposes the missing material and construction specifications.",
+    "Pattern maker establishes the missing pattern-dependent dimensions (incl. SC-1 to SC-3).",
+    "Factory makes the physical size-M sample.",
+    "Factory measures the finished sample by the JACKETEK POM methods in this document.",
+    "Factory returns: measurement sheet, material specification sheet, construction proposal, photos, the sample.",
+    "JACKETEK compares the actual measurements with the provisional targets.",
+    "JACKETEK approves / rejects / requests corrections.",
+    "Only after approval does JACKETEK create Production Tech Pack v1.0."
+  ],
+  "designIntent": {
+    "shoulder": "DROPPED SHOULDER (K1 resolved)",
+    "body": "Cotton Fabric",
+    "sleeves": "Leather",
+    "sleevePolicy": {
+      "designIntent": "Leather",
+      "alternatives": "ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT",
+      "rule": "A supplier may propose synthetic / PU (or other) alternatives only as clearly labelled alternative proposals. They never silently replace Leather. For each alternative record the cost, MOQ, performance and appearance differences against the leather proposal. Changing the design intent needs explicit JACKETEK approval.",
+      "recordForAlternatives": [
+        "cost difference",
+        "MOQ difference",
+        "performance difference",
+        "appearance difference"
+      ],
+      "changeRequires": "Explicit JACKETEK approval"
+    },
+    "rib": "Varsity knitted rib collar, cuffs and waistband — required",
+    "closure": "Metal snap front closure — required",
+    "lining": "Lining required (plain / quilted not chosen)",
+    "pockets": "Two front angled welt pockets, one per front panel, topstitched outline",
+    "fit": "Relaxed / baggy",
+    "k2": "PARTIALLY_RESOLVED"
+  },
+  "targets": [
+    {
+      "id": "B01",
+      "name": "Half Chest — Flat Width",
+      "min": 61,
+      "max": 62.2,
+      "unit": "cm",
+      "quantity": "Half Chest — Flat Width",
+      "status": "PROVISIONAL_TARGET",
+      "confidence": "LOW",
+      "label": "PROVISIONAL TARGET · LOW CONFIDENCE · NOT PRODUCTION APPROVED"
+    },
+    {
+      "id": "B06",
+      "name": "Centre-back length",
+      "min": 67.3,
+      "max": 68,
+      "unit": "cm",
+      "quantity": "Centre-back length, collar seam → finished rib edge",
+      "status": "PROVISIONAL_TARGET",
+      "confidence": "LOW",
+      "label": "PROVISIONAL TARGET · LOW CONFIDENCE · NOT PRODUCTION APPROVED"
+    }
+  ],
+  "noTarget": [
+    {
+      "id": "B09",
+      "name": "Across shoulder",
+      "text": "TBD — PATTERN MAKER"
+    },
+    {
+      "id": "S02",
+      "name": "Sleeve (shoulder point → cuff seam)",
+      "text": "TBD — PATTERN MAKER / MEASURE ON SAMPLE"
+    }
+  ],
+  "measurementSheet": [
+    {
+      "id": "B01",
+      "pomId": "B01",
+      "area": "Body",
+      "name": "Half Chest — Flat Width",
+      "howToMeasure": "HALF CHEST — FLAT WIDTH. Garment laid flat, front up, snaps closed, smoothed without stretching. LEVEL: 2.54 cm (1\") below the armhole point, measured down the side seam. Measure STRAIGHT across, side seam to side seam. Report the FLAT WIDTH only. Not along a curve, not around the body. Derived circumference = Flat Width × 2 — calculated by JACKETEK, NOT a separately measured POM.",
+      "note": null,
+      "role": "TARGET",
+      "target": {
+        "min": 61,
+        "max": 62.2,
+        "unit": "cm",
+        "quantity": "Half Chest — Flat Width",
+        "status": "PROVISIONAL_TARGET",
+        "confidence": "LOW",
+        "label": "PROVISIONAL TARGET · LOW CONFIDENCE · NOT PRODUCTION APPROVED"
+      },
+      "targetText": "61.0–62.2 cm",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null,
+      "derived": {
+        "name": "Chest circumference (derived)",
+        "formula": "Flat Width × 2",
+        "measured": false,
+        "by": "JACKETEK",
+        "note": "Derived from the flat width; not a separately measured POM."
+      }
+    },
+    {
+      "id": "B01-A",
+      "pomId": "B01",
+      "area": "Body",
+      "name": "Half Chest — Flat Width AT the armhole point (pit to pit)",
+      "howToMeasure": "Half Chest — Flat Width as B01, but at the level OF the armhole point (pit to pit), straight. Alternative level, recorded for comparison only (flat width, not a circumference).",
+      "note": null,
+      "role": "ALTERNATIVE",
+      "target": null,
+      "targetText": "REFERENCE ONLY — alternative method",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B02",
+      "pomId": "B02",
+      "area": "Body",
+      "name": "Waist circumference",
+      "howToMeasure": "FROM Side seam at waist level · TO Opposite side seam at waist level · straight · flat, snapped closed · rib excluded",
+      "note": "Measuring level: PATTERN MAKER TO SET before the sample.",
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B03",
+      "pomId": "B03",
+      "area": "Body",
+      "name": "Body width at waistband seam (above rib)",
+      "howToMeasure": "FROM Waistband seam at the side · TO Waistband seam at the opposite side · straight along the seam line · flat, snapped closed · rib excluded (seam above the rib)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B04",
+      "pomId": "B04",
+      "area": "Body",
+      "name": "Bottom opening, relaxed",
+      "howToMeasure": "FROM Finished bottom edge at the side fold · TO Opposite side fold · straight along the edge · flat, snapped closed, relaxed · rib included (rib edge) (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B05",
+      "pomId": "B05",
+      "area": "Body",
+      "name": "Bottom opening, extended",
+      "howToMeasure": "FROM Finished bottom edge at the side fold · TO Opposite side fold · straight along the edge · flat, snapped closed, stretched · rib included (rib edge) (stretched to full extension without straining stitches)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B06",
+      "pomId": "B06",
+      "area": "Body",
+      "name": "Centre-back length",
+      "howToMeasure": "Garment laid flat, BACK facing up, rib relaxed. START: centre back at the COLLAR SEAM (where the collar rib joins the body) — not the top of the collar. END: finished bottom edge of the waistband rib at centre back. STRAIGHT, vertical along the centre-back line.",
+      "note": null,
+      "role": "TARGET",
+      "target": {
+        "min": 67.3,
+        "max": 68,
+        "unit": "cm",
+        "quantity": "Centre-back length, collar seam → finished rib edge",
+        "status": "PROVISIONAL_TARGET",
+        "confidence": "LOW",
+        "label": "PROVISIONAL TARGET · LOW CONFIDENCE · NOT PRODUCTION APPROVED"
+      },
+      "targetText": "67.3–68.0 cm",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B06-T",
+      "pomId": "B06",
+      "area": "Body",
+      "name": "Centre-back length from the TOP of the collar",
+      "howToMeasure": "As B06 but START at the TOP (outer edge) of the collar at centre back. Alternative start point, recorded for comparison only.",
+      "note": null,
+      "role": "ALTERNATIVE",
+      "target": null,
+      "targetText": "REFERENCE ONLY — alternative method",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B07",
+      "pomId": "B07",
+      "area": "Body",
+      "name": "Back length from HPS",
+      "howToMeasure": "FROM HPS (shoulder seam meets collar seam) · TO Finished bottom edge · straight, parallel to CB · flat, back facing up · rib included (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B08",
+      "pomId": "B08",
+      "area": "Body",
+      "name": "Front length from HPS",
+      "howToMeasure": "FROM HPS · TO Finished bottom edge · straight, parallel to CF · flat, snapped closed · rib included (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B09",
+      "pomId": "B09",
+      "area": "Body",
+      "name": "Across shoulder",
+      "howToMeasure": "Garment laid flat, BACK facing up, smoothed. FROM the LEFT shoulder point TO the RIGHT shoulder point. Dropped shoulder: the shoulder point is where the sleeve-attachment (armhole) seam crosses the shoulder line. Measure STRAIGHT, seam point to seam point, at the seam line.",
+      "note": null,
+      "role": "PATTERN_TARGET_TBD",
+      "target": null,
+      "targetText": "TBD — PATTERN MAKER",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B09-C",
+      "pomId": "B09",
+      "area": "Body",
+      "name": "Across shoulder along the back contour",
+      "howToMeasure": "As B09 but ALONG the back contour / shoulder line from seam point to seam point. Recorded for comparison only.",
+      "note": null,
+      "role": "ALTERNATIVE",
+      "target": null,
+      "targetText": "REFERENCE ONLY — alternative method",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B10",
+      "pomId": "B10",
+      "area": "Body",
+      "name": "Shoulder length",
+      "howToMeasure": "FROM HPS · TO Shoulder point (dropped: armhole seam on the shoulder line) · straight along the shoulder seam / shoulder line · flat",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B11",
+      "pomId": "B11",
+      "area": "Body",
+      "name": "Shoulder drop",
+      "howToMeasure": "FROM HPS level · TO Shoulder-point level (dropped shoulder point) · vertical · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B12",
+      "pomId": "B12",
+      "area": "Body",
+      "name": "Across front",
+      "howToMeasure": "FROM Left front armhole seam · TO Right front armhole seam · straight · flat, snapped closed",
+      "note": "Measuring level: PATTERN MAKER TO SET before the sample.",
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B13",
+      "pomId": "B13",
+      "area": "Body",
+      "name": "Across back",
+      "howToMeasure": "FROM Left back armhole seam · TO Right back armhole seam · straight · flat, back facing up",
+      "note": "Measuring level: PATTERN MAKER TO SET before the sample.",
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B14",
+      "pomId": "B14",
+      "area": "Body",
+      "name": "Armhole depth",
+      "howToMeasure": "FROM HPS level · TO Armhole-point (underarm) level · vertical · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B15",
+      "pomId": "B15",
+      "area": "Body",
+      "name": "Armhole, straight",
+      "howToMeasure": "FROM Shoulder point (dropped) · TO Armhole point · straight · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "B16",
+      "pomId": "B16",
+      "area": "Body",
+      "name": "Armhole, curved (along seam)",
+      "howToMeasure": "FROM Shoulder point (dropped) · TO Shoulder point (full circuit, front + back) · along the curve of the armhole seam · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S02",
+      "pomId": "S02",
+      "area": "Sleeve",
+      "name": "Sleeve — shoulder point → cuff seam (PRIMARY)",
+      "howToMeasure": "PRIMARY SLEEVE METHOD. Sleeve laid straight and flat, overarm fold up. FROM the shoulder point (dropped: armhole seam on the shoulder line) ALONG the overarm fold TO the CUFF SEAM (where the rib cuff is attached). Rib excluded.",
+      "note": null,
+      "role": "PATTERN_TARGET_TBD",
+      "target": null,
+      "targetText": "TBD — PATTERN MAKER",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S02-E",
+      "pomId": "S02",
+      "area": "Sleeve",
+      "name": "Sleeve — shoulder point → finished cuff edge (SECONDARY)",
+      "howToMeasure": "SECONDARY. Same start and path as S02, but TO the FINISHED CUFF EDGE (rib included, relaxed). Check: S02-E ≈ S02 + S09. Never reported as S02.",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S01",
+      "pomId": "S01",
+      "area": "Sleeve",
+      "name": "Sleeve — centre back → cuff seam (COMPARISON ONLY)",
+      "howToMeasure": "COMPARISON ONLY. FROM centre back at the collar seam, ALONG the shoulder line to the shoulder point, then DOWN the overarm fold TO the CUFF SEAM. Never reported as S02.",
+      "note": null,
+      "role": "COMPARISON",
+      "target": null,
+      "targetText": "REFERENCE ONLY — comparison, no target",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S01-E",
+      "pomId": "S01",
+      "area": "Sleeve",
+      "name": "Sleeve — centre back → finished cuff edge (COMPARISON ONLY)",
+      "howToMeasure": "COMPARISON ONLY. As S01 but TO the FINISHED CUFF EDGE (rib included, relaxed).",
+      "note": null,
+      "role": "COMPARISON",
+      "target": null,
+      "targetText": "REFERENCE ONLY — comparison, no target",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S03",
+      "pomId": "S03",
+      "area": "Sleeve",
+      "name": "Underarm sleeve length",
+      "howToMeasure": "FROM Armhole point · TO Finished cuff edge · along the underarm seam · flat · rib included (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S04",
+      "pomId": "S04",
+      "area": "Sleeve",
+      "name": "Bicep width, 1\" below armhole",
+      "howToMeasure": "FROM Underarm seam, 2.54 cm below the armhole point · TO Sleeve fold opposite · straight, perpendicular to the sleeve centre line · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S05",
+      "pomId": "S05",
+      "area": "Sleeve",
+      "name": "Elbow width",
+      "howToMeasure": "FROM Underarm seam at elbow level · TO Sleeve fold opposite · straight, perpendicular to the sleeve line · flat",
+      "note": "Measuring level: PATTERN MAKER TO SET before the sample.",
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S06",
+      "pomId": "S06",
+      "area": "Sleeve",
+      "name": "Sleeve width at cuff seam (above rib)",
+      "howToMeasure": "FROM Cuff seam, underarm side · TO Cuff seam, fold side · straight along the cuff seam · flat · rib excluded (seam above the rib)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S07",
+      "pomId": "S07",
+      "area": "Sleeve",
+      "name": "Cuff opening, relaxed",
+      "howToMeasure": "FROM Finished cuff edge · TO Finished cuff edge, opposite fold · straight along the edge · flat, relaxed · rib included (rib edge) (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S08",
+      "pomId": "S08",
+      "area": "Sleeve",
+      "name": "Cuff opening, extended",
+      "howToMeasure": "FROM Finished cuff edge · TO Finished cuff edge, opposite fold · straight along the edge · flat, stretched · rib included (rib edge) (stretched to full extension)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S09",
+      "pomId": "S09",
+      "area": "Sleeve",
+      "name": "Cuff rib height",
+      "howToMeasure": "FROM Cuff seam · TO Finished cuff edge · straight · flat, relaxed · rib rib only (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "S10",
+      "pomId": "S10",
+      "area": "Sleeve",
+      "name": "Sleeve cap height (pattern)",
+      "howToMeasure": "FROM Bicep line (pattern) · TO Top of the sleeve cap (pattern) · straight on the net pattern · pattern piece",
+      "note": null,
+      "role": "PATTERN_ONLY",
+      "target": null,
+      "targetText": "NO TARGET — pattern measure",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET (pattern / cut piece)",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "R01",
+      "pomId": "R01",
+      "area": "Rib",
+      "name": "Waistband rib height",
+      "howToMeasure": "FROM Waistband seam at CB · TO Finished bottom edge at CB · straight · flat, relaxed · rib rib only (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "R02",
+      "pomId": "R02",
+      "area": "Rib",
+      "name": "Waistband rib cut length",
+      "howToMeasure": "FROM — · TO — · cut piece · cut piece · rib rib piece (unstretched)",
+      "note": null,
+      "role": "CALCULATED",
+      "target": null,
+      "targetText": "NO TARGET — calculated from the pattern",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET (pattern / cut piece)",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "R03",
+      "pomId": "R03",
+      "area": "Rib",
+      "name": "Cuff rib cut length",
+      "howToMeasure": "FROM — · TO — · cut piece · cut piece · rib rib piece (unstretched)",
+      "note": null,
+      "role": "CALCULATED",
+      "target": null,
+      "targetText": "NO TARGET — calculated from the pattern",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET (pattern / cut piece)",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "R04",
+      "pomId": "R04",
+      "area": "Rib",
+      "name": "Collar rib cut length",
+      "howToMeasure": "FROM — · TO — · cut piece · cut piece · rib rib piece (unstretched)",
+      "note": null,
+      "role": "CALCULATED",
+      "target": null,
+      "targetText": "NO TARGET — calculated from the pattern",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET (pattern / cut piece)",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "R05",
+      "pomId": "R05",
+      "area": "Rib",
+      "name": "Rib stripe layout (count, stripe widths, distance from edge)",
+      "howToMeasure": "FROM Finished edge · TO Each stripe edge · straight, perpendicular to the edge · flat, relaxed · rib rib only (relaxed)",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C01",
+      "pomId": "C01",
+      "area": "Collar & neck",
+      "name": "Collar height at CB",
+      "howToMeasure": "FROM Collar seam at CB · TO Collar outer edge at CB · straight, collar standing / unfolded · flat, relaxed · rib collar rib (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C02",
+      "pomId": "C02",
+      "area": "Collar & neck",
+      "name": "Collar height at front ends",
+      "howToMeasure": "FROM Collar seam at the front end · TO Collar outer edge at the front end · straight · flat, relaxed · rib collar rib (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C03",
+      "pomId": "C03",
+      "area": "Collar & neck",
+      "name": "Collar neck-edge length (attached edge)",
+      "howToMeasure": "FROM Left collar front end · TO Right collar front end · along the collar seam (curve) · flat, relaxed · rib collar rib (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C04",
+      "pomId": "C04",
+      "area": "Collar & neck",
+      "name": "Collar outer-edge length, relaxed",
+      "howToMeasure": "FROM Left outer corner · TO Right outer corner · along the outer edge (curve) · flat, relaxed · rib collar rib (relaxed)",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C05",
+      "pomId": "C05",
+      "area": "Collar & neck",
+      "name": "Neck width, seam to seam",
+      "howToMeasure": "FROM Left HPS at the collar seam · TO Right HPS at the collar seam · straight · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C06",
+      "pomId": "C06",
+      "area": "Collar & neck",
+      "name": "Front neck drop",
+      "howToMeasure": "FROM HPS line · TO Collar seam at CF · vertical · flat, snapped closed",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "C07",
+      "pomId": "C07",
+      "area": "Collar & neck",
+      "name": "Back neck drop",
+      "howToMeasure": "FROM HPS line · TO Collar seam at CB · vertical · flat, back facing up",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F01",
+      "pomId": "F01",
+      "area": "Front & closure",
+      "name": "Front placket / facing width (finished)",
+      "howToMeasure": "FROM Front edge · TO Placket inner stitch line · straight, perpendicular to the front edge · flat, snapped closed",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F02",
+      "pomId": "F02",
+      "area": "Front & closure",
+      "name": "Front overlap (CF to front edge)",
+      "howToMeasure": "FROM CF line · TO Overlapping front edge · straight, perpendicular · flat, snapped closed",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F03",
+      "pomId": "F03",
+      "area": "Front & closure",
+      "name": "Snap count",
+      "howToMeasure": "FROM — · TO — · count · —",
+      "note": "A count, not a length.",
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "count",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "count",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F04",
+      "pomId": "F04",
+      "area": "Front & closure",
+      "name": "Top snap position below neck seam",
+      "howToMeasure": "FROM Collar seam at the front edge · TO Top snap centre · straight along the front edge · flat, snapped closed",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F05",
+      "pomId": "F05",
+      "area": "Front & closure",
+      "name": "Bottom snap position above bottom edge",
+      "howToMeasure": "FROM Finished bottom edge · TO Bottom snap centre · straight along the front edge · flat, snapped closed · rib included if the snap sits on the rib (relaxed)",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F06",
+      "pomId": "F06",
+      "area": "Front & closure",
+      "name": "Snap spacing (centre to centre)",
+      "howToMeasure": "FROM Snap centre · TO Next snap centre · straight · flat, snapped closed",
+      "note": null,
+      "role": "CALCULATED",
+      "target": null,
+      "targetText": "NO TARGET — calculated from the pattern",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET (pattern / cut piece)",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "F07",
+      "pomId": "F07",
+      "area": "Front & closure",
+      "name": "Snap centre from front edge",
+      "howToMeasure": "FROM Front edge · TO Snap centre · straight, perpendicular · flat, snapped closed",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P01",
+      "pomId": "P01",
+      "area": "Pockets",
+      "name": "Pocket opening length",
+      "howToMeasure": "FROM Upper end of the opening · TO Lower end of the opening · straight along the opening · flat, snapped closed",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P02",
+      "pomId": "P02",
+      "area": "Pockets",
+      "name": "Pocket welt width",
+      "howToMeasure": "FROM Welt seam · TO Welt edge · straight, perpendicular to the opening · flat",
+      "note": null,
+      "role": "MEASURE",
+      "target": null,
+      "targetText": "NO TARGET — MEASURE ON SAMPLE",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P03",
+      "pomId": "P03",
+      "area": "Pockets",
+      "name": "Pocket position below HPS (top of opening)",
+      "howToMeasure": "FROM HPS · TO Upper end of the opening · vertical · flat, snapped closed",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P04",
+      "pomId": "P04",
+      "area": "Pockets",
+      "name": "Pocket position from CF (top of opening)",
+      "howToMeasure": "FROM CF line · TO Upper end of the opening · horizontal · flat, snapped closed",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P05",
+      "pomId": "P05",
+      "area": "Pockets",
+      "name": "Pocket opening angle",
+      "howToMeasure": "FROM Vertical reference · TO Opening line · angle · flat, snapped closed",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "deg",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "deg",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P06",
+      "pomId": "P06",
+      "area": "Pockets",
+      "name": "Pocket bag depth",
+      "howToMeasure": "FROM Lower end of the opening (inside) · TO Bottom of the pocket bag · straight · flat (inside)",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "P07",
+      "pomId": "P07",
+      "area": "Pockets",
+      "name": "Pocket bag width",
+      "howToMeasure": "FROM Pocket bag edge · TO Opposite bag edge · straight, widest point · flat (inside)",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "L01",
+      "pomId": "L01",
+      "area": "Lining",
+      "name": "Lining CB length relative to shell",
+      "howToMeasure": "FROM Lining CB neck · TO Lining hem seam · straight along CB · inside out, flat",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "L02",
+      "pomId": "L02",
+      "area": "Lining",
+      "name": "Lining sleeve length relative to shell",
+      "howToMeasure": "FROM Lining armhole · TO Lining cuff seam · along the overarm · inside out, flat",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "L03",
+      "pomId": "L03",
+      "area": "Lining",
+      "name": "Lining chest width relative to shell",
+      "howToMeasure": "FROM Lining side seam · TO Opposite lining side seam · straight · inside out, flat",
+      "note": null,
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    },
+    {
+      "id": "L04",
+      "pomId": "L04",
+      "area": "Lining",
+      "name": "Inside pocket opening (if fitted)",
+      "howToMeasure": "FROM Opening end · TO Opening end · straight · inside, flat",
+      "note": "Only if an inside pocket is fitted (JACKETEK decision open).",
+      "role": "PATTERN",
+      "target": null,
+      "targetText": "NO TARGET — PATTERN MAKER TO SET",
+      "tolerance": {
+        "value": null,
+        "text": "TBD",
+        "note": "No tolerance is approved. JACKETEK sets tolerances at sample approval."
+      },
+      "patternProposed": {
+        "value": null,
+        "unit": "cm",
+        "fill": "PATTERN MAKER TO SET",
+        "by": "factory / pattern maker"
+      },
+      "sampleActual": {
+        "value": null,
+        "unit": "cm",
+        "fill": "MEASURE ON SAMPLE",
+        "by": "factory"
+      },
+      "variance": {
+        "value": null,
+        "fill": "JACKETEK — after sample",
+        "by": "JACKETEK"
+      },
+      "status": {
+        "value": null,
+        "fill": "JACKETEK TO APPROVE AFTER SAMPLE",
+        "by": "JACKETEK"
+      },
+      "comments": null
+    }
+  ],
+  "droppedShoulder": {
+    "construction": "DROPPED SHOULDER",
+    "k1": {
+      "status": "RESOLVED",
+      "decision": "DROPPED_SHOULDER",
+      "decided": "2026-10-10"
+    },
+    "shoulderPoint": "On the JACKETEK garment the shoulder point (SP) is where the sleeve-attachment (armhole) seam line crosses the shoulder line — the shoulder seam extended to the top fold with the garment laid flat. It sits below and outside the wearer's natural shoulder; its exact position is set by the pattern maker.",
+    "parameters": [
+      {
+        "id": "SC-1",
+        "name": "Shoulder-point position (drop extension)",
+        "definition": "Where the armhole seam meets the shoulder line, stated on the pattern as the extension beyond the natural-shoulder point of the base block (cm, pattern).",
+        "value": null,
+        "fill": "PATTERN MAKER TO SET",
+        "when": "Recorded on the pattern before or with the sample; marked on the sample."
+      },
+      {
+        "id": "SC-2",
+        "name": "Shoulder drop / slope at the dropped shoulder point",
+        "definition": "B11 — vertical HPS level → dropped shoulder-point level.",
+        "value": null,
+        "fill": "PATTERN MAKER TO SET",
+        "when": "Recorded on the pattern before or with the sample; marked on the sample."
+      },
+      {
+        "id": "SC-3",
+        "name": "Armhole depth and sleeve-cap height for the dropped shoulder",
+        "definition": "B14 and S10.",
+        "value": null,
+        "fill": "PATTERN MAKER TO SET",
+        "when": "Recorded on the pattern before or with the sample; marked on the sample."
+      }
+    ],
+    "rules": [
+      "SC-1 to SC-3 are set by the pattern maker for the JACKETEK relaxed / baggy fit.",
+      "Do NOT derive them from Golden Bear or any set-in reference.",
+      "Mark the shoulder point on the sample (tailor's chalk / thread tack) and photograph it.",
+      "Across shoulder (B09) and the sleeve (S02) follow from these choices: no target is given."
+    ]
+  },
+  "materials": {
+    "rule": "Give the actual specification for the sample, the reason, and any option with its price impact. Number your options. Send swatches / photos where practical. Nothing here is approved by JACKETEK before the sample is checked.",
+    "sections": [
+      {
+        "id": "MP-1",
+        "title": "Body — Cotton Fabric",
+        "k2": "K2.1",
+        "designIntent": "Cotton Fabric",
+        "swatch": true,
+        "fields": [
+          {
+            "key": "fibreComposition",
+            "label": "Fibre composition",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "weave",
+            "label": "Weave / construction",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "gsm",
+            "label": "GSM",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "finish",
+            "label": "Finish",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "shrinkage",
+            "label": "Shrinkage (length / width, wash method)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "colourMatching",
+            "label": "Colour-matching method",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "supplierCode",
+            "label": "Supplier / material code",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          }
+        ]
+      },
+      {
+        "id": "MP-2",
+        "title": "Sleeves — Leather",
+        "k2": "K2.2",
+        "designIntent": "Leather",
+        "swatch": true,
+        "policy": {
+          "designIntent": "Leather",
+          "alternatives": "ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT",
+          "rule": "A supplier may propose synthetic / PU (or other) alternatives only as clearly labelled alternative proposals. They never silently replace Leather. For each alternative record the cost, MOQ, performance and appearance differences against the leather proposal. Changing the design intent needs explicit JACKETEK approval.",
+          "recordForAlternatives": [
+            "cost difference",
+            "MOQ difference",
+            "performance difference",
+            "appearance difference"
+          ],
+          "changeRequires": "Explicit JACKETEK approval"
+        },
+        "fields": [
+          {
+            "key": "leatherType",
+            "label": "Leather type (animal, tannage)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "identification",
+            "label": "Genuine leather — material identification / evidence",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "thickness",
+            "label": "Thickness",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "grain",
+            "label": "Grain",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "finish",
+            "label": "Finish",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "handFeel",
+            "label": "Hand feel",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "backing",
+            "label": "Backing",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "colourConsistency",
+            "label": "Colour consistency (hide to hide, lot to lot)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "moq",
+            "label": "MOQ",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "priceImpact",
+            "label": "Price impact",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "supplierCode",
+            "label": "Supplier / material code",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          }
+        ]
+      },
+      {
+        "id": "MP-3",
+        "title": "Rib — collar, cuffs, waistband",
+        "k2": "K2.4–K2.6",
+        "designIntent": "Knitted varsity rib; collar / cuffs / waistband matching; striped colourway supported",
+        "swatch": true,
+        "parts": [
+          "collar",
+          "cuffs",
+          "waistband"
+        ],
+        "fields": [
+          {
+            "key": "composition",
+            "label": "Composition",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "knitStructure",
+            "label": "Knit structure",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "gauge",
+            "label": "Gauge",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "weight",
+            "label": "Weight",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "thickness",
+            "label": "Thickness",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "stretchPct",
+            "label": "Stretch %",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "recoveryPct",
+            "label": "Recovery %",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "stripeConstruction",
+            "label": "Stripe construction (knitted-in / other)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "stripeWidths",
+            "label": "Stripe widths and positions",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "colourMatch",
+            "label": "Colour-match method (to body / sleeves)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          }
+        ]
+      },
+      {
+        "id": "MP-4",
+        "title": "Lining",
+        "k2": "K2.3",
+        "designIntent": "Lining required (body and sleeves). Plain or quilted NOT chosen yet.",
+        "swatch": true,
+        "fields": [
+          {
+            "key": "material",
+            "label": "Material",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "fibreContent",
+            "label": "Fibre content",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "weight",
+            "label": "Weight",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "colour",
+            "label": "Colour",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "plainOrQuilted",
+            "label": "Plain vs quilted — propose; JACKETEK decides after the sample",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE · JACKETEK TO APPROVE AFTER SAMPLE"
+          },
+          {
+            "key": "wadding",
+            "label": "Wadding (only if quilted)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "breathability",
+            "label": "Breathability",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "handFeel",
+            "label": "Hand feel",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "embroideryCompatibility",
+            "label": "Embroidery compatibility (stitches through the shell; protection)",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          }
+        ]
+      },
+      {
+        "id": "MP-5",
+        "title": "Snaps / hardware",
+        "k2": "K2.7",
+        "designIntent": "Metal snap front closure",
+        "swatch": true,
+        "fields": [
+          {
+            "key": "diameter",
+            "label": "Snap diameter",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "alloy",
+            "label": "Material / alloy",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "plating",
+            "label": "Plating / finish",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "colour",
+            "label": "Colour",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "supplierRef",
+            "label": "Supplier / reference number if available",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "attachment",
+            "label": "Attachment method",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "force",
+            "label": "Opening / closing force, or equivalent quality assessment",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "reinforcement",
+            "label": "Reinforcement method",
+            "value": null,
+            "fill": "FACTORY TO PROPOSE"
+          },
+          {
+            "key": "count",
+            "label": "Snap count",
+            "value": null,
+            "fill": "PATTERN MAKER TO SET"
+          },
+          {
+            "key": "spacing",
+            "label": "Snap spacing / positions",
+            "value": null,
+            "fill": "PATTERN MAKER TO SET"
+          }
+        ]
+      }
+    ],
+    "alternativeProposals": {
+      "label": "ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT",
+      "rule": "A supplier may propose synthetic / PU (or other) alternatives only as clearly labelled alternative proposals. They never silently replace Leather. For each alternative record the cost, MOQ, performance and appearance differences against the leather proposal. Changing the design intent needs explicit JACKETEK approval.",
+      "replacesDesignIntent": false,
+      "fieldsPerAlternative": [
+        "material",
+        "identification",
+        "costDifference",
+        "moqDifference",
+        "performanceDifference",
+        "appearanceDifference"
+      ]
+    }
+  },
+  "construction": {
+    "pockets": {
+      "visualIntent": [
+        "Two front angled welt pockets",
+        "One per front panel",
+        "Topstitched outline"
+      ],
+      "fields": [
+        {
+          "key": "handEntryEdge",
+          "label": "Hand-entry edge",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE / PATTERN MAKER TO SET"
+        },
+        {
+          "key": "openingDimensions",
+          "label": "Opening dimensions (P01 length, P02 welt width)",
+          "value": null,
+          "fill": "PATTERN MAKER TO SET"
+        },
+        {
+          "key": "weltConstruction",
+          "label": "Welt construction",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "weltMaterial",
+          "label": "Welt material — open (X-04). Leather matching the sleeves, as drawn, is a visual reference / option only",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE / JACKETEK TO APPROVE AFTER SAMPLE"
+        },
+        {
+          "key": "bagMaterial",
+          "label": "Pocket bag material",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "bagDepth",
+          "label": "Pocket bag depth (P06)",
+          "value": null,
+          "fill": "PATTERN MAKER TO SET"
+        },
+        {
+          "key": "bartacks",
+          "label": "Bartacks / reinforcement",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "interfacing",
+          "label": "Interfacing",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "insidePocket",
+          "label": "Should an inside pocket be offered? (proposal only; JACKETEK decides)",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        }
+      ]
+    },
+    "sewing": {
+      "rule": "Dropped shoulder (K1) must remain compatible with every proposal.",
+      "fields": [
+        {
+          "key": "seamConstruction",
+          "label": "Seam construction",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "seamAllowances",
+          "label": "Seam allowances",
+          "value": null,
+          "fill": "PATTERN MAKER TO SET"
+        },
+        {
+          "key": "topstitching",
+          "label": "Topstitching",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "stitchType",
+          "label": "Stitch type",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "spi",
+          "label": "SPI (stitches per inch)",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "threadType",
+          "label": "Thread type (cotton seams / leather seams)",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "sleeveAttachment",
+          "label": "Sleeve attachment construction (dropped shoulder)",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "ribAttachment",
+          "label": "Rib attachment (collar, cuffs, waistband)",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "neckFinish",
+          "label": "Neck finish",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "frontPlacket",
+          "label": "Front placket / facing",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "liningAssembly",
+          "label": "Lining assembly",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "reinforcementAreas",
+          "label": "Reinforcement areas",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "leatherToCotton",
+          "label": "Leather-to-cotton seam treatment",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        {
+          "key": "interlining",
+          "label": "Interlining where required",
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        }
+      ]
+    }
+  },
+  "embroidery": {
+    "evaluate": [
+      "embroidery on Cotton Fabric",
+      "embroidery / patch attachment on Leather",
+      "backing / stabilizer",
+      "lining protection",
+      "stitch density",
+      "edge finish",
+      "puckering risk",
+      "leather perforation / damage risk"
+    ],
+    "tests": [
+      {
+        "id": "ET-A",
+        "zone": "leftChest",
+        "location": "Chest (left chest zone)",
+        "substrate": "Cotton Fabric body",
+        "test": "Front Letters sample: one block letter as a felt / chenille-style patch letter, attached by the method the factory proposes",
+        "artwork": "JACKETEK test geometry: plain block letter shape drawn from straight lines (no font, no licensed artwork)",
+        "goal": "Manufacturing validation, not customer styling.",
+        "size": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE",
+          "note": "Representative size that fits the usable area on the sample; record the finished width × height."
+        },
+        "method": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "threadAndColours": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "backingStabilizer": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "stitchDensity": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "edgeFinish": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "result": {
+          "value": null,
+          "fill": "MEASURE ON SAMPLE",
+          "note": "Puckering, perforation / damage, lining protection, appearance — with photos."
+        },
+        "approval": {
+          "by": "JACKETEK",
+          "fill": "JACKETEK TO APPROVE AFTER SAMPLE"
+        }
+      },
+      {
+        "id": "ET-B",
+        "zone": "mainBack",
+        "location": "Main back",
+        "substrate": "Cotton Fabric body",
+        "test": "One medium / large embroidery or patch: concentric circle + square test motif with a fill area, satin border and fine detail lines",
+        "artwork": "JACKETEK test geometry (circles, squares, lines)",
+        "goal": "Manufacturing validation, not customer styling.",
+        "size": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE",
+          "note": "Representative size that fits the usable area on the sample; record the finished width × height."
+        },
+        "method": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "threadAndColours": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "backingStabilizer": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "stitchDensity": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "edgeFinish": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "result": {
+          "value": null,
+          "fill": "MEASURE ON SAMPLE",
+          "note": "Puckering, perforation / damage, lining protection, appearance — with photos."
+        },
+        "approval": {
+          "by": "JACKETEK",
+          "fill": "JACKETEK TO APPROVE AFTER SAMPLE"
+        }
+      },
+      {
+        "id": "ET-C",
+        "zone": "leftSleeveMiddle",
+        "location": "Sleeve (left sleeve, middle zone)",
+        "substrate": "Leather sleeve",
+        "test": "One number / patch on leather: two block digits as a patch or direct embroidery, as the factory proposes",
+        "artwork": "JACKETEK test geometry: block digits \"1\" and \"2\" drawn from rectangles (no font)",
+        "goal": "Manufacturing validation, not customer styling.",
+        "size": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE",
+          "note": "Representative size that fits the usable area on the sample; record the finished width × height."
+        },
+        "method": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "threadAndColours": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "backingStabilizer": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "stitchDensity": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "edgeFinish": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "result": {
+          "value": null,
+          "fill": "MEASURE ON SAMPLE",
+          "note": "Puckering, perforation / damage, lining protection, appearance — with photos."
+        },
+        "approval": {
+          "by": "JACKETEK",
+          "fill": "JACKETEK TO APPROVE AFTER SAMPLE"
+        }
+      },
+      {
+        "id": "ET-D",
+        "zone": "backQuote",
+        "location": "Lower back text zone",
+        "substrate": "Cotton Fabric body",
+        "test": "One line of text embroidery: \"JACKETEK M SAMPLE\"",
+        "artwork": "Plain text; any block sans-serif the factory owns (no licensed artwork). Preview shown in Tajawal (SIL Open Font License).",
+        "goal": "Manufacturing validation, not customer styling.",
+        "size": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE",
+          "note": "Representative size that fits the usable area on the sample; record the finished width × height."
+        },
+        "method": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "threadAndColours": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "backingStabilizer": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "stitchDensity": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "edgeFinish": {
+          "value": null,
+          "fill": "FACTORY TO PROPOSE"
+        },
+        "result": {
+          "value": null,
+          "fill": "MEASURE ON SAMPLE",
+          "note": "Puckering, perforation / damage, lining protection, appearance — with photos."
+        },
+        "approval": {
+          "by": "JACKETEK",
+          "fill": "JACKETEK TO APPROVE AFTER SAMPLE"
+        }
+      }
+    ],
+    "zoneSchedule": {
+      "label": "REFERENCE FOR PLACEMENT — NOT PHYSICAL SIZE",
+      "rule": "Shares of garment landmarks, not measurements. No zone is converted to cm in this document; the conversion is done by JACKETEK after the M sample is measured.",
+      "zones": [
+        {
+          "zoneId": "leftChest",
+          "name": "Left Chest",
+          "panel": "Left front (wearer's left)",
+          "substrate": "Cotton Fabric body",
+          "side": "front",
+          "normalised": {
+            "kind": "body",
+            "u": 0.6001,
+            "v": 0.2548,
+            "w": 0.2728,
+            "h": 0.1782,
+            "aspect": 1
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "rightChest",
+          "name": "Right Chest",
+          "panel": "Right front (wearer's right)",
+          "substrate": "Cotton Fabric body",
+          "side": "front",
+          "normalised": {
+            "kind": "body",
+            "u": -0.6001,
+            "v": 0.2548,
+            "w": 0.2728,
+            "h": 0.1782,
+            "aspect": 1
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "mainBack",
+          "name": "Main Back",
+          "panel": "Back",
+          "substrate": "Cotton Fabric body",
+          "side": "back",
+          "normalised": {
+            "kind": "body",
+            "u": 0,
+            "v": 0.43,
+            "w": 0.8183,
+            "h": 0.52,
+            "aspect": 1.0278
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "backQuote",
+          "name": "Lower Back Text (text only)",
+          "panel": "Back",
+          "substrate": "Cotton Fabric body",
+          "side": "back",
+          "normalised": {
+            "kind": "body",
+            "u": 0,
+            "v": 0.8125,
+            "w": 0.8183,
+            "h": 0.1247,
+            "aspect": 4.2857
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "leftSleeveUpper",
+          "name": "Left Sleeve — Upper",
+          "panel": "Left sleeve, outer side",
+          "substrate": "Leather sleeve",
+          "side": "leftSleeve",
+          "normalised": {
+            "kind": "sleeve",
+            "s": 0.2618,
+            "w": 0.6563,
+            "h": 0.2218,
+            "aspect": 0.75
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "leftSleeveMiddle",
+          "name": "Left Sleeve — Middle",
+          "panel": "Left sleeve, outer side",
+          "substrate": "Leather sleeve",
+          "side": "leftSleeve",
+          "normalised": {
+            "kind": "sleeve",
+            "s": 0.5391,
+            "w": 0.6407,
+            "h": 0.2218,
+            "aspect": 0.75
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "leftSleeveLower",
+          "name": "Left Sleeve — Lower",
+          "panel": "Left sleeve, outer side",
+          "substrate": "Leather sleeve",
+          "side": "leftSleeve",
+          "normalised": {
+            "kind": "sleeve",
+            "s": 0.8164,
+            "w": 0.7368,
+            "h": 0.2218,
+            "aspect": 0.75
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "rightSleeveUpper",
+          "name": "Right Sleeve — Upper",
+          "panel": "Right sleeve, outer side",
+          "substrate": "Leather sleeve",
+          "side": "rightSleeve",
+          "normalised": {
+            "kind": "sleeve",
+            "s": 0.2618,
+            "w": 0.6563,
+            "h": 0.2218,
+            "aspect": 0.75
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "rightSleeveMiddle",
+          "name": "Right Sleeve — Middle",
+          "panel": "Right sleeve, outer side",
+          "substrate": "Leather sleeve",
+          "side": "rightSleeve",
+          "normalised": {
+            "kind": "sleeve",
+            "s": 0.5391,
+            "w": 0.6407,
+            "h": 0.2218,
+            "aspect": 0.75
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        },
+        {
+          "zoneId": "rightSleeveLower",
+          "name": "Right Sleeve — Lower",
+          "panel": "Right sleeve, outer side",
+          "substrate": "Leather sleeve",
+          "side": "rightSleeve",
+          "normalised": {
+            "kind": "sleeve",
+            "s": 0.8164,
+            "w": 0.7368,
+            "h": 0.2218,
+            "aspect": 0.75
+          },
+          "physicalCm": null,
+          "physicalFill": "JACKETEK — after M sample calibration"
+        }
+      ]
+    },
+    "calibration": {
+      "title": "EMBROIDERY ZONE CALIBRATION — TO COMPLETE FROM M SAMPLE",
+      "measurements": [
+        {
+          "id": "EC-01",
+          "group": "HPS",
+          "landmark": "HPS (left and right)",
+          "measure": "Mark both HPS points (shoulder seam meets collar seam); photograph with a ruler.",
+          "poms": [],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-02",
+          "group": "Front body",
+          "landmark": "Front HPS → waistband seam",
+          "measure": "Vertical, parallel to CF, from HPS to the top of the waistband rib (waistband seam), each side.",
+          "poms": [
+            "B08",
+            "R01"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-03",
+          "group": "Back body",
+          "landmark": "Back HPS → waistband seam",
+          "measure": "Vertical, parallel to CB, from HPS to the waistband seam. Also equals B07 − R01.",
+          "poms": [
+            "B07",
+            "R01"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-04",
+          "group": "Back body",
+          "landmark": "CB collar seam → waistband seam",
+          "measure": "Straight along CB.",
+          "poms": [
+            "B06",
+            "R01"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-05",
+          "group": "Waistband top",
+          "landmark": "Waistband seam: body width flat",
+          "measure": "Straight along the waistband seam, side to side (flat). Same as B03 flat width.",
+          "poms": [
+            "B03"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-06",
+          "group": "Waistband top",
+          "landmark": "Waistband seam height at CF, side seam and CB",
+          "measure": "Distance of the waistband seam above the finished edge at CF, side and CB (shows if the seam is level).",
+          "poms": [
+            "R01"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-07",
+          "group": "Front body",
+          "landmark": "CF line and placket",
+          "measure": "Placket inner stitch line to CF (F01, F02); the chest zones must stay clear of the placket and snaps.",
+          "poms": [
+            "F01",
+            "F02",
+            "F07"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-08",
+          "group": "Front body",
+          "landmark": "Chest panel boundaries",
+          "measure": "At the chest-zone level: CF → armhole seam (each side); collar seam → top of pocket opening; pocket position (P03, P04).",
+          "poms": [
+            "P03",
+            "P04"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-09",
+          "group": "Back body",
+          "landmark": "Back panel boundaries",
+          "measure": "Shoulder seams / armhole seams to CB at 3 levels (top, middle, above the waistband); any back seam or yoke.",
+          "poms": [
+            "B13"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-10",
+          "group": "Shoulder point",
+          "landmark": "Shoulder point (left and right)",
+          "measure": "Mark both shoulder points (armhole seam on the shoulder line); photograph; B09 and B10.",
+          "poms": [
+            "B09",
+            "B10"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-11",
+          "group": "Cuff seam",
+          "landmark": "Shoulder point → cuff seam (sleeve unit)",
+          "measure": "S02 primary (along the overarm). The sleeve zones are shares of this length.",
+          "poms": [
+            "S02",
+            "S09"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-12",
+          "group": "Sleeve",
+          "landmark": "Sleeve flat-width profile",
+          "measure": "Sleeve flat width, perpendicular to the sleeve line, every 5 cm from the shoulder point to the cuff seam.",
+          "poms": [
+            "S04",
+            "S05",
+            "S06"
+          ],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-13",
+          "group": "Sleeve",
+          "landmark": "Sleeve seams and leather panels",
+          "measure": "Position of every sleeve seam (underarm seam, back-sleeve seam if any) and leather panel joins on the outer face, from the overarm fold.",
+          "poms": [],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        },
+        {
+          "id": "EC-14",
+          "group": "Usable embroidery area",
+          "landmark": "Usable area per zone",
+          "measure": "For each zone, mark with removable tape the largest area clear of seams, placket, snaps, pockets, collar and rib (plus the factory's safety margin); measure its width × height and its position from the landmarks above; photograph with a ruler.",
+          "poms": [],
+          "value": null,
+          "fill": "MEASURE ON SAMPLE"
+        }
+      ],
+      "conversion": "Not performed. JACKETEK converts the normalised zones to cm after these measurements are returned."
+    }
+  },
+  "photos": [
+    {
+      "id": "PH-01",
+      "view": "FRONT — laid flat",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-02",
+      "view": "BACK — laid flat",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-03",
+      "view": "LEFT SIDE / SLEEVE",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-04",
+      "view": "RIGHT SIDE / SLEEVE",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-05",
+      "view": "COLLAR close-up",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-06",
+      "view": "CUFF close-up",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-07",
+      "view": "WAISTBAND close-up",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-08",
+      "view": "POCKET close-up",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-09",
+      "view": "SNAP / FRONT CLOSURE close-up",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-10",
+      "view": "INSIDE / LINING",
+      "ruler": false,
+      "rulerText": "Ruler where practical",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-11",
+      "view": "LEATHER-TO-COTTON SEAM",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-12",
+      "view": "EMBROIDERY TESTS (ET-A to ET-D, front and inside)",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-13",
+      "view": "Tape on B01, B06, B09, S02 and S02-E (one photo each)",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-14",
+      "view": "Shoulder point marked (both sides)",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    },
+    {
+      "id": "PH-15",
+      "view": "Usable embroidery areas taped (EC-14)",
+      "ruler": true,
+      "rulerText": "Ruler / scale in view",
+      "fileName": null,
+      "fill": "FACTORY — with the sample"
+    }
+  ],
+  "returnChecklist": [
+    "The physical size-M sample",
+    "Measurement sheet: Pattern Proposed and Sample Actual for every row",
+    "SC-1 to SC-3 (dropped shoulder) and the pattern revision",
+    "Material specification sheet: body, leather, rib ×3, lining, snaps (MP-1 to MP-5)",
+    "Any alternative proposal, labelled as an alternative (not design intent)",
+    "Construction proposal: pockets and sewing / assembly",
+    "Embroidery test results ET-A to ET-D, with the test pieces",
+    "Embroidery zone calibration measurements EC-01 to EC-14",
+    "Photos PH-01 to PH-15",
+    "Swatches: body, leather, rib (collar / cuff / waistband), lining, snaps, pocketing, interlining",
+    "Deviations from this request, and the factory's comments / recommended corrections"
+  ],
+  "openDecisions": [
+    {
+      "status": "TBD",
+      "when": "Before the sample",
+      "id": "OD-01",
+      "item": "Sample colourway: body, sleeves, rib stripes, snap finish, lining colour, thread colours",
+      "owner": "JACKETEK",
+      "blocksSample": true
+    },
+    {
+      "status": "TBD",
+      "when": "Before the sample",
+      "id": "OD-02",
+      "item": "Factory selection and sample quantity",
+      "owner": "JACKETEK",
+      "blocksSample": true
+    },
+    {
+      "status": "TBD",
+      "when": "Before the sample",
+      "id": "OD-04",
+      "item": "Fit-model / fit-evaluation setup (relaxed fit, sleeve length on the body)",
+      "owner": "JACKETEK + pattern maker",
+      "blocksSample": true
+    },
+    {
+      "status": "PATTERN MAKER TO SET",
+      "when": "Set by the pattern maker before / with the sample",
+      "id": "OD-05",
+      "item": "SC-1 / SC-2 / SC-3 — shoulder-point position, shoulder slope, armhole depth / sleeve cap",
+      "owner": "Pattern maker",
+      "blocksSample": true
+    },
+    {
+      "status": "TBD — after the factory proposals are received",
+      "when": "After the factory proposals",
+      "id": "OD-06",
+      "item": "JACKETEK acceptance of the factory's material proposals (MP-1 to MP-5) before final sample approval",
+      "owner": "JACKETEK",
+      "blocksSample": true
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-07",
+      "item": "Welt material (X-04) and the pocket details",
+      "owner": "Factory proposes; JACKETEK decides",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-08",
+      "item": "Snap count / waistband tab (X-05)",
+      "owner": "Pattern maker",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-09",
+      "item": "Lining plain or quilted",
+      "owner": "JACKETEK, after the factory proposal",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-10",
+      "item": "Inside pocket offered or not (X-09)",
+      "owner": "JACKETEK",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-11",
+      "item": "Tolerances per POM",
+      "owner": "JACKETEK, at sample approval",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-12",
+      "item": "Embroidery methods, backing and thread per test",
+      "owner": "Factory proposes",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-13",
+      "item": "Physical embroidery zone sizes (K3)",
+      "owner": "JACKETEK, after calibration from the sample",
+      "blocksSample": false
+    },
+    {
+      "status": "TBD",
+      "when": "With / after the sample",
+      "id": "OD-14",
+      "item": "Product / construction alignment items X-01, X-03, X-05, X-13 (website wording and options)",
+      "owner": "JACKETEK",
+      "blocksSample": false
+    }
+  ],
+  "resolvedDecisions": [
+    {
+      "id": "OD-03",
+      "status": "RESOLVED",
+      "resolved": "2026-10-11",
+      "record": "USER-CONFIRMED WRITTEN PERMISSION FROM S.i. GRAPHICS FOR FACTORY SHARING OF DERIVED TECHNICAL DRAWINGS",
+      "decision": "Factory sharing of the rendered / derived S.i.-based technical drawings is permitted based on written permission obtained by JACKETEK from S.i. Graphics.",
+      "evidence": "Held by JACKETEK; not stored in the project.",
+      "pdfNote": "S.i.-based derived technical drawings: FACTORY SHARING PERMITTED BY WRITTEN LICENCE CONFIRMATION HELD BY JACKETEK. EDITABLE SOURCE TEMPLATE FILES ARE NOT INCLUDED.",
+      "restrictions": [
+        "Do not share editable S.i. source files.",
+        "Do not include the purchased AI / SVG / EPS source files.",
+        "Do not redistribute the template itself.",
+        "Only the derived / rendered drawings used inside JACKETEK's development package may be shared."
+      ]
+    }
+  ],
+  "drawingLicence": {
+    "id": "OD-03",
+    "status": "RESOLVED",
+    "resolved": "2026-10-11",
+    "record": "USER-CONFIRMED WRITTEN PERMISSION FROM S.i. GRAPHICS FOR FACTORY SHARING OF DERIVED TECHNICAL DRAWINGS",
+    "decision": "Factory sharing of the rendered / derived S.i.-based technical drawings is permitted based on written permission obtained by JACKETEK from S.i. Graphics.",
+    "evidence": "Held by JACKETEK; not stored in the project.",
+    "pdfNote": "S.i.-based derived technical drawings: FACTORY SHARING PERMITTED BY WRITTEN LICENCE CONFIRMATION HELD BY JACKETEK. EDITABLE SOURCE TEMPLATE FILES ARE NOT INCLUDED.",
+    "restrictions": [
+      "Do not share editable S.i. source files.",
+      "Do not include the purchased AI / SVG / EPS source files.",
+      "Do not redistribute the template itself.",
+      "Only the derived / rendered drawings used inside JACKETEK's development package may be shared."
+    ]
+  },
+  "alignmentItems": [
+    {
+      "id": "X-01",
+      "topic": "Customer material choice vs design intent",
+      "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+    },
+    {
+      "id": "X-03",
+      "topic": "Leather wording",
+      "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+    },
+    {
+      "id": "X-04",
+      "topic": "Pocket welt material",
+      "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+    },
+    {
+      "id": "X-05",
+      "topic": "Snap count / waistband tab",
+      "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+    },
+    {
+      "id": "X-13",
+      "topic": "\"Clean-finished seams\"",
+      "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+    }
+  ],
+  "varianceStatuses": [
+    "WITHIN_TARGET_RANGE",
+    "OUTSIDE_TARGET_RANGE",
+    "REFERENCE_ONLY",
+    "NO_TARGET",
+    "REVIEW_REQUIRED"
+  ],
+  "signOff": {
+    "revisions": [
+      {
+        "revision": "MSR-01",
+        "date": "2026-10-11",
+        "status": "ISSUED FOR SAMPLE DEVELOPMENT — not for bulk production, not production approved",
+        "note": "First development sample request, size M."
+      }
+    ],
+    "factoryReceipt": [
+      "Factory name",
+      "Received by",
+      "Date",
+      "Questions / deviations noted"
+    ],
+    "jacketekAfterSample": [
+      "Reviewed by (JACKETEK)",
+      "Date",
+      "Decision per POM / material / construction: approve · reject · correct",
+      "Next revision (MSR-02 or Master Spec update)"
+    ],
+    "note": "The factory acknowledges receipt only. Approval is JACKETEK's, after the physical sample, and is recorded separately."
+  },
+  "productionApproved": false
+}

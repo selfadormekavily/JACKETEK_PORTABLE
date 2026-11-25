@@ -1,0 +1,141 @@
+{
+ "front": [
+  {
+   "n": 1,
+   "text": "Rib collar (knitted, striped)",
+   "piece": "JKT_FRONT_L_M",
+   "px": [
+    789.9,
+    343.9
+   ]
+  },
+  {
+   "n": 2,
+   "text": "Snap closure — 5 front + 2 waistband tab, wearer's left over right",
+   "piece": "JKT_FRONT_L_M",
+   "px": [
+    698.1,
+    623.9
+   ]
+  },
+  {
+   "n": 3,
+   "text": "ART-03 “YO” letter patch — wearer's left chest",
+   "piece": "JKT_FRONT_L_M",
+   "px": [
+    829.3,
+    478.2
+   ]
+  },
+  {
+   "n": 4,
+   "text": "ART-04 Iraq flag patch — wearer's right chest",
+   "piece": "JKT_FRONT_R_M",
+   "px": [
+    572.8,
+    476.8
+   ]
+  },
+  {
+   "n": 5,
+   "text": "Angled single-welt pocket (×2)",
+   "piece": "JKT_FRONT_R_M",
+   "px": [
+    514.6,
+    810.6
+   ]
+  },
+  {
+   "n": 6,
+   "text": "Waistband rib (knitted, striped) with shell-fabric front tabs",
+   "piece": "JKT_FRONT_R_M",
+   "px": [
+    524.0,
+    942.7
+   ]
+  },
+  {
+   "n": 7,
+   "text": "Leather sleeve, one-piece; dropped shoulder, low flat cap",
+   "piece": "JKT_SLEEVE_R_M",
+   "px": [
+    366.4,
+    1001.8
+   ]
+  },
+  {
+   "n": 8,
+   "text": "Rib cuff (knitted, striped)",
+   "piece": "JKT_SLEEVE_L_M",
+   "px": [
+    1034.1,
+    1013.5
+   ]
+  },
+  {
+   "n": 9,
+   "text": "Relaxed body: half chest 57.94 cm, half body 53.38 cm at the waistband seam",
+   "piece": "JKT_FRONT_L_M",
+   "px": [
+    929.1,
+    905.9
+   ]
+  }
+ ],
+ "back": [
+  {
+   "n": 10,
+   "text": "ART-05 “SENIOR 2027” back graphic",
+   "piece": "JKT_BACK_M",
+   "px": [
+    698.3,
+    585.2
+   ]
+  },
+  {
+   "n": 11,
+   "text": "ART-01 personalised name text",
+   "piece": "JKT_BACK_M",
+   "px": [
+    698.3,
+    837.5
+   ]
+  },
+  {
+   "n": 12,
+   "text": "ART-02 emblem — wearer's left sleeve",
+   "piece": "JKT_SLEEVE_L_M",
+   "px": [
+    374.7,
+    564.8
+   ]
+  },
+  {
+   "n": 13,
+   "text": "ART-07 Arabic text + ART-06 number “09” — wearer's right sleeve",
+   "piece": "JKT_SLEEVE_R_M",
+   "px": [
+    1028.2,
+    556.6
+   ]
+  },
+  {
+   "n": 14,
+   "text": "One-piece back, no CB seam",
+   "piece": "JKT_BACK_M",
+   "px": [
+    896.0,
+    817.4
+   ]
+  },
+  {
+   "n": 15,
+   "text": "Rib collar, back section",
+   "piece": "JKT_BACK_M",
+   "px": [
+    698.9,
+    321.6
+   ]
+  }
+ ]
+}

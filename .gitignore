@@ -1,0 +1,102 @@
+node_modules
+dist
+dist-ssr
+*.local
+
+.DS_Store
+
+# Production PDFs and their order JSON / artwork (generated, contain customer data)
+production-output
+# populate.mjs's intermediate HTML
+production-drawing/build/production_drawing.*.html
+# Server order storage (orders contain customer data) and its PDFs
+server-data
+
+# Local env files (secrets); the template stays tracked
+.env
+.env.*
+!.env.example
+# TypeScript incremental build info
+*.tsbuildinfo
+# Claude Code local session state
+.claude/
+# The full embroidery design library lives outside public/ until its licensing
+# is confirmed (see src/features/configurator/library/README.md)
+embroidery-library-full/
+# Colour layers (fill / outline masks) authored for the full library — derived
+# from its licensed artwork (scripts/front-letters/colour-layers.mjs)
+embroidery-library-layers/
+# Licensed S.i. Graphics varsity tech pack (purchased) and every derivative of it:
+# the licence forbids sharing / distributing the files as-is (see garment-spec/README.md).
+garment-spec/si-graphics-varsity-techpack/
+garment-spec/working-varsity-flat/
+# Purchased varsity-mv2 (toshitimo) CLO / FBX / OBJ garment source and everything that
+# carries its geometry or textures (CLO working copy, DXF / PDF / SVG pattern exports,
+# renders, raw CLO data). Only manifests, reports, analysis and scripts are tracked
+# (see garment-spec/varsity-mv2-source/README.md).
+garment-spec/varsity-mv2-source/original-zips/
+garment-spec/varsity-mv2-source/extracted/
+garment-spec/varsity-mv2-source/working/
+garment-spec/varsity-mv2-source/exports/
+# The review layout reproduces the purchased pattern outlines 1:1 — keep it local like exports/.
+garment-spec/varsity-mv2-source/analysis/pattern-layout.*
+# JACKETEK pattern derived from that licensed geometry: coordinates / DXF / 1:1 layouts / CLO work
+# stay local; rules, parameters, validation and reports are tracked.
+garment-spec/jacketek-pattern-v0.1/exports/
+garment-spec/jacketek-pattern-v0.1/working/*
+!garment-spec/jacketek-pattern-v0.1/working/README.md
+garment-spec/jacketek-pattern-v0.1/analysis/jacketek-m-pattern-layout.*
+# The full licensed ready-made library lives in runtime-assets/embroidery-library
+# (outside public/, so builds don't copy it into dist/). Only the catalogues and
+# the original test fixtures already in Git stay tracked; never commit the
+# licensed designs. The public/ lines guard against a copy put back there.
+runtime-assets/embroidery-library/assets/
+runtime-assets/embroidery-library/colourways/
+runtime-assets/embroidery-library/letter-templates/
+public/embroidery-library/
+
+# Archived material from retired copies (old databases with customer data,
+# prototypes, superseded files): kept with the folder, never in Git.
+archive/
+
+# ---------------------------------------------------------------------------
+# GitHub repository scope: application source + the data it needs to run.
+# Everything below stays on the local machine only.
+# ---------------------------------------------------------------------------
+# Logs, caches, temp, editor / OS files
+*.log
+npm-debug.log*
+.cache/
+.vite/
+*.tmp
+*.blend1
+__pycache__/
+*.pyc
+.vscode/
+.idea/
+Thumbs.db
+# Local outputs, references and working notes (not used by the application)
+/dev-output/
+/design-refs/
+/research/
+/research_notes/
+/jacketek-design-spec.zip
+/TRANSFER_README.md
+/LICENSED_ASSETS_README.md
+# Unused renders of the legacy production drawing (the generator uses data/, flats/, template/, build/)
+/production-drawing/images/
+# Retired backup 3D models (the site loads public/models/fidelio_varsity_v09.glb)
+/public/models/fidelio jacket_REALISM_*.glb
+# garment-spec: experiments, studies and restricted sources stay local
+/garment-spec/varsity-mv2-source/
+/garment-spec/jacketek-pattern-v0.1/
+/garment-spec/JACKETEK_MANUFACTURER_INTRODUCTION/
+/garment-spec/JACKETEK_R3_PATTERN_STUDY/
+/garment-spec/JACKETEK_REALISTIC_FIT_SIMULATION/
+/garment-spec/R2_REFERENCE_SPECS_COMPARISON/
+# R2 engineering pipeline scripts: they only run against the restricted purchased CLO source
+/scripts/garment-source/
+/scripts/jacketek-original/
+/scripts/jacketek-pattern/
+/scripts/jacketek-r2/
+/scripts/jacketek-supplier/

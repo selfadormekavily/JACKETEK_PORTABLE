@@ -1,0 +1,2137 @@
+{
+ "title": "JACKETEK Material / Construction Matrix v0.1 (K2)",
+ "generated": "2026-10-11",
+ "generator": "scripts/materials/material-matrix.mjs (data: scripts/materials/components.mjs)",
+ "documentStatus": "VALIDATION_DRAFT",
+ "productionApproved": false,
+ "basedOn": {
+  "file": "garment-spec/jacketek-master-spec-v0.1.json",
+  "sha256": "091f8c0c4da3e439c7f96c3b3db86e4d95b66d61e518d0090d198c9c403abd46",
+  "unchanged": true
+ },
+ "masterSpecV02": {
+  "file": "garment-spec/jacketek-master-spec-v0.2.json",
+  "field": "materialConstructionPlan",
+  "wiredIntoRfq": false
+ },
+ "rule": "No specification value invented. Body = Cotton Fabric and sleeves = Leather are design intent; every composition, weight, thickness, finish, dimension and stitch value is TBD_SUPPLIER_PROPOSAL or TBD_PATTERN_MAKER. S.i. template text is REFERENCE ONLY. Embroidery placement (zones) is not part of this matrix.",
+ "k2": {
+  "id": "K2",
+  "topic": "Materials and garment construction",
+  "status": "PARTIALLY_RESOLVED",
+  "recorded": "2026-10-11",
+  "decidedBy": "JACKETEK (product direction)",
+  "v01Text": "Kept verbatim in v0.1 `conflicts` (\"The configurator offers leather or Cotton Fabric for body and sleeves…\").",
+  "resolved": [
+   "Body shell = Cotton Fabric (design intent)",
+   "Sleeves = Leather (design intent)",
+   "Varsity rib components required: collar, cuffs, waistband (knitted rib, striped colourway supported, matching system)",
+   "Metal snap front closure required",
+   "Lining required"
+  ],
+  "unresolved": [
+   "Actual material specifications (all components)",
+   "Compositions",
+   "Weights / GSM",
+   "Thicknesses (leather, rib)",
+   "Hardware dimensions, alloy, plating, supplier codes",
+   "Sewing construction (seams, allowances, SPI, topstitching, reinforcement)",
+   "Pocket build details not shown by the drawing (opening edge, bag, bartacks, inside pocket)",
+   "Quilted vs plain lining",
+   "Embroidery construction per artwork type"
+  ],
+  "notApproved": "Nothing in K2 is approved for production. Every specification comes from a supplier proposal and/or the pattern maker and is approved by JACKETEK only after the physical M sample.",
+  "sampleScope": "The factory proposal covers Cotton Fabric body + Leather sleeves only (see X-01)."
+ },
+ "leatherPolicy": {
+  "designIntent": "Leather",
+  "alternatives": "ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT",
+  "rule": "A supplier may propose synthetic / PU (or other) alternatives only as clearly labelled alternative proposals. They never silently replace Leather. For each alternative record the cost, MOQ, performance and appearance differences against the leather proposal. Changing the design intent needs explicit JACKETEK approval.",
+  "recordForAlternatives": [
+   "cost difference",
+   "MOQ difference",
+   "performance difference",
+   "appearance difference"
+  ],
+  "changeRequires": "Explicit JACKETEK approval"
+ },
+ "openAlignmentItems": [
+  "X-01",
+  "X-03",
+  "X-04",
+  "X-05",
+  "X-13"
+ ],
+ "statusVocabulary": {
+  "DESIGN_INTENT": "DESIGN_INTENT / CUSTOMER_PRODUCT_DIRECTION",
+  "CONSTRUCTION_INTENT": "CONSTRUCTION_INTENT",
+  "REQUIRED": "REQUIRED",
+  "VISUAL_INTENT": "VISUAL_INTENT",
+  "SUPPLIER": "TBD_SUPPLIER_PROPOSAL",
+  "PATTERN": "TBD_PATTERN_MAKER",
+  "SAMPLE": "SAMPLE_VALIDATION",
+  "SUPPLIER_SAMPLE": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION",
+  "REFERENCE": "REFERENCE_ONLY",
+  "UNKNOWN": "UNKNOWN",
+  "NOT_FITTED": "NOT_FITTED"
+ },
+ "sources": {
+  "V01": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+  "V02": "Master Spec v0.2 (measurement plan only before K2; no material fields beyond v0.1)",
+  "CFG": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+  "SITE": "Website copy (src/locales/en/story.ts, studies.ts, hero.ts, catalog.ts)",
+  "RFQ": "RFQ generator (src/features/techpack/build.ts; RFQ-05 manufacturing-spec.json)",
+  "RFQFLAT": "RFQ drawings (server/rfq/flats.mjs fillsFor: welts coloured as the sleeves)",
+  "LEG": "Legacy production sheet (src/features/production/orderToProductionOrder.ts → production-drawing PDF, LEGACY)",
+  "LEGFLAT": "Legacy flat (production-drawing/flats/varsityFlat.mjs, LEGACY)",
+  "M3D": "3D model (src/three/jacket/*) — render materials only",
+  "SIFLAT": "S.i. canonical flat (garment-spec/working-varsity-flat/front.svg + flat.json) — drawing, not to scale",
+  "SITEXT": "S.i. template text (purchased Blank + Example PDF; demo style SW-TSH-04) — REFERENCE ONLY",
+  "GB": "Golden Bear Classic (FIT_REFERENCE / EXTERNAL_REFERENCE)"
+ },
+ "counts": {
+  "components": 12,
+  "specFields": 89,
+  "specFieldsSupplier": 74,
+  "specFieldsPatternMaker": 13,
+  "specFieldsWithValue": 2,
+  "auditRows": 39,
+  "contradictions": 13,
+  "embroideryTypes": 7
+ },
+ "components": [
+  {
+   "id": "K2.1",
+   "name": "Body shell material",
+   "bom": [
+    "BOM01"
+   ],
+   "con": [
+    "CON01",
+    "CON02",
+    "CON15"
+   ],
+   "designIntent": "Cotton Fabric",
+   "intentStatus": "DESIGN_INTENT / CUSTOMER_PRODUCT_DIRECTION",
+   "currentSource": [
+    "CFG (default body material, shown \"Cotton Fabric\")",
+    "SITE (\"Cotton fabric body\")",
+    "RFQ-05 (CUSTOMER_SELECTED)"
+   ],
+   "material": {
+    "value": "Cotton Fabric",
+    "status": "DESIGN_INTENT / CUSTOMER_PRODUCT_DIRECTION"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_PATTERN_MAKER",
+    "note": "Panel construction and seams set by the pattern maker"
+   },
+   "spec": {
+    "cottonPercentage": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "composition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "weave": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "gsm": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "fabricWeight": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "finish": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "shrinkage": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "coating": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "colourMatching": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    }
+   },
+   "status": "DESIGN_INTENT — SPEC TBD_SUPPLIER_PROPOSAL",
+   "finalAuthority": "JACKETEK (intent: decided) · Supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "composition",
+    "construction / weave",
+    "GSM",
+    "finish",
+    "shrinkage",
+    "coating (if any)",
+    "colour-matching method to the 16-colour palette"
+   ],
+   "patternMakerInput": [
+    "shrinkage allowance in the pattern",
+    "panel seams and pressing (CON15)"
+   ],
+   "sampleValidation": [
+    "hand feel, drape and bulk vs fit (v0.1 K2)",
+    "colour match",
+    "embroidery on the body zones (4)",
+    "shrinkage after care test"
+   ],
+   "unresolved": [
+    "every specification field"
+   ],
+   "contradictions": [
+    "X-01",
+    "X-02"
+   ]
+  },
+  {
+   "id": "K2.2",
+   "name": "Sleeve material",
+   "bom": [
+    "BOM02"
+   ],
+   "con": [
+    "CON03",
+    "CON04",
+    "CON05",
+    "CON15"
+   ],
+   "designIntent": "Leather",
+   "intentStatus": "DESIGN_INTENT / CUSTOMER_PRODUCT_DIRECTION",
+   "currentSource": [
+    "CFG (default sleeve material \"Leather\")",
+    "SITE (\"Leather sleeves\")",
+    "RFQ-05 (CUSTOMER_SELECTED)"
+   ],
+   "material": {
+    "value": "Leather",
+    "status": "DESIGN_INTENT / CUSTOMER_PRODUCT_DIRECTION"
+   },
+   "construction": {
+    "value": "Sleeve attachment compatible with the dropped shoulder (K1)",
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "leatherTypeOrAlternative": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL",
+     "note": "Supplier proposes the leather (type, animal, tannage). Synthetic / PU only as ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT"
+    },
+    "thickness": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "handFeel": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "finish": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "grain": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "backing": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "colourConsistency": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "moq": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "priceImpact": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    }
+   },
+   "status": "DESIGN_INTENT (Leather) — LEATHER SPEC TBD_SUPPLIER_PROPOSAL; alternatives are proposals only",
+   "materialPolicy": {
+    "designIntent": "Leather",
+    "alternatives": "ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT",
+    "rule": "A supplier may propose synthetic / PU (or other) alternatives only as clearly labelled alternative proposals. They never silently replace Leather. For each alternative record the cost, MOQ, performance and appearance differences against the leather proposal. Changing the design intent needs explicit JACKETEK approval.",
+    "recordForAlternatives": [
+     "cost difference",
+     "MOQ difference",
+     "performance difference",
+     "appearance difference"
+    ],
+    "changeRequires": "Explicit JACKETEK approval"
+   },
+   "finalAuthority": "JACKETEK (intent: decided) · Supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "LEATHER proposal — material type, thickness, hand feel, finish, colour consistency, MOQ, price",
+    "Any synthetic / PU option as ALTERNATIVE SUPPLIER PROPOSAL (not design intent) with cost / MOQ / performance / appearance differences",
+    "backing",
+    "colour matching to the palette's leather shades"
+   ],
+   "patternMakerInput": [
+    "leather seams (CON05: seam type, needle, edge finish, no pins)",
+    "sleeve attachment to the dropped shoulder (CON04)"
+   ],
+   "sampleValidation": [
+    "hand feel and sheen",
+    "colour match",
+    "embroidery on the 6 sleeve zones",
+    "rib-cuff join",
+    "seam strength"
+   ],
+   "unresolved": [
+    "leather type",
+    "every specification field"
+   ],
+   "contradictions": [
+    "X-01",
+    "X-03"
+   ]
+  },
+  {
+   "id": "K2.3",
+   "name": "Lining",
+   "bom": [
+    "BOM03",
+    "BOM04",
+    "BOM05"
+   ],
+   "con": [
+    "CON12"
+   ],
+   "designIntent": "Lining required (body and sleeves)",
+   "intentStatus": "REQUIRED",
+   "currentSource": [
+    "V01 BOM03 / BOM04 / BOM05 (TBD)",
+    "Legacy sheet (TBC)"
+   ],
+   "material": {
+    "value": null,
+    "status": "TBD_SUPPLIER_PROPOSAL"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_SUPPLIER_PROPOSAL",
+    "note": "Quilted vs plain not decided by any project evidence (X-07); bagging and attachment: pattern maker (CON12)"
+   },
+   "spec": {
+    "fibreContent": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "weight": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "colour": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "breathability": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "handFeel": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "embroideryPatchCompatibility": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "quiltedOrPlain": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL",
+     "note": "Supplier to propose; JACKETEK decides after the sample"
+    },
+    "wadding": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL",
+     "note": "Only if quilted"
+    }
+   },
+   "status": "REQUIRED — MATERIAL TBD_SUPPLIER_PROPOSAL",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "fibre content",
+    "weight",
+    "colour",
+    "breathability",
+    "hand feel",
+    "compatibility with embroidery / patches",
+    "quilted or plain (with wadding if quilted)"
+   ],
+   "patternMakerInput": [
+    "lining construction (bagged vs other, jump hems, attachment to rib — CON12)",
+    "lining relative lengths L01–L03"
+   ],
+   "sampleValidation": [
+    "fit inside the shell (L01–L03)",
+    "embroidery backs covered",
+    "comfort"
+   ],
+   "unresolved": [
+    "material",
+    "quilted vs plain",
+    "colour rule"
+   ],
+   "contradictions": [
+    "X-07"
+   ]
+  },
+  {
+   "id": "K2.4",
+   "name": "Collar rib",
+   "bom": [
+    "BOM06",
+    "BOM09"
+   ],
+   "con": [
+    "CON06"
+   ],
+   "designIntent": "Knitted varsity rib; striped colourway supported; collar / cuff / waistband matching system",
+   "intentStatus": "CONSTRUCTION_INTENT",
+   "currentSource": [
+    "RFQ (\"Rib knit\", SYSTEM_DERIVED; colour = customer trim colour)",
+    "S.i. flat (striped rib collar)",
+    "3D preview (stripes in the sleeve colour)"
+   ],
+   "material": {
+    "value": "Knitted rib",
+    "status": "CONSTRUCTION_INTENT"
+   },
+   "construction": {
+    "value": "Collar rib attached to the shell",
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "fibreComposition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "knitStructure": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "weight": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stretchPct": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "recoveryPct": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "finishedThickness": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stripeWidth": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stripeCountAndPosition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "gauge": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    }
+   },
+   "status": "CONSTRUCTION_INTENT — SPEC TBD_SUPPLIER_PROPOSAL / SAMPLE VALIDATION",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "composition",
+    "knit structure",
+    "weight",
+    "stretch / recovery",
+    "stripe construction (knitted-in), widths",
+    "gauge",
+    "colour matching to the trim and stripe colours"
+   ],
+   "patternMakerInput": [
+    "collar rib attachment (CON06: method, stretch control, allowance)",
+    "rib heights and cut ratio (R01–R05)"
+   ],
+   "sampleValidation": [
+    "stretch and recovery",
+    "stripe alignment across collar / cuffs / waistband",
+    "colour match"
+   ],
+   "unresolved": [
+    "every specification field",
+    "stripe layout"
+   ],
+   "contradictions": [
+    "X-06"
+   ]
+  },
+  {
+   "id": "K2.5",
+   "name": "Cuff rib",
+   "bom": [
+    "BOM07",
+    "BOM09"
+   ],
+   "con": [
+    "CON07"
+   ],
+   "designIntent": "Knitted varsity rib; striped colourway supported; collar / cuff / waistband matching system",
+   "intentStatus": "CONSTRUCTION_INTENT",
+   "currentSource": [
+    "RFQ (\"Rib knit\", SYSTEM_DERIVED; colour = customer trim colour)",
+    "S.i. flat (striped rib cuffs)",
+    "3D preview (stripes in the sleeve colour)"
+   ],
+   "material": {
+    "value": "Knitted rib",
+    "status": "CONSTRUCTION_INTENT"
+   },
+   "construction": {
+    "value": "Cuff rib attached to the shell",
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "fibreComposition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "knitStructure": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "weight": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stretchPct": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "recoveryPct": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "finishedThickness": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stripeWidth": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stripeCountAndPosition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "gauge": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    }
+   },
+   "status": "CONSTRUCTION_INTENT — SPEC TBD_SUPPLIER_PROPOSAL / SAMPLE VALIDATION",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "composition",
+    "knit structure",
+    "weight",
+    "stretch / recovery",
+    "stripe construction (knitted-in), widths",
+    "gauge",
+    "colour matching to the trim and stripe colours"
+   ],
+   "patternMakerInput": [
+    "cuff rib attachment (CON07: method, stretch control, allowance)",
+    "rib heights and cut ratio (R01–R05)"
+   ],
+   "sampleValidation": [
+    "stretch and recovery",
+    "stripe alignment across collar / cuffs / waistband",
+    "colour match"
+   ],
+   "unresolved": [
+    "every specification field",
+    "stripe layout"
+   ],
+   "contradictions": [
+    "X-06"
+   ]
+  },
+  {
+   "id": "K2.6",
+   "name": "Waistband rib",
+   "bom": [
+    "BOM08",
+    "BOM09"
+   ],
+   "con": [
+    "CON08"
+   ],
+   "designIntent": "Knitted varsity rib; striped colourway supported; collar / cuff / waistband matching system",
+   "intentStatus": "CONSTRUCTION_INTENT",
+   "currentSource": [
+    "RFQ (\"Rib knit\", SYSTEM_DERIVED; colour = customer trim colour)",
+    "S.i. flat (striped rib waistband)",
+    "3D preview (stripes in the sleeve colour)"
+   ],
+   "material": {
+    "value": "Knitted rib",
+    "status": "CONSTRUCTION_INTENT"
+   },
+   "construction": {
+    "value": "Waistband rib attached to the shell",
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "fibreComposition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "knitStructure": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "weight": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stretchPct": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "recoveryPct": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "finishedThickness": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stripeWidth": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "stripeCountAndPosition": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    },
+    "gauge": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL / SAMPLE_VALIDATION"
+    }
+   },
+   "status": "CONSTRUCTION_INTENT — SPEC TBD_SUPPLIER_PROPOSAL / SAMPLE VALIDATION",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "composition",
+    "knit structure",
+    "weight",
+    "stretch / recovery",
+    "stripe construction (knitted-in), widths",
+    "gauge",
+    "colour matching to the trim and stripe colours"
+   ],
+   "patternMakerInput": [
+    "waistband rib attachment (CON08: method, stretch control, allowance)",
+    "rib heights and cut ratio (R01–R05)"
+   ],
+   "sampleValidation": [
+    "stretch and recovery",
+    "stripe alignment across collar / cuffs / waistband",
+    "colour match"
+   ],
+   "unresolved": [
+    "every specification field",
+    "stripe layout"
+   ],
+   "contradictions": [
+    "X-06"
+   ]
+  },
+  {
+   "id": "K2.7",
+   "name": "Front closure / snaps",
+   "bom": [
+    "BOM10",
+    "BOM11",
+    "BOM20"
+   ],
+   "con": [
+    "CON09",
+    "CON10"
+   ],
+   "designIntent": "Metal snap buttons, snap placket front",
+   "intentStatus": "CONSTRUCTION_INTENT",
+   "currentSource": [
+    "RFQ (\"Snap front\", SYSTEM_DERIVED)",
+    "CFG (snap finish: black / silver / gold / gunmetal — customer)",
+    "S.i. flat (snap placket + waistband tab)"
+   ],
+   "material": {
+    "value": "Metal snap buttons",
+    "status": "CONSTRUCTION_INTENT"
+   },
+   "construction": {
+    "value": "Snap placket; waistband tab shown on the flat",
+    "status": "TBD_PATTERN_MAKER",
+    "note": "Count, spacing, tab: pattern maker (X-05)"
+   },
+   "spec": {
+    "diameter": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "alloy": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "plating": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL",
+     "note": "Must deliver the four customer finishes"
+    },
+    "supplierCode": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "pullStrength": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "reinforcement": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "count": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "spacing": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "waistbandTab": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    }
+   },
+   "status": "CONSTRUCTION_INTENT — HARDWARE TBD_SUPPLIER_PROPOSAL",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "diameter",
+    "material / alloy",
+    "plating for the four finishes",
+    "supplier / code if available",
+    "pull strength",
+    "reinforcement behind snaps (BOM20)"
+   ],
+   "patternMakerInput": [
+    "snap count, positions, spacing (F03–F07)",
+    "placket / facing construction and interfacing (CON09, BOM18)",
+    "waistband tab"
+   ],
+   "sampleValidation": [
+    "colour",
+    "finish",
+    "spacing",
+    "attachment quality (on cotton fabric)",
+    "opening / closing force"
+   ],
+   "unresolved": [
+    "every hardware field",
+    "count",
+    "tab"
+   ],
+   "contradictions": [
+    "X-05",
+    "X-10"
+   ]
+  },
+  {
+   "id": "K2.8",
+   "name": "Pocket construction",
+   "bom": [
+    "BOM12"
+   ],
+   "con": [
+    "CON11"
+   ],
+   "designIntent": "Two front welt pockets, one per front panel, single angled welt with topstitched outline; upper end toward centre front (as drawn)",
+   "intentStatus": "VISUAL_INTENT",
+   "currentSource": [
+    "S.i. flat (layer-pockets, layer-pocket-stitch; landmarks.pockets)",
+    "Legacy flat (\"slanted welts\")",
+    "3D model"
+   ],
+   "material": {
+    "value": "Pocket bag (pocketing) required by a welt pocket",
+    "status": "TBD_SUPPLIER_PROPOSAL"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_PATTERN_MAKER",
+    "note": "Hand-entry edge, welt build, bag size and attachment, bartacks not shown"
+   },
+   "spec": {
+    "pocketType": {
+     "value": "Angled single-welt pocket ×2",
+     "status": "VISUAL_INTENT"
+    },
+    "openingEdge": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER",
+     "note": "Not shown on any drawing"
+    },
+    "bagMaterial": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "bagSize": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "bartacks": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "insidePocket": {
+     "value": null,
+     "status": "UNKNOWN",
+     "note": "Fitted or not: JACKETEK decision (X-09)"
+    }
+   },
+   "status": "VISUAL_INTENT — BUILD TBD_PATTERN_MAKER",
+   "finalAuthority": "Pattern maker → JACKETEK approval after M sample",
+   "supplierInput": [
+    "pocketing material"
+   ],
+   "patternMakerInput": [
+    "opening edge / direction",
+    "welt construction",
+    "bag size and attachment",
+    "bartacks (CON11)"
+   ],
+   "sampleValidation": [
+    "hand entry",
+    "welt angle and position (P01–P05)",
+    "bag depth and width (P06, P07)"
+   ],
+   "unresolved": [
+    "opening edge",
+    "bag",
+    "bartacks",
+    "inside pocket"
+   ],
+   "contradictions": [
+    "X-09"
+   ]
+  },
+  {
+   "id": "K2.9",
+   "name": "Pocket welt material",
+   "bom": [
+    "BOM13",
+    "BOM19"
+   ],
+   "con": [
+    "CON11"
+   ],
+   "designIntent": "Welt material OPEN — FACTORY TO PROPOSE / JACKETEK TO APPROVE (X-04). The 3D model and drawings show the welts in the sleeve material and colour; leather matching the sleeves is a visual reference / option only.",
+   "intentStatus": "VISUAL_INTENT",
+   "currentSource": [
+    "Legacy sheet (sleeve material)",
+    "RFQ / legacy drawings (welts coloured as sleeves)",
+    "V01 BOM13 (\"leather or shell fabric\")"
+   ],
+   "material": {
+    "value": null,
+    "status": "TBD_SUPPLIER_PROPOSAL",
+    "note": "FACTORY TO PROPOSE / JACKETEK TO APPROVE; leather matching the sleeves is a visual reference / option only"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "material": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "interfacing": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "thickness": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    }
+   },
+   "status": "OPEN (X-04) — TBD_SUPPLIER_PROPOSAL; JACKETEK approves",
+   "finalAuthority": "JACKETEK (approves the welt material) · Supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "welt material proposal (options; leather matching the sleeves is one visual option, not decided)",
+    "welt interfacing (BOM19)"
+   ],
+   "patternMakerInput": [
+    "opening length and welt width (P01, P02)",
+    "welt build"
+   ],
+   "sampleValidation": [
+    "match to sleeves",
+    "edge finish"
+   ],
+   "unresolved": [
+    "welt material (X-04)",
+    "material spec"
+   ],
+   "contradictions": [
+    "X-04"
+   ]
+  },
+  {
+   "id": "K2.10",
+   "name": "Thread / sewing construction",
+   "bom": [
+    "BOM14",
+    "BOM15"
+   ],
+   "con": [
+    "CON01",
+    "CON02",
+    "CON03",
+    "CON04",
+    "CON05",
+    "CON06",
+    "CON07",
+    "CON08",
+    "CON12",
+    "CON15"
+   ],
+   "designIntent": "Seams placeholders; sleeve attachment compatible with the dropped shoulder (K1)",
+   "intentStatus": "TBD_PATTERN_MAKER",
+   "currentSource": [
+    "V01 construction CON01–CON16 (all TO_SET_BY_PATTERN_MAKER, no values)",
+    "S.i. template stitching page (REFERENCE ONLY)"
+   ],
+   "material": {
+    "value": null,
+    "status": "TBD_SUPPLIER_PROPOSAL",
+    "note": "Thread for fabric seams (BOM14) and leather seams (BOM15)"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "bodySeamConstruction": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "sleeveAttachment": {
+     "value": "Compatible with dropped shoulder (K1)",
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "ribAttachment": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "topstitching": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "seamAllowance": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "seamFinish": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER",
+     "note": "Website claims clean-finished seams (X-13)"
+    },
+    "neckFinish": {
+     "value": null,
+     "status": "TBD_PATTERN_MAKER"
+    },
+    "spi": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "threadType": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "reinforcement": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    }
+   },
+   "status": "TBD_PATTERN_MAKER / TBD_SUPPLIER_PROPOSAL",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "thread type (fabric and leather seams)",
+    "SPI",
+    "seam types",
+    "reinforcement"
+   ],
+   "patternMakerInput": [
+    "body seam construction",
+    "sleeve attachment (dropped shoulder)",
+    "rib attachment",
+    "topstitching",
+    "seam allowance",
+    "seam and neck finish"
+   ],
+   "sampleValidation": [
+    "seam strength",
+    "leather-to-cotton joins",
+    "finish inside"
+   ],
+   "unresolved": [
+    "every field"
+   ],
+   "reference": "S.i. stitching page and callouts (single-needle topstitch, box stitch, self-fabric bias tape) — REFERENCE ONLY, template demo",
+   "contradictions": [
+    "X-13"
+   ]
+  },
+  {
+   "id": "K2.11",
+   "name": "Interlining / reinforcement",
+   "bom": [
+    "BOM18",
+    "BOM19",
+    "BOM20"
+   ],
+   "con": [
+    "CON09",
+    "CON10"
+   ],
+   "designIntent": "If required (placket, welts, behind snaps)",
+   "intentStatus": "TBD_SUPPLIER_PROPOSAL",
+   "currentSource": [
+    "V01 BOM18–BOM20 (TBD)"
+   ],
+   "material": {
+    "value": null,
+    "status": "TBD_SUPPLIER_PROPOSAL"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_PATTERN_MAKER"
+   },
+   "spec": {
+    "placketInterfacing": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "weltInterfacing": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "snapReinforcement": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "fusibleOrSewn": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    }
+   },
+   "status": "TBD_SUPPLIER_PROPOSAL (if required)",
+   "finalAuthority": "Pattern maker + supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "interfacing type and weight per position",
+    "snap reinforcement"
+   ],
+   "patternMakerInput": [
+    "where interlining is needed"
+   ],
+   "sampleValidation": [
+    "placket stability",
+    "snap pull-through"
+   ],
+   "unresolved": [
+    "whether required",
+    "every field"
+   ],
+   "contradictions": []
+  },
+  {
+   "id": "K2.12",
+   "name": "Embroidery backing / stabiliser",
+   "bom": [
+    "BOM16",
+    "BOM17",
+    "BOM21"
+   ],
+   "con": [
+    "CON13"
+   ],
+   "designIntent": "As required by the embroidery method; separate for the cotton body and the leather sleeves",
+   "intentStatus": "TBD_SUPPLIER_PROPOSAL",
+   "currentSource": [
+    "V01 BOM16 / BOM17 / BOM21 (TBD)",
+    "RFQ productionTechnique TBD_SUPPLIER_PROPOSAL"
+   ],
+   "material": {
+    "value": null,
+    "status": "TBD_SUPPLIER_PROPOSAL"
+   },
+   "construction": {
+    "value": null,
+    "status": "TBD_PATTERN_MAKER",
+    "note": "Embroider panels before assembly vs after (CON13)"
+   },
+   "spec": {
+    "backingBody": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "backingLeather": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "removal": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    },
+    "liningProtection": {
+     "value": null,
+     "status": "TBD_SUPPLIER_PROPOSAL"
+    }
+   },
+   "status": "TBD_SUPPLIER_PROPOSAL",
+   "finalAuthority": "Supplier proposal → JACKETEK approval after M sample",
+   "supplierInput": [
+    "backing / stabiliser per substrate",
+    "removal method",
+    "lining protection"
+   ],
+   "patternMakerInput": [
+    "embroidery before / after assembly (CON13)"
+   ],
+   "sampleValidation": [
+    "puckering on cotton",
+    "perforation on leather",
+    "back of embroidery against the lining"
+   ],
+   "unresolved": [
+    "every field"
+   ],
+   "contradictions": [
+    "X-08"
+   ]
+  }
+ ],
+ "embroideryConstruction": {
+  "fields": [
+   "embroideryMethod",
+   "backingStabiliser",
+   "threadType",
+   "stitchDensity",
+   "edgeFinish",
+   "patchAttachment",
+   "leatherSleeveCompatibility",
+   "liningProtection"
+  ],
+  "substrates": [
+   {
+    "substrate": "Cotton Fabric body",
+    "zones": [
+     "leftChest",
+     "rightChest",
+     "mainBack",
+     "backQuote"
+    ]
+   },
+   {
+    "substrate": "Leather sleeves",
+    "zones": [
+     "leftSleeveUpper",
+     "leftSleeveMiddle",
+     "leftSleeveLower",
+     "rightSleeveUpper",
+     "rightSleeveMiddle",
+     "rightSleeveLower"
+    ]
+   }
+  ],
+  "types": [
+   {
+    "type": "TEXT",
+    "name": "Text (customer text, font)",
+    "evidence": "Configurator previews satin stitch",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   },
+   {
+    "type": "FRONT_LETTERS",
+    "name": "Front Letters",
+    "evidence": "Letter styles include \"Cotton patch — black / grey\" (a patch look); website shows a raised chenille letter",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   },
+   {
+    "type": "NUMBER_YEAR",
+    "name": "Numbers / year",
+    "evidence": "Library category BC",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   },
+   {
+    "type": "READY_MADE",
+    "name": "Ready-made (back designs, class patches)",
+    "evidence": "Library categories AQ / AB (\"Class patches\")",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   },
+   {
+    "type": "CREST",
+    "name": "Crest",
+    "evidence": "Library",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   },
+   {
+    "type": "UPLOAD",
+    "name": "Customer upload",
+    "evidence": "Uploaded artwork; digitising by supplier",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   },
+   {
+    "type": "OTHER_LIBRARY_DESIGN",
+    "name": "Other library design",
+    "evidence": "Library",
+    "fields": {
+     "embroideryMethod": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "backingStabiliser": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "threadType": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "stitchDensity": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "edgeFinish": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "patchAttachment": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "leatherSleeveCompatibility": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     },
+     "liningProtection": {
+      "value": null,
+      "status": "TBD_SUPPLIER_PROPOSAL"
+     }
+    }
+   }
+  ],
+  "placement": "Unchanged — Master Spec v0.1 embroideryZones and the normalised zone placement. Not mixed with construction."
+ },
+ "audit": [
+  {
+   "field": "Body material",
+   "value": "Leather or Cotton Fabric (customer choice; default Cotton Fabric, id \"felt\")",
+   "source": "CFG",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-01",
+   "sourceName": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+   "approved": false
+  },
+  {
+   "field": "Sleeve material",
+   "value": "Leather or Cotton Fabric (customer choice; default Leather)",
+   "source": "CFG",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-01",
+   "sourceName": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+   "approved": false
+  },
+  {
+   "field": "Body / sleeve material (BOM01 / BOM02)",
+   "value": "\"Customer choice: leather or cotton fabric\"; composition / weight / supplier null",
+   "source": "V01",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-01",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Body / sleeve material on RFQ-05",
+   "value": "Cotton Fabric / Leather — CUSTOMER_SELECTED from the stored order",
+   "source": "RFQ",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "RFQ generator (src/features/techpack/build.ts; RFQ-05 manufacturing-spec.json)",
+   "approved": false
+  },
+  {
+   "field": "Material name vs internal id",
+   "value": "Shown \"Cotton Fabric\"; id \"felt\"; code comments \"wool felt\"; story keys \"wool\"",
+   "source": "CFG",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-02",
+   "sourceName": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+   "approved": false
+  },
+  {
+   "field": "Leather description",
+   "value": "\"Structured leather with a soft, natural sheen\"; \"Supple leather that softens with wear\"",
+   "source": "SITE",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-03",
+   "sourceName": "Website copy (src/locales/en/story.ts, studies.ts, hero.ts, catalog.ts)",
+   "approved": false
+  },
+  {
+   "field": "Cotton fabric description",
+   "value": "\"Dense, soft cotton fabric with a matte finish\" (no composition, weave or weight)",
+   "source": "SITE",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Website copy (src/locales/en/story.ts, studies.ts, hero.ts, catalog.ts)",
+   "approved": false
+  },
+  {
+   "field": "Colour palette",
+   "value": "16 colours, one shade per material (felt / leather hex); rib uses the fabric palette",
+   "source": "CFG",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+   "approved": false
+  },
+  {
+   "field": "Rib (collar, cuffs, waistband)",
+   "value": "\"Rib knit\" — SYSTEM_DERIVED; colour = customer trim colour",
+   "source": "RFQ",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "RFQ generator (src/features/techpack/build.ts; RFQ-05 manufacturing-spec.json)",
+   "approved": false
+  },
+  {
+   "field": "Rib stripes",
+   "value": "Shown in the sleeve colour (3D preview); not a customer option; count / width open",
+   "source": "RFQ",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": "X-06",
+   "sourceName": "RFQ generator (src/features/techpack/build.ts; RFQ-05 manufacturing-spec.json)",
+   "approved": false
+  },
+  {
+   "field": "Rib stripe yarn (BOM09)",
+   "value": "\"TBD — the configurator has no stripe option today\"",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-06",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Rib heights on legacy sheet",
+   "value": "Cuff / waistband 6.1, collar 4.1 cm from \"5 rib strips\" of the 3D mesh",
+   "source": "LEG",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": "X-06",
+   "sourceName": "Legacy production sheet (src/features/production/orderToProductionOrder.ts → production-drawing PDF, LEGACY)",
+   "approved": false
+  },
+  {
+   "field": "Body lining (BOM03)",
+   "value": "TBD (Golden Bear reference: quilted satin acetate)",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-07",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Sleeve lining (BOM04)",
+   "value": "TBD",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Wadding / quilting (BOM05)",
+   "value": "\"whether JACKETEK is quilted is undecided\"",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-07",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Lining on legacy sheet",
+   "value": "\"—\" / TBC",
+   "source": "LEG",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Legacy production sheet (src/features/production/orderToProductionOrder.ts → production-drawing PDF, LEGACY)",
+   "approved": false
+  },
+  {
+   "field": "Lining in the 3D model",
+   "value": "Dark render material for the inside — not a lining specification",
+   "source": "M3D",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "3D model (src/three/jacket/*) — render materials only",
+   "approved": false
+  },
+  {
+   "field": "Front closure",
+   "value": "Snap front — SYSTEM_DERIVED (snap placket)",
+   "source": "RFQ",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "RFQ generator (src/features/techpack/build.ts; RFQ-05 manufacturing-spec.json)",
+   "approved": false
+  },
+  {
+   "field": "Snap finish",
+   "value": "Black / Silver / Gold / Gunmetal — customer choice (RFQ-05: Gold)",
+   "source": "CFG",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+   "approved": false
+  },
+  {
+   "field": "Snaps (BOM10)",
+   "value": "TBD (type, size, metal)",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Snap count",
+   "value": "Legacy sheet 7 (5 placket + 2 waistband tab); S.i. flat 6 marks (5 placket + 1 waistband); RFQ TBD_PATTERN_MAKER",
+   "source": "LEG",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": "X-05",
+   "sourceName": "Legacy production sheet (src/features/production/orderToProductionOrder.ts → production-drawing PDF, LEGACY)",
+   "approved": false
+  },
+  {
+   "field": "Waistband closure tab",
+   "value": "Legacy sheet \"Front tabs\" ×2, material TBC; S.i. flat layer \"waistband-tab\"",
+   "source": "LEGFLAT",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": "X-05",
+   "sourceName": "Legacy flat (production-drawing/flats/varsityFlat.mjs, LEGACY)",
+   "approved": false
+  },
+  {
+   "field": "Zipper (BOM11)",
+   "value": "Not fitted (ZIPPER_ENABLED = false); configurator help text still mentions \"an optional hidden zipper\"",
+   "source": "CFG",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-10",
+   "sourceName": "Configurator (src/features/configurator/model/catalog.ts MATERIALS / BUTTON_FINISHES / ZIPPER_ENABLED; config.ts defaults)",
+   "approved": false
+  },
+  {
+   "field": "Pocket type",
+   "value": "Two front welt pockets, one per front panel, single angled welt with topstitch outline",
+   "source": "SIFLAT",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "S.i. canonical flat (garment-spec/working-varsity-flat/front.svg + flat.json) — drawing, not to scale",
+   "approved": false
+  },
+  {
+   "field": "Pocket welt material (BOM13)",
+   "value": "\"TBD (leather or shell fabric)\"; RFQ: TBD_SUPPLIER_PROPOSAL",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-04",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Pocket welt material — legacy / drawings",
+   "value": "Cut from the sleeve material (3D model); RFQ and legacy drawings colour welts as the sleeves",
+   "source": "LEG",
+   "customer": false,
+   "inferred": true,
+   "supplier": false,
+   "conflict": "X-04",
+   "sourceName": "Legacy production sheet (src/features/production/orderToProductionOrder.ts → production-drawing PDF, LEGACY)",
+   "approved": false
+  },
+  {
+   "field": "Pocketing (BOM12)",
+   "value": "TBD",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Inside pocket",
+   "value": "v0.1 L04: \"whether one is fitted is undecided\"; S.i. template shows an internal welt pocket",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-09",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Sewing thread (BOM14 / BOM15)",
+   "value": "TBD (type, ticket); colour-matching rule TBD",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Seam construction (CON01–CON16)",
+   "value": "All TO_SET_BY_PATTERN_MAKER, value null; CON04 still reads \"set-in vs dropped (OPEN)\"",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Seam finish claim",
+   "value": "\"clean-finished seams\" (website copy)",
+   "source": "SITE",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-13",
+   "sourceName": "Website copy (src/locales/en/story.ts, studies.ts, hero.ts, catalog.ts)",
+   "approved": false
+  },
+  {
+   "field": "Interfacing (BOM18 / BOM19) / snap reinforcement (BOM20)",
+   "value": "TBD",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Embroidery technique",
+   "value": "Configurator preview: satin only; RFQ productionTechnique TBD_SUPPLIER_PROPOSAL (direct, chenille, patch)",
+   "source": "RFQ",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-08",
+   "sourceName": "RFQ generator (src/features/techpack/build.ts; RFQ-05 manufacturing-spec.json)",
+   "approved": false
+  },
+  {
+   "field": "Embroidery methods shown on the website",
+   "value": "\"Raised chenille\" study; letter styles \"Cotton patch — black / grey\"; library \"Class patches\"",
+   "source": "SITE",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-08",
+   "sourceName": "Website copy (src/locales/en/story.ts, studies.ts, hero.ts, catalog.ts)",
+   "approved": false
+  },
+  {
+   "field": "Embroidery thread (BOM16)",
+   "value": "Colours from the 19-thread palette (customer); brand / type / weight TBD",
+   "source": "V01",
+   "customer": true,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Embroidery backing (BOM17) / patch base (BOM21)",
+   "value": "TBD (per shell material); patch base only if a patch method is adopted",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": null,
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "Cuff protector (BOM22)",
+   "value": "UNKNOWN — seen on Golden Bear; not decided",
+   "source": "V01",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-11",
+   "sourceName": "Master Spec v0.1 (garment-spec/jacketek-master-spec-v0.1.json — bom, construction, conflicts K2, dataOwnership)",
+   "approved": false
+  },
+  {
+   "field": "S.i. template material callouts",
+   "value": "100% Wool; 2X1 Cotton Rib 350GSM; Cotton thread; metal snap buttons; internal quilting; self-fabric bias tape; chenille patch; care label 100% cotton",
+   "source": "SITEXT",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-12",
+   "sourceName": "S.i. template text (purchased Blank + Example PDF; demo style SW-TSH-04) — REFERENCE ONLY",
+   "approved": false
+  },
+  {
+   "field": "Golden Bear reference construction",
+   "value": "Melton wool / leather, quilted satin-acetate lining, set-in sleeve, leather cuff protector",
+   "source": "GB",
+   "customer": false,
+   "inferred": false,
+   "supplier": false,
+   "conflict": "X-12",
+   "sourceName": "Golden Bear Classic (FIT_REFERENCE / EXTERNAL_REFERENCE)",
+   "approved": false
+  }
+ ],
+ "contradictions": [
+  {
+   "id": "X-01",
+   "topic": "Customer material choice vs design intent",
+   "between": [
+    "CFG",
+    "V01",
+    "K2 design intent"
+   ],
+   "detail": "The configurator lets the customer choose Leather or Cotton Fabric for the body and for the sleeves separately; v0.1 BOM01 / BOM02 and dataOwnership record a customer choice. JACKETEK design intent is body = Cotton Fabric, sleeves = Leather — the configurator's default and RFQ-05's values.",
+   "action": "Recorded, website not changed. Product decision open: whether other combinations stay orderable. The factory proposal covers only Cotton Fabric body + Leather sleeves.",
+   "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+  },
+  {
+   "id": "X-02",
+   "topic": "Material name",
+   "between": [
+    "CFG",
+    "SITE",
+    "GB",
+    "SITEXT"
+   ],
+   "detail": "Shown as \"Cotton Fabric\", stored as id \"felt\"; code comments say \"wool felt\" and the story copy keys say \"wool\". Golden Bear's reference body is melton wool; the S.i. template example is 100% Wool.",
+   "action": "\"Cotton Fabric\" (the customer-facing name) is the design intent. No wool or felt composition is implied. Internal id not changed.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-03",
+   "topic": "Leather wording",
+   "between": [
+    "SITE",
+    "K2.2"
+   ],
+   "detail": "Website copy promises \"supple leather that softens with wear\" and \"a soft, natural sheen\" — qualities of genuine leather. K2.2 leaves genuine vs synthetic open for the supplier.",
+   "action": "Leather stays the design intent; synthetic / PU is an alternative proposal only. If JACKETEK ever approves an alternative, the website copy must be reviewed first. Copy not changed now.",
+   "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+  },
+  {
+   "id": "X-04",
+   "topic": "Pocket welt material",
+   "between": [
+    "LEG",
+    "RFQFLAT",
+    "V01",
+    "RFQ"
+   ],
+   "detail": "Legacy sheet and the 3D model cut the welts from the sleeve material; RFQ and legacy drawings colour the welts as the sleeves; v0.1 BOM13 says \"leather or shell fabric\" and the RFQ lists it TBD_SUPPLIER_PROPOSAL. The S.i. template calls them \"contrasting\" (template text).",
+   "action": "OPEN. Welt material: FACTORY TO PROPOSE / JACKETEK TO APPROVE. Leather matching the sleeves (as drawn) is a visual reference / option only, not a decision. Build TBD_PATTERN_MAKER.",
+   "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+  },
+  {
+   "id": "X-05",
+   "topic": "Snap count / waistband tab",
+   "between": [
+    "LEG",
+    "SIFLAT",
+    "RFQ"
+   ],
+   "detail": "Legacy sheet: 7 snaps (5 placket + 2 on the waistband tab) and 2 \"front tabs\". S.i. flat: 6 snap marks (5 placket + 1 on the waistband) and a waistband-tab layer. RFQ: count TBD_PATTERN_MAKER (F03–F07).",
+   "action": "Count, spacing and the tab stay TBD_PATTERN_MAKER. Neither drawing is a specification.",
+   "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+  },
+  {
+   "id": "X-06",
+   "topic": "Rib stripes",
+   "between": [
+    "V01",
+    "RFQ",
+    "LEG",
+    "SITE"
+   ],
+   "detail": "v0.1 BOM09: \"the configurator has no stripe option today\"; the 3D preview, RFQ and legacy sheet show stripes in the sleeve colour (SYSTEM_DERIVED); the website shows a \"striped rib cuff\". The legacy rib heights come from 5 strips of the 3D mesh, not a stripe specification.",
+   "action": "Striped colourway supported as construction intent; stripe count, widths, positions and yarn stay open.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-07",
+   "topic": "Lining: quilted or plain",
+   "between": [
+    "V01",
+    "GB",
+    "SITEXT",
+    "M3D"
+   ],
+   "detail": "Golden Bear uses quilted satin acetate; the S.i. template shows \"internal quilting\" (template demo); v0.1 BOM05 says quilting is undecided; the 3D model has only a dark inside render material.",
+   "action": "No project evidence decides quilted vs plain: TBD_SUPPLIER_PROPOSAL with JACKETEK decision after the sample.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-08",
+   "topic": "Embroidery method",
+   "between": [
+    "CFG",
+    "SITE",
+    "RFQ"
+   ],
+   "detail": "The configurator previews satin stitch only; the website shows raised chenille, \"Cotton patch\" letter styles and \"Class patches\"; the RFQ asks the supplier to propose the technique.",
+   "action": "Method per artwork type TBD_SUPPLIER_PROPOSAL. The website's chenille / patch imagery is product direction, not a specification.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-09",
+   "topic": "Inside pocket",
+   "between": [
+    "V01",
+    "SITEXT"
+   ],
+   "detail": "v0.1 L04 says whether an inside pocket is fitted is undecided; the S.i. template shows an internal welt pocket (template demo).",
+   "action": "UNKNOWN — JACKETEK decision; if fitted, build TBD_PATTERN_MAKER.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-10",
+   "topic": "Hidden zipper",
+   "between": [
+    "CFG",
+    "SITE"
+   ],
+   "detail": "ZIPPER_ENABLED = false and the RFQ prints \"Not fitted\", but the configurator's closure help text still mentions \"an optional hidden zipper\".",
+   "action": "NOT_FITTED for K2. Website text not changed.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-11",
+   "topic": "Cuff protector",
+   "between": [
+    "GB",
+    "V01"
+   ],
+   "detail": "Golden Bear has a leather cuff protector; v0.1 BOM22 marks it UNKNOWN for JACKETEK. Not shown on the S.i. flat or the 3D model.",
+   "action": "UNKNOWN — not fitted unless JACKETEK decides otherwise.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-12",
+   "topic": "Reference construction ≠ JACKETEK",
+   "between": [
+    "GB",
+    "SITEXT"
+   ],
+   "detail": "Golden Bear (melton wool / leather, quilted lining, set-in) and the S.i. template example (100% wool, 2×1 cotton rib 350 GSM, cotton thread) describe other garments. The S.i. callouts appear in the Blank file too: template demo content.",
+   "action": "REFERENCE ONLY. No value imported.",
+   "status": "RECORDED"
+  },
+  {
+   "id": "X-13",
+   "topic": "\"Clean-finished seams\"",
+   "between": [
+    "SITE",
+    "V01"
+   ],
+   "detail": "Website copy claims clean-finished seams; every v0.1 construction operation is TO_SET_BY_PATTERN_MAKER with no value.",
+   "action": "Seam finish TBD_PATTERN_MAKER; the claim must be met by the approved construction or the copy reviewed.",
+   "status": "OPEN — PRODUCT / CONSTRUCTION ALIGNMENT ITEM"
+  }
+ ],
+ "factoryProposalRequest": [
+  {
+   "group": "BODY FABRIC",
+   "component": "K2.1",
+   "items": [
+    "composition",
+    "construction / weave",
+    "GSM",
+    "finish",
+    "shrinkage",
+    "colour matching method"
+   ]
+  },
+  {
+   "group": "SLEEVE MATERIAL",
+   "component": "K2.2",
+   "items": [
+    "leather — material type (design intent: Leather)",
+    "alternatives (synthetic / PU) only as ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT, each with cost / MOQ / performance / appearance differences",
+    "thickness",
+    "finish",
+    "backing",
+    "hand feel",
+    "colour matching / consistency",
+    "minimum order quantity",
+    "price impact"
+   ]
+  },
+  {
+   "group": "RIB",
+   "component": "K2.4–K2.6",
+   "items": [
+    "composition",
+    "knit structure / gauge",
+    "weight",
+    "stretch / recovery",
+    "stripe construction"
+   ]
+  },
+  {
+   "group": "LINING",
+   "component": "K2.3",
+   "items": [
+    "composition",
+    "weight",
+    "construction (quilted or plain; wadding if quilted)",
+    "colour",
+    "breathability",
+    "hand feel",
+    "compatibility with embroidery / patches"
+   ]
+  },
+  {
+   "group": "SNAPS",
+   "component": "K2.7",
+   "items": [
+    "diameter",
+    "material",
+    "finish (black / silver / gold / gunmetal)",
+    "supplier / code if available",
+    "pull strength",
+    "reinforcement"
+   ]
+  },
+  {
+   "group": "POCKETS",
+   "component": "K2.8–K2.9",
+   "items": [
+    "pocketing material",
+    "welt material — FACTORY TO PROPOSE / JACKETEK TO APPROVE (leather matching the sleeves is a visual reference / option only; X-04 open)",
+    "welt interfacing"
+   ]
+  },
+  {
+   "group": "THREAD / SEWING",
+   "component": "K2.10–K2.11",
+   "items": [
+    "thread type (fabric seams, leather seams)",
+    "SPI",
+    "seam type",
+    "reinforcement",
+    "interlining where required"
+   ]
+  },
+  {
+   "group": "EMBROIDERY",
+   "component": "K2.12",
+   "items": [
+    "method per artwork type (direct, chenille, patch)",
+    "thread",
+    "backing",
+    "stabiliser",
+    "attachment / finishing method",
+    "suitability on leather sleeves",
+    "lining protection"
+   ]
+  }
+ ]
+}

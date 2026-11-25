@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JACKETEK — Custom Graduation Jackets</title>
+    <script>
+      // The saved language (jacketek.locale), applied before first paint so
+      // Arabic never flashes LTR. Mirrors src/i18n/config.ts.
+      try {
+        if (localStorage.getItem("jacketek.locale") === "ar-IQ") {
+          document.documentElement.lang = "ar-IQ";
+          document.documentElement.dir = "rtl";
+        }
+      } catch (e) {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Noto Sans Arabic: the temporary Arabic UI/body face (src/styles/i18n.css). -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700&family=Graduate&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

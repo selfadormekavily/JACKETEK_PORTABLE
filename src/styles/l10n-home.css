@@ -1,0 +1,82 @@
+/*
+ * Localization / RTL adjustments for the home area (owned by that area's pass).
+ * Arabic-only rules key off :root[lang="ar-IQ"]; direction rules off [dir="rtl"].
+ *
+ * Unlayered on purpose: these win over Tailwind utilities and the
+ * components layer. Inline sizes still need !important.
+ */
+
+/* ---- Arabic type in the homepage story (sections/Hero, HeroStory) ---- */
+
+:root[lang="ar-IQ"] .jk-home {
+  /* Story headlines (HeroStory headSize): DARK's letters stand taller
+     and need a looser line, so the same boxes take a smaller size. */
+  --jk-head-scale: 0.78;
+}
+
+/* Headlines: DARK, no tracking (the phones' inline -0.04em included),
+   room for dots and marks above and below. */
+:root[lang="ar-IQ"] .jk-home .jk-headline {
+  letter-spacing: 0 !important;
+  /* DARK's marks sit inside its compact letters: lines never collide here. */
+  line-height: 1.12;
+}
+:root[lang="ar-IQ"] .jk-home .jk-story-head--compact {
+  font-size: clamp(34px, 10vw, 54px);
+}
+
+/* The opening headline (an h1 in Hanken 500 in English) → DARK. */
+:root[lang="ar-IQ"] .jk-hero-title {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.34;
+  letter-spacing: 0;
+}
+:root[lang="ar-IQ"] .jk-hero-title--compact {
+  font-size: 30px;
+}
+:root[lang="ar-IQ"] .jk-hero-lede {
+  font-size: 20px !important;
+  line-height: 1.85;
+}
+
+/* Giant words: DARK sits wider and taller than Anton. */
+:root[lang="ar-IQ"] .jk-home-moment {
+  font-size: 400px !important;
+}
+:root[lang="ar-IQ"] .jk-home-moment--compact {
+  top: 15% !important;
+  font-size: 22vw !important;
+}
+
+/* ---- Material studies (sections/MaterialStudies) ---- */
+
+/* The outline word mirrors to the left, across from the intro. */
+[dir="rtl"] .jk-studies__word {
+  right: auto;
+  left: -0.02em;
+}
+/* The SVG draws its own merged outline. */
+:root[lang="ar-IQ"] .jk-studies__word {
+  -webkit-text-stroke: 0;
+  line-height: 1;
+  /* DARK sets fewer, wider letters: a larger size fills the same band. */
+  font-size: clamp(160px, 30vw, 470px);
+}
+/* The SVG holds DARK's whole font box: raised so the letters (not the
+   empty space above them) sit at the top of the section, as in English. */
+:root[lang="ar-IQ"] .jk-studies__word > svg {
+  margin-top: -0.38em;
+}
+:root[lang="ar-IQ"] .jk-study__num {
+  font-size: 12.5px;
+  letter-spacing: 0;
+}
+:root[lang="ar-IQ"] .jk-studies .jk-headline {
+  line-height: 1.4;
+}
+:root[lang="ar-IQ"] .jk-studies__intro p:last-child {
+  max-width: 34ch;
+  line-height: 1.85;
+}

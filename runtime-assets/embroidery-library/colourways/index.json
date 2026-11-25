@@ -1,0 +1,31 @@
+{
+ "version": 1,
+ "phase": 1,
+ "designs": {
+  "4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60": {
+   "file": "4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60/colourway.json",
+   "originalFileName": "year-2027.png",
+   "slots": [
+    "fill",
+    "outline"
+   ]
+  },
+  "5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071": {
+   "file": "5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071/colourway.json",
+   "originalFileName": "seniors.png",
+   "slots": [
+    "fill",
+    "outline"
+   ]
+  },
+  "2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e": {
+   "file": "2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e/colourway.json",
+   "originalFileName": "star-crest.png",
+   "slots": [
+    "border",
+    "fill",
+    "detail"
+   ]
+  }
+ }
+}

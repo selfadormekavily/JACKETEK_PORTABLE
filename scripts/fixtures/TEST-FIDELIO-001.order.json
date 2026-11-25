@@ -1,0 +1,100 @@
+{
+    "id":  "TEST-FIDELIO-001",
+    "createdAt":  "2026-10-02T19:30:00.000Z",
+    "status":  "pending",
+    "items":  [
+                  {
+                      "productId":  "graduation-jacket",
+                      "productName":  "Graduation Jacket",
+                      "size":  "XL",
+                      "quantity":  1,
+                      "unitPrice":  null,
+                      "lineTotal":  null,
+                      "customization":  {
+                                            "colours":  {
+                                                            "body":  "black",
+                                                            "sleeves":  "ivory",
+                                                            "trim":  "burgundy"
+                                                        },
+                                            "materials":  {
+                                                              "body":  "felt",
+                                                              "sleeves":  "leather"
+                                                          },
+                                            "buttons":  "gold",
+                                            "zipper":  false,
+                                            "embroidery":  [
+                                                               {
+                                                                   "id":  "emb-1",
+                                                                   "placement":  "leftChest",
+                                                                   "offset":  [
+                                                                                  0,
+                                                                                  0
+                                                                              ],
+                                                                   "rotation":  0,
+                                                                   "scale":  1,
+                                                                   "style":  "satin",
+                                                                   "kind":  "text",
+                                                                   "text":  "J. HADDAD",
+                                                                   "image":  null,
+                                                                   "thread":  "gold"
+                                                               },
+                                                               {
+                                                                   "id":  "emb-2",
+                                                                   "placement":  "centerChest",
+                                                                   "offset":  [
+                                                                                  0,
+                                                                                  0.012
+                                                                              ],
+                                                                   "rotation":  0,
+                                                                   "scale":  0.9,
+                                                                   "style":  "satin",
+                                                                   "kind":  "image",
+                                                                   "text":  "",
+                                                                   "image":  {
+                                                                                 "src":  "data:image/png;base64,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",
+                                                                                 "aspect":  1
+                                                                             },
+                                                                   "thread":  null
+                                                               },
+                                                               {
+                                                                   "id":  "emb-3",
+                                                                   "placement":  "upperBack",
+                                                                   "offset":  [
+                                                                                  0,
+                                                                                  0.01
+                                                                              ],
+                                                                   "rotation":  -4,
+                                                                   "scale":  1.2,
+                                                                   "style":  "satin",
+                                                                   "kind":  "text",
+                                                                   "text":  "CLASS OF 2026",
+                                                                   "image":  null,
+                                                                   "thread":  "ivory"
+                                                               }
+                                                           ],
+                                            "size":  "XL",
+                                            "fit":  "relaxed"
+                                        }
+                  }
+              ],
+    "pricing":  {
+                    "currency":  "JOD",
+                    "subtotal":  null,
+                    "delivery":  null,
+                    "total":  null
+                },
+    "customer":  {
+                     "fullName":  "Lina Haddad",
+                     "phone":  "079 123 4567"
+                 },
+    "delivery":  {
+                     "city":  "Amman",
+                     "area":  "Khalda",
+                     "address":  "Wadi Saqra St, Building 12, Floor 3",
+                     "notes":  "Call me before delivery"
+                 },
+    "payment":  {
+                    "method":  "cod",
+                    "status":  "due-on-delivery"
+                }
+}

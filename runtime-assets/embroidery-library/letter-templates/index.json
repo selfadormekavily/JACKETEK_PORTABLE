@@ -1,0 +1,12 @@
+{
+ "version": 1,
+ "libraryId": "23ff73fd-b78f-4718-9109-2b8f73076954",
+ "templates": {
+  "3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f": {
+   "file": "3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f/template.json",
+   "style": "varsity-block",
+   "name": "Varsity block",
+   "approximation": false
+  }
+ }
+}

@@ -1,0 +1,477 @@
+/*
+ * Group orders: the cart's materials, gathered for a whole class. Raised
+ * cream cards, navy type and hairlines, crimson for the one action and the
+ * stitched accents (here: the viewer's own jackets), dusty blue as light.
+ * Directional values are logical (inline-start / -end), so Arabic mirrors.
+ */
+
+/* ---- Header facts: members · jackets · status, stitched apart ---- */
+.jk-group-facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0;
+  margin-top: 28px;
+}
+.jk-group-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-inline: 0 28px;
+}
+.jk-group-fact + .jk-group-fact {
+  padding-inline-start: 28px;
+  border-inline-start: 1.5px dashed rgb(var(--brand-navy) / 0.2);
+}
+.jk-group-fact__value {
+  color: rgb(var(--brand-navy));
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+}
+
+/* Status: a small patch; open = a crimson knot, locked = navy, closed = quiet. */
+.jk-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 30px;
+  padding: 4px 11px;
+  border-radius: 3px;
+  background: rgb(var(--brand-cream));
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-navy) / 0.16);
+  color: rgb(var(--brand-navy));
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  outline: 1px dashed rgb(var(--brand-navy) / 0.22);
+  outline-offset: -4px;
+}
+.jk-status::before {
+  width: 7px;
+  height: 7px;
+  flex: none;
+  content: "";
+  border-radius: 9999px;
+  background: rgb(var(--brand-crimson));
+  box-shadow: 0 0 0 3px rgb(var(--brand-crimson) / 0.16);
+}
+.jk-status--LOCKED {
+  background: rgb(var(--brand-navy));
+  color: rgb(var(--brand-cream));
+  outline-color: rgb(var(--brand-cream) / 0.4);
+}
+.jk-status--LOCKED::before {
+  background: rgb(var(--brand-cream));
+  box-shadow: none;
+}
+.jk-status--CANCELLED {
+  color: rgb(var(--brand-navy-soft));
+  background: transparent;
+}
+.jk-status--CANCELLED::before {
+  background: transparent;
+  box-shadow: inset 0 0 0 1.5px rgb(var(--brand-navy) / 0.35);
+}
+
+/* ---- Notices: a quiet line of light; crimson-edged when it needs attention ---- */
+.jk-group-note {
+  padding: 12px 14px;
+  background: rgb(var(--brand-dusty) / 0.14);
+  box-shadow: inset 2px 0 0 rgb(var(--brand-dusty));
+  color: rgb(var(--brand-navy));
+  font-size: 14px;
+  line-height: 1.5;
+}
+[dir="rtl"] .jk-group-note {
+  box-shadow: inset -2px 0 0 rgb(var(--brand-dusty));
+}
+.jk-group-note--attention {
+  background: rgb(var(--brand-crimson) / 0.07);
+  box-shadow: inset 2px 0 0 rgb(var(--brand-crimson));
+}
+[dir="rtl"] .jk-group-note--attention {
+  box-shadow: inset -2px 0 0 rgb(var(--brand-crimson));
+}
+
+/* ---- A member: name, tags, then their jackets ---- */
+.jk-member + .jk-member {
+  margin-top: 44px;
+}
+.jk-member__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgb(var(--brand-navy) / 0.14);
+}
+.jk-member__name {
+  color: rgb(var(--brand-navy));
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.jk-member__count {
+  margin-inline-start: auto;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 13px;
+}
+/* Woven tags: Host, You. */
+.jk-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 8px 2px;
+  background: rgb(var(--brand-cream-raised));
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-navy) / 0.16);
+  color: rgb(var(--brand-navy));
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.jk-tag--you {
+  background: rgb(var(--brand-crimson));
+  box-shadow: none;
+  color: rgb(var(--brand-cream));
+}
+/* The host's actions on a member: quiet labels under the name, as the cart's Remove. */
+.jk-member__manage {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 4px 22px;
+  margin-top: 6px;
+}
+.jk-member__manage .jk-confirm {
+  flex-basis: 100%;
+  max-width: 460px;
+}
+.jk-member__empty {
+  padding: 18px 0 4px;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 14px;
+}
+.jk-member__jackets {
+  display: grid;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+/* ---- A group jacket: a compact cart card ---- */
+.jk-gjacket {
+  position: relative;
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  border: 1px solid rgb(var(--brand-navy) / 0.14);
+  background: linear-gradient(180deg, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream)) 100%);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 24px 48px -36px rgb(var(--brand-dusty) / 0.75),
+    0 12px 22px -20px rgb(var(--brand-navy-deep) / 0.35);
+}
+/* The viewer's own jackets carry the crimson stitch (as the cart's cards do). */
+.jk-gjacket--yours::before {
+  position: absolute;
+  z-index: 2;
+  top: -1px;
+  inset-inline-start: 22px;
+  width: 56px;
+  height: 0;
+  content: "";
+  border-top: 2px solid rgb(var(--brand-crimson));
+}
+/* The cart's fitting room in miniature: a framed portrait stage, never stretched by a long card. */
+.jk-gjacket__stage {
+  align-self: start;
+  aspect-ratio: 4 / 5;
+  margin-block: 10px;
+  margin-inline: 10px 0;
+}
+.jk-gjacket:hover .jk-stage__jacket {
+  transform: translateX(-50%) translateY(-4px);
+}
+.jk-gjacket__body {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-block: 20px 18px;
+  padding-inline: 24px 22px;
+}
+.jk-gjacket__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.jk-gjacket__embroidery {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 4px 14px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+.jk-gjacket__embroidery dt {
+  color: rgb(var(--brand-navy-soft));
+}
+.jk-gjacket__embroidery dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  color: rgb(var(--brand-navy));
+}
+.jk-gjacket__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+  margin-top: auto;
+  padding-top: 6px;
+}
+.jk-gjacket__error {
+  color: rgb(var(--brand-crimson));
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* ---- The invite: the link on a woven card, ready to copy ---- */
+.jk-invite__link {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px dashed rgb(var(--brand-navy) / 0.3);
+  background: rgb(var(--brand-cream-raised) / 0.7);
+  color: rgb(var(--brand-navy));
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+  text-align: left;
+  user-select: all;
+}
+.jk-invite__actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+/* A smaller secondary button (the site's own outline button, compact). */
+.jk-btn-quiet {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid rgb(var(--brand-navy) / 0.55);
+  background: rgb(var(--brand-cream-raised) / 0.5);
+  color: rgb(var(--brand-navy));
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  transition: background-color 250ms var(--ease-out-expo);
+}
+.jk-btn-quiet:hover:not(:disabled) {
+  background: rgb(var(--brand-navy));
+  color: rgb(var(--brand-cream));
+}
+.jk-btn-quiet:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.jk-btn-quiet:disabled {
+  border-color: rgb(var(--brand-navy) / 0.2);
+  color: rgb(var(--brand-navy) / 0.4);
+  cursor: not-allowed;
+}
+.jk-btn-quiet--danger {
+  border-color: rgb(var(--brand-crimson) / 0.7);
+  color: rgb(var(--brand-crimson));
+}
+.jk-btn-quiet--danger:hover:not(:disabled) {
+  background: rgb(var(--brand-crimson));
+  color: rgb(var(--brand-cream));
+}
+
+/* ---- Side cards (invite, pricing, host controls) stack with room for their tabs ---- */
+.jk-group-aside {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}
+.jk-host-row + .jk-host-row {
+  margin-top: 18px;
+  padding-top: 18px;
+  border-top: 1px dashed rgb(var(--brand-navy) / 0.2);
+}
+.jk-host-row__hint {
+  margin-top: 8px;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* An inline "are you sure?": the question, then Yes / No in place of the button. */
+.jk-confirm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgb(var(--brand-crimson) / 0.06);
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-crimson) / 0.25);
+}
+.jk-confirm__question {
+  color: rgb(var(--brand-navy));
+  font-size: 14px;
+  line-height: 1.45;
+}
+.jk-confirm__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---- Start a group (the cart): the dashed invitation, opening into a form ---- */
+.jk-group-start {
+  border: 1.5px dashed rgb(var(--brand-navy) / 0.22);
+  background: rgb(var(--brand-cream-raised) / 0.35);
+}
+.jk-group-start__intro {
+  display: flex;
+  gap: 18px;
+  padding: 22px 24px;
+}
+.jk-group-start__form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 0 24px 24px;
+}
+.jk-group-pick {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 56px;
+  padding: 8px 10px;
+  border: 1px solid rgb(var(--brand-navy) / 0.14);
+  background: rgb(var(--brand-cream-raised) / 0.7);
+  cursor: pointer;
+}
+.jk-group-pick:has(input:checked) {
+  border-color: rgb(var(--brand-navy) / 0.55);
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-navy) / 0.25);
+}
+/* The jacket the server couldn't take: ringed in crimson until the next try. */
+.jk-group-pick--problem {
+  border-color: rgb(var(--brand-crimson));
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-crimson) / 0.5);
+  background: rgb(var(--brand-crimson) / 0.05);
+}
+.jk-group-pick input {
+  width: 20px;
+  height: 20px;
+  flex: none;
+  accent-color: rgb(var(--brand-crimson));
+}
+.jk-group-pick__thumb {
+  width: 44px;
+  height: 52px;
+  flex: none;
+  object-fit: contain;
+  background: rgb(var(--brand-cream));
+}
+
+/* ---- My groups: one row per group ---- */
+.jk-group-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 16px 24px;
+  padding: 22px 24px;
+  border: 1px solid rgb(var(--brand-navy) / 0.14);
+  background: linear-gradient(180deg, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream)) 100%);
+  transition:
+    transform 450ms var(--ease-out-expo),
+    box-shadow 450ms var(--ease-out-expo);
+}
+.jk-group-row:hover,
+.jk-group-row:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 44px -34px rgb(var(--brand-navy-deep) / 0.5);
+}
+.jk-group-row__name {
+  color: rgb(var(--brand-navy));
+  font-size: 22px;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  overflow-wrap: anywhere;
+}
+.jk-group-row > .jk-status {
+  justify-self: start;
+}
+.jk-group-row__meta {
+  margin-top: 6px;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 13.5px;
+}
+
+/* ---- The configurator, designing for a group: one line above Back / Next ---- */
+.jk-design-target {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 14px;
+  margin-bottom: 10px;
+  color: rgb(var(--brand-navy));
+  font-size: 13px;
+  line-height: 1.4;
+}
+.jk-design-target strong {
+  font-weight: 600;
+}
+.jk-design-target__error {
+  margin-bottom: 10px;
+  color: rgb(var(--brand-crimson));
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+@media (max-width: 767px) {
+  .jk-gjacket {
+    grid-template-columns: 112px minmax(0, 1fr);
+  }
+  .jk-gjacket__stage {
+    margin-block: 8px;
+    margin-inline: 8px 0;
+  }
+  .jk-gjacket__body {
+    padding: 16px 14px 14px;
+  }
+  .jk-group-fact {
+    padding-inline-end: 18px;
+  }
+  .jk-group-fact + .jk-group-fact {
+    padding-inline-start: 18px;
+  }
+  .jk-group-start__intro {
+    padding: 18px 16px;
+  }
+  .jk-group-start__form {
+    padding: 0 16px 18px;
+  }
+  .jk-group-row {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 18px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jk-group-row,
+  .jk-group-row:hover {
+    transition: none;
+    transform: none;
+  }
+}

@@ -1,0 +1,196 @@
+/* Fidelio Varsity tech pack — A4 portrait, 4 pages, black on white. */
+@page { size: A4 portrait; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { background: #fff; color: #000; }
+body { font-family: Arial, Helvetica, sans-serif; font-size: 8pt; line-height: 1.3;
+       -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+/* A fixed page box: content can never flow onto a fifth page. */
+.page { position: relative; width: 210mm; height: 296.8mm; padding: 9mm 10mm 0; overflow: hidden;
+        display: flex; flex-direction: column; break-after: page; page-break-after: always; }
+.page:last-child { break-after: auto; page-break-after: auto; }
+
+.hdr { display: flex; justify-content: space-between; align-items: center; gap: 3mm;
+       border-bottom: 0.8pt solid #000; padding-bottom: 1.6mm; white-space: nowrap; }
+.hdr .brand { font-size: 6.8pt; font-weight: 700; letter-spacing: 0.16em; }
+.hdr .brand span { font-weight: 400; letter-spacing: 0.08em; }
+.hdr .title { font-size: 9.6pt; font-weight: 700; letter-spacing: 0.1em; }
+.hdr .title b { border: 0.8pt solid #000; padding: 0 1.2mm; margin-right: 1.5mm; }
+.hdr .ref { font-size: 6.8pt; letter-spacing: 0.05em; }
+.ftr { position: absolute; left: 10mm; right: 10mm; bottom: 6mm; display: flex; justify-content: space-between;
+       border-top: 0.5pt solid #000; padding-top: 1.2mm; font-size: 6.4pt; letter-spacing: 0.1em; }
+.body { flex: 1 1 auto; min-height: 0; padding: 4mm 0 12mm; display: flex; flex-direction: column; gap: 3.5mm; }
+
+.muted { color: #555; }
+.mono { font-family: Consolas, "Courier New", monospace; font-size: 7.4pt; }
+.tbc { font-size: 6.6pt; font-weight: 700; letter-spacing: 0.06em; border: 0.5pt solid #000; padding: 0 0.8mm; white-space: nowrap; }
+.refb { font-size: 6pt; font-weight: 700; letter-spacing: 0.08em; background: #000; color: #fff; padding: 0 0.7mm; }
+.sw { display: inline-block; width: 3.4mm; height: 3.4mm; border: 0.5pt solid #000; vertical-align: -0.7mm; margin-right: 1.4mm; }
+.note { font-size: 6.6pt; color: #333; }
+.sec { font-size: 7pt; font-weight: 700; letter-spacing: 0.14em; margin-bottom: 1.5mm; }
+
+/* key / value table */
+table { border-collapse: collapse; width: 100%; }
+table.kv th { width: 28mm; text-align: left; vertical-align: top; font-size: 6.6pt; font-weight: 700; letter-spacing: 0.1em;
+              padding: 1.25mm 2mm 1.25mm 0; border-bottom: 0.4pt solid #bbb; }
+table.kv td { padding: 1.1mm 0; border-bottom: 0.4pt solid #bbb; vertical-align: top; }
+table.kv tr:first-child th, table.kv tr:first-child td { border-top: 0.8pt solid #000; }
+table.kv tr:last-child th, table.kv tr:last-child td { border-bottom: 0.8pt solid #000; }
+
+/* spec tables */
+table.spec th { font-size: 6.6pt; font-weight: 700; letter-spacing: 0.1em; text-align: left; padding: 1.4mm 2mm;
+                border-top: 0.8pt solid #000; border-bottom: 0.8pt solid #000; }
+table.spec td { padding: 1.5mm 2mm; border-bottom: 0.4pt solid #bbb; vertical-align: top; }
+table.spec tbody tr:last-child td { border-bottom: 0.8pt solid #000; }
+table.spec small { display: block; font-size: 6.4pt; color: #555; }
+table.mat td.part { font-weight: 700; width: 34mm; }
+table.mat td:nth-child(2) { width: 44mm; }
+
+/* figures */
+figure { display: flex; flex-direction: column; align-items: center; }
+figcaption { font-size: 6.8pt; font-weight: 700; letter-spacing: 0.14em; margin-top: 1mm; }
+figure svg { display: block; }
+.flats2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; }
+.flats2 figure { border: 0.5pt solid #000; padding: 2mm 0 1.5mm; }
+
+/* page 1 */
+.p1 { display: flex; flex-direction: column; gap: 7mm; }
+.p1 table.kv td { font-size: 9.5pt; }
+.p1 table.kv th { width: 34mm; padding-top: 2.4mm; padding-bottom: 2.2mm; }
+.p1 table.kv td { padding-top: 2mm; padding-bottom: 2mm; }
+
+/* page 2 */
+.legend { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 6mm; font-size: 7.6pt; }
+
+/* page 3 */
+figure.tech { border: 0.5pt solid #000; padding: 1mm 0; }
+.p3row { display: grid; grid-template-columns: 78mm 1fr; gap: 3mm; align-items: stretch; }
+.p3row figure.tech { justify-content: center; }
+.poms { display: grid; grid-template-columns: 1fr 1fr; gap: 3mm; align-items: start; }
+table.pom th, table.pom td { padding: 0.35mm 1mm; font-size: 6.3pt; vertical-align: middle; }
+table.pom th { font-size: 5.8pt; }
+table.pom td.code { font-weight: 700; width: 4.5mm; }
+table.pom td.how { font-size: 5.5pt; color: #444; width: 33mm; }
+table.pom .val { width: 19mm; text-align: right; white-space: nowrap; }
+table.pom td.val b { font-size: 8pt; }
+table.pom .tbc { font-size: 5pt; padding: 0 0.4mm; }
+table.pom tr.grp td { font-size: 5.6pt; font-weight: 700; letter-spacing: 0.12em; padding-top: 0.9mm; border-bottom: 0.5pt solid #000; }
+table.pom .val { width: 11mm; }
+table.pom td.val { font-size: 7.4pt; }
+table.pom .st { width: 8mm; text-align: center; }
+table.pom tr.s-tbc td:not(.st) { color: #666; }
+table.pom .dash { color: #666; }
+
+/* measurement source badges */
+.badge { display: inline-block; min-width: 3.6mm; padding: 0 0.6mm; font-size: 5.2pt; font-weight: 700; line-height: 1.35;
+         letter-spacing: 0.04em; text-align: center; border: 0.6pt solid #000; }
+.b-confirmed { background: #000; color: #fff; }
+.b-derived { background: #fff; color: #000; }
+.b-fixed { background: #fff; color: #000; border-style: dashed; }
+.b-tbc { background: #fff; color: #666; border-color: #888; }
+.mlegend { display: flex; flex-wrap: wrap; gap: 1mm 5mm; font-size: 5.8pt; letter-spacing: 0.04em; }
+.mlegend .badge { margin-right: 1mm; }
+.panels { border: 0.5pt solid #000; padding: 1.5mm 2mm; }
+.panels .pieces { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 0.8pt solid #000; }
+.piece { display: flex; flex-direction: column; align-items: center; padding: 0.8mm 0 0.6mm; border-bottom: 0.4pt solid #bbb; }
+.piece:nth-child(3n+2) { border-left: 0.4pt solid #bbb; border-right: 0.4pt solid #bbb; }
+.piece:nth-last-child(-n+3) { border-bottom: 0; }
+.piece .pn { font-size: 5.8pt; font-weight: 700; letter-spacing: 0.04em; text-align: center; margin-top: 0.4mm; }
+.piece .pq { font-size: 5.4pt; color: #444; text-align: center; }
+
+/* page 4 */
+.cards { display: grid; gap: 4mm; }
+.card { border: 0.8pt solid #000; display: flex; flex-direction: column; overflow: hidden; }
+.card .ah { border-bottom: 0.8pt solid #000; padding: 1.2mm 2.5mm; font-size: 8.5pt; letter-spacing: 0.14em; }
+.card .cbody { flex: 1 1 auto; padding: 2.5mm; display: flex; flex-direction: column; gap: 2mm; min-height: 0; }
+.card.horiz .cbody { flex-direction: row; gap: 3mm; }
+.card .cleft { display: flex; flex-direction: column; gap: 2mm; flex: 1 1 0; min-width: 0; }
+.card table.kv { table-layout: fixed; }
+.card table.kv td { overflow-wrap: anywhere; }
+.card .ctop { display: flex; flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 2mm; }
+.card .ctop .diag { align-self: flex-start; }
+.art { border: 0.5pt solid #000; display: flex; align-items: center; justify-content: center; padding: 1.5mm; align-self: center;
+       background-color: #fff;
+       background-image: linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%), linear-gradient(45deg, #eee 25%, transparent 25%, transparent 75%, #eee 75%);
+       background-size: 3mm 3mm; background-position: 0 0, 1.5mm 1.5mm; }
+.art img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; }
+.artcap { font-size: 6pt; font-weight: 700; letter-spacing: 0.1em; text-align: center; margin-top: 0.8mm; }
+.artcap.left { text-align: left; margin: 0; }
+.art.digi { background-image: none; padding: 1mm; }
+.art.digi svg { display: block; }
+.card .ah { display: flex; align-items: center; justify-content: space-between; gap: 2mm; }
+.digi-status { font-size: 5.6pt; font-weight: 700; letter-spacing: 0.06em; border: 0.8pt solid #000; padding: 0.3mm 1.2mm; white-space: nowrap; }
+.card .statusrow { border-bottom: 0.5pt solid #000; padding: 0.6mm 2mm; }
+.card .statusrow .digi-status { border: 0; padding: 0; font-size: 5.2pt; }
+.thumbrow { display: flex; align-items: center; gap: 3mm; }
+.thumbrow .art { align-self: auto; }
+.card table.kv th { width: 24mm; }
+.card.dense table.kv th { width: 21mm; font-size: 5.6pt; padding: 0.4mm 1.5mm 0.4mm 0; }
+.card.dense table.kv td { font-size: 6.3pt; padding: 0.35mm 0; line-height: 1.2; }
+.card.dense .mono { font-size: 5.4pt; }
+.card.dense .ah { padding: 0.8mm 2.5mm; font-size: 7.6pt; }
+.card.dense .cbody { padding: 2mm; gap: 1.5mm; }
+.card.dense .artcap { font-size: 5.4pt; }
+.card.dense figcaption { font-size: 5.8pt; }
+.card.dense .tbc { font-size: 5.6pt; }
+.card .diag { flex: 0 0 auto; border: 0.5pt solid #000; padding: 1mm 0 0.8mm; align-self: center; }
+.card.horiz .diag { align-self: flex-start; }
+.texts { font-size: 7pt; border-top: 0.5pt solid #000; padding-top: 1.5mm; }
+
+/* page 5+: stitch map */
+.smwarn { border: 1.2pt solid #C2185B; color: #C2185B; font-size: 9pt; font-weight: 700; letter-spacing: 0.14em; text-align: center; padding: 1.4mm 0; }
+.smsub { font-size: 7pt; letter-spacing: 0.06em; margin-top: -1.5mm; }
+.smtitle { font-size: 9pt; font-weight: 700; letter-spacing: 0.12em; border-bottom: 0.8pt solid #000; padding-bottom: 1mm; }
+.smrow1 { display: grid; grid-template-columns: 38mm 1fr; gap: 3mm; align-items: start; }
+.smside { display: flex; flex-direction: column; gap: 1.2mm; }
+.smsrcrow { display: flex; gap: 2mm; align-items: center; border-bottom: 0.5pt solid #000; padding-bottom: 1.5mm; }
+.smsrcrow .artcap { font-size: 5.4pt; }
+.art.smsrc { width: 16mm; height: 16mm; padding: 0.8mm; }
+.smsep { border: 0.5pt solid #bbb; padding: 0.8mm; align-items: center; }
+.smsep figcaption { font-size: 5.2pt; letter-spacing: 0.03em; font-weight: 400; margin-top: 0.6mm; white-space: nowrap; }
+.smsep figcaption .sw { width: 2.4mm; height: 2.4mm; margin-right: 0.8mm; }
+.smmap, .smdetail { border: 0.5pt solid #000; padding: 1.5mm; align-items: center; }
+.smmap figcaption, .smdetail figcaption { font-size: 6pt; letter-spacing: 0.08em; }
+.smrow2 { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: start; }
+.smdata table.kv th { width: 27mm; font-size: 5.6pt; padding: 0.45mm 1.5mm 0.45mm 0; }
+.smdata table.kv td { font-size: 6.3pt; padding: 0.4mm 0; line-height: 1.22; overflow-wrap: anywhere; }
+.smdata .mono { font-size: 5.6pt; }
+.smlegend { display: flex; flex-wrap: wrap; gap: 0.8mm 3.5mm; font-size: 5.6pt; letter-spacing: 0.05em; border-top: 0.5pt solid #000; border-bottom: 0.5pt solid #000; padding: 1mm 0; margin-top: -1.5mm; }
+.smlegend div { display: flex; align-items: center; gap: 1mm; }
+.smlegend svg { width: 6mm; height: 3mm; flex: none; }
+.mk { display: inline-block; width: 2.2mm; height: 2.2mm; border-radius: 50%; flex: none; vertical-align: -0.4mm; margin-right: 1mm; }
+.mk.start { background: #2E7D32; } .mk.end { background: #C62828; }
+.mk.color { background: #000; border-radius: 0; }
+.mk.needle { background: #000; width: 1mm; height: 1mm; margin: 0 1.6mm 0 0.6mm; }
+.smlegend .trim { color: #C2185B; font-size: 7pt; width: 7mm; text-align: center; }
+.smlegend .dir { font-size: 6pt; width: 7mm; text-align: center; }
+.smlegend .mk { margin: 0 0.5mm; }
+.smlegend .trim, .smlegend .dir { width: auto; }
+table.smthreads th, table.smthreads td { padding: 0.45mm 1.5mm; font-size: 6.4pt; }
+.smrow3 .sec { margin-bottom: 1mm; }
+table.smthreads .num { text-align: right; }
+table.smthreads td.code { font-weight: 700; width: 8mm; }
+.seqh { margin-top: 2mm; }
+.smseq { display: flex; flex-wrap: wrap; align-items: center; gap: 1mm 1.2mm; font-size: 6.4pt; }
+.smseq .seqs { border: 0.6pt solid #000; padding: 0.5mm 1.2mm; }
+.smseq .seqm { font-weight: 700; letter-spacing: 0.06em; }
+.smseq .arr { color: #555; }
+.none { border: 0.8pt solid #000; padding: 20mm 0; text-align: center; font-size: 10pt; font-weight: 700; letter-spacing: 0.16em; }
+
+/* LEGACY WARNING (see populate.mjs LEGACY_WARNING) — in the page margins and as overlays, so no
+   layout moves. Red is the only colour on the sheet's furniture. */
+.legacy-band { position: absolute; left: 10mm; right: 10mm; top: 2.2mm; height: 5.4mm; background: #c00000; color: #fff;
+               font-size: 6.9pt; font-weight: 700; letter-spacing: 0.07em; text-align: center; line-height: 5.4mm; white-space: nowrap; }
+.legacy-foot { position: absolute; left: 10mm; right: 10mm; bottom: 1.6mm; color: #c00000; font-size: 6.6pt; font-weight: 700;
+               letter-spacing: 0.12em; text-align: center; white-space: nowrap; }
+.legacy-mark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%) rotate(-35deg); white-space: nowrap;
+               font-size: 30pt; font-weight: 700; letter-spacing: 0.04em; color: rgba(192, 0, 0, 0.09); pointer-events: none; z-index: 5; }
+.legacy-box { border: 1.6pt solid #c00000; color: #c00000; background: #fff; }
+.legacy-box .lw { font-weight: 700; letter-spacing: 0.08em; }
+.legacy-box .ls { color: #333; margin-top: 1.5mm; }
+.legacy-box.p1 { margin-top: 8mm; padding: 6mm 7mm; text-align: center; }
+.legacy-box.p1 .lw { font-size: 17pt; line-height: 1.35; }
+.legacy-box.p1 .ls { font-size: 8pt; }
+.legacy-box.p3 { position: absolute; left: 12mm; top: 21.5mm; padding: 1.6mm 2.4mm; z-index: 4; white-space: nowrap; }
+.legacy-box.p3 .lw { font-size: 7.2pt; line-height: 1.3; letter-spacing: 0.05em; }
+.legacy-box.p3 .ls { display: none; }

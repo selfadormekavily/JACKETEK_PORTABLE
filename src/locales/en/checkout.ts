@@ -1,0 +1,76 @@
+/** English source: checkout (/checkout). */
+const checkout = {
+  eyebrow: "Guest checkout",
+  title: "Checkout",
+  empty: {
+    body: "Your cart is empty — there's nothing to check out yet.",
+    cta: "Design your jacket",
+  },
+  summaryToggle: "Order summary",
+  steps: {
+    contact: "Contact",
+    delivery: "Delivery",
+    payment: "Payment",
+  },
+  fields: {
+    fullName: "Full name",
+    phone: "Phone number",
+    phonePlaceholder: "07X XXX XXXX",
+    phoneHint: "We'll call this number to arrange delivery.",
+    city: "City",
+    area: "Area",
+    areaPlaceholder: "e.g. Khalda",
+    address: "Full address",
+    addressPlaceholder: "Street, building number, floor, apartment",
+    notes: "Delivery notes",
+    notesPlaceholder: "e.g. Call me before delivery",
+  },
+  /** Display names of the suggested Jordanian cities (the value sent stays the English name). */
+  cities: {
+    Amman: "Amman",
+    Zarqa: "Zarqa",
+    Irbid: "Irbid",
+    Aqaba: "Aqaba",
+    Salt: "Salt",
+    Madaba: "Madaba",
+    Jerash: "Jerash",
+    Ajloun: "Ajloun",
+    Karak: "Karak",
+    Mafraq: "Mafraq",
+    Tafilah: "Tafilah",
+    Maan: "Ma'an",
+  },
+  payment: {
+    aria: "Payment method",
+    method: "Payment method",
+    cod: {
+      label: "Cash on delivery",
+      detail: "Pay when your jacket arrives.",
+      name: "Cash on Delivery",
+    },
+    card: {
+      label: "Card / Visa",
+      detail: "Pay securely online.",
+      name: "Card / Visa",
+      comingSoon: "Online card payment is coming soon. For now, please choose Cash on Delivery.",
+    },
+  },
+  placeOrder: "Place order",
+  placingOrder: "Placing order…",
+  errors: {
+    cartEmpty: "Your cart is empty.",
+    fullName: "Enter your full name.",
+    phoneRequired: "Enter your phone number.",
+    phoneInvalid: "Enter a valid phone number, e.g. 07X XXX XXXX.",
+    city: "Enter your city.",
+    area: "Enter your area.",
+    address: "Enter your full address (street, building, floor).",
+    payment: "Choose a payment method.",
+    cardUnavailable: "Card payment isn't available yet. Please choose Cash on Delivery.",
+    network: "We couldn't reach our server. Check your connection and try again.",
+    notPlaced: "Your order couldn't be placed. Please try again.",
+    generic: "Something went wrong. Please try again.",
+  },
+};
+
+export default checkout;

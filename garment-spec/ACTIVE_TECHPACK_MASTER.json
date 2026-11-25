@@ -1,0 +1,656 @@
+{
+  "schema": "jacketek.active-techpack-master/1",
+  "generatedBy": "scripts/techpack-master/build-active-master.mjs",
+  "style": {
+    "id": "JKT-VJ-01",
+    "name": "JACKETEK Varsity Jacket",
+    "productId": "fidelio-varsity"
+  },
+  "revision": "R2",
+  "engineeringRevision": "ORIG-R2 (CHG-02 + CHG-04)",
+  "revisionDate": "2026-10-28",
+  "baseSize": "ORIGINAL BASE SIZE",
+  "grading": {
+    "status": "MISSING",
+    "note": "R2 is a single base size. No grading exists; a customer size other than the base size cannot be cut until the owner approves grading."
+  },
+  "approval": {
+    "status": "PENDING_OWNER_APPROVAL",
+    "approvedBy": null,
+    "approvedAt": null,
+    "note": "Latest engineering revision (owner-requested CHG-04). Package status: FOR SAMPLE DEVELOPMENT — NOT APPROVED FOR BULK PRODUCTION. Sew line only; not cut-ready until FC-01."
+  },
+  "lineage": [
+    {
+      "revision": "ORIG-BASE-01",
+      "status": "BASE OF R2 — pack retired 2026-11-25; the 3 reference files the R2 build reads are kept",
+      "path": "garment-spec/JACKETEK_R2_BUILD_SOURCES/ORIG-BASE-01 (full pack: external backup C:/JACKETEK_BACKUPS/techpack-cleanup-2026-11-25-phase2)"
+    },
+    {
+      "revision": "PROD-ENG-02 (resized v0.1 pattern)",
+      "status": "SUPERSEDED — RETIRED 2026-11-25",
+      "path": "external backup C:/JACKETEK_BACKUPS/techpack-cleanup-2026-11-25 (no data kept in the project)"
+    },
+    {
+      "revision": "ORIG-R1 (CHG-03)",
+      "status": "SUPERSEDED by R2 — RETIRED 2026-11-25",
+      "path": "external backup C:/JACKETEK_BACKUPS/techpack-cleanup-2026-11-25 (comparison data: garment-spec/JACKETEK_R2_BUILD_SOURCES/R1-comparison)"
+    },
+    {
+      "revision": "ORIG-R2 (CHG-02 + CHG-04)",
+      "status": "CURRENT ENGINEERING REVISION — PENDING OWNER APPROVAL",
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2 + garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2"
+    }
+  ],
+  "supersedesForCustomerTechPacks": [
+    "garment-spec/jacketek-master-spec-v0.1.json (RFQ Tech Pack, Golden Bear reference)",
+    "production-drawing/ legacy size chart (Production Drawing PDF)"
+  ],
+  "supplierPackage": {
+    "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2",
+    "zip": {
+      "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2.zip",
+      "role": "supplier package ZIP",
+      "bytes": 33288288,
+      "sha256": "3e0ef51dc87562f3511f82b59ddfda305f1d36ff9e2a64d71cc5ba9be560c7b8"
+    },
+    "files": [
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/01_TECH_PACK/JACKETEK_Supplier_Tech_Pack.pdf",
+        "role": "supplier package",
+        "bytes": 6732411,
+        "sha256": "5b48f15bdcc08e6ee142be104e41c8f608845f36daeb377f2bd01abfee96d97d"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/02_PATTERNS/JACKETEK_JKT-VJ-01_R2_Cutting_and_Piece_Inventory.xlsx",
+        "role": "supplier package",
+        "bytes": 9978,
+        "sha256": "65d9207b6722a1c219869bb8f957e35a053cd29fc6966c47b2a62f799f69c616"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/02_PATTERNS/JACKETEK_JKT-VJ-01_R2_Production_Pattern.dxf",
+        "role": "supplier package",
+        "bytes": 68550,
+        "sha256": "ab6ca6c3ccbb4d24d0e978c15f73378f2ac686e1620aca88b41a2f74d65d2113"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/02_PATTERNS/JACKETEK_Pattern_Sheets_1to1.pdf",
+        "role": "supplier package",
+        "bytes": 86364,
+        "sha256": "b84f40c3f96c6b21975afca421ea4677e9b14fd1c78da7038d5996c77382e6b8"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-01_Back_Name_Text_COLOUR-IVORY.png",
+        "role": "supplier package",
+        "bytes": 44645,
+        "sha256": "ea736e131506cf97db26129daefa113969b69d5f240b9ff36c55b0caedc61859"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-01_Back_Name_Text_MASTER.png",
+        "role": "supplier package",
+        "bytes": 70666,
+        "sha256": "c09d87fb066b8fce6a6df578b44d0cbda5628e3d960fca5d9c602b4a36d44ad0"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-02_Left_Sleeve_Emblem_MASTER.png",
+        "role": "supplier package",
+        "bytes": 3700109,
+        "sha256": "e3e60c39774a7e7801bdfae5ec3a1a7ab0e9b0de0a1a7cec1c29ab29d254ee86"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-03_YO_Chest_Patch_MASTER.png",
+        "role": "supplier package",
+        "bytes": 1016058,
+        "sha256": "203043eee4312c37d0ebed9973ce8fa7afc9d9791c9ce3f7cb1bcee2d49557ac"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-04_Iraq_Flag_Chest_Patch_MASTER.png",
+        "role": "supplier package",
+        "bytes": 4043493,
+        "sha256": "d45bd6293c2300a5fb24f002e88e926790388720bcff7ae1f7e786f5f785c36b"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-05_Back_SENIOR_2027_MASTER.png",
+        "role": "supplier package",
+        "bytes": 843914,
+        "sha256": "39f7d05eca52fe395698e96ab006d05904d63928e6f1b4d46ad920fe4a54efa7"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-06_Right_Sleeve_Number_09_MASTER.png",
+        "role": "supplier package",
+        "bytes": 3447619,
+        "sha256": "32de2606f789dbb18ca7287eb6e733ece8ed36f14b19639f65f3f71f193c5645"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-07_Right_Sleeve_Arabic_Text_COLOUR-IVORY.png",
+        "role": "supplier package",
+        "bytes": 39482,
+        "sha256": "37120dbf8172fc7d344843f4f197ea41f4e29feb9fefb1bcde802e8f9fca200c"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/Artwork_Masters/ART-07_Right_Sleeve_Arabic_Text_MASTER.png",
+        "role": "supplier package",
+        "bytes": 65213,
+        "sha256": "55e515d24fef0997c2d787957df452d9833bdf388d6adf7c474b22c9061a03a2"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/JACKETEK_Artwork_Placement_Diagrams.pdf",
+        "role": "supplier package",
+        "bytes": 130670,
+        "sha256": "d30270f0938a68f18d3e2ae1901cfd54f126d8ed757b1265d8eb6f36160693a2"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/03_ARTWORK/JACKETEK_Artwork_Specification_Sheets_FULL-SIZE.pdf",
+        "role": "supplier package",
+        "bytes": 13800323,
+        "sha256": "57e9a3b435ac245f28f11bd98fe4d79059ffb74e1c3f1de2fd06bc3bcae66d33"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/04_MATERIALS/JACKETEK_Supplier_BOM.xlsx",
+        "role": "supplier package",
+        "bytes": 6801,
+        "sha256": "5d2cc3bce437520746045abaea4ce887ed362bd76ec16028372c74d15ebd5908"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/05_FACTORY_CONFIRMATION/JACKETEK_Factory_Confirmation_Sheet.pdf",
+        "role": "supplier package",
+        "bytes": 62740,
+        "sha256": "1d8cab377833a53b627c758a7b7cbc74bfe6e171f84a38b4c990635ff58ec3c5"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/05_FACTORY_CONFIRMATION/JACKETEK_Factory_Confirmation_Sheet.xlsx",
+        "role": "supplier package",
+        "bytes": 6417,
+        "sha256": "0653309edda384c4af0a16d407b4aaec32695c7c3df60b1ca174ce46b756c27e"
+      },
+      {
+        "path": "garment-spec/JACKETEK_SUPPLIER_PACKAGE_R2/README.txt",
+        "role": "supplier package",
+        "bytes": 840,
+        "sha256": "10759882c094be1dfa3fedf67831a208a63d686253d5831c6c7a21303066b834"
+      }
+    ],
+    "verification": {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/supplier-package-verification.json",
+      "role": "R2 package verification (22 checks)",
+      "bytes": 5771,
+      "sha256": "fe5bb34965a3a12da60d0e3d67d7271f376c070c841447e83ff55c2e55108937"
+    }
+  },
+  "engineeringData": [
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/factory-master-data.json",
+      "role": "base-size POMs and pattern data",
+      "bytes": 480745,
+      "sha256": "573d94453102ec360107744fccb5d171f6532cbb0fdf0156910f226dc50a3ba8"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/design-change-CHG-04.json",
+      "role": "CHG-04 widths + reference artwork placement",
+      "bytes": 15805,
+      "sha256": "8d8035cb20f03a3d3c9c637e703881d0afe9d70050d48e1877f32a0b49519d70"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/supplier-build/artwork-manifest.json",
+      "role": "R2 artwork manifest",
+      "bytes": 6694,
+      "sha256": "60891a816dc514c866d9f30057bca71d5b994946b96f9fb96980cce3a7dfbc44"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/supplier-build/callouts.json",
+      "role": "flat-view callout positions",
+      "bytes": 2358,
+      "sha256": "7462a1c7b4d4735d6bf75be41b85b463124f306c25b273e338ccda8f391deaae"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/supplier-build/confirm-items.json",
+      "role": "factory confirmation items FC-01…FC-09",
+      "bytes": 2159,
+      "sha256": "2c9fff22574944bdd6143e3f6d320545ea5bdc0da3d02db5e3708cf6e7816f9a"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/supplier-build/flat-front.png",
+      "role": "technical flat — front",
+      "bytes": 875451,
+      "sha256": "d21baca8ccea928a0ff27642a12e3377e6bd6fbbcd2104bca8ee545801e602e0"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/traceability/supplier-build/flat-back.png",
+      "role": "technical flat — back",
+      "bytes": 840330,
+      "sha256": "1cf53d5f51d9fe146bfb1d4ffa8d25b9234ac00ec85dbaceb98b631b93ff5848"
+    },
+    {
+      "path": "garment-spec/JACKETEK_FACTORY_MASTER_ORIG_R2/JACKETEK_ORIGINAL_Patterns_1to1.dxf",
+      "role": "internal engineering DXF (R2)",
+      "bytes": 143120,
+      "sha256": "4f98a1e4b91a20d4528a05c3e619d4be2aa5ab250b7902584ea5906d6c8a01a2"
+    },
+    {
+      "path": "garment-spec/JACKETEK_R2_BUILD_SOURCES/reference-design/D-59a2a5aab079/DEV-01/design-config.json",
+      "role": "reference design for the R2 artwork placements (D-59a2a5aab079 DEV-01)",
+      "bytes": 2013887,
+      "sha256": "835b4b5d5cc6e79eab634145444cea167809663ea1604eaef11449747236fdd9"
+    }
+  ],
+  "supplierTechPackSections": {
+    "appliesUnchanged": [
+      "4 Measurement specification — base size",
+      "6 Construction and sewing instructions",
+      "7 Pattern inventory and cutting",
+      "8 Pattern measurement diagrams",
+      "10 Pockets, facings and lining",
+      "14 Labels, finishing and packing",
+      "15 Quality control and factory confirmation (measurement and construction checks)"
+    ],
+    "replacedByCustomerTechPack": [
+      "1 Style overview (colourway, artwork, order reference)",
+      "2 Garment views (reference design)",
+      "3 Technical flats — artwork callouts",
+      "5 Bill of materials — colours",
+      "9 Rib / snaps — rib band colours (band layout and snap positions still apply)",
+      "11–13 Artwork pages (reference design)"
+    ],
+    "patternsAndArtworkFolders": "02_PATTERNS applies unchanged (DXF layer ARTWORK_PLACEMENT shows the reference design's boxes — use the customer positions instead). 03_ARTWORK belongs to the reference design only."
+  },
+  "bomRows": [
+    {
+      "id": "M1",
+      "component": "Body shell fabric",
+      "placement": "Back, fronts, waistband front tabs",
+      "customerField": "body"
+    },
+    {
+      "id": "M2",
+      "component": "Sleeve leather / fabric",
+      "placement": "Sleeves",
+      "customerField": "sleeves"
+    },
+    {
+      "id": "M3",
+      "component": "Lining — body and sleeves",
+      "placement": "Inside body and sleeves",
+      "customerField": null
+    },
+    {
+      "id": "M4",
+      "component": "Knitted rib — collar, cuffs, waistband",
+      "placement": "Collar ×1, cuffs ×2, waistband ×1",
+      "customerField": "rib"
+    },
+    {
+      "id": "M5",
+      "component": "Snap fasteners",
+      "placement": "Front 5 + waistband tab 2",
+      "customerField": "snaps"
+    },
+    {
+      "id": "M6",
+      "component": "Pocketing",
+      "placement": "Pocket bags ×2",
+      "customerField": null
+    },
+    {
+      "id": "M7",
+      "component": "Pocket welt material",
+      "placement": "Welts ×2",
+      "customerField": "welts"
+    },
+    {
+      "id": "M8",
+      "component": "Interfacing / reinforcement",
+      "placement": "Front edge / snap line, welts, behind snaps",
+      "customerField": null
+    },
+    {
+      "id": "M9",
+      "component": "Sewing thread",
+      "placement": "Cotton seams; leather seams",
+      "customerField": null
+    },
+    {
+      "id": "M10",
+      "component": "Embroidery thread / patch materials",
+      "placement": "Artwork per this Production Tech Pack",
+      "customerField": "artwork"
+    }
+  ],
+  "keyPoms": [
+    {
+      "id": "B01",
+      "group": "Body",
+      "name": "Half chest — flat width, 2.54 cm below the armhole (underarm) point",
+      "baseSizeCm": 57.94,
+      "class": "PATTERN",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "B03",
+      "group": "Body",
+      "name": "Body width at waistband seam — flat (shell edge, before rib)",
+      "baseSizeCm": 53.38,
+      "class": "PATTERN",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "B06",
+      "group": "Body",
+      "name": "Centre-back length — collar seam → finished waistband edge",
+      "baseSizeCm": 66.6,
+      "class": "PATTERN + RIB",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "B08",
+      "group": "Body",
+      "name": "Front length from HPS (vertical)",
+      "baseSizeCm": 68.9,
+      "class": "PATTERN + RIB",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "B09",
+      "group": "Body",
+      "name": "Across shoulder — shoulder point to shoulder point, straight (back)",
+      "baseSizeCm": 52.46,
+      "class": "PATTERN",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "B14",
+      "group": "Armhole",
+      "name": "Armhole depth — HPS level to underarm level (vertical)",
+      "baseSizeCm": 30.28,
+      "class": "PATTERN",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "S02-E",
+      "group": "Sleeve",
+      "name": "Sleeve — shoulder point → finished cuff edge (secondary)",
+      "baseSizeCm": 59.29,
+      "class": "PATTERN + RIB",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "S04",
+      "group": "Sleeve",
+      "name": "Bicep — flat width 2.54 cm below the underarm level",
+      "baseSizeCm": 24.03,
+      "class": "PATTERN",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "S06",
+      "group": "Sleeve",
+      "name": "Sleeve width at the cuff seam — flat",
+      "baseSizeCm": 14.98,
+      "class": "PATTERN",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "C01",
+      "group": "Collar",
+      "name": "Collar height at CB (5 back collar strips)",
+      "baseSizeCm": 4,
+      "class": "PATTERN (CLO STRIPS)",
+      "status": "PROPOSED"
+    },
+    {
+      "id": "R01",
+      "group": "Rib",
+      "name": "Waistband rib height (5 CLO strips)",
+      "baseSizeCm": 6.09,
+      "class": "PATTERN (CLO STRIPS)",
+      "status": "PROPOSED"
+    }
+  ],
+  "factoryConfirmation": [
+    {
+      "id": "FC-01",
+      "title": "Seam allowance",
+      "detail": "Seam allowance width for every seam (shoulder, side, armhole, sleeve underarm, cuff, waistband, collar, front edge, tabs, welts). Patterns are supplied as sew line only — the factory adds the confirmed allowance before cutting.",
+      "area": "Pattern / cutting"
+    },
+    {
+      "id": "FC-02",
+      "title": "Seam and stitch construction",
+      "detail": "Seam type, stitch type, stitches per cm, needle and thread for cotton shell and leather seams; seam finishing; topstitching.",
+      "area": "Construction"
+    },
+    {
+      "id": "FC-03",
+      "title": "Lining, facings, pocket bags, interfacing",
+      "detail": "Lining construction (body and sleeves; quilted or plain), lining ease and hem jumps, front facing width, back-neck facing (if used), pocket bag size, interfacing positions. Draft from the supplied shell pieces.",
+      "area": "Pattern / construction"
+    },
+    {
+      "id": "FC-04",
+      "title": "Materials",
+      "detail": "Composition, weight / thickness, width and supplier references for body fabric, sleeve leather, lining, rib, pocketing, welt material, interfacing, threads. Physical colour references (lab dips / swatches) for Black #171717 and Burgundy #64152B.",
+      "area": "Materials"
+    },
+    {
+      "id": "FC-05",
+      "title": "Knitted rib",
+      "detail": "Yarn, knit structure, gauge, stretch / recovery and knitted length that produces the relaxed lengths and stripe layout in section 8.",
+      "area": "Materials"
+    },
+    {
+      "id": "FC-06",
+      "title": "Snap fasteners",
+      "detail": "Snap type, size, alloy, gunmetal finish reference, pull strength, reinforcement and setting method (7 sets).",
+      "area": "Trims"
+    },
+    {
+      "id": "FC-07",
+      "title": "Artwork production",
+      "detail": "Method per artwork (embroidery / patch / chenille), thread brand and colour codes, backing / stabiliser, patch edge finish and attachment, digitising (stitch count, density). Pre-production strike-off of every artwork.",
+      "area": "Artwork"
+    },
+    {
+      "id": "FC-08",
+      "title": "Labels and packing",
+      "detail": "Main, size and care / content labels (content and positions), hanger loop, hangtag, folding and polybag.",
+      "area": "Finishing"
+    },
+    {
+      "id": "FC-09",
+      "title": "Tolerances and sample approval",
+      "detail": "Measurement tolerance per point of measure and the sample approval procedure (proto sample in the base size, measured against section 3).",
+      "area": "Quality"
+    }
+  ],
+  "zoneReferences": [
+    {
+      "zoneId": "backQuote",
+      "r2ArtworkId": "ART-01-BACK_QUOTE",
+      "piece": "JKT_BACK",
+      "frame": "x = cm from CB (+ wearer's left, − wearer's right); y = cm below the back HPS line",
+      "referenceSizeCm": [
+        30,
+        4.71
+      ],
+      "referenceCentreCm": {
+        "x": -0.15,
+        "y": 49.99
+      },
+      "referenceRotationDeg": 0.6,
+      "referenceInZoneOffsetCm": [
+        0,
+        -1.15
+      ],
+      "flatCallout": {
+        "view": "back",
+        "px": [
+          698.3,
+          837.5
+        ]
+      }
+    },
+    {
+      "zoneId": "leftSleeveUpper",
+      "r2ArtworkId": "ART-02-LEFT_SLEEVE_UPPER",
+      "piece": "JKT_SLEEVE_L",
+      "frame": "x = cm across from the sleeve centre line (+ toward the back half); y = cm below the shoulder point (cap peak) along the centre line",
+      "referenceSizeCm": [
+        6.86,
+        9.74
+      ],
+      "referenceCentreCm": {
+        "x": 0.81,
+        "y": 12.47
+      },
+      "referenceRotationDeg": 8.5,
+      "referenceInZoneOffsetCm": [
+        0.77,
+        -0.68
+      ],
+      "flatCallout": {
+        "view": "back",
+        "px": [
+          374.7,
+          564.8
+        ]
+      }
+    },
+    {
+      "zoneId": "leftChest",
+      "r2ArtworkId": "ART-03-LEFT_CHEST",
+      "piece": "JKT_FRONT_L",
+      "frame": "x = cm from CF toward the side seam; y = cm below the front HPS",
+      "referenceSizeCm": [
+        10,
+        8.12
+      ],
+      "referenceCentreCm": {
+        "x": 10.49,
+        "y": 18.32
+      },
+      "referenceRotationDeg": 3.9,
+      "referenceInZoneOffsetCm": [
+        0,
+        -0.26
+      ],
+      "flatCallout": {
+        "view": "front",
+        "px": [
+          829.3,
+          478.2
+        ]
+      }
+    },
+    {
+      "zoneId": "rightChest",
+      "r2ArtworkId": "ART-04-RIGHT_CHEST",
+      "piece": "JKT_FRONT_R",
+      "frame": "x = cm from CF toward the side seam; y = cm below the front HPS",
+      "referenceSizeCm": [
+        7.3,
+        4.89
+      ],
+      "referenceCentreCm": {
+        "x": 10.21,
+        "y": 18.19
+      },
+      "referenceRotationDeg": -3.7,
+      "referenceInZoneOffsetCm": [
+        0,
+        0
+      ],
+      "flatCallout": {
+        "view": "front",
+        "px": [
+          572.8,
+          476.8
+        ]
+      }
+    },
+    {
+      "zoneId": "mainBack",
+      "r2ArtworkId": "ART-05-MAIN_BACK",
+      "piece": "JKT_BACK",
+      "frame": "x = cm from CB (+ wearer's left, − wearer's right); y = cm below the back HPS line",
+      "referenceSizeCm": [
+        27.51,
+        29.19
+      ],
+      "referenceCentreCm": {
+        "x": -0.14,
+        "y": 27.58
+      },
+      "referenceRotationDeg": 1.1,
+      "referenceInZoneOffsetCm": [
+        -0.01,
+        0
+      ],
+      "flatCallout": {
+        "view": "back",
+        "px": [
+          698.3,
+          585.2
+        ]
+      }
+    },
+    {
+      "zoneId": "rightSleeveMiddle",
+      "r2ArtworkId": "ART-06-RIGHT_SLEEVE_MIDDLE",
+      "piece": "JKT_SLEEVE_R",
+      "frame": "x = cm across from the sleeve centre line (+ toward the back half); y = cm below the shoulder point (cap peak) along the centre line",
+      "referenceSizeCm": [
+        8.4,
+        5.88
+      ],
+      "referenceCentreCm": {
+        "x": 0.72,
+        "y": 25.92
+      },
+      "referenceRotationDeg": -5.1,
+      "referenceInZoneOffsetCm": [
+        0,
+        1.44
+      ],
+      "flatCallout": {
+        "view": "back",
+        "px": [
+          1028.2,
+          556.6
+        ]
+      }
+    },
+    {
+      "zoneId": "rightSleeveUpper",
+      "r2ArtworkId": "ART-07-RIGHT_SLEEVE_UPPER",
+      "piece": "JKT_SLEEVE_R",
+      "frame": "x = cm across from the sleeve centre line (+ toward the back half); y = cm below the shoulder point (cap peak) along the centre line",
+      "referenceSizeCm": [
+        8.4,
+        8.36
+      ],
+      "referenceCentreCm": {
+        "x": -0.41,
+        "y": 12.13
+      },
+      "referenceRotationDeg": -9.6,
+      "referenceInZoneOffsetCm": [
+        0,
+        0.15
+      ],
+      "flatCallout": {
+        "view": "back",
+        "px": [
+          1028.2,
+          556.6
+        ]
+      }
+    }
+  ],
+  "openItems": [
+    "Owner production approval of R2",
+    "Grading for sizes other than the base size",
+    "FC-01…FC-09 factory confirmation",
+    "Strike-off of every artwork (curvature / tilt on curved panels)",
+    "CLO drape of R2 not run"
+  ],
+  "sha256OfContent": "ec0d53e7aa83f887f800f1f96084262422dd57abbf37f529d1196fe4e5a4d9d2"
+}

@@ -1,0 +1,39 @@
+{
+  "_comment": "Points of measure printed on page 3, and how each value is obtained for the ordered size. Hierarchy: CONFIRMED (official_size_chart.json, authoritative, never altered here) > DERIVED (Blender pattern, calibrated against a confirmed measurement) > FIXED (verified pattern detail, not graded) > TBC (no reliable data). Never add a value from the 3D surface or a drawing.",
+  "units": "cm",
+  "source": {
+    "file": "Fidelio_Varsity_ProductionReady_v13.blend (production master, read-only)",
+    "method": "Measured on the 2D sewing pattern stored in the panel UVs (net pattern, no seam allowance), at the scale 1 UV = 134.2 cm (median 3D/UV edge ratio of the body panels).",
+    "validation": "Pattern front length 70.00 = official M (0.0 %); sleeve cap 52.5 vs armhole 51.8 (0.7 ease); side seams 34.6 / 34.1; underarm seams 45.7 / 45.7.",
+    "measured": "2026-10-03"
+  },
+  "calibration": {
+    "width": { "confirmed": "A", "chart": "chest_width_flat", "pattern_value": 53.14, "rule": "official 1/2 chest for the size / 53.14" },
+    "length": { "confirmed": "B", "chart": "jacket_length", "pattern_value": 70.0, "rule": "official front length for the size / 70.00" }
+  },
+  "points": [
+    { "code": "A", "group": "BODY", "name": "1/2 chest width (chest width flat)", "how": "Underarm to underarm, laid flat", "status": "confirmed", "chart": "chest_width_flat" },
+    { "code": "B", "group": "BODY", "name": "Overall front length", "how": "HPS to hem (official jacket length)", "status": "confirmed", "chart": "jacket_length" },
+    { "code": "D", "group": "BODY", "name": "Overall back length", "how": "CB neck seam to hem", "status": "derived", "calibrate": "length", "pattern": 67.94, "raw": "back panel 61.74 + back rib 6.21" },
+    { "code": "E", "group": "BODY", "name": "Shoulder width", "how": "Shoulder point to shoulder point, across back", "status": "derived", "calibrate": "width", "pattern": 51.67, "raw": "back pattern SP to SP" },
+    { "code": "F", "group": "BODY", "name": "Bottom / hem width", "how": "Waistband edge to edge, relaxed rib", "status": "derived", "calibrate": "width", "pattern": 45.95, "raw": "(rib 83.99 + tabs 10.20 - front overlap 2.3) / 2" },
+    { "code": "G", "group": "BODY", "name": "Armhole (straight)", "how": "Shoulder point to underarm, front", "status": "derived", "calibrate": "length", "pattern": 22.31, "raw": "front pattern SP to underarm (back 24.15, full curve 51.8)" },
+    { "code": "C", "group": "SLEEVE", "name": "Sleeve length", "how": "Shoulder point to cuff end", "status": "confirmed", "chart": "sleeve_length" },
+    { "code": "H", "group": "SLEEVE", "name": "Upper sleeve width", "how": "At underarm, laid flat", "status": "derived", "calibrate": "width", "pattern": 24.01, "raw": "sleeve pattern 48.03 around at underarm / 2" },
+    { "code": "I", "group": "SLEEVE", "name": "Elbow width", "how": "Halfway underarm to cuff seam, laid flat", "status": "derived", "calibrate": "width", "pattern": 19.32, "raw": "sleeve pattern 38.64 around / 2" },
+    { "code": "J", "group": "SLEEVE", "name": "Cuff opening", "how": "Cuff end, relaxed, laid flat", "status": "fixed", "value": 11.6, "raw": "cuff end strip 23.19 around / 2" },
+    { "code": "K", "group": "SLEEVE", "name": "Cuff height", "how": "Cuff seam to cuff end", "status": "fixed", "value": 6.1, "raw": "5 rib strips x 1.22" },
+    { "code": "L", "group": "COLLAR", "name": "Collar height", "how": "At CB, neck seam to collar edge", "status": "fixed", "value": 4.1, "raw": "5 rib strips x 0.82" },
+    { "code": "M", "group": "COLLAR", "name": "Neck opening", "how": "HPS to HPS", "status": "derived", "calibrate": "width", "pattern": 20.32, "raw": "back pattern HPS to HPS" },
+    { "code": "N", "group": "POCKET", "name": "Pocket welt width", "how": "Across the welt", "status": "fixed", "value": 2.0, "raw": "welt piece" },
+    { "code": "O", "group": "POCKET", "name": "Pocket welt length", "how": "Along the welt", "status": "fixed", "value": 15.3, "raw": "welt piece" },
+    { "code": "P", "group": "POCKET", "name": "Pocket opening", "how": "Usable opening length", "status": "tbc", "note": "no opening geometry in the model" },
+    { "code": "W", "group": "POCKET", "name": "Pocket bag dimensions", "how": "Bag width x depth", "status": "tbc", "note": "pocket bag not modelled" },
+    { "code": "Q", "group": "POCKET", "name": "Pocket position from hem", "how": "Hem to lower welt end", "status": "derived", "calibrate": "length", "pattern": 12.0, "raw": "front pattern 5.88 + rib 6.12" },
+    { "code": "R", "group": "POCKET", "name": "Pocket position from CF", "how": "CF to welt centre", "status": "derived", "calibrate": "width", "pattern": 16.81, "raw": "front pattern CF line to welt centre" },
+    { "code": "S", "group": "CONSTRUCTION", "name": "Front placket width", "how": "Front edge to snap centre line", "status": "tbc", "note": "pattern 1.10 vs 3D 1.41 disagree" },
+    { "code": "T", "group": "CONSTRUCTION", "name": "Waistband height", "how": "Waistband seam to hem", "status": "fixed", "value": 6.1, "raw": "5 rib strips x 1.22 (back 6.2)" },
+    { "code": "U", "group": "CONSTRUCTION", "name": "Seam allowance", "how": "All seams", "status": "tbc", "note": "pattern is net" },
+    { "code": "V", "group": "CONSTRUCTION", "name": "Topstitch / edge stitch", "how": "Distance from edge", "status": "tbc", "note": "no stitch geometry" }
+  ]
+}

@@ -1,0 +1,211 @@
+/*
+ * Localization: Arabic typography + RTL foundations.
+ *
+ * <html lang dir> is set by i18n/I18nProvider (and before first paint by
+ * index.html). Everything Arabic-specific keys off :root[lang="ar-IQ"] or
+ * [dir="rtl"]; English rendering is unchanged.
+ *
+ * TYPOGRAPHY TOKENS — the only place Arabic fonts are named.
+ *   --font-ar-display  DARK ExtraBold (800): hero/section headlines, giant
+ *                      editorial words, large brand moments. The only DARK
+ *                      weight we hold — never synthesized into others.
+ *   --font-ar-text     TEMPORARY readable fallback (Noto Sans Arabic, OFL,
+ *                      real 400–700) for body, nav, forms, buttons, prices,
+ *                      errors. When the licensed DARK family arrives: add its
+ *                      @font-face weights below and set --font-ar-text: "DARK".
+ * Latin inside Arabic text (emails, sizes, JACKETEK) keeps Hanken Grotesk:
+ * DARK is limited to Arabic code points (unicode-range) and Hanken comes
+ * first in the stacks, so Latin and digits never pick up Arabic fonts.
+ */
+
+@font-face {
+  font-family: "DARK";
+  src:
+    url("/assets/fonts/dark/DARK-ExtraBold.woff2") format("woff2"),
+    url("/assets/fonts/dark/DARK-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  unicode-range: U+0600-06FF, U+0750-077F, U+08A0-08FF, U+FB50-FDFF, U+FE70-FEFF;
+}
+
+:root {
+  --font-ar-display: "DARK";
+  --font-ar-text: "Noto Sans Arabic";
+  /* Arabic weight roles (real weights of --font-ar-text). */
+  --ar-w-text: 400;
+  --ar-w-ui: 500;
+  --ar-w-label: 600;
+  --ar-w-strong: 700;
+}
+
+:root[lang="ar-IQ"] {
+  --font-sans: "Hanken Grotesk", var(--font-ar-text), "Inter", "Helvetica Neue", Arial, sans-serif;
+  /* Giant words: Anton for Latin/digits, DARK for Arabic. */
+  --font-display: "Anton", var(--font-ar-display), "Bebas Neue", Impact, sans-serif;
+  /* Headlines: Hanken for Latin, DARK for Arabic. */
+  --font-headline: "Hanken Grotesk", var(--font-ar-display), var(--font-ar-text), sans-serif;
+}
+
+/* Plain (unlayered) CSS: this file has no @tailwind directives, so it
+   cannot use @layer; its selectors are scoped by lang/dir anyway. */
+/* Arabic has no italics or capitals; tracking breaks the joins. */
+:root[lang="ar-IQ"] :where(em, i, cite) {
+  font-style: normal;
+}
+
+/* Small labels: sentence-case, no tracking, a touch larger (Arabic
+   glyphs sit small at the English uppercase sizes). */
+/* !important: English labels set 9–13px inline for uppercase Latin;
+   Arabic needs at least 13px to stay readable at every site. */
+:root[lang="ar-IQ"] .jk-label {
+  font-size: 13px !important;
+  font-weight: var(--ar-w-label);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.6;
+}
+:root[lang="ar-IQ"] .jk-label-xs {
+  font-size: 12.5px !important;
+  font-weight: var(--ar-w-label);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+/* Headlines: DARK ExtraBold (requested at 700 so Latin stays on
+   Hanken's real 700; DARK's only face, 800, is the match for Arabic). */
+:root[lang="ar-IQ"] .jk-headline {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.3;
+}
+:root[lang="ar-IQ"] .jk-body {
+  line-height: 1.85;
+}
+/* Giant display words: DARK, no caps, room for dots and marks.
+   (Latin-only display text — the 404 numeral, codes — opts out with
+   .jk-latin and keeps Anton's tight metrics.) */
+:root[lang="ar-IQ"] .jk-display:not(.jk-pressed-numeral):not(.jk-latin) {
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.12;
+}
+
+/* Buttons: sentence-case Arabic labels at a readable size. */
+:root[lang="ar-IQ"] .jk-btn-primary,
+:root[lang="ar-IQ"] .jk-btn-secondary {
+  font-size: 15.5px;
+  font-weight: var(--ar-w-strong);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+}
+:root[lang="ar-IQ"] .jk-btn-primary {
+  padding-block: 18px;
+}
+
+/* Tailwind tracking/uppercase utilities were tuned for Latin capitals;
+   in Arabic they would pull the joined letters apart. Latin-only
+   elements that need their tracking opt out with .jk-latin. */
+:root[lang="ar-IQ"] [class*="tracking-"]:not(.jk-latin),
+:root[lang="ar-IQ"] .uppercase:not(.jk-latin) {
+  letter-spacing: 0 !important;
+}
+:root[lang="ar-IQ"] .uppercase:not(.jk-latin) {
+  text-transform: none;
+}
+
+/* ---- RTL: directional details ---- */
+
+/* Forward arrows point the reading direction (→ becomes ←). The arrows'
+   own hover nudge is a transform, so the flip uses `scale`, which
+   composes with it (the nudge then also moves leftwards). */
+[dir="rtl"] .jk-arrow,
+[dir="rtl"] .jk-flip-rtl,
+[dir="rtl"] .jk-arrow-link svg {
+  scale: -1 1;
+}
+
+/* Underlines grow from the reading start. */
+[dir="rtl"] .jk-nav-link::after {
+  transform-origin: right center;
+}
+
+/* Range sliders follow the reading direction. */
+[dir="rtl"] .fidelio-range {
+  direction: rtl;
+}
+
+
+/* The language switch (components/LanguageSwitch). */
+.jk-lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid rgb(var(--fid-ink) / 0.22);
+  border-radius: 999px;
+}
+.jk-lang__opt {
+  min-height: 26px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  color: rgb(var(--fid-ink));
+  font-size: 12px;
+  line-height: 1.4;
+  transition:
+    background-color 200ms var(--ease-out-expo),
+    color 200ms var(--ease-out-expo);
+}
+.jk-lang__opt[lang="en"] {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+.jk-lang__opt[lang="ar"] {
+  font-family: var(--font-ar-text), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+.jk-lang__opt[aria-pressed="true"] {
+  background: rgb(var(--fid-ink));
+  color: rgb(var(--fid-ink-inverse));
+}
+.jk-lang__opt[aria-pressed="false"]:hover {
+  background: rgb(var(--fid-ink) / 0.08);
+}
+/* Phones' top bar: one compact pill naming the other language (a 44px hit area via .jk-hit). */
+.jk-lang-toggle {
+  display: inline-grid;
+  min-height: 28px;
+  place-items: center;
+  padding: 1px 10px;
+  border: 1px solid rgb(var(--fid-ink) / 0.3);
+  border-radius: 999px;
+  color: rgb(var(--fid-ink));
+  font-size: 11px;
+  line-height: 1.3;
+  transition: background-color 200ms var(--ease-out-expo);
+}
+.jk-lang-toggle[lang="en"] {
+  font-family: "Hanken Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+.jk-lang-toggle[lang="ar"] {
+  font-family: var(--font-ar-text), sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+}
+.jk-lang-toggle:hover,
+.jk-lang-toggle:active {
+  background: rgb(var(--fid-ink) / 0.08);
+}
+.jk-lang--sheet .jk-lang__opt {
+  min-height: 36px;
+  padding: 4px 16px;
+  font-size: 14px;
+}

@@ -1,0 +1,26 @@
+/* Development tech pack panel (admin only) on the configurator's Review step. */
+.jk-devtp {
+  margin: 0 0 0.5rem;
+  padding: 0.45rem 0.6rem;
+  border: 1px dashed #1d4f91;
+  border-radius: 6px;
+  background: #f3f7fc;
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+.jk-devtp__row { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.jk-devtp__button {
+  padding: 0.35rem 0.8rem;
+  border: 1px solid #1d4f91;
+  border-radius: 4px;
+  background: #fff;
+  color: #1d4f91;
+  font-weight: 600;
+  cursor: pointer;
+}
+.jk-devtp__button:disabled { opacity: 0.6; cursor: progress; }
+.jk-devtp__tag { color: #1d4f91; font-size: 0.7rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.jk-devtp__status { margin: 0.3rem 0 0; color: #222; }
+.jk-devtp__status:empty { display: none; }
+.jk-devtp__status a { color: #1d4f91; text-decoration: underline; }
+.jk-devtp__ref { display: block; color: #555; font-size: 0.7rem; word-break: break-all; }

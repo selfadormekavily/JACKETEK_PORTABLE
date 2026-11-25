@@ -1,0 +1,231 @@
+{
+ "version": 1,
+ "generated": "2026-10-07T09:17:14.084Z",
+ "note": "TEST SUBSET — original JACKETEK fixtures only. The full library is connected with EMBROIDERY_LIBRARY_DIR (server/embroideryLibrary.mjs).",
+ "libraries": [
+  {
+   "id": "23ff73fd-b78f-4718-9109-2b8f73076954",
+   "title": "Front Letters",
+   "titles": {
+    "en": "Front Letters",
+    "ar-IQ": "الحروف الأمامية"
+   },
+   "description": "Front Letters",
+   "productionName": "TEST-F",
+   "designCount": 1
+  },
+  {
+   "id": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+   "title": "JACKETEK test patches",
+   "titles": {
+    "en": "JACKETEK test patches",
+    "ar-IQ": "باتشات تجريبية من جاكيتك"
+   },
+   "description": "JACKETEK test patches",
+   "productionName": "TEST",
+   "designCount": 5
+  }
+ ],
+ "designs": [
+  {
+   "id": "jacketek:3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f",
+   "designId": "3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f",
+   "libraryId": "23ff73fd-b78f-4718-9109-2b8f73076954",
+   "libraryTitle": "Front Letters",
+   "libraryDescription": "JACKETEK test fixture (original artwork, scripts/embroidery-fixtures/build.mjs).",
+   "productionName": "TEST-F",
+   "originalFileName": "varsity-monogram.png",
+   "asset": "/embroidery-library/assets/3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f/full.png",
+   "thumbnail": "/embroidery-library/assets/3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f/thumb.png",
+   "thumbnailWidth": 256,
+   "thumbnailHeight": 256,
+   "format": "png",
+   "width": 1200,
+   "height": 1200,
+   "transparent": true,
+   "zones": [
+    "leftChest",
+    "rightChest"
+   ],
+   "source": {
+    "provider": "jacketek-test",
+    "placements": [],
+    "libraryId": "23ff73fd-b78f-4718-9109-2b8f73076954",
+    "designId": "3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f",
+    "fullSleeve": false,
+    "fullUrl": "",
+    "thumbnailUrl": ""
+   }
+  },
+  {
+   "id": "jacketek:4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60",
+   "designId": "4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60",
+   "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+   "libraryTitle": "JACKETEK test patches",
+   "libraryDescription": "JACKETEK test fixture (original artwork, scripts/embroidery-fixtures/build.mjs).",
+   "productionName": "TEST",
+   "originalFileName": "year-2027.png",
+   "asset": "/embroidery-library/assets/4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60/full.png",
+   "thumbnail": "/embroidery-library/assets/4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60/thumb.png",
+   "thumbnailWidth": 256,
+   "thumbnailHeight": 102,
+   "format": "png",
+   "width": 1500,
+   "height": 600,
+   "transparent": true,
+   "zones": [
+    "mainBack",
+    "leftChest",
+    "rightChest",
+    "leftSleeveUpper",
+    "leftSleeveMiddle",
+    "leftSleeveLower",
+    "rightSleeveUpper",
+    "rightSleeveMiddle",
+    "rightSleeveLower"
+   ],
+   "source": {
+    "provider": "jacketek-test",
+    "placements": [],
+    "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+    "designId": "4e1b8a5c-6f7d-4c9e-8f0a-1b2c3d4e5f60",
+    "fullSleeve": false,
+    "fullUrl": "",
+    "thumbnailUrl": ""
+   }
+  },
+  {
+   "id": "jacketek:5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071",
+   "designId": "5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071",
+   "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+   "libraryTitle": "JACKETEK test patches",
+   "libraryDescription": "JACKETEK test fixture (original artwork, scripts/embroidery-fixtures/build.mjs).",
+   "productionName": "TEST",
+   "originalFileName": "seniors.png",
+   "asset": "/embroidery-library/assets/5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071/full.png",
+   "thumbnail": "/embroidery-library/assets/5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071/thumb.png",
+   "thumbnailWidth": 256,
+   "thumbnailHeight": 69,
+   "format": "png",
+   "width": 1700,
+   "height": 460,
+   "transparent": true,
+   "zones": [
+    "mainBack",
+    "leftChest",
+    "rightChest"
+   ],
+   "source": {
+    "provider": "jacketek-test",
+    "placements": [],
+    "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+    "designId": "5f2c9b6d-7a8e-4d0f-9a1b-2c3d4e5f6071",
+    "fullSleeve": false,
+    "fullUrl": "",
+    "thumbnailUrl": ""
+   }
+  },
+  {
+   "id": "jacketek:2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e",
+   "designId": "2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e",
+   "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+   "libraryTitle": "JACKETEK test patches",
+   "libraryDescription": "JACKETEK test fixture (original artwork, scripts/embroidery-fixtures/build.mjs).",
+   "productionName": "TEST",
+   "originalFileName": "star-crest.png",
+   "asset": "/embroidery-library/assets/2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e/full.png",
+   "thumbnail": "/embroidery-library/assets/2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e/thumb.png",
+   "thumbnailWidth": 256,
+   "thumbnailHeight": 256,
+   "format": "png",
+   "width": 1024,
+   "height": 1024,
+   "transparent": true,
+   "zones": [
+    "leftChest",
+    "rightChest",
+    "mainBack",
+    "leftSleeveUpper",
+    "leftSleeveMiddle",
+    "leftSleeveLower",
+    "rightSleeveUpper",
+    "rightSleeveMiddle",
+    "rightSleeveLower"
+   ],
+   "source": {
+    "provider": "jacketek-test",
+    "placements": [],
+    "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+    "designId": "2c9f6e3a-4d5b-4a7c-8d8e-9f0a1b2c3d4e",
+    "fullSleeve": false,
+    "fullUrl": "",
+    "thumbnailUrl": ""
+   }
+  },
+  {
+   "id": "jacketek:1b8e5d2f-3c4a-4f6b-9c7d-8e9f0a1b2c3d",
+   "designId": "1b8e5d2f-3c4a-4f6b-9c7d-8e9f0a1b2c3d",
+   "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+   "libraryTitle": "JACKETEK test patches",
+   "libraryDescription": "JACKETEK test fixture (original artwork, scripts/embroidery-fixtures/build.mjs).",
+   "productionName": "TEST",
+   "originalFileName": "number-27.png",
+   "asset": "/embroidery-library/assets/1b8e5d2f-3c4a-4f6b-9c7d-8e9f0a1b2c3d/full.png",
+   "thumbnail": "/embroidery-library/assets/1b8e5d2f-3c4a-4f6b-9c7d-8e9f0a1b2c3d/thumb.png",
+   "thumbnailWidth": 256,
+   "thumbnailHeight": 256,
+   "format": "png",
+   "width": 900,
+   "height": 900,
+   "transparent": true,
+   "zones": [
+    "leftChest",
+    "rightChest",
+    "leftSleeveUpper",
+    "leftSleeveMiddle",
+    "leftSleeveLower",
+    "rightSleeveUpper",
+    "rightSleeveMiddle",
+    "rightSleeveLower"
+   ],
+   "source": {
+    "provider": "jacketek-test",
+    "placements": [],
+    "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+    "designId": "1b8e5d2f-3c4a-4f6b-9c7d-8e9f0a1b2c3d",
+    "fullSleeve": false,
+    "fullUrl": "",
+    "thumbnailUrl": ""
+   }
+  },
+  {
+   "id": "jacketek:0a7d4c1e-2b3f-4e5a-8b6c-7d8e9f0a1b2c",
+   "designId": "0a7d4c1e-2b3f-4e5a-8b6c-7d8e9f0a1b2c",
+   "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+   "libraryTitle": "JACKETEK test patches",
+   "libraryDescription": "JACKETEK test fixture (original artwork, scripts/embroidery-fixtures/build.mjs).",
+   "productionName": "TEST",
+   "originalFileName": "class-of-2027.png",
+   "asset": "/embroidery-library/assets/0a7d4c1e-2b3f-4e5a-8b6c-7d8e9f0a1b2c/full.png",
+   "thumbnail": "/embroidery-library/assets/0a7d4c1e-2b3f-4e5a-8b6c-7d8e9f0a1b2c/thumb.png",
+   "thumbnailWidth": 256,
+   "thumbnailHeight": 115,
+   "format": "png",
+   "width": 1600,
+   "height": 720,
+   "transparent": true,
+   "zones": [
+    "mainBack"
+   ],
+   "source": {
+    "provider": "jacketek-test",
+    "placements": [],
+    "libraryId": "6b1e0c52-5d3a-4c1e-9a77-0f1a2b3c4d5e",
+    "designId": "0a7d4c1e-2b3f-4e5a-8b6c-7d8e9f0a1b2c",
+    "fullSleeve": false,
+    "fullUrl": "",
+    "thumbnailUrl": ""
+   }
+  }
+ ]
+}

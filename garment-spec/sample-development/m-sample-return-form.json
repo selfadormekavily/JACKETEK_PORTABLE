@@ -1,0 +1,1064 @@
+{
+  "schema": "jacketek.m-sample-return",
+  "request": "MSR-01",
+  "note": "Filled by the factory and returned with the sample. Contains no approval field: JACKETEK approves separately after the sample.",
+  "factory": {
+    "factoryName": null,
+    "contact": null,
+    "sampleDate": null,
+    "sampleId": null,
+    "patternRevision": null,
+    "measuredBy": null,
+    "measurementDate": null
+  },
+  "materialCodes": {
+    "bodyFabric": null,
+    "leather": null,
+    "ribCollar": null,
+    "ribCuffs": null,
+    "ribWaistband": null,
+    "lining": null,
+    "snaps": null,
+    "thread": null,
+    "pocketing": null,
+    "interlining": null,
+    "embroideryBacking": null
+  },
+  "droppedShoulder": [
+    {
+      "id": "SC-1",
+      "name": "Shoulder-point position (drop extension)",
+      "value": null,
+      "unit": "cm",
+      "comment": null
+    },
+    {
+      "id": "SC-2",
+      "name": "Shoulder drop / slope at the dropped shoulder point",
+      "value": null,
+      "unit": "cm",
+      "comment": null
+    },
+    {
+      "id": "SC-3",
+      "name": "Armhole depth and sleeve-cap height for the dropped shoulder",
+      "value": null,
+      "unit": "cm",
+      "comment": null
+    }
+  ],
+  "measurements": [
+    {
+      "id": "B01",
+      "pomId": "B01",
+      "name": "Half Chest — Flat Width",
+      "unit": "cm",
+      "report": "Flat width only. The circumference (Flat Width × 2) is derived by JACKETEK — do not report it as a separate measurement.",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B01-A",
+      "pomId": "B01",
+      "name": "Half Chest — Flat Width AT the armhole point (pit to pit)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B02",
+      "pomId": "B02",
+      "name": "Waist circumference",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B03",
+      "pomId": "B03",
+      "name": "Body width at waistband seam (above rib)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B04",
+      "pomId": "B04",
+      "name": "Bottom opening, relaxed",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B05",
+      "pomId": "B05",
+      "name": "Bottom opening, extended",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B06",
+      "pomId": "B06",
+      "name": "Centre-back length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B06-T",
+      "pomId": "B06",
+      "name": "Centre-back length from the TOP of the collar",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B07",
+      "pomId": "B07",
+      "name": "Back length from HPS",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B08",
+      "pomId": "B08",
+      "name": "Front length from HPS",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B09",
+      "pomId": "B09",
+      "name": "Across shoulder",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B09-C",
+      "pomId": "B09",
+      "name": "Across shoulder along the back contour",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B10",
+      "pomId": "B10",
+      "name": "Shoulder length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B11",
+      "pomId": "B11",
+      "name": "Shoulder drop",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B12",
+      "pomId": "B12",
+      "name": "Across front",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B13",
+      "pomId": "B13",
+      "name": "Across back",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B14",
+      "pomId": "B14",
+      "name": "Armhole depth",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B15",
+      "pomId": "B15",
+      "name": "Armhole, straight",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "B16",
+      "pomId": "B16",
+      "name": "Armhole, curved (along seam)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S02",
+      "pomId": "S02",
+      "name": "Sleeve — shoulder point → cuff seam (PRIMARY)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S02-E",
+      "pomId": "S02",
+      "name": "Sleeve — shoulder point → finished cuff edge (SECONDARY)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S01",
+      "pomId": "S01",
+      "name": "Sleeve — centre back → cuff seam (COMPARISON ONLY)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S01-E",
+      "pomId": "S01",
+      "name": "Sleeve — centre back → finished cuff edge (COMPARISON ONLY)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S03",
+      "pomId": "S03",
+      "name": "Underarm sleeve length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S04",
+      "pomId": "S04",
+      "name": "Bicep width, 1\" below armhole",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S05",
+      "pomId": "S05",
+      "name": "Elbow width",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S06",
+      "pomId": "S06",
+      "name": "Sleeve width at cuff seam (above rib)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S07",
+      "pomId": "S07",
+      "name": "Cuff opening, relaxed",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S08",
+      "pomId": "S08",
+      "name": "Cuff opening, extended",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S09",
+      "pomId": "S09",
+      "name": "Cuff rib height",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "S10",
+      "pomId": "S10",
+      "name": "Sleeve cap height (pattern)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "R01",
+      "pomId": "R01",
+      "name": "Waistband rib height",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "R02",
+      "pomId": "R02",
+      "name": "Waistband rib cut length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "R03",
+      "pomId": "R03",
+      "name": "Cuff rib cut length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "R04",
+      "pomId": "R04",
+      "name": "Collar rib cut length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "R05",
+      "pomId": "R05",
+      "name": "Rib stripe layout (count, stripe widths, distance from edge)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C01",
+      "pomId": "C01",
+      "name": "Collar height at CB",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C02",
+      "pomId": "C02",
+      "name": "Collar height at front ends",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C03",
+      "pomId": "C03",
+      "name": "Collar neck-edge length (attached edge)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C04",
+      "pomId": "C04",
+      "name": "Collar outer-edge length, relaxed",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C05",
+      "pomId": "C05",
+      "name": "Neck width, seam to seam",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C06",
+      "pomId": "C06",
+      "name": "Front neck drop",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "C07",
+      "pomId": "C07",
+      "name": "Back neck drop",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F01",
+      "pomId": "F01",
+      "name": "Front placket / facing width (finished)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F02",
+      "pomId": "F02",
+      "name": "Front overlap (CF to front edge)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F03",
+      "pomId": "F03",
+      "name": "Snap count",
+      "unit": "count",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F04",
+      "pomId": "F04",
+      "name": "Top snap position below neck seam",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F05",
+      "pomId": "F05",
+      "name": "Bottom snap position above bottom edge",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F06",
+      "pomId": "F06",
+      "name": "Snap spacing (centre to centre)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "F07",
+      "pomId": "F07",
+      "name": "Snap centre from front edge",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P01",
+      "pomId": "P01",
+      "name": "Pocket opening length",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P02",
+      "pomId": "P02",
+      "name": "Pocket welt width",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P03",
+      "pomId": "P03",
+      "name": "Pocket position below HPS (top of opening)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P04",
+      "pomId": "P04",
+      "name": "Pocket position from CF (top of opening)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P05",
+      "pomId": "P05",
+      "name": "Pocket opening angle",
+      "unit": "deg",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P06",
+      "pomId": "P06",
+      "name": "Pocket bag depth",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "P07",
+      "pomId": "P07",
+      "name": "Pocket bag width",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "L01",
+      "pomId": "L01",
+      "name": "Lining CB length relative to shell",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "L02",
+      "pomId": "L02",
+      "name": "Lining sleeve length relative to shell",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "L03",
+      "pomId": "L03",
+      "name": "Lining chest width relative to shell",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "L04",
+      "pomId": "L04",
+      "name": "Inside pocket opening (if fitted)",
+      "unit": "cm",
+      "patternProposed": null,
+      "sampleActual": null,
+      "photo": null,
+      "comment": null
+    }
+  ],
+  "supplierSpecifications": [
+    {
+      "id": "MP-1",
+      "title": "Body — Cotton Fabric",
+      "values": {
+        "fibreComposition": null,
+        "weave": null,
+        "gsm": null,
+        "finish": null,
+        "shrinkage": null,
+        "colourMatching": null,
+        "supplierCode": null
+      },
+      "swatchSent": null,
+      "comment": null
+    },
+    {
+      "id": "MP-2",
+      "title": "Sleeves — Leather",
+      "values": {
+        "leatherType": null,
+        "identification": null,
+        "thickness": null,
+        "grain": null,
+        "finish": null,
+        "handFeel": null,
+        "backing": null,
+        "colourConsistency": null,
+        "moq": null,
+        "priceImpact": null,
+        "supplierCode": null
+      },
+      "swatchSent": null,
+      "comment": null
+    },
+    {
+      "id": "MP-3",
+      "title": "Rib — collar, cuffs, waistband",
+      "parts": {
+        "collar": {
+          "composition": null,
+          "knitStructure": null,
+          "gauge": null,
+          "weight": null,
+          "thickness": null,
+          "stretchPct": null,
+          "recoveryPct": null,
+          "stripeConstruction": null,
+          "stripeWidths": null,
+          "colourMatch": null
+        },
+        "cuffs": {
+          "composition": null,
+          "knitStructure": null,
+          "gauge": null,
+          "weight": null,
+          "thickness": null,
+          "stretchPct": null,
+          "recoveryPct": null,
+          "stripeConstruction": null,
+          "stripeWidths": null,
+          "colourMatch": null
+        },
+        "waistband": {
+          "composition": null,
+          "knitStructure": null,
+          "gauge": null,
+          "weight": null,
+          "thickness": null,
+          "stretchPct": null,
+          "recoveryPct": null,
+          "stripeConstruction": null,
+          "stripeWidths": null,
+          "colourMatch": null
+        }
+      },
+      "swatchSent": null,
+      "comment": null
+    },
+    {
+      "id": "MP-4",
+      "title": "Lining",
+      "values": {
+        "material": null,
+        "fibreContent": null,
+        "weight": null,
+        "colour": null,
+        "plainOrQuilted": null,
+        "wadding": null,
+        "breathability": null,
+        "handFeel": null,
+        "embroideryCompatibility": null
+      },
+      "swatchSent": null,
+      "comment": null
+    },
+    {
+      "id": "MP-5",
+      "title": "Snaps / hardware",
+      "values": {
+        "diameter": null,
+        "alloy": null,
+        "plating": null,
+        "colour": null,
+        "supplierRef": null,
+        "attachment": null,
+        "force": null,
+        "reinforcement": null,
+        "count": null,
+        "spacing": null
+      },
+      "swatchSent": null,
+      "comment": null
+    }
+  ],
+  "alternativeProposals": [],
+  "alternativeProposalTemplate": {
+    "label": "ALTERNATIVE SUPPLIER PROPOSAL — NOT CURRENT JACKETEK DESIGN INTENT",
+    "replacesDesignIntent": false,
+    "material": null,
+    "identification": null,
+    "costDifference": null,
+    "moqDifference": null,
+    "performanceDifference": null,
+    "appearanceDifference": null
+  },
+  "constructionProposals": {
+    "pockets": {
+      "handEntryEdge": null,
+      "openingDimensions": null,
+      "weltConstruction": null,
+      "weltMaterial": null,
+      "bagMaterial": null,
+      "bagDepth": null,
+      "bartacks": null,
+      "interfacing": null,
+      "insidePocket": null
+    },
+    "sewing": {
+      "seamConstruction": null,
+      "seamAllowances": null,
+      "topstitching": null,
+      "stitchType": null,
+      "spi": null,
+      "threadType": null,
+      "sleeveAttachment": null,
+      "ribAttachment": null,
+      "neckFinish": null,
+      "frontPlacket": null,
+      "liningAssembly": null,
+      "reinforcementAreas": null,
+      "leatherToCotton": null,
+      "interlining": null
+    }
+  },
+  "embroideryTests": [
+    {
+      "id": "ET-A",
+      "zone": "leftChest",
+      "method": null,
+      "finishedWidthCm": null,
+      "finishedHeightCm": null,
+      "threadAndColours": null,
+      "backingStabilizer": null,
+      "stitchDensity": null,
+      "edgeFinish": null,
+      "puckering": null,
+      "leatherDamage": null,
+      "liningProtection": null,
+      "photos": [],
+      "comment": null
+    },
+    {
+      "id": "ET-B",
+      "zone": "mainBack",
+      "method": null,
+      "finishedWidthCm": null,
+      "finishedHeightCm": null,
+      "threadAndColours": null,
+      "backingStabilizer": null,
+      "stitchDensity": null,
+      "edgeFinish": null,
+      "puckering": null,
+      "leatherDamage": null,
+      "liningProtection": null,
+      "photos": [],
+      "comment": null
+    },
+    {
+      "id": "ET-C",
+      "zone": "leftSleeveMiddle",
+      "method": null,
+      "finishedWidthCm": null,
+      "finishedHeightCm": null,
+      "threadAndColours": null,
+      "backingStabilizer": null,
+      "stitchDensity": null,
+      "edgeFinish": null,
+      "puckering": null,
+      "leatherDamage": null,
+      "liningProtection": null,
+      "photos": [],
+      "comment": null
+    },
+    {
+      "id": "ET-D",
+      "zone": "backQuote",
+      "method": null,
+      "finishedWidthCm": null,
+      "finishedHeightCm": null,
+      "threadAndColours": null,
+      "backingStabilizer": null,
+      "stitchDensity": null,
+      "edgeFinish": null,
+      "puckering": null,
+      "leatherDamage": null,
+      "liningProtection": null,
+      "photos": [],
+      "comment": null
+    }
+  ],
+  "calibration": [
+    {
+      "id": "EC-01",
+      "landmark": "HPS (left and right)",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-02",
+      "landmark": "Front HPS → waistband seam",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-03",
+      "landmark": "Back HPS → waistband seam",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-04",
+      "landmark": "CB collar seam → waistband seam",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-05",
+      "landmark": "Waistband seam: body width flat",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-06",
+      "landmark": "Waistband seam height at CF, side seam and CB",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-07",
+      "landmark": "CF line and placket",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-08",
+      "landmark": "Chest panel boundaries",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-09",
+      "landmark": "Back panel boundaries",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-10",
+      "landmark": "Shoulder point (left and right)",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-11",
+      "landmark": "Shoulder point → cuff seam (sleeve unit)",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-12",
+      "landmark": "Sleeve flat-width profile",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-13",
+      "landmark": "Sleeve seams and leather panels",
+      "values": null,
+      "photo": null,
+      "comment": null
+    },
+    {
+      "id": "EC-14",
+      "landmark": "Usable area per zone",
+      "values": null,
+      "photo": null,
+      "comment": null
+    }
+  ],
+  "photos": [
+    {
+      "id": "PH-01",
+      "view": "FRONT — laid flat",
+      "fileName": null
+    },
+    {
+      "id": "PH-02",
+      "view": "BACK — laid flat",
+      "fileName": null
+    },
+    {
+      "id": "PH-03",
+      "view": "LEFT SIDE / SLEEVE",
+      "fileName": null
+    },
+    {
+      "id": "PH-04",
+      "view": "RIGHT SIDE / SLEEVE",
+      "fileName": null
+    },
+    {
+      "id": "PH-05",
+      "view": "COLLAR close-up",
+      "fileName": null
+    },
+    {
+      "id": "PH-06",
+      "view": "CUFF close-up",
+      "fileName": null
+    },
+    {
+      "id": "PH-07",
+      "view": "WAISTBAND close-up",
+      "fileName": null
+    },
+    {
+      "id": "PH-08",
+      "view": "POCKET close-up",
+      "fileName": null
+    },
+    {
+      "id": "PH-09",
+      "view": "SNAP / FRONT CLOSURE close-up",
+      "fileName": null
+    },
+    {
+      "id": "PH-10",
+      "view": "INSIDE / LINING",
+      "fileName": null
+    },
+    {
+      "id": "PH-11",
+      "view": "LEATHER-TO-COTTON SEAM",
+      "fileName": null
+    },
+    {
+      "id": "PH-12",
+      "view": "EMBROIDERY TESTS (ET-A to ET-D, front and inside)",
+      "fileName": null
+    },
+    {
+      "id": "PH-13",
+      "view": "Tape on B01, B06, B09, S02 and S02-E (one photo each)",
+      "fileName": null
+    },
+    {
+      "id": "PH-14",
+      "view": "Shoulder point marked (both sides)",
+      "fileName": null
+    },
+    {
+      "id": "PH-15",
+      "view": "Usable embroidery areas taped (EC-14)",
+      "fileName": null
+    }
+  ],
+  "deviations": [],
+  "comments": null,
+  "factoryRecommendedCorrections": []
+}

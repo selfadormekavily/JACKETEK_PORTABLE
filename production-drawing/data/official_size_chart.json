@@ -1,0 +1,20 @@
+{
+  "_status": "LEGACY · NOT AUTHORITATIVE · NOT USED BY RFQ · NOT JACKETEK MASTER SPEC. Superseded by the Master Garment Spec (garment-spec/), with which these values conflict. Kept for historical compatibility with the legacy production-drawing sheet only; the \"_source\" wording below is historical. Never send the legacy production-drawing PDF to a factory.",
+  "_source": "Client-approved OFFICIAL SIZE CHART (2026-10-02). Identical to Fidelio_Varsity_Drawing_v02.blend, sheet SC-01 / text block OFFICIAL_SIZE_CHART. Values are authoritative: never derive from the 3D model, never round or edit.",
+  "units": "cm",
+  "columns": ["SIZE", "CHEST WIDTH FLAT", "JACKET LENGTH", "SLEEVE LENGTH"],
+  "rows": [
+    { "size": "XS",  "chest_width_flat": "54 cm", "jacket_length": "66 cm", "sleeve_length": "60 cm" },
+    { "size": "S",   "chest_width_flat": "57 cm", "jacket_length": "68 cm", "sleeve_length": "61 cm" },
+    { "size": "M",   "chest_width_flat": "60 cm", "jacket_length": "70 cm", "sleeve_length": "62 cm" },
+    { "size": "L",   "chest_width_flat": "63 cm", "jacket_length": "72 cm", "sleeve_length": "63 cm" },
+    { "size": "XL",  "chest_width_flat": "66 cm", "jacket_length": "74 cm", "sleeve_length": "64 cm" },
+    { "size": "2XL", "chest_width_flat": "69 cm", "jacket_length": "76 cm", "sleeve_length": "65 cm" },
+    { "size": "3XL", "chest_width_flat": "72 cm", "jacket_length": "78 cm", "sleeve_length": "66 cm" }
+  ],
+  "definitions": {
+    "CHEST WIDTH FLAT": "Measured straight across the garment from underarm to underarm when laid flat.",
+    "JACKET LENGTH": "Measured from the designated top shoulder/neck reference point to the bottom of the jacket.",
+    "SLEEVE LENGTH": "Measured from the shoulder/sleeve attachment reference point to the end of the cuff."
+  }
+}

@@ -1,0 +1,12 @@
+# Licensed CLO geometry (purchased varsity-mv2) — keep the folder out of git.
+# Exception: the reference design configuration pinned by ACTIVE_TECHPACK_MASTER.json
+# (JACKETEK's own design data, no CLO geometry), needed by the Production Tech Pack generator.
+*
+!.gitignore
+!reference-design/
+reference-design/*
+!reference-design/D-59a2a5aab079/
+reference-design/D-59a2a5aab079/*
+!reference-design/D-59a2a5aab079/DEV-01/
+reference-design/D-59a2a5aab079/DEV-01/*
+!reference-design/D-59a2a5aab079/DEV-01/design-config.json

@@ -1,0 +1,18 @@
+# R2 engineering working files stay local. Only the files pinned (by SHA-256) in
+# garment-spec/ACTIVE_TECHPACK_MASTER.json are tracked: the Production Tech Pack
+# generator refuses to run if any of them is missing or changed.
+*
+!.gitignore
+!JACKETEK_ORIGINAL_Patterns_1to1.dxf
+!traceability/
+traceability/*
+!traceability/supplier-package-verification.json
+!traceability/factory-master-data.json
+!traceability/design-change-CHG-04.json
+!traceability/supplier-build/
+traceability/supplier-build/*
+!traceability/supplier-build/artwork-manifest.json
+!traceability/supplier-build/callouts.json
+!traceability/supplier-build/confirm-items.json
+!traceability/supplier-build/flat-front.png
+!traceability/supplier-build/flat-back.png

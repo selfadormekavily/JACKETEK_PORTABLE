@@ -1,0 +1,473 @@
+/*
+ * Auth (/auth) and the nav's account control.
+ * Inline start: the jacket suspended in the cream room. Inline end: a
+ * raised cream sheet with the form (RTL mirrors the layout, never the
+ * jacket; direction tweaks live in l10n-auth.css). Phones and tablets: a short stage band above it.
+ */
+.jk-auth {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  background: rgb(var(--brand-cream));
+}
+.jk-auth__stage {
+  position: relative;
+  min-height: 100dvh;
+  overflow: hidden;
+}
+.jk-auth__thread {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.jk-auth__jacket {
+  position: absolute;
+  top: 44%;
+  left: 50%;
+  width: min(46%, 44vh);
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+.jk-auth__jacket img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 2px 2px rgb(var(--brand-navy-deep) / 0.18)) drop-shadow(0 24px 30px rgb(var(--brand-navy-deep) / 0.18));
+  animation: jk-suspend 7s ease-in-out infinite;
+}
+/* The floor shadow breathes with the float. */
+.jk-auth__jacket::after {
+  position: absolute;
+  right: 14%;
+  bottom: -10%;
+  left: 14%;
+  height: 7%;
+  content: "";
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--brand-navy-deep) / 0.28), transparent);
+  filter: blur(6px);
+  animation: jk-suspend-shadow 7s ease-in-out infinite;
+}
+@keyframes jk-suspend {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes jk-suspend-shadow {
+  0%,
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scaleX(0.9);
+    opacity: 0.7;
+  }
+}
+.jk-auth__statement {
+  position: absolute;
+  right: clamp(24px, 5vw, 64px);
+  bottom: clamp(28px, 6vh, 64px);
+  left: clamp(24px, 5vw, 64px);
+}
+.jk-auth__headline {
+  margin-top: 14px;
+  color: rgb(var(--brand-navy));
+  font-family: var(--font-sans);
+  font-size: clamp(34px, 3.6vw, 56px);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
+}
+/* A dusty-blue information card. */
+.jk-auth__note {
+  display: flex;
+  gap: 12px;
+  max-width: 44ch;
+  margin-top: 20px;
+  padding: 14px 16px;
+  background: rgb(var(--brand-dusty) / 0.14);
+  box-shadow: inset 2px 0 0 rgb(var(--brand-dusty));
+  color: rgb(var(--brand-navy));
+  font-size: 14px;
+  line-height: 1.5;
+}
+.jk-auth__note-mark {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 9999px;
+  background: rgb(var(--brand-crimson));
+}
+.jk-auth__panel {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 112px clamp(24px, 5vw, 72px) 56px;
+  background:
+    radial-gradient(ellipse 120% 40% at 50% 0%, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream-raised) / 0) 70%),
+    rgb(var(--brand-cream));
+  box-shadow:
+    -1px 0 0 rgb(var(--brand-navy) / 0.12),
+    -24px 0 48px -32px rgb(var(--brand-navy-deep) / 0.45);
+}
+.jk-auth__sheet {
+  width: min(460px, 100%);
+}
+
+/* Log in | Create account: a crimson bar slides under the active tab. */
+.jk-auth-tabs {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid rgb(var(--brand-navy) / 0.14);
+}
+.jk-auth-tab {
+  padding: 0 0 14px;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-align: start;
+  text-transform: uppercase;
+  transition: color 250ms var(--ease-out-expo);
+}
+.jk-auth-tab[aria-selected="true"],
+.jk-auth-tab:hover {
+  color: rgb(var(--brand-navy));
+}
+.jk-auth-tabs__bar {
+  position: absolute;
+  bottom: -1px;
+  inset-inline-start: 0;
+  width: 50%;
+  height: 2px;
+  background: rgb(var(--brand-crimson));
+  transition: transform 450ms var(--ease-out-expo);
+}
+.jk-auth-tabs[data-mode="signup"] .jk-auth-tabs__bar {
+  transform: translateX(100%);
+}
+
+.jk-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 34px;
+  animation: fade-in-up 600ms var(--ease-out-expo) both;
+}
+.jk-auth-form__title {
+  color: rgb(var(--brand-navy));
+  font-size: clamp(28px, 2.4vw, 34px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+.jk-auth-form__lede {
+  margin-top: -8px;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 15px;
+  line-height: 1.55;
+}
+.jk-auth-form__switch {
+  color: rgb(var(--brand-navy-soft));
+  font-size: 14px;
+}
+
+/* Email | Mobile: a navy pill slides behind the active option. */
+.jk-auth-method {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 4px;
+  border: 1px solid rgb(var(--brand-navy) / 0.2);
+  background: rgb(var(--brand-cream-raised) / 0.6);
+}
+.jk-auth-method__pill {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  inset-inline-start: 4px;
+  width: calc(50% - 4px);
+  background: rgb(var(--brand-navy));
+  box-shadow: 0 8px 16px -10px rgb(var(--brand-navy-deep) / 0.7);
+  transition: transform 450ms var(--ease-out-expo);
+}
+.jk-auth-method[data-method="phone"] .jk-auth-method__pill {
+  transform: translateX(100%);
+}
+.jk-auth-method__option {
+  position: relative;
+  padding: 11px 8px;
+  color: rgb(var(--brand-navy));
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition: color 300ms var(--ease-out-expo);
+}
+.jk-auth-method__option[aria-checked="true"] {
+  color: rgb(var(--brand-cream));
+}
+
+.jk-auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.jk-auth-label {
+  color: rgb(var(--brand-navy));
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+/* The field: a raised cream box; on focus a crimson stitch draws along its foot. */
+.jk-auth-input {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+  border: 1px solid rgb(var(--brand-navy) / 0.22);
+  background: rgb(var(--brand-cream-raised));
+  transition:
+    border-color 250ms var(--ease-out-expo),
+    box-shadow 250ms var(--ease-out-expo);
+}
+.jk-auth-input::after {
+  position: absolute;
+  bottom: 5px;
+  inset-inline: 10px;
+  height: 0;
+  content: "";
+  border-top: 1.5px dashed rgb(var(--brand-crimson));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms var(--ease-out-expo);
+  pointer-events: none;
+}
+.jk-auth-input:focus-within {
+  border-color: rgb(var(--brand-navy));
+  box-shadow: 0 14px 28px -22px rgb(var(--brand-navy-deep) / 0.55);
+}
+.jk-auth-input:focus-within::after {
+  transform: scaleX(1);
+}
+.jk-auth-input.is-invalid {
+  border-color: rgb(var(--brand-crimson));
+}
+.jk-auth-input input {
+  min-width: 0;
+  height: 52px;
+  flex: 1;
+  padding: 0 16px;
+  border: 0;
+  outline: none;
+  background: transparent;
+  color: rgb(var(--brand-navy));
+  font-size: 16px;
+}
+.jk-auth-input input::placeholder {
+  color: rgb(var(--brand-navy-soft) / 0.55);
+}
+.jk-auth-input input:focus-visible {
+  outline: none;
+}
+.jk-auth-message {
+  color: rgb(var(--brand-navy-soft));
+  font-size: 13px;
+  line-height: 1.45;
+  animation: fade-in-up 350ms var(--ease-out-expo) both;
+}
+.jk-auth-message.is-error {
+  color: rgb(var(--brand-red));
+}
+.jk-auth-alert {
+  padding: 12px 14px;
+  background: rgb(var(--brand-crimson) / 0.07);
+  box-shadow: inset 2px 0 0 rgb(var(--brand-crimson));
+  color: rgb(var(--brand-oxblood));
+  font-size: 14px;
+  animation: fade-in-up 350ms var(--ease-out-expo) both;
+}
+
+/* Phone: the country trigger inside the field, then the number. */
+.jk-auth-input--phone input {
+  padding-inline-start: 12px;
+}
+.jk-auth-country {
+  display: flex;
+  height: 52px;
+  align-items: center;
+  gap: 8px;
+  padding-block: 0;
+  padding-inline: 14px 12px;
+  border-inline-end: 1px solid rgb(var(--brand-navy) / 0.14);
+  color: rgb(var(--brand-navy-soft));
+  transition: background-color 200ms;
+}
+.jk-auth-country:hover {
+  background: rgb(var(--brand-dusty) / 0.12);
+}
+.jk-flag {
+  font-family: "Twemoji Country Flags", "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+}
+.jk-auth-popover {
+  position: absolute;
+  z-index: 30;
+  top: calc(100% + 8px);
+  inset-inline-start: -1px;
+  width: min(340px, calc(100vw - 48px));
+  border: 1px solid rgb(var(--brand-navy) / 0.16);
+  background: rgb(var(--brand-cream-raised));
+  box-shadow: 0 28px 50px -28px rgb(var(--brand-navy-deep) / 0.6);
+  animation: fade-in-up 300ms var(--ease-out-expo) both;
+}
+.jk-auth-search {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 0;
+  border-bottom: 1px dashed rgb(var(--brand-navy) / 0.25);
+  outline: none;
+  background: transparent;
+  color: rgb(var(--brand-navy));
+  font-size: 15px;
+}
+
+/* Password: show/hide (the slash draws away when revealed), length badge. */
+.jk-auth-reveal {
+  display: grid;
+  width: 48px;
+  height: 52px;
+  place-items: center;
+  color: rgb(var(--brand-navy-soft));
+  transition: color 200ms;
+}
+.jk-auth-reveal:hover {
+  color: rgb(var(--brand-navy));
+}
+.jk-auth-reveal__slash {
+  stroke-dasharray: 17;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 300ms var(--ease-out-expo);
+}
+.jk-auth-reveal[aria-pressed="true"] .jk-auth-reveal__slash {
+  stroke-dashoffset: 17;
+}
+.jk-auth-strength {
+  color: rgb(var(--brand-navy-soft));
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.jk-auth-strength.is-ok {
+  color: rgb(var(--brand-crimson));
+  font-weight: 700;
+}
+
+.jk-auth-submit {
+  margin-top: 6px;
+}
+.jk-auth-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgb(var(--brand-cream) / 0.35);
+  border-top-color: rgb(var(--brand-cream));
+  border-radius: 9999px;
+  animation: jk-spin 800ms linear infinite;
+}
+@keyframes jk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* The nav's account control. */
+.jk-account-initial {
+  display: grid;
+  width: 22px;
+  height: 22px;
+  place-items: center;
+  border-radius: 9999px;
+  background: rgb(var(--fid-ink));
+  color: rgb(var(--fid-ink-inverse));
+  font-size: 10px;
+  letter-spacing: 0;
+}
+.jk-account-menu {
+  --fid-ink: var(--brand-navy);
+  --t-head: var(--brand-navy);
+  --t-muted: var(--brand-navy-soft);
+  --t-rule: var(--brand-red);
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 14px);
+  inset-inline-end: 0;
+  width: 240px;
+  padding: 16px 18px;
+  border: 1px solid rgb(var(--brand-navy) / 0.14);
+  background: rgb(var(--brand-cream-raised));
+  box-shadow: 0 28px 50px -28px rgb(var(--brand-navy-deep) / 0.6);
+  text-align: start;
+  animation: fade-in-up 300ms var(--ease-out-expo) both;
+}
+
+@media (max-width: 1023px) {
+  .jk-auth {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  /* Phones and tablets: the room becomes a short band above the form. */
+  .jk-auth__stage {
+    height: clamp(300px, 46vh, 420px);
+    min-height: 0;
+  }
+  .jk-auth__jacket {
+    top: auto;
+    bottom: 26px;
+    inset-inline: auto 6%;
+    width: min(36%, 220px);
+    transform: none;
+  }
+  .jk-auth__statement {
+    bottom: 30px;
+    inset-inline-end: 44%;
+  }
+  .jk-auth__headline {
+    font-size: clamp(30px, 8vw, 44px);
+  }
+  .jk-auth__note,
+  .jk-auth__thread {
+    display: none;
+  }
+  .jk-auth__panel {
+    align-items: flex-start;
+    padding: 28px 20px 64px;
+    box-shadow: 0 -1px 0 rgb(var(--brand-navy) / 0.12);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jk-auth__jacket img,
+  .jk-auth__jacket::after,
+  .jk-auth-spinner,
+  .jk-auth-form,
+  .jk-auth-message,
+  .jk-auth-alert,
+  .jk-auth-popover,
+  .jk-account-menu {
+    animation: none;
+  }
+  .jk-auth-tabs__bar,
+  .jk-auth-method__pill,
+  .jk-auth-input::after {
+    transition: none;
+  }
+}

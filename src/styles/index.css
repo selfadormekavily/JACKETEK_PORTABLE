@@ -1,0 +1,791 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Ink and nav surface (RGB channels). The homepage story overrides
+     them on <html> as it moves through its chapters. */
+  :root {
+    /*
+     * BRAND PALETTE (r g b triples) — the only colours the interface uses.
+     * Everything else in this file, the Tailwind config (jk.*) and the
+     * homepage's colour worlds (three/heroLayout MOODS) derives from these.
+     *
+     *   navy     #003049  the anchor: dark grounds, nav, footer, ink on cream
+     *   cream    #FCF0D6  the light surface: pages, panels, cards; ink on navy
+     *   crimson  #C1121F  primary action: CTAs, active controls, focus on cream
+     *   oxblood  #780000  depth: hover/pressed states, dark-red emphasis
+     *   red      #AE1F23  supporting red: rules, numerals, labels, errors
+     *   dusty    #669BBC  secondary blue: soft type on navy, one chapter ground
+     */
+    --brand-navy: 0 48 73;
+    --brand-cream: 252 240 214;
+    --brand-crimson: 193 18 31;
+    --brand-oxblood: 120 0 0;
+    --brand-red: 174 31 35;
+    --brand-dusty: 102 155 188;
+    /* Derived tones — blends of the palette, never new hues. */
+    --brand-navy-soft: 51 102 131; /* navy ⨉ dusty 50/50: muted type on cream (5.5:1) */
+    --brand-navy-deep: 0 19 29; /* navy in shadow: vignettes, drop shadows */
+    --brand-cream-deep: 241 227 203; /* cream, a shade down: the page canvas */
+    --brand-cream-raised: 254 248 235; /* cream lifted toward white: fields, selected cells */
+
+    /* Ink and nav surface. The homepage story overrides them on <html>
+       as it moves through its chapters. */
+    --fid-ink: var(--brand-navy);
+    /* The colour on an ink fill (the logo tag's letter). */
+    --fid-ink-inverse: var(--brand-cream);
+
+    /* JACKETEK design tokens (design spec §12). */
+    --font-display: "Anton", "Bebas Neue", "Oswald", Impact, sans-serif;
+    --font-sans: "Hanken Grotesk", "Inter", "Helvetica Neue", Arial, sans-serif;
+    --font-varsity: "Graduate", "Alfa Slab One", "Rockwell", serif;
+
+    /*
+     * Colour WORLDS. The homepage moves through four grounds (three/heroLayout
+     * MOODS): Navy → Cream → Cream paper → Dusty Blue → Navy, rewriting the
+     * variables below as it scrolls so one world melts into the next. The
+     * defaults here are the Cream world (cart, checkout, Design page,
+     * admin, 404). Each world sets its ground and its type roles as r g b.
+     */
+    --bg-c0: 255 248 234;
+    --bg-c1: var(--brand-cream);
+    --bg-c2: 223 205 180;
+    --bg-glow: 255 251 242;
+    --bg-glow-a: 0.55;
+
+    /* Type roles on cream: navy ink, crimson accent, soft-navy secondary
+       text and numerals; supporting-red accent rules. */
+    --t-head: var(--brand-navy);
+    --t-accent: var(--brand-crimson);
+    --t-body: var(--brand-navy);
+    --t-muted: var(--brand-navy-soft);
+    --t-numeral: var(--brand-navy-soft);
+    --t-on-head: var(--brand-cream);
+    /* Primary action: crimson, cream label; deepens to oxblood on hover. */
+    --t-btn: var(--brand-crimson);
+    --t-btn-text: var(--brand-cream);
+    --t-btn-hover: var(--brand-oxblood);
+    /* Links, focus rings, selected controls. */
+    --t-link: var(--brand-crimson);
+    /* Decorative rules and details; the logo tag's stitched edge. */
+    --t-rule: var(--brand-red);
+    --t-stitch: var(--brand-crimson);
+
+    --c-ink: rgb(var(--t-head));
+    /* Light surfaces: panels and sheets (paper), the page (canvas), and
+       raised cells — fields, selected options — a touch brighter. */
+    --c-paper: rgb(var(--brand-cream));
+    --c-canvas: rgb(var(--brand-cream-deep));
+    --c-raised: rgb(var(--brand-cream-raised));
+    --c-accent: rgb(var(--t-link));
+
+    /* The ground: the world's radial light, plus a soft second light from
+       the top right that shifts the colour gently across the frame. */
+    --bg-studio: radial-gradient(ellipse 70% 55% at 88% -6%, rgb(var(--bg-c0) / 0.45) 0%, rgb(var(--bg-c0) / 0) 70%),
+      radial-gradient(ellipse 60% 72% at 50% 44%, rgb(var(--bg-c0)) 0%, rgb(var(--bg-c1)) 50%, rgb(var(--bg-c2)) 100%);
+    /* The light behind the jacket(s). */
+    --bg-glow-layer: radial-gradient(ellipse 34% 42% at 50% 45%, rgb(var(--bg-glow) / var(--bg-glow-a)) 0%, rgb(var(--bg-glow) / 0) 72%);
+    /* Texture: a soft, low-contrast grain + a faint twill (premium cloth,
+       not paper). */
+    --bg-grain: url("/assets/texture/grain-soft-240.png");
+
+    --ease-out-expo: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-jk-canvas text-fidelio-black antialiased;
+    font-family: var(--font-sans);
+  }
+
+  /* Focus-visible on every control: a ring in the world's accent. */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 1.5px solid var(--c-accent);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* ---- JACKETEK type styles (design spec §1.2) ---- */
+
+  /* Small uppercase UI text: eyebrows, nav, meta. */
+  .jk-label {
+    font-family: var(--font-sans);
+    font-size: 10.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .jk-label-xs {
+    font-family: var(--font-sans);
+    font-size: 9.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  /* Two-tone section headline (size set per section). */
+  .jk-headline {
+    font-family: var(--font-sans);
+    font-weight: 600;
+    line-height: 0.94;
+    letter-spacing: -0.045em;
+  }
+  .jk-body {
+    font-family: var(--font-sans);
+    font-size: 17px;
+    font-weight: 400;
+    line-height: 1.65;
+    color: rgb(var(--t-body));
+  }
+  /* Giant display words (Anton). */
+  .jk-display {
+    font-family: var(--font-display);
+    font-weight: 400;
+    line-height: 0.82;
+    letter-spacing: -0.005em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+
+  /*
+   * Bottom edge for content in the pinned story on phones. The story's
+   * stage is the LARGE viewport tall (100lvh: it fills the screen whatever
+   * Safari's toolbars do), so words anchored near its bottom are lifted by
+   * the toolbar's height (100lvh − 100svh) and the safe area — they stay
+   * visible when the toolbar shows.
+   */
+  .jk-safe-bottom {
+    bottom: clamp(28px, 5vh, 48px);
+  }
+  @supports (height: 100svh) {
+    .jk-safe-bottom {
+      bottom: calc(100lvh - 100svh + env(safe-area-inset-bottom, 0px) + clamp(28px, 5svh, 48px));
+    }
+  }
+
+  /*
+   * Texture: a very soft grain plus a faint diagonal twill — reads as
+   * fine cloth up close, disappears at a glance. Soft-light, so it adds
+   * depth in the world's own colour instead of greying it.
+   */
+  .jk-grain {
+    background-image:
+      var(--bg-grain),
+      repeating-linear-gradient(45deg, rgb(255 255 255 / 0.018) 0 1px, transparent 1px 4px),
+      repeating-linear-gradient(-45deg, rgb(0 0 0 / 0.018) 0 1px, transparent 1px 4px);
+    background-repeat: repeat;
+    background-size: 240px 240px, auto, auto;
+    mix-blend-mode: soft-light;
+    pointer-events: none;
+  }
+
+  /*
+   * ---- The cream room (components/Atmosphere) ----
+   * Layers of light, not a fill. --jk-light is 1 in the cream worlds and 0
+   * on the dark chapter, so every light-room layer fades out there.
+   */
+  .jk-atmos {
+    --jk-light: calc(1 - var(--jk-dark, 0));
+    overflow: hidden;
+    isolation: isolate;
+    background: var(--bg-studio);
+    pointer-events: none;
+  }
+  .jk-atmos > * {
+    position: absolute;
+    inset: 0;
+  }
+  /* Window light from the upper left, with one soft shaft across the room. */
+  .jk-atmos__window {
+    background:
+      radial-gradient(ellipse 46% 64% at 16% 8%, rgb(255 252 244 / calc(0.8 * var(--jk-light))) 0%, rgb(255 252 244 / 0) 72%),
+      linear-gradient(112deg, rgb(255 252 244 / 0) 22%, rgb(255 252 244 / calc(0.22 * var(--jk-light))) 34%, rgb(255 252 244 / 0) 47%);
+  }
+  /* The pinstripe wall: hairline navy verticals, only near the subject. */
+  .jk-atmos__wall {
+    background: repeating-linear-gradient(90deg, rgb(var(--brand-navy) / 0.085) 0 1px, transparent 1px 26px);
+    -webkit-mask-image: radial-gradient(ellipse 34% 58% at var(--atmos-x, 68%) 42%, #000 0%, rgb(0 0 0 / 0.55) 45%, transparent 78%);
+    mask-image: radial-gradient(ellipse 34% 58% at var(--atmos-x, 68%) 42%, #000 0%, rgb(0 0 0 / 0.55) 45%, transparent 78%);
+    opacity: calc(var(--jk-wall, 0.6) * var(--jk-light));
+  }
+  /* Dusty-blue ambient: the light that makes the cream feel alive. */
+  .jk-atmos__ambient {
+    inset: -12%;
+    background:
+      radial-gradient(ellipse 26% 38% at var(--atmos-x, 66%) 46%, rgb(var(--brand-dusty) / calc(var(--jk-amb, 0.22) * var(--jk-light))) 0%, rgb(var(--brand-dusty) / calc(var(--jk-amb, 0.22) * 0.35 * var(--jk-light))) 45%, rgb(var(--brand-dusty) / 0) 75%),
+      radial-gradient(ellipse 26% 22% at 18% 86%, rgb(var(--brand-dusty) / calc(var(--jk-amb, 0.22) * 0.45 * var(--jk-light))) 0%, rgb(var(--brand-dusty) / 0) 70%);
+    filter: blur(24px);
+    animation: jk-ambient-drift 26s ease-in-out infinite alternate;
+  }
+  /* The floor plane: a horizon seam, then a warm shadow falling off. */
+  .jk-atmos__floor {
+    top: 84%;
+    background: linear-gradient(to bottom, rgb(var(--brand-oxblood) / calc(0.05 * var(--jk-light))) 0%, rgb(var(--brand-oxblood) / 0) 55%);
+    border-top: 1px solid rgb(var(--brand-navy) / calc(0.09 * var(--jk-light)));
+    -webkit-mask-image: linear-gradient(90deg, transparent 8%, #000 34%, #000 84%, transparent 98%);
+    mask-image: linear-gradient(90deg, transparent 8%, #000 34%, #000 84%, transparent 98%);
+  }
+  .jk-atmos__vignette {
+    background: radial-gradient(ellipse 90% 88% at 50% 42%, transparent 58%, rgb(var(--brand-navy) / calc(0.1 * var(--jk-light))) 100%);
+  }
+  .jk-atmos__grain {
+    opacity: calc(0.7 + 0.3 * var(--jk-light));
+  }
+  @keyframes jk-ambient-drift {
+    from {
+      transform: translate3d(-2.5%, 1.5%, 0) scale(1);
+    }
+    to {
+      transform: translate3d(2.5%, -2%, 0) scale(1.06);
+    }
+  }
+
+  /* Plain pages (cart, checkout, 404): a quieter wall. */
+  .jk-atmos--page {
+    --jk-wall: 0.28;
+    --jk-amb: 0.26;
+    z-index: 0;
+  }
+
+  /* The subject stands in the middle of the room (configurator stage). */
+  .jk-atmos--center {
+    --atmos-x: 50%;
+  }
+
+  /* The open configurator step: a raised cream card with a crimson edge. */
+  .jk-step-open {
+    margin: 0 -16px;
+    padding: 0 16px;
+    background: linear-gradient(180deg, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream-raised) / 0.35) 100%);
+    box-shadow:
+      inset 2px 0 0 rgb(var(--brand-crimson)),
+      0 16px 30px -26px rgb(var(--brand-navy-deep) / 0.5);
+  }
+
+  /* The configurator's side panel: a raised cream sheet against the room. */
+  .jk-panel {
+    position: relative;
+    background:
+      radial-gradient(ellipse 120% 40% at 50% 0%, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream-raised) / 0) 70%),
+      rgb(var(--brand-cream));
+  }
+  @media (min-width: 1180px), (min-width: 1024px) and (orientation: landscape) {
+    .jk-panel {
+      box-shadow:
+        -1px 0 0 rgb(var(--brand-navy) / 0.12),
+        -24px 0 48px -32px rgb(var(--brand-navy-deep) / 0.45);
+    }
+  }
+
+  /* Fabric swatch: a woven disc with a soft sheen, lifted off the panel. */
+  .jk-swatch {
+    position: relative;
+    border-radius: 9999px;
+    box-shadow:
+      0 0 0 1px rgb(var(--brand-navy) / 0.18),
+      0 6px 12px -6px rgb(var(--brand-navy-deep) / 0.45);
+    transition:
+      transform 220ms var(--ease-out-expo),
+      box-shadow 220ms var(--ease-out-expo);
+  }
+  .jk-swatch::after {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    content: "";
+    background:
+      radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.32) 0%, rgb(255 255 255 / 0) 46%),
+      repeating-linear-gradient(45deg, rgb(255 255 255 / 0.05) 0 1px, transparent 1px 3px);
+    pointer-events: none;
+  }
+  .jk-swatch:hover {
+    transform: translateY(-2px);
+  }
+  .jk-swatch[aria-pressed="true"] {
+    box-shadow:
+      0 0 0 3px var(--c-paper),
+      0 0 0 5px rgb(var(--t-link)),
+      0 10px 18px -8px rgb(var(--brand-crimson) / 0.45);
+  }
+
+  /* The hero's stitched thread: the stitches march slowly along it. */
+  .jk-thread path {
+    animation: jk-march 7s linear infinite;
+  }
+  @keyframes jk-march {
+    to {
+      stroke-dashoffset: -64;
+    }
+  }
+
+  /* A raised cream surface: cards, option cells, sheets. */
+  .jk-raised-card {
+    border: 1px solid rgb(var(--brand-navy) / 0.12);
+    background: linear-gradient(180deg, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream)) 100%);
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.6) inset,
+      0 18px 36px -28px rgb(var(--brand-navy-deep) / 0.45);
+  }
+
+  /* The stitched seam: where a cream section meets a navy one. */
+  .jk-seam {
+    position: relative;
+  }
+  .jk-seam::before {
+    position: absolute;
+    z-index: 2;
+    top: 14px;
+    right: 0;
+    left: 0;
+    height: 0;
+    content: "";
+    border-top: 1.5px dashed rgb(var(--brand-crimson) / 0.85);
+    pointer-events: none;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .jk-atmos__ambient,
+    .jk-thread path {
+      animation: none;
+    }
+  }
+
+  /* ---- Buttons and links (design spec §8) ---- */
+
+  .jk-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 22px 24px;
+    background: rgb(var(--t-btn));
+    color: rgb(var(--t-btn-text));
+    font-family: var(--font-sans);
+    font-size: 11.5px;
+    font-weight: 600;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition:
+      background-color 250ms var(--ease-out-expo),
+      transform 250ms var(--ease-out-expo);
+  }
+  /* Hover: crimson deepens to oxblood and the arrow moves (below) —
+     exact palette colours, never a brightness filter. */
+  .jk-btn-primary:hover {
+    background: rgb(var(--t-btn-hover));
+  }
+  .jk-btn-primary:active {
+    background: rgb(var(--t-btn-hover));
+    transform: translateY(1px);
+  }
+  .jk-btn-primary:disabled,
+  .jk-btn-primary[aria-disabled="true"] {
+    background: rgb(var(--t-head) / 0.1);
+    color: rgb(var(--t-head) / 0.45);
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+  /* The hero's call to action: a soft glow of its own fill under it; it
+     lifts a little on hover. */
+  .jk-btn-hero {
+    box-shadow: 0 16px 34px -18px rgb(var(--t-btn) / 0.6);
+    transition:
+      background-color 250ms var(--ease-out-expo),
+      transform 250ms var(--ease-out-expo),
+      box-shadow 250ms var(--ease-out-expo);
+  }
+  .jk-btn-hero:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 22px 40px -18px rgb(var(--t-btn-hover) / 0.8);
+  }
+  .jk-btn-hero:active {
+    transform: translateY(0);
+  }
+
+  /* The graduation cap on the wordmark's last K (sections/Hero): it drops
+     onto the letter's corner once the lettering has stitched in and
+     settles with a little give; a soft shadow seats it there. Then the cap
+     holds still and only its tassel moves, as if in a faint breeze. */
+  .jk-cap {
+    filter: drop-shadow(1px 3px 2.5px rgb(0 0 0 / 0.38)) drop-shadow(3px 9px 10px rgb(0 0 0 / 0.22));
+    opacity: 0;
+    transform: translate3d(0, -26%, 0) rotate(-9deg);
+  }
+  .jk-cap-on {
+    opacity: 1;
+    /* Tipped outward, balanced on the corner (its origin: the contact). */
+    transform: rotate(7deg);
+    transition:
+      opacity 380ms ease-out,
+      transform 820ms cubic-bezier(0.3, 1.45, 0.55, 1);
+  }
+  /* Two sways about the tassel's knot, ~1.5° at most together: a slow
+     drift (9.7 s) and a lighter flutter (4.3 s). Each loop starts and ends
+     at rest, and their lengths don't divide, so it never visibly repeats. */
+  .jk-cap-breeze {
+    animation: jk-breeze 9.7s ease-in-out infinite;
+  }
+  .jk-cap-gust {
+    animation: jk-gust 4.3s ease-in-out infinite;
+  }
+  @keyframes jk-breeze {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    17% {
+      transform: rotate(1.1deg);
+    }
+    31% {
+      transform: rotate(0.55deg);
+    }
+    49% {
+      transform: rotate(-0.85deg);
+    }
+    66% {
+      transform: rotate(-0.2deg);
+    }
+    82% {
+      transform: rotate(0.7deg);
+    }
+  }
+  @keyframes jk-gust {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    28% {
+      transform: rotate(-0.45deg);
+    }
+    57% {
+      transform: rotate(0.35deg);
+    }
+    79% {
+      transform: rotate(-0.15deg);
+    }
+  }
+  /* The stitch badges around the hero jacket (sections/HeroBadges). Each
+     transform job has its own property, so they never fight: the float's
+     entrance uses `scale` and its breathing `translate`; the badge's rest
+     turn and cursor tilt are `transform`, its hover lift `translate` and
+     `scale`. Depth: far badges are a touch dimmer, their shadows tighter. */
+  .jk-badge-near {
+    --badge-tone: brightness(1);
+    --badge-shade: drop-shadow(0 2px 2px rgb(0 0 0 / 0.32)) drop-shadow(0 12px 16px rgb(0 0 0 / 0.3));
+    --badge-shade-up: drop-shadow(0 3px 3px rgb(0 0 0 / 0.3)) drop-shadow(0 18px 22px rgb(0 0 0 / 0.34));
+    animation-duration: 8s;
+  }
+  .jk-badge-mid {
+    --badge-tone: brightness(0.94) saturate(0.92);
+    --badge-shade: drop-shadow(0 2px 2px rgb(0 0 0 / 0.3)) drop-shadow(0 9px 12px rgb(0 0 0 / 0.26));
+    --badge-shade-up: drop-shadow(0 3px 3px rgb(0 0 0 / 0.28)) drop-shadow(0 14px 18px rgb(0 0 0 / 0.32));
+    animation-duration: 9.5s;
+  }
+  .jk-badge-far {
+    --badge-tone: brightness(0.86) saturate(0.84);
+    --badge-shade: drop-shadow(0 1px 2px rgb(0 0 0 / 0.3)) drop-shadow(0 6px 9px rgb(0 0 0 / 0.22));
+    --badge-shade-up: drop-shadow(0 2px 3px rgb(0 0 0 / 0.28)) drop-shadow(0 11px 15px rgb(0 0 0 / 0.3));
+    animation-duration: 11s;
+  }
+  .jk-badge-float {
+    opacity: 0;
+    scale: 0.94;
+    animation-name: jk-badge-float;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+  }
+  .jk-badges-on .jk-badge-float {
+    opacity: 1;
+    scale: 1;
+    transition:
+      opacity 700ms ease-out,
+      scale 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  @keyframes jk-badge-float {
+    0%, 100% {
+      translate: 0 0;
+    }
+    50% {
+      translate: 0 calc(var(--float, 2px) * -1);
+    }
+  }
+  .jk-badge {
+    transform: perspective(700px) rotate(var(--rot, 0deg)) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg));
+    filter: var(--badge-tone) var(--badge-shade);
+    transition:
+      transform 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      translate 550ms cubic-bezier(0.22, 1, 0.36, 1),
+      scale 550ms cubic-bezier(0.22, 1, 0.36, 1),
+      rotate 650ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 550ms ease-out;
+  }
+  .jk-badge:hover,
+  .jk-badge-pressed {
+    translate: 0 -3px;
+    scale: 1.06;
+    rotate: 1.5deg;
+    filter: var(--badge-tone) brightness(1.04) var(--badge-shade-up);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .jk-badge-float {
+      animation: none;
+    }
+    .jk-badges-on .jk-badge-float {
+      transition: opacity 400ms ease-out;
+    }
+    .jk-cap-on {
+      transition: none;
+    }
+    .jk-cap-breeze,
+    .jk-cap-gust {
+      animation: none;
+    }
+  }
+  .jk-btn-primary .jk-arrow,
+  .jk-btn-secondary .jk-arrow {
+    transition: transform 250ms var(--ease-out-expo);
+  }
+  .jk-btn-primary:hover .jk-arrow,
+  .jk-btn-secondary:hover .jk-arrow {
+    transform: translateX(4px);
+  }
+
+  .jk-btn-secondary {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 22px;
+    border: 1px solid var(--c-ink);
+    background: rgb(var(--brand-cream-raised) / 0.45);
+    color: var(--c-ink);
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: background-color 250ms var(--ease-out-expo);
+  }
+  .jk-btn-secondary:hover {
+    background: var(--c-ink);
+    color: rgb(var(--t-on-head));
+  }
+  .jk-btn-secondary:active {
+    transform: translateY(1px);
+  }
+
+  /* Underline link ("View the craft"): colour → the world's link accent on hover. */
+  .jk-link {
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgb(var(--t-rule));
+  }
+  .jk-link:hover,
+  .jk-arrow-link:hover {
+    color: var(--c-accent);
+  }
+  /* Arrow link ("Discover the craft ↗"). */
+  .jk-arrow-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .jk-arrow-link svg {
+    transition: transform 200ms var(--ease-out-expo);
+  }
+  .jk-arrow-link:hover svg {
+    transform: translate(2px, -2px);
+  }
+
+  /* Nav item: a 1px underline grows from the left on hover; the active
+     item keeps it. */
+  .jk-nav-link {
+    position: relative;
+    padding-bottom: 4px;
+  }
+  .jk-nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 300ms var(--ease-out-expo);
+  }
+  .jk-nav-link:hover::after,
+  .jk-nav-link[aria-current="page"]::after {
+    transform: scaleX(1);
+  }
+  /* The top navigation's underline is a detail: the world's rule colour. */
+  .jk-nav-link.jk-nav-rule::after {
+    background: rgb(var(--t-rule));
+  }
+
+  /* Dashed dividers: structure, not accent — a quiet hairline in the
+     world's ink (the red rule is kept for single accent lines). */
+  .jk-dashed-top {
+    border-top: 1px dashed rgb(var(--t-head) / 0.3);
+  }
+  .jk-dashed-bottom {
+    border-bottom: 1px dashed rgb(var(--t-head) / 0.3);
+  }
+
+  /* Hairline range slider (configurator). */
+  .fidelio-range {
+    appearance: none;
+    height: 24px;
+    background: transparent;
+    cursor: pointer;
+  }
+  .fidelio-range::-webkit-slider-runnable-track {
+    height: 1px;
+    background: rgb(var(--t-head) / 0.2);
+  }
+  .fidelio-range::-moz-range-track {
+    height: 1px;
+    background: rgb(var(--t-head) / 0.2);
+  }
+  .fidelio-range::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    margin-top: -5.5px;
+    border-radius: 0;
+    background: var(--c-ink);
+  }
+  .fidelio-range::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: 0;
+    border-radius: 0;
+    background: var(--c-ink);
+  }
+  .fidelio-range:focus-visible {
+    outline: 1.5px solid var(--c-accent);
+    outline-offset: 4px;
+  }
+  .fidelio-range:hover::-webkit-slider-thumb,
+  .fidelio-range:active::-webkit-slider-thumb {
+    background: rgb(var(--t-link));
+  }
+  .fidelio-range:hover::-moz-range-thumb,
+  .fidelio-range:active::-moz-range-thumb {
+    background: rgb(var(--t-link));
+  }
+
+  /*
+   * The Navy world, scoped: any surface that must stay navy whatever page
+   * or chapter it sits in (the footer). Same roles as three/heroLayout
+   * MOODS.navy — cream ink, dusty-blue secondary type, crimson thread.
+   */
+  .jk-world-navy {
+    --bg-c0: 31 80 107;
+    --bg-c1: var(--brand-navy);
+    --bg-c2: var(--brand-navy-deep);
+    --bg-glow: 162 189 198;
+    --t-head: var(--brand-cream);
+    --t-accent: var(--brand-dusty);
+    --t-body: var(--brand-cream);
+    --t-muted: var(--brand-dusty);
+    --t-numeral: var(--brand-dusty);
+    --t-on-head: var(--brand-navy);
+    --t-btn: var(--brand-crimson);
+    --t-btn-text: var(--brand-cream);
+    --t-btn-hover: var(--brand-oxblood);
+    --t-link: var(--brand-dusty);
+    --t-rule: var(--brand-crimson);
+    --t-stitch: var(--brand-crimson);
+    --fid-ink: var(--brand-cream);
+    --fid-ink-inverse: var(--brand-navy);
+    --c-ink: rgb(var(--t-head));
+    --c-accent: rgb(var(--t-link));
+    /* Custom properties resolve where they're declared: re-derive the
+       ground from this world's stops. */
+    --bg-studio: radial-gradient(ellipse 70% 55% at 88% -6%, rgb(var(--bg-c0) / 0.45) 0%, rgb(var(--bg-c0) / 0) 70%),
+      radial-gradient(ellipse 60% 72% at 50% 44%, rgb(var(--bg-c0)) 0%, rgb(var(--bg-c1)) 50%, rgb(var(--bg-c2)) 100%);
+    color: rgb(var(--t-body));
+  }
+}
+
+@layer utilities {
+  @keyframes drift-a {
+    0% {
+      transform: translate(-5%, -4%) scale(1);
+    }
+    50% {
+      transform: translate(4%, 3%) scale(1.08);
+    }
+    100% {
+      transform: translate(-5%, -4%) scale(1);
+    }
+  }
+
+  @keyframes drift-b {
+    0% {
+      transform: translate(4%, 2%) scale(1.05);
+    }
+    50% {
+      transform: translate(-3%, -5%) scale(0.96);
+    }
+    100% {
+      transform: translate(4%, 2%) scale(1.05);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-drift-a {
+    animation: drift-a 26s ease-in-out infinite;
+  }
+
+  .animate-drift-b {
+    animation: drift-b 32s ease-in-out infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes scroll-cue {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(200%);
+    }
+  }
+
+  .animate-scroll-cue {
+    animation: scroll-cue 3.6s cubic-bezier(0.45, 0, 0.25, 1) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-drift-a,
+    .animate-drift-b,
+    .animate-scroll-cue {
+      animation: none;
+    }
+  }
+}

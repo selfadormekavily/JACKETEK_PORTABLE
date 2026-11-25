@@ -1,0 +1,754 @@
+{
+ "id": "CHG-04",
+ "date": "2026-10-28",
+ "requestedBy": "JACKETEK (owner)",
+ "supersedes": "CHG-03 (R1 lower body +4.0 cm)",
+ "title": "Match the production pattern to the live website jacket (silhouette, artwork size / position), construction from the purchased CLO pattern",
+ "pattern": {
+  "source": "scripts/jacketek-r2/r2_study.py → traceability/r2-targets.json",
+  "rule": "x' = axis + s(y)·(x − axis); axis = CB (back) / CF (fronts, extension kept rigid); s(y) PCHIP through the control points, constant beyond them",
+  "body": {
+   "JKT_BACK_M": {
+    "controlPoints": [
+     [
+      952.03,
+      1.08842
+     ],
+     [
+      1031.29,
+      1.11223
+     ],
+     [
+      1081.29,
+      1.12734
+     ],
+     [
+      1131.29,
+      1.14053
+     ],
+     [
+      1181.29,
+      1.15166
+     ],
+     [
+      1255.89,
+      1.13917
+     ],
+     [
+      1341.29,
+      1.07935
+     ],
+     [
+      1391.29,
+      1.04298
+     ],
+     [
+      1441.29,
+      1.03922
+     ],
+     [
+      1491.29,
+      1.03815
+     ],
+     [
+      1551.02,
+      1.03057
+     ]
+    ],
+    "sources": [
+     "waistband seam +0.5 cm (B03)",
+     "underarm -25 cm",
+     "underarm -20 cm",
+     "underarm -15 cm",
+     "underarm -10 cm",
+     "B01 chest (2.54 below underarm)",
+     "across back (B13 level)",
+     "upper body B13 +5 cm",
+     "upper body B13 +10 cm",
+     "upper body B13 +15 cm",
+     "back shoulder seams"
+    ]
+   },
+   "JKT_FRONT_L_M": {
+    "controlPoints": [
+     [
+      952.03,
+      1.08351
+     ],
+     [
+      1031.29,
+      1.10829
+     ],
+     [
+      1081.29,
+      1.12053
+     ],
+     [
+      1131.29,
+      1.13105
+     ],
+     [
+      1181.29,
+      1.14362
+     ],
+     [
+      1255.89,
+      1.13318
+     ],
+     [
+      1341.29,
+      1.07066
+     ],
+     [
+      1391.29,
+      1.03971
+     ],
+     [
+      1441.29,
+      1.03969
+     ],
+     [
+      1491.29,
+      1.03712
+     ],
+     [
+      1551.02,
+      1.03057
+     ]
+    ],
+    "sources": [
+     "waistband seam +0.5 cm (B03)",
+     "underarm -25 cm",
+     "underarm -20 cm",
+     "underarm -15 cm",
+     "underarm -10 cm",
+     "B01 chest (2.54 below underarm)",
+     "across front (B13 level)",
+     "upper body B13 +5 cm",
+     "upper body B13 +10 cm",
+     "upper body B13 +15 cm",
+     "back shoulder seams"
+    ]
+   },
+   "JKT_FRONT_R_M": {
+    "controlPoints": [
+     [
+      952.03,
+      1.08351
+     ],
+     [
+      1031.29,
+      1.10829
+     ],
+     [
+      1081.29,
+      1.12053
+     ],
+     [
+      1131.29,
+      1.13105
+     ],
+     [
+      1181.29,
+      1.14362
+     ],
+     [
+      1255.89,
+      1.13318
+     ],
+     [
+      1341.29,
+      1.07066
+     ],
+     [
+      1391.29,
+      1.03971
+     ],
+     [
+      1441.29,
+      1.03969
+     ],
+     [
+      1491.29,
+      1.03712
+     ],
+     [
+      1551.02,
+      1.03057
+     ]
+    ],
+    "sources": [
+     "waistband seam +0.5 cm (B03)",
+     "underarm -25 cm",
+     "underarm -20 cm",
+     "underarm -15 cm",
+     "underarm -10 cm",
+     "B01 chest (2.54 below underarm)",
+     "across front (B13 level)",
+     "upper body B13 +5 cm",
+     "upper body B13 +10 cm",
+     "upper body B13 +15 cm",
+     "back shoulder seams"
+    ]
+   }
+  },
+  "sleeveWidthScale": 1.04457,
+  "sleeveRule": {
+   "websiteEase": 1.04,
+   "solved": 1.04457,
+   "armholeBodyMm": [
+    1035.64,
+    1074.29
+   ],
+   "capMm": [
+    1028.95,
+    1067.6
+   ],
+   "rule": "sleeve width × k about the cap peak, k solved so Σ cap − Σ armhole equals the purchased value (both armholes)"
+  },
+  "rib": {
+   "COLLAR RIB — back · centre": {
+    "scale": 1.0264051361957631,
+    "rule": "strip lengths × 1.02641 = joined body edge 212.0 / purchased 206.5 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_10",
+     "varsitytoshitimo_22",
+     "varsitytoshitimo_27",
+     "varsitytoshitimo_45",
+     "varsitytoshitimo_7"
+    ]
+   },
+   "COLLAR RIB — front · wearer's left (PROBABLE)": {
+    "scale": 1.0069400198459826,
+    "rule": "strip lengths × 1.00694 = joined body edge 126.8 / purchased 125.9 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_20",
+     "varsitytoshitimo_41",
+     "varsitytoshitimo_42",
+     "varsitytoshitimo_44",
+     "varsitytoshitimo_8"
+    ]
+   },
+   "COLLAR RIB — front · wearer's right (PROBABLE)": {
+    "scale": 1.0069399906684398,
+    "rule": "strip lengths × 1.00694 = joined body edge 126.8 / purchased 125.9 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_21",
+     "varsitytoshitimo_33",
+     "varsitytoshitimo_35",
+     "varsitytoshitimo_43",
+     "varsitytoshitimo_9"
+    ]
+   },
+   "CUFF RIB · wearer's left (PROBABLE)": {
+    "scale": 1.044568899568255,
+    "rule": "strip lengths × 1.04457 = joined body edge 299.5 / purchased 286.7 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_12",
+     "varsitytoshitimo_37",
+     "varsitytoshitimo_38",
+     "varsitytoshitimo_40",
+     "varsitytoshitimo_5"
+    ]
+   },
+   "CUFF RIB · wearer's right (PROBABLE)": {
+    "scale": 1.0445688996921692,
+    "rule": "strip lengths × 1.04457 = joined body edge 299.5 / purchased 286.7 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_2",
+     "varsitytoshitimo_28",
+     "varsitytoshitimo_32",
+     "varsitytoshitimo_36",
+     "varsitytoshitimo_4"
+    ]
+   },
+   "WAISTBAND RIB — back · centre": {
+    "scale": 1.088422105108086,
+    "rule": "strip lengths × 1.08842 = joined body edge 535.0 / purchased 491.5 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo",
+     "varsitytoshitimo_14",
+     "varsitytoshitimo_23",
+     "varsitytoshitimo_34",
+     "varsitytoshitimo_49"
+    ]
+   },
+   "WAISTBAND RIB — front · wearer's left (PROBABLE)": {
+    "scale": 1.083524716830678,
+    "rule": "strip lengths × 1.08352 = joined body edge 231.7 / purchased 213.9 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_17",
+     "varsitytoshitimo_26",
+     "varsitytoshitimo_3",
+     "varsitytoshitimo_47",
+     "varsitytoshitimo_48"
+    ]
+   },
+   "WAISTBAND RIB — front · wearer's right (PROBABLE)": {
+    "scale": 1.0835230737006634,
+    "rule": "strip lengths × 1.08352 = joined body edge 231.7 / purchased 213.9 mm (purchased rib-to-body ratio kept)",
+    "pieces": [
+     "varsitytoshitimo_1",
+     "varsitytoshitimo_25",
+     "varsitytoshitimo_39",
+     "varsitytoshitimo_46",
+     "varsitytoshitimo_6"
+    ]
+   }
+  },
+  "tabs": {
+   "varsitytoshitimo_24": {
+    "scale": 1.0513769114175242,
+    "rule": "tab length × 1.05138 = joined front edge 54.6 / purchased 52.0 mm"
+   },
+   "varsitytoshitimo_18": {
+    "scale": 1.051377979397113,
+    "rule": "tab length × 1.05138 = joined front edge 54.6 / purchased 52.0 mm"
+   }
+  },
+  "maxPointMoveMm": {
+   "JKT_FRONT_L_M": {
+    "maxMoveMm": 36.306
+   },
+   "JKT_FRONT_R_M": {
+    "maxMoveMm": 36.306
+   },
+   "JKT_BACK_M": {
+    "maxMoveMm": 38.33
+   },
+   "JKT_SLEEVE_R_M": {
+    "maxMoveMm": 10.932
+   },
+   "JKT_WB_FRONT_TAB_R_M": {
+    "maxMoveMm": 2.569
+   },
+   "JKT_WB_FRONT_TAB_L_M": {
+    "maxMoveMm": 2.569
+   },
+   "JKT_SLEEVE_L_M": {
+    "maxMoveMm": 10.932
+   },
+   "JKT_CUFF_RIB_R_S1_M": {
+    "maxMoveMm": 5.276
+   },
+   "JKT_CUFF_RIB_L_S1_M": {
+    "maxMoveMm": 5.276
+   },
+   "JKT_CUFF_RIB_R_S2_M": {
+    "maxMoveMm": 5.224
+   },
+   "JKT_CUFF_RIB_L_S2_M": {
+    "maxMoveMm": 5.224
+   },
+   "JKT_CUFF_RIB_R_S3_M": {
+    "maxMoveMm": 5.171
+   },
+   "JKT_CUFF_RIB_L_S3_M": {
+    "maxMoveMm": 5.171
+   },
+   "JKT_CUFF_RIB_R_S4_M": {
+    "maxMoveMm": 5.118
+   },
+   "JKT_CUFF_RIB_R_S5_M": {
+    "maxMoveMm": 5.066
+   },
+   "JKT_CUFF_RIB_L_S5_M": {
+    "maxMoveMm": 5.066
+   },
+   "JKT_CUFF_RIB_L_S4_M": {
+    "maxMoveMm": 5.118
+   },
+   "JKT_COLLAR_RIB_FRONT_R_S1_M": {
+    "maxMoveMm": 0.379
+   },
+   "JKT_COLLAR_RIB_FRONT_L_S1_M": {
+    "maxMoveMm": 0.379
+   },
+   "JKT_COLLAR_RIB_FRONT_R_S2_M": {
+    "maxMoveMm": 0.391
+   },
+   "JKT_COLLAR_RIB_FRONT_L_S2_M": {
+    "maxMoveMm": 0.391
+   },
+   "JKT_COLLAR_RIB_FRONT_R_S3_M": {
+    "maxMoveMm": 0.402
+   },
+   "JKT_COLLAR_RIB_FRONT_L_S3_M": {
+    "maxMoveMm": 0.402
+   },
+   "JKT_COLLAR_RIB_FRONT_R_S5_M": {
+    "maxMoveMm": 0.426
+   },
+   "JKT_COLLAR_RIB_FRONT_R_S4_M": {
+    "maxMoveMm": 0.414
+   },
+   "JKT_COLLAR_RIB_FRONT_L_S5_M": {
+    "maxMoveMm": 0.426
+   },
+   "JKT_COLLAR_RIB_FRONT_L_S4_M": {
+    "maxMoveMm": 0.414
+   },
+   "JKT_COLLAR_RIB_BACK_S5_M": {
+    "maxMoveMm": 2.134
+   },
+   "JKT_COLLAR_RIB_BACK_S4_M": {
+    "maxMoveMm": 2.156
+   },
+   "JKT_COLLAR_RIB_BACK_S3_M": {
+    "maxMoveMm": 2.179
+   },
+   "JKT_COLLAR_RIB_BACK_S2_M": {
+    "maxMoveMm": 2.201
+   },
+   "JKT_COLLAR_RIB_BACK_S1_M": {
+    "maxMoveMm": 2.224
+   },
+   "JKT_WB_RIB_FRONT_R_S4_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_R_S5_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_R_S3_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_R_S2_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_R_S1_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_L_S5_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_L_S4_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_L_S3_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_L_S1_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_FRONT_L_S2_M": {
+    "maxMoveMm": 7.76
+   },
+   "JKT_WB_RIB_BACK_S4_M": {
+    "maxMoveMm": 19.962
+   },
+   "JKT_WB_RIB_BACK_S5_M": {
+    "maxMoveMm": 19.962
+   },
+   "JKT_WB_RIB_BACK_S3_M": {
+    "maxMoveMm": 19.962
+   },
+   "JKT_WB_RIB_BACK_S2_M": {
+    "maxMoveMm": 19.962
+   },
+   "JKT_WB_RIB_BACK_S1_M": {
+    "maxMoveMm": 19.962
+   }
+  }
+ },
+ "targets": {
+  "body": {
+   "JKT_BACK_M": {
+    "controlPoints": [
+     [
+      952.03,
+      1.08842
+     ],
+     [
+      1031.29,
+      1.11223
+     ],
+     [
+      1081.29,
+      1.12734
+     ],
+     [
+      1131.29,
+      1.14053
+     ],
+     [
+      1181.29,
+      1.15166
+     ],
+     [
+      1255.89,
+      1.13917
+     ],
+     [
+      1341.29,
+      1.07935
+     ],
+     [
+      1391.29,
+      1.04298
+     ],
+     [
+      1441.29,
+      1.03922
+     ],
+     [
+      1491.29,
+      1.03815
+     ],
+     [
+      1551.02,
+      1.03057
+     ]
+    ],
+    "sources": [
+     "waistband seam +0.5 cm (B03)",
+     "underarm -25 cm",
+     "underarm -20 cm",
+     "underarm -15 cm",
+     "underarm -10 cm",
+     "B01 chest (2.54 below underarm)",
+     "across back (B13 level)",
+     "upper body B13 +5 cm",
+     "upper body B13 +10 cm",
+     "upper body B13 +15 cm",
+     "back shoulder seams"
+    ]
+   },
+   "JKT_FRONT_L_M": {
+    "controlPoints": [
+     [
+      952.03,
+      1.08351
+     ],
+     [
+      1031.29,
+      1.10829
+     ],
+     [
+      1081.29,
+      1.12053
+     ],
+     [
+      1131.29,
+      1.13105
+     ],
+     [
+      1181.29,
+      1.14362
+     ],
+     [
+      1255.89,
+      1.13318
+     ],
+     [
+      1341.29,
+      1.07066
+     ],
+     [
+      1391.29,
+      1.03971
+     ],
+     [
+      1441.29,
+      1.03969
+     ],
+     [
+      1491.29,
+      1.03712
+     ],
+     [
+      1551.02,
+      1.03057
+     ]
+    ],
+    "sources": [
+     "waistband seam +0.5 cm (B03)",
+     "underarm -25 cm",
+     "underarm -20 cm",
+     "underarm -15 cm",
+     "underarm -10 cm",
+     "B01 chest (2.54 below underarm)",
+     "across front (B13 level)",
+     "upper body B13 +5 cm",
+     "upper body B13 +10 cm",
+     "upper body B13 +15 cm",
+     "back shoulder seams"
+    ]
+   },
+   "JKT_FRONT_R_M": {
+    "controlPoints": [
+     [
+      952.03,
+      1.08351
+     ],
+     [
+      1031.29,
+      1.10829
+     ],
+     [
+      1081.29,
+      1.12053
+     ],
+     [
+      1131.29,
+      1.13105
+     ],
+     [
+      1181.29,
+      1.14362
+     ],
+     [
+      1255.89,
+      1.13318
+     ],
+     [
+      1341.29,
+      1.07066
+     ],
+     [
+      1391.29,
+      1.03971
+     ],
+     [
+      1441.29,
+      1.03969
+     ],
+     [
+      1491.29,
+      1.03712
+     ],
+     [
+      1551.02,
+      1.03057
+     ]
+    ],
+    "sources": [
+     "waistband seam +0.5 cm (B03)",
+     "underarm -25 cm",
+     "underarm -20 cm",
+     "underarm -15 cm",
+     "underarm -10 cm",
+     "B01 chest (2.54 below underarm)",
+     "across front (B13 level)",
+     "upper body B13 +5 cm",
+     "upper body B13 +10 cm",
+     "upper body B13 +15 cm",
+     "back shoulder seams"
+    ]
+   }
+  },
+  "sleeve": {
+   "widthScale": 1.04,
+   "evidence": {
+    "elbow WEB/CLO": 1.0301382836806623,
+    "cuff WEB/CLO": 1.0460911877260102,
+    "elbow WEB0/CLO (no ease)": 0.991232811759277
+   },
+   "lengthScale": 1.0,
+   "note": "bicep / centre-line readings are pose-distorted (sleeves rotated down from CLO's T-pose); sleeve design unchanged except the display ease"
+  },
+  "ribEvidence": {
+   "collar (back strips, WEB/CLO along)": 1.039,
+   "cuff (WEB/CLO along)": 1.0375,
+   "waistband (WEB/CLO along)": "1.074–1.082 (incl. Blender stretch 3.3–4.1 %)"
+  },
+  "collarScaleTop": 1.039,
+  "rule": "x' = axis + s(y)·(x − axis); axis = CB (back) / CF (fronts, extension kept rigid); s(y) PCHIP through the control points, constant beyond them"
+ },
+ "verification": {
+  "allPass": true,
+  "rows": 23
+ },
+ "artwork": [
+  {
+   "id": "ART-01-BACK_QUOTE",
+   "sizeCm": [
+    30.0,
+    4.71
+   ],
+   "centreCm": {
+    "x": -0.15,
+    "y": 49.99
+   },
+   "rotationDeg": 0.6,
+   "frame": "x = cm from CB (+ wearer's left, − wearer's right); y = cm below the back HPS line"
+  },
+  {
+   "id": "ART-02-LEFT_SLEEVE_UPPER",
+   "sizeCm": [
+    6.86,
+    9.74
+   ],
+   "centreCm": {
+    "x": 0.81,
+    "y": 12.47
+   },
+   "rotationDeg": 8.5,
+   "frame": "x = cm across from the sleeve centre line (+ toward the back half); y = cm below the shoulder point (cap peak) along the centre line"
+  },
+  {
+   "id": "ART-03-LEFT_CHEST",
+   "sizeCm": [
+    10.0,
+    8.12
+   ],
+   "centreCm": {
+    "x": 10.49,
+    "y": 18.32
+   },
+   "rotationDeg": 3.9,
+   "frame": "x = cm from CF toward the side seam; y = cm below the front HPS"
+  },
+  {
+   "id": "ART-04-RIGHT_CHEST",
+   "sizeCm": [
+    7.3,
+    4.89
+   ],
+   "centreCm": {
+    "x": 10.21,
+    "y": 18.19
+   },
+   "rotationDeg": -3.7,
+   "frame": "x = cm from CF toward the side seam; y = cm below the front HPS"
+  },
+  {
+   "id": "ART-05-MAIN_BACK",
+   "sizeCm": [
+    27.51,
+    29.19
+   ],
+   "centreCm": {
+    "x": -0.14,
+    "y": 27.58
+   },
+   "rotationDeg": 1.1,
+   "frame": "x = cm from CB (+ wearer's left, − wearer's right); y = cm below the back HPS line"
+  },
+  {
+   "id": "ART-06-RIGHT_SLEEVE_MIDDLE",
+   "sizeCm": [
+    8.4,
+    5.88
+   ],
+   "centreCm": {
+    "x": 0.72,
+    "y": 25.92
+   },
+   "rotationDeg": -5.1,
+   "frame": "x = cm across from the sleeve centre line (+ toward the back half); y = cm below the shoulder point (cap peak) along the centre line"
+  },
+  {
+   "id": "ART-07-RIGHT_SLEEVE_UPPER",
+   "sizeCm": [
+    8.4,
+    8.36
+   ],
+   "centreCm": {
+    "x": -0.41,
+    "y": 12.13
+   },
+   "rotationDeg": -9.6,
+   "frame": "x = cm across from the sleeve centre line (+ toward the back half); y = cm below the shoulder point (cap peak) along the centre line"
+  }
+ ]
+}

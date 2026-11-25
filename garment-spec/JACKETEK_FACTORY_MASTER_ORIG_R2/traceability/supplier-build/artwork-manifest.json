@@ -1,0 +1,382 @@
+[
+ {
+  "artworkId": "ART-01-BACK_QUOTE",
+  "code": "ART-01",
+  "slug": "ART-01_Back_Name_Text",
+  "master": "ART-01_Back_Name_Text_MASTER.png",
+  "colourCopy": "ART-01_Back_Name_Text_COLOUR-IVORY.png",
+  "sourceFile": "artwork\\ART-01-BACK_QUOTE.png",
+  "pixels": [
+   1618,
+   254
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 30.0,
+  "heightCm": 4.71,
+  "ppiAtFinishedSize": 137,
+  "mono": true,
+  "threads": [
+   [
+    "Fill (text)",
+    "Ivory",
+    "#ECE7DC"
+   ]
+  ],
+  "palette": null,
+  "piece": "JKT_BACK_M",
+  "rotationDeg": 0.6,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "waistband seam",
+    "distanceCm": 10.7
+   },
+   {
+    "feature": "side seam",
+    "distanceCm": 12.69
+   },
+   {
+    "feature": "armhole seam",
+    "distanceCm": 20.83
+   },
+   {
+    "feature": "shoulder seam",
+    "distanceCm": 42.35
+   }
+  ]
+ },
+ {
+  "artworkId": "ART-02-LEFT_SLEEVE_UPPER",
+  "code": "ART-02",
+  "slug": "ART-02_Left_Sleeve_Emblem",
+  "master": "ART-02_Left_Sleeve_Emblem_MASTER.png",
+  "colourCopy": null,
+  "sourceFile": "artwork\\ART-02-LEFT_SLEEVE_UPPER.webp",
+  "pixels": [
+   1201,
+   1705
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 6.86,
+  "heightCm": 9.74,
+  "ppiAtFinishedSize": 445,
+  "mono": false,
+  "threads": [],
+  "palette": [
+   [
+    "#DE2627",
+    29.5
+   ],
+   [
+    "#2E2422",
+    23.7
+   ],
+   [
+    "#B3090B",
+    14.9
+   ],
+   [
+    "#160E0C",
+    13.8
+   ],
+   [
+    "#B27978",
+    7.0
+   ],
+   [
+    "#050705",
+    6.5
+   ],
+   [
+    "#A33B3A",
+    2.9
+   ]
+  ],
+  "piece": "JKT_SLEEVE_L_M",
+  "rotationDeg": 8.5,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "armhole seam",
+    "distanceCm": 6.98
+   },
+   {
+    "feature": "sleeve underarm seam",
+    "distanceCm": 18.35
+   },
+   {
+    "feature": "cuff seam",
+    "distanceCm": 35.45
+   }
+  ]
+ },
+ {
+  "artworkId": "ART-03-LEFT_CHEST",
+  "code": "ART-03",
+  "slug": "ART-03_YO_Chest_Patch",
+  "master": "ART-03_YO_Chest_Patch_MASTER.png",
+  "colourCopy": null,
+  "sourceFile": "artwork\\ART-03-LEFT_CHEST.png",
+  "pixels": [
+   1920,
+   1559
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 10.0,
+  "heightCm": 8.12,
+  "ppiAtFinishedSize": 488,
+  "mono": false,
+  "threads": [
+   [
+    "Fill",
+    "Burgundy",
+    "#64152B"
+   ],
+   [
+    "Outline",
+    "White",
+    "#F4F4F4"
+   ],
+   [
+    "Inner line",
+    "Burgundy",
+    "#64152B"
+   ]
+  ],
+  "palette": null,
+  "piece": "JKT_FRONT_L_M",
+  "rotationDeg": 3.9,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "collar seam",
+    "distanceCm": 4.16
+   },
+   {
+    "feature": "CF line",
+    "distanceCm": 5.22
+   },
+   {
+    "feature": "snap line",
+    "distanceCm": 5.96
+   },
+   {
+    "feature": "armhole seam",
+    "distanceCm": 6.45
+   }
+  ]
+ },
+ {
+  "artworkId": "ART-04-RIGHT_CHEST",
+  "code": "ART-04",
+  "slug": "ART-04_Iraq_Flag_Chest_Patch",
+  "master": "ART-04_Iraq_Flag_Chest_Patch_MASTER.png",
+  "colourCopy": null,
+  "sourceFile": "artwork\\ART-04-RIGHT_CHEST.webp",
+  "pixels": [
+   1920,
+   1287
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 7.3,
+  "heightCm": 4.89,
+  "ppiAtFinishedSize": 668,
+  "mono": false,
+  "threads": [],
+  "palette": [
+   [
+    "#F72524",
+    16.9
+   ],
+   [
+    "#FDFBFA",
+    16.5
+   ],
+   [
+    "#0C0B0B",
+    13.6
+   ],
+   [
+    "#3F5F3B",
+    13.2
+   ],
+   [
+    "#292524",
+    12.0
+   ],
+   [
+    "#C30D0D",
+    11.5
+   ],
+   [
+    "#C8D3BD",
+    10.2
+   ],
+   [
+    "#E06765",
+    6.2
+   ]
+  ],
+  "piece": "JKT_FRONT_R_M",
+  "rotationDeg": -3.7,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "collar seam",
+    "distanceCm": 5.85
+   },
+   {
+    "feature": "CF line",
+    "distanceCm": 6.41
+   },
+   {
+    "feature": "armhole seam",
+    "distanceCm": 8.11
+   },
+   {
+    "feature": "front edge (CF extension)",
+    "distanceCm": 8.38
+   }
+  ]
+ },
+ {
+  "artworkId": "ART-05-MAIN_BACK",
+  "code": "ART-05",
+  "slug": "ART-05_Back_SENIOR_2027",
+  "master": "ART-05_Back_SENIOR_2027_MASTER.png",
+  "colourCopy": null,
+  "sourceFile": "artwork\\ART-05-MAIN_BACK.png",
+  "pixels": [
+   1210,
+   1284
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 27.51,
+  "heightCm": 29.19,
+  "ppiAtFinishedSize": 112,
+  "mono": false,
+  "threads": [
+   [
+    "Fill",
+    "Ivory",
+    "#ECE7DC"
+   ],
+   [
+    "Outline",
+    "Burgundy",
+    "#64152B"
+   ]
+  ],
+  "palette": null,
+  "piece": "JKT_BACK_M",
+  "rotationDeg": 1.1,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "armhole seam",
+    "distanceCm": 8.62
+   },
+   {
+    "feature": "collar seam",
+    "distanceCm": 10.29
+   },
+   {
+    "feature": "shoulder seam",
+    "distanceCm": 10.39
+   },
+   {
+    "feature": "side seam",
+    "distanceCm": 14.77
+   }
+  ]
+ },
+ {
+  "artworkId": "ART-06-RIGHT_SLEEVE_MIDDLE",
+  "code": "ART-06",
+  "slug": "ART-06_Right_Sleeve_Number_09",
+  "master": "ART-06_Right_Sleeve_Number_09_MASTER.png",
+  "colourCopy": null,
+  "sourceFile": "artwork\\ART-06-RIGHT_SLEEVE_MIDDLE.png",
+  "pixels": [
+   1920,
+   1343
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 8.4,
+  "heightCm": 5.88,
+  "ppiAtFinishedSize": 581,
+  "mono": false,
+  "threads": [
+   [
+    "Fill",
+    "White",
+    "#F4F4F4"
+   ],
+   [
+    "Inner line",
+    "Burgundy",
+    "#64152B"
+   ]
+  ],
+  "palette": null,
+  "piece": "JKT_SLEEVE_R_M",
+  "rotationDeg": -5.1,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "sleeve underarm seam",
+    "distanceCm": 15.39
+   },
+   {
+    "feature": "armhole seam",
+    "distanceCm": 20.42
+   },
+   {
+    "feature": "cuff seam",
+    "distanceCm": 24.0
+   }
+  ]
+ },
+ {
+  "artworkId": "ART-07-RIGHT_SLEEVE_UPPER",
+  "code": "ART-07",
+  "slug": "ART-07_Right_Sleeve_Arabic_Text",
+  "master": "ART-07_Right_Sleeve_Arabic_Text_MASTER.png",
+  "colourCopy": "ART-07_Right_Sleeve_Arabic_Text_COLOUR-IVORY.png",
+  "sourceFile": "artwork\\ART-07-RIGHT_SLEEVE_UPPER.png",
+  "pixels": [
+   781,
+   777
+  ],
+  "pixelsIdentical": true,
+  "widthCm": 8.4,
+  "heightCm": 8.36,
+  "ppiAtFinishedSize": 236,
+  "mono": true,
+  "threads": [
+   [
+    "Fill (text)",
+    "Ivory",
+    "#ECE7DC"
+   ]
+  ],
+  "palette": null,
+  "piece": "JKT_SLEEVE_R_M",
+  "rotationDeg": -9.6,
+  "aspectKept": true,
+  "clearance": [
+   {
+    "feature": "armhole seam",
+    "distanceCm": 7.05
+   },
+   {
+    "feature": "sleeve underarm seam",
+    "distanceCm": 17.95
+   },
+   {
+    "feature": "cuff seam",
+    "distanceCm": 36.26
+   }
+  ]
+ }
+]

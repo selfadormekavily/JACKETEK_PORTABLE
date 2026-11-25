@@ -1,0 +1,847 @@
+/*
+ * The configurator as a guided fitting-room journey (components/ConfiguratorShell,
+ * components/StepFlow): one step at a time, the jacket always in view.
+ *
+ *  - Split layout (desktops, landscape tablets — the `cfg` screen): the stage
+ *    is the hero; the panel is three bands (heading · the step's controls ·
+ *    Back / Next), and only the middle band scrolls.
+ *  - Stacked (phones, portrait tablets): the stage and a compact step map are
+ *    pinned under the bar; the controls scroll beneath; Back / Next is a bar
+ *    at the bottom of the screen.
+ *
+ * Logical properties throughout, so the whole flow mirrors in Arabic.
+ */
+
+:root {
+  /* Split layout: the panel's width (wider on large screens, the stage stays the hero). */
+  --cfg-panel: clamp(440px, 34vw, 520px);
+  /* Stacked: the bar's height (6px top border + 60px / 76px nav), the action bar, and
+     the pinned stage — at its largest at the top of the page (open), settled to a
+     compact height once the customer scrolls into the controls, smaller still while typing. */
+  --cfg-nav: 66px;
+  --cfg-bar: 76px;
+  --cfg-stage-open: clamp(380px, 57svh, 540px);
+  --cfg-stage-compact: clamp(300px, 41svh, 400px);
+  --cfg-stage-typing: clamp(190px, 28svh, 280px);
+  /* The stage gives way pixel for pixel as the page scrolls (--cfg-scroll: ConfiguratorShell). */
+  --cfg-stage-h: max(var(--cfg-stage-compact), calc(var(--cfg-stage-open) - var(--cfg-scroll, 0px)));
+}
+@media (min-width: 768px) {
+  :root {
+    --cfg-nav: 82px;
+    --cfg-bar: 84px;
+    --cfg-stage-open: clamp(440px, 54svh, 680px);
+    --cfg-stage-compact: clamp(360px, 43svh, 540px);
+  }
+}
+/* (Set on the root, so the page's scroll-padding follows the stage's height too.) */
+html:has(.jk-cfg :is(textarea, input[type="text"], input[type="search"]):focus) {
+  --cfg-stage-h: var(--cfg-stage-typing);
+}
+
+/* ======================= Stacked (phones, portrait tablets) ======================= */
+/* Exactly the complement of the split layout's query (below). */
+@media (max-width: 1023.98px), (max-width: 1179.98px) and (orientation: portrait) {
+  .jk-cfg {
+    padding-top: var(--cfg-nav);
+  }
+  /* Anything scrolled into view (keyboard focus, find-in-page, scrollIntoView)
+     lands between the pinned stage and the action bar, never under them. */
+  html:has(.jk-cfg) {
+    scroll-padding-top: calc(var(--cfg-nav) + var(--cfg-stage-h) + 12px);
+    scroll-padding-bottom: calc(var(--cfg-bar) + 12px);
+  }
+
+  /* The pinned stage: the jacket (and, on tablets, the view switch), under the bar.
+     Gestures that start on it are the jacket's: no page scroll or pull-to-refresh
+     from there (the page scrolls from the controls below). */
+  .jk-cfg-stage {
+    position: sticky;
+    top: var(--cfg-nav);
+    z-index: 20;
+    display: flex;
+    height: var(--cfg-stage-h);
+    flex-direction: column;
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: contain;
+    box-shadow:
+      0 1px 0 rgb(var(--brand-navy) / 0.1),
+      0 18px 26px -24px rgb(var(--brand-navy-deep) / 0.55);
+  }
+  /* Easing only into the typing height (the scroll-linked height must not lag). */
+  html:has(.jk-cfg :is(textarea, input[type="text"], input[type="search"]):focus) .jk-cfg-stage {
+    transition: height 320ms var(--ease-out-expo);
+  }
+  /* What the stage gives way, the panel takes as margin: the controls move
+     exactly with the finger, nothing jumps. */
+  .jk-cfg-panel {
+    margin-top: min(var(--cfg-scroll, 0px), calc(var(--cfg-stage-open) - var(--cfg-stage-compact)));
+  }
+  /* The step map floats over the top edge of the stage: no band of its own,
+     the room (and the jacket) continue behind it. */
+  .jk-cfg-stage__map {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    z-index: 5;
+    padding: 6px 20px 0;
+    pointer-events: none;
+  }
+  .jk-cfg-stage__map .jk-stepmap__step {
+    pointer-events: auto;
+  }
+  /* Over the jacket (e.g. zoomed in on a zone) the label keeps a faint
+     translucent pill, so it stays readable without becoming a band. */
+  .jk-cfg-stage__map .jk-stepmap__current {
+    width: max-content;
+    margin: 0 auto;
+    padding: 1px 12px 2px;
+    border-radius: 999px;
+    background: rgb(var(--brand-cream) / 0.72);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+  /* The room keeps the stage's full height; it is scaled down (from the top
+     centre, ConfiguratorStage) as the stage gives way, so the canvas never resizes. */
+  .jk-cfg-stage__room {
+    flex: none;
+    height: var(--cfg-stage-open);
+    transform-origin: 50% 0;
+  }
+  .jk-cfg-views {
+    padding-bottom: 2px;
+  }
+
+  /* Typing (text embroidery, initials, font search): the jacket steps back a
+     little (--cfg-stage-typing, above) and the action bar leaves room for the keyboard. */
+  .jk-cfg:has(:is(textarea, input[type="text"], input[type="search"]):focus) .jk-stepbar {
+    display: none;
+  }
+
+  .jk-cfg-panel__head {
+    padding: 24px 20px 0;
+  }
+  .jk-cfg-panel__body {
+    padding: 28px 20px calc(var(--cfg-bar) + 44px + env(safe-area-inset-bottom));
+  }
+
+  /* Back / Next: a frosted bar at the bottom of the screen. */
+  .jk-stepbar {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 0;
+    z-index: 30;
+    padding: 10px 20px calc(10px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgb(var(--brand-navy) / 0.12);
+    background: rgb(var(--brand-cream) / 0.9);
+    box-shadow: 0 -14px 26px -24px rgb(var(--brand-navy-deep) / 0.5);
+    -webkit-backdrop-filter: blur(14px) saturate(1.1);
+    backdrop-filter: blur(14px) saturate(1.1);
+  }
+}
+@media (min-width: 768px) and (max-width: 1023.98px), (min-width: 768px) and (max-width: 1179.98px) and (orientation: portrait) {
+  .jk-cfg-panel__head {
+    padding: 32px 40px 0;
+  }
+  .jk-cfg-panel__body {
+    padding-inline: 40px;
+  }
+  .jk-stepbar {
+    padding-inline: 40px;
+  }
+  .jk-cfg-stage__map {
+    padding: 10px 40px 0;
+  }
+}
+
+/* ======================= Split (desktops, landscape tablets) ======================= */
+@media (min-width: 1180px), (min-width: 1024px) and (orientation: landscape) {
+  .jk-cfg {
+    padding-top: 0;
+  }
+  .jk-cfg-stage {
+    position: relative;
+    top: auto;
+    display: block;
+    height: 100%;
+    box-shadow: none;
+  }
+  .jk-cfg-panel__head {
+    padding: 30px 40px 0;
+  }
+  .jk-cfg-panel__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 30px 40px 36px;
+    overscroll-behavior: contain;
+    /* The controls fade out under the heading and above the actions. */
+    -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 22px), transparent 100%);
+    mask-image: linear-gradient(180deg, transparent 0, #000 18px, #000 calc(100% - 22px), transparent 100%);
+  }
+  .jk-stepbar {
+    position: relative;
+    padding: 16px 40px 22px;
+    border-top: 1px solid rgb(var(--brand-navy) / 0.12);
+    background: rgb(var(--brand-cream));
+  }
+}
+
+/* ======================= The panel's heading ======================= */
+.jk-cfg-panel__collection {
+  display: block;
+  margin-top: 3px;
+  color: rgb(var(--t-muted));
+  font-size: 9.5px;
+  font-weight: 500;
+}
+/* The step map uses the panel's full width (its names need the room). */
+.jk-cfg-panel__head .jk-stepmap {
+  margin-top: 26px;
+  margin-inline: -28px;
+}
+.jk-stephead {
+  margin-top: 26px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgb(var(--brand-navy) / 0.12);
+}
+.jk-stephead__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 10px;
+}
+.jk-stephead__title {
+  font-size: clamp(34px, 9vw, 46px);
+}
+.jk-stephead__value {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 3px;
+  color: rgb(var(--brand-navy));
+  font-size: 13.5px;
+  line-height: 1.4;
+}
+.jk-stephead__dot {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+  border-radius: 9999px;
+  box-shadow:
+    0 0 0 1px rgb(var(--brand-navy) / 0.25),
+    0 0 0 3px rgb(var(--brand-cream-raised));
+}
+.jk-stephead__prompt {
+  margin-top: 10px;
+  color: rgb(var(--t-muted));
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+/* ======================= The step map ======================= */
+.jk-stepmap {
+  container-type: inline-size;
+}
+.jk-stepmap__track {
+  --knot: 10px;
+  position: relative;
+  display: grid;
+  grid-auto-columns: minmax(0, 1fr);
+  grid-auto-flow: column;
+}
+/* The thread: stitched from the first knot to the last, solid navy up to the current one. */
+.jk-stepmap__track::before,
+.jk-stepmap__track::after {
+  position: absolute;
+  top: 21px;
+  inset-inline-start: calc(100% / 12);
+  height: 0;
+  content: "";
+  pointer-events: none;
+}
+.jk-stepmap__track::before {
+  inset-inline-end: calc(100% / 12);
+  border-top: 1.5px dashed rgb(var(--brand-navy) / 0.25);
+}
+.jk-stepmap__track::after {
+  width: calc((100% - 100% / 6) * var(--progress, 0));
+  border-top: 1.5px solid rgb(var(--brand-navy));
+  transition: width 520ms var(--ease-out-expo);
+}
+.jk-stepmap__item {
+  display: flex;
+  justify-content: center;
+  min-width: 0;
+}
+.jk-stepmap__step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 44px;
+  min-height: 44px;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding-top: 16px;
+  color: rgb(var(--t-muted));
+  transition: color 250ms var(--ease-out-expo);
+}
+.jk-stepmap__knot {
+  display: block;
+  width: var(--knot);
+  height: var(--knot);
+  border-radius: 9999px;
+  background: rgb(var(--brand-cream));
+  box-shadow: inset 0 0 0 1.5px rgb(var(--brand-navy) / 0.35);
+  transition:
+    background-color 300ms var(--ease-out-expo),
+    box-shadow 300ms var(--ease-out-expo),
+    transform 300ms var(--ease-out-expo);
+}
+.jk-stepmap__step[data-state="done"] .jk-stepmap__knot {
+  background: rgb(var(--brand-navy));
+  box-shadow: 0 0 0 3px rgb(var(--brand-cream));
+}
+.jk-stepmap__step[data-state="current"] {
+  color: rgb(var(--t-head));
+}
+.jk-stepmap__step[data-state="current"] .jk-stepmap__knot {
+  background: rgb(var(--brand-crimson));
+  box-shadow:
+    0 0 0 3px rgb(var(--brand-cream)),
+    0 0 0 5px rgb(var(--brand-crimson) / 0.22);
+  transform: scale(1.3);
+}
+.jk-stepmap__step:hover {
+  color: rgb(var(--t-head));
+}
+.jk-stepmap__step:hover .jk-stepmap__knot {
+  box-shadow: inset 0 0 0 1.5px rgb(var(--brand-navy) / 0.8);
+}
+.jk-stepmap__step[data-state="done"]:hover .jk-stepmap__knot {
+  box-shadow: 0 0 0 3px rgb(var(--brand-cream)), 0 0 0 4.5px rgb(var(--brand-navy) / 0.3);
+}
+.jk-stepmap__step:focus-visible {
+  outline: 2px solid rgb(var(--t-link));
+  outline-offset: 2px;
+}
+.jk-stepmap__name {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Too narrow to name every step: only the current one is named (the others say who they are on hover and to screen readers). */
+@container (max-width: 420px) {
+  .jk-stepmap__step:not([data-state="current"]) .jk-stepmap__name {
+    visibility: hidden;
+  }
+}
+
+/* Compact (stacked): knots only, the current step named beneath. */
+.jk-stepmap--current .jk-stepmap__track::before,
+.jk-stepmap--current .jk-stepmap__track::after {
+  top: 15px;
+}
+.jk-stepmap--current .jk-stepmap__step {
+  min-height: 32px;
+  padding-top: 10px;
+}
+.jk-stepmap__current {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 2px;
+  animation: jk-step-fade 360ms var(--ease-out-expo) both;
+}
+.jk-stepmap__index {
+  color: rgb(var(--brand-crimson));
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+.jk-stepmap__label {
+  color: rgb(var(--t-head));
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+.jk-stepmap__count {
+  color: rgb(var(--t-muted));
+  font-size: 10px;
+  letter-spacing: 0.08em;
+}
+
+/* ======================= Back / Next ======================= */
+.jk-stepbar__note {
+  margin-bottom: 10px;
+  color: rgb(var(--t-muted));
+  font-size: 12px;
+  line-height: 1.5;
+}
+.jk-stepbar__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.jk-stepbar__back {
+  display: inline-flex;
+  min-height: 52px;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 10px;
+  padding-inline: 4px 14px;
+  color: rgb(var(--t-head));
+  transition: color 250ms var(--ease-out-expo);
+}
+.jk-stepbar__back:hover {
+  color: rgb(var(--t-link));
+}
+.jk-stepbar__back .jk-arrow {
+  transition: transform 250ms var(--ease-out-expo);
+}
+.jk-stepbar__back:hover .jk-arrow {
+  transform: translateX(-3px);
+}
+.jk-stepbar__next {
+  display: inline-flex;
+  min-width: 0;
+  min-height: 52px;
+  flex: 0 1 auto;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-inline: 24px 20px;
+  background: rgb(var(--t-btn));
+  color: rgb(var(--t-btn-text));
+  box-shadow: 0 12px 22px -16px rgb(var(--brand-crimson) / 0.8);
+  transition:
+    background-color 250ms var(--ease-out-expo),
+    transform 150ms var(--ease-out-expo);
+}
+.jk-stepbar__next:hover {
+  background: rgb(var(--t-btn-hover));
+}
+.jk-stepbar__next:active {
+  transform: translateY(1px);
+}
+.jk-stepbar__next .jk-arrow {
+  transition: transform 250ms var(--ease-out-expo);
+}
+.jk-stepbar__next:hover .jk-arrow {
+  transform: translateX(3px);
+}
+.jk-stepbar__next:disabled {
+  cursor: not-allowed;
+  background: transparent;
+  box-shadow: inset 0 0 0 1px rgb(var(--t-muted));
+  color: rgb(var(--t-muted));
+}
+/* A stitched seam inside the button (the woven-tag detail). */
+.jk-stepbar__next:not(:disabled) {
+  outline: 1px dashed rgb(var(--brand-cream) / 0.45);
+  outline-offset: -5px;
+}
+@media (max-width: 767px) {
+  .jk-stepbar__next {
+    flex: 1 1 auto;
+  }
+}
+/* (RTL: the arrows are mirrored with `scale` (styles/i18n.css), which composes
+   with the hover nudge above — so the nudge already points the reading way.) */
+
+/* ======================= Step transitions ======================= */
+@keyframes jk-step-in {
+  from {
+    opacity: 0;
+    transform: translateX(calc(var(--jk-step-shift) * 1px));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes jk-step-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.jk-step-enter {
+  --jk-step-shift: 16;
+  animation: jk-step-in 420ms var(--ease-out-expo) both;
+}
+.jk-step-enter[data-direction="-1"] {
+  --jk-step-shift: -16;
+}
+[dir="rtl"] .jk-step-enter {
+  --jk-step-shift: -16;
+}
+[dir="rtl"] .jk-step-enter[data-direction="-1"] {
+  --jk-step-shift: 16;
+}
+.jk-step-fade {
+  animation: jk-step-fade 320ms var(--ease-out-expo) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .jk-step-enter,
+  .jk-step-fade,
+  .jk-stepmap__current {
+    animation: none;
+  }
+  .jk-stepmap__track::after,
+  .jk-stepmap__knot,
+  .jk-cfg-stage {
+    transition: none;
+  }
+}
+
+/* ======================= Embroidery: the zone map ======================= */
+.jk-zonemap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.jk-zonemap__hint {
+  color: rgb(var(--t-muted));
+  font-size: 12px;
+  line-height: 1.5;
+}
+.jk-zonemap__groups {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgb(var(--brand-navy) / 0.85);
+}
+.jk-zonemap__group {
+  display: grid;
+  grid-template-columns: 92px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding-block: 10px;
+  border-bottom: 1px dashed rgb(var(--brand-navy) / 0.18);
+}
+.jk-zonemap__group-name {
+  color: rgb(var(--t-muted));
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+/* The chips of a group share its width evenly (2 front, 2 back, 3 per sleeve). */
+.jk-zonemap__zones {
+  display: grid;
+  grid-template-columns: repeat(var(--zones, 3), minmax(0, 1fr));
+  gap: 6px;
+}
+@media (max-width: 767px) {
+  .jk-zonemap__group {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding-block: 12px;
+  }
+}
+.jk-zonechip {
+  display: inline-flex;
+  min-height: 44px;
+  min-width: 0;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px 6px 9px;
+  padding-inline: 9px 12px;
+  border-radius: 2px;
+  background: rgb(var(--brand-cream-raised) / 0.45);
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-navy) / 0.16);
+  color: rgb(var(--t-muted));
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.3;
+  text-align: start;
+  text-transform: uppercase;
+  transition:
+    background-color 220ms var(--ease-out-expo),
+    box-shadow 220ms var(--ease-out-expo),
+    color 220ms var(--ease-out-expo);
+}
+.jk-zonechip:hover {
+  background: rgb(var(--brand-cream-raised));
+  color: rgb(var(--t-head));
+}
+.jk-zonechip[data-filled] {
+  color: rgb(var(--t-head));
+}
+.jk-zonechip[aria-pressed="true"] {
+  background: rgb(var(--brand-cream-raised));
+  box-shadow:
+    inset 0 0 0 1.5px rgb(var(--t-link)),
+    0 10px 18px -14px rgb(var(--brand-navy-deep) / 0.6);
+  color: rgb(var(--t-head));
+}
+.jk-zonechip:focus-visible {
+  outline: 2px solid rgb(var(--t-link));
+  outline-offset: 2px;
+}
+.jk-zonechip__mark {
+  display: grid;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  place-items: center;
+}
+.jk-zonechip__mark img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+.jk-zonechip__ring {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1.2px currentColor;
+  opacity: 0.7;
+}
+.jk-zonechip[aria-pressed="true"] .jk-zonechip__ring {
+  background: rgb(var(--brand-crimson));
+  box-shadow: none;
+  opacity: 1;
+}
+.jk-zonechip__aa {
+  font-family: var(--font-display);
+  font-size: 15px;
+  letter-spacing: 0;
+  line-height: 1;
+  text-transform: none;
+}
+
+/* The chosen zone's editor: its name and size, then only its controls.
+   Scrolled to from the zone map, it stops just under the pinned stage. */
+.jk-zone {
+  scroll-margin-top: 20px;
+}
+@media (max-width: 1023.98px), (max-width: 1179.98px) and (orientation: portrait) {
+  .jk-zone {
+    scroll-margin-top: 4px; /* the page's scroll-padding already clears the pinned stage */
+  }
+  /* The pinned step map already says "5 / 6". */
+  .jk-stephead__step {
+    display: none;
+  }
+  .jk-stephead {
+    margin-top: 0;
+  }
+}
+.jk-zone__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgb(var(--brand-navy) / 0.85);
+}
+.jk-zone__area {
+  color: rgb(var(--t-muted));
+  font-size: 12.5px;
+}
+
+/* ======================= Folded secondary controls ======================= */
+.jk-disclosure {
+  border-block: 1px dashed rgb(var(--brand-navy) / 0.2);
+}
+.jk-disclosure__toggle {
+  display: flex;
+  width: 100%;
+  min-height: 52px;
+  align-items: center;
+  gap: 12px;
+  text-align: start;
+}
+.jk-disclosure__value {
+  min-width: 0;
+  margin-inline-start: auto;
+  color: rgb(var(--t-muted));
+  font-size: 12.5px;
+  text-align: end;
+}
+.jk-disclosure__chevron {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  margin-inline: 4px 2px;
+  border-block-end: 1.5px solid rgb(var(--brand-navy));
+  border-inline-end: 1.5px solid rgb(var(--brand-navy));
+  transform: translateY(-2px) rotate(45deg);
+  transition: transform 260ms var(--ease-out-expo);
+}
+.jk-disclosure[data-open] .jk-disclosure__chevron {
+  transform: translateY(2px) rotate(225deg);
+}
+.jk-disclosure__toggle:hover .jk-disclosure__value {
+  color: rgb(var(--t-head));
+}
+.jk-disclosure__body {
+  padding: 4px 0 22px;
+}
+
+/* ======================= Selected-state polish ======================= */
+/* Palette swatches: the chosen colour's name in ink, underlined with a short crimson stitch. */
+.jk-swatch-cell[aria-checked="true"] > span:last-child {
+  position: relative;
+  font-weight: 600;
+}
+.jk-swatch-cell[aria-checked="true"] > span:last-child::after {
+  position: absolute;
+  inset-inline: 30%;
+  bottom: -5px;
+  border-top: 1.5px dashed rgb(var(--brand-crimson));
+  content: "";
+}
+.jk-swatch-cell .jk-swatch {
+  transition:
+    transform 220ms var(--ease-out-expo),
+    box-shadow 260ms var(--ease-out-expo);
+}
+.jk-swatch-cell[aria-checked="true"] .jk-swatch {
+  transform: scale(1.08);
+}
+
+/* ======================= Arabic ======================= */
+:root[lang="ar-IQ"] :is(.jk-stepmap__name, .jk-stepmap__label, .jk-zonemap__group-name, .jk-zonechip) {
+  letter-spacing: 0;
+  text-transform: none;
+}
+:root[lang="ar-IQ"] .jk-stepmap__name {
+  font-size: 11px;
+}
+:root[lang="ar-IQ"] .jk-stepmap__label {
+  font-size: 13px;
+}
+:root[lang="ar-IQ"] .jk-zonemap__group-name {
+  font-size: 12px;
+}
+:root[lang="ar-IQ"] .jk-zonechip {
+  font-size: 12.5px;
+  font-weight: var(--ar-w-label);
+}
+:root[lang="ar-IQ"] .jk-cfg-panel__collection {
+  font-size: 11.5px;
+}
+
+/* ======================= Touch: how to handle the jacket ======================= */
+.jk-gesture-hint {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  z-index: 6;
+  max-width: calc(100% - 96px);
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgb(var(--brand-navy) / 0.82);
+  color: rgb(var(--brand-cream));
+  font-size: 11.5px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 6px);
+  transition:
+    opacity 400ms var(--ease-out-expo),
+    transform 400ms var(--ease-out-expo);
+}
+.jk-gesture-hint[data-shown] {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+.jk-gesture-help {
+  position: absolute;
+  bottom: 10px;
+  inset-inline-start: 10px;
+  z-index: 6;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 999px;
+  background: rgb(var(--brand-cream) / 0.75);
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-navy) / 0.2);
+  color: rgb(var(--brand-navy));
+  font-size: 13px;
+  font-weight: 600;
+}
+/* A 44px target around the small mark. */
+.jk-gesture-help::before {
+  position: absolute;
+  inset: -7px;
+  content: "";
+}
+@media (min-width: 1180px), (min-width: 1024px) and (orientation: landscape) {
+  .jk-gesture-hint {
+    bottom: 96px;
+  }
+  .jk-gesture-help {
+    bottom: 92px;
+    inset-inline-start: 24px;
+  }
+}
+
+/* ======================= Embroidery: area N of M ======================= */
+.jk-zone__count {
+  margin-bottom: 4px;
+  color: rgb(var(--brand-crimson));
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+:root[lang="ar-IQ"] .jk-zone__count {
+  font-size: 12px;
+  letter-spacing: 0;
+  text-transform: none;
+}
+:root[lang="ar-IQ"] .jk-gesture-hint {
+  font-size: 12.5px;
+}
+
+/* "Next area" over the area's name (Embroidery, inner level). */
+.jk-stepbar__stack {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+.jk-stepbar__kicker {
+  font-size: 9.5px;
+  opacity: 0.85;
+}
+.jk-stepbar__target {
+  max-width: 100%;
+  overflow: hidden;
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-overflow: ellipsis;
+  text-transform: none;
+  white-space: nowrap;
+}
+:root[lang="ar-IQ"] .jk-stepbar__kicker {
+  font-size: 12px;
+}
+:root[lang="ar-IQ"] .jk-stepbar__target {
+  font-size: 14.5px;
+  letter-spacing: 0;
+}

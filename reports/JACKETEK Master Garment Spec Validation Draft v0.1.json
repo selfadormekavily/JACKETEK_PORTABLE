@@ -1,0 +1,2654 @@
+{
+  "schema": "jacketek.masterGarmentSpec",
+  "schemaVersion": "0.1.0",
+  "title": "JACKETEK Master Garment Spec — Validation Draft v0.1",
+  "date": "2026-10-08",
+  "documentStatus": "VALIDATION_DRAFT",
+  "productionApproved": false,
+  "connectedToWebsite": false,
+  "product": "Senior / Varsity / Letterman jacket, deliberately roomy / baggy silhouette",
+  "decisions": {
+    "primarySilhouetteReference": "Golden Bear Classic Fit Varsity Jacket (base M)",
+    "primaryTechPackStructureReference": "S.i. Graphics Varsity Letterman Jacket Tech Pack — structure only; its example numbers are NOT authoritative",
+    "secondaryVisualReference": "JACKETEK visual fit reference / secondary benchmark (M only; source and method unverified; grading not used)",
+    "excludedSources": [
+      "LineDrop PixelVarsity (not independently verifiable)"
+    ],
+    "labelShiftRejected": "Golden Bear L is NOT relabelled as JACKETEK M",
+    "extraEasePolicy": "Only on an approved physical sample, by a pattern maker, without blindly increasing sleeve/body length"
+  },
+  "revision": "v0.1 rev 2 — added the secondary visual fit reference, the provisional target range and the sample strategy",
+  "vocabulary": {
+    "status": [
+      "VERIFIED_SOURCE",
+      "TO_MEASURE_ON_SAMPLE",
+      "TO_SET_BY_PATTERN_MAKER",
+      "DERIVED_FROM_APPROVED_SPEC"
+    ],
+    "certainty": [
+      "KNOWN",
+      "DERIVED",
+      "UNKNOWN",
+      "NEEDS SAMPLE",
+      "NEEDS PATTERN MAKER"
+    ],
+    "sourceClassification": [
+      "PRIMARY_VERIFIED_REFERENCE",
+      "SECONDARY_VISUAL_REFERENCE",
+      "EXCLUDED"
+    ]
+  },
+  "units": {
+    "source": "in",
+    "master": "cm",
+    "conversion": "1 in = 2.54 cm (exact)"
+  },
+  "sizes": [
+    "XS",
+    "S",
+    "M",
+    "L",
+    "XL",
+    "XXL"
+  ],
+  "baseSize": "M",
+  "sources": [
+    {
+      "id": "GB",
+      "name": "Golden Bear Sportswear — size chart (Classic Fit)",
+      "url": "https://www.goldenbearsportswear.com/pages/size-chart",
+      "accessed": "2026-10-08",
+      "use": "Numerical reference for B01, B06, B09, S01"
+    },
+    {
+      "id": "SIG",
+      "name": "S.i. Graphics Varsity Letterman Jacket Tech Pack Template",
+      "url": "https://sigraphics.co/products/varsity-letterman-jacket-tech-pack-template",
+      "use": "Document structure only"
+    },
+    {
+      "id": "CFG",
+      "name": "JACKETEK configurator (src/features/configurator/model)",
+      "use": "Zone ids, customer data fields; 3D reference values for information only"
+    }
+  ],
+  "poms": [
+    {
+      "id": "B01",
+      "area": "Body",
+      "name": "Chest circumference, 1\" (2.54 cm) below armhole",
+      "arabic": "محيط الصدر: يُقاس أفقياً على بُعد 1 إنش (2.54 سم) تحت نقطة الإبط، من خياطة الجنب إلى خياطة الجنب، والقيمة هي المحيط الكامل (العرض المسطح × 2).",
+      "method": "Straight across the body at 1\" below the armhole point, side seam to side seam; reported as full circumference (flat width × 2).",
+      "start": "Side seam, 1\" below left armhole point",
+      "end": "Side seam, 1\" below right armhole point",
+      "condition": "flat, snapped closed",
+      "unit": "in (source) / cm",
+      "status": "VERIFIED_SOURCE",
+      "certainty": "KNOWN",
+      "sourceLabel": "\"Chest (1\" below armhole)\"",
+      "source": {
+        "name": "Golden Bear Sportswear — Classic Fit size chart",
+        "url": "https://www.goldenbearsportswear.com/pages/size-chart",
+        "accessed": "2026-10-08",
+        "measurementType": "garment",
+        "sourceUnit": "in"
+      },
+      "baseM": {
+        "inches": 49.0,
+        "cm": 124.46,
+        "cmText": "124.46"
+      },
+      "gradePerSize": {
+        "inches": 3.0,
+        "cm": 7.62,
+        "cmText": "7.62"
+      },
+      "referenceLabel": "REFERENCE — NOT YET JACKETEK PRODUCTION APPROVED"
+    },
+    {
+      "id": "B02",
+      "area": "Body",
+      "name": "Waist circumference",
+      "arabic": "محيط الخصر: عرض الجسم الأفقي عند مستوى الخصر (على مسافة ثابتة من نقطة الكتف العليا HPS تُحدَّد لاحقاً)، المحيط الكامل.",
+      "method": "Straight across the body at a fixed distance below HPS (distance to be fixed by pattern maker), side seam to side seam × 2.",
+      "start": "Side seam at waist level",
+      "end": "Opposite side seam at waist level",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B03",
+      "area": "Body",
+      "name": "Body width at waistband seam (above rib)",
+      "arabic": "عرض الجسم عند خياطة تركيب الحزام المطاطي (فوق الرِّب مباشرة)، المحيط الكامل.",
+      "method": "Along the seam joining body to waistband rib, side to side, × 2.",
+      "start": "Waistband seam at side",
+      "end": "Waistband seam at opposite side",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B04",
+      "area": "Body",
+      "name": "Bottom opening, relaxed",
+      "arabic": "فتحة الأسفل وهي مرتخية: محيط الحافة السفلية للحزام المطاطي دون أي شد.",
+      "method": "Along the finished bottom edge of the waistband rib, relaxed, × 2.",
+      "start": "Bottom edge at side fold",
+      "end": "Bottom edge at opposite side fold",
+      "condition": "flat, snapped closed, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B05",
+      "area": "Body",
+      "name": "Bottom opening, extended",
+      "arabic": "فتحة الأسفل مشدودة: محيط الحافة السفلية للحزام المطاطي عند شدّه إلى أقصى امتداد دون إجهاد الغرز.",
+      "method": "Same line as B04, stretched to full extension without straining stitches, × 2.",
+      "start": "Bottom edge at side fold",
+      "end": "Bottom edge at opposite side fold",
+      "condition": "flat, snapped closed, stretched",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B06",
+      "area": "Body",
+      "name": "Centre-back length",
+      "arabic": "الطول من منتصف الظهر: من منتصف الظهر عند خياطة الياقة نزولاً حتى الحافة السفلية للحزام. (نقطة البداية عند Golden Bear غير محددة — انظر القسم 4.)",
+      "method": "Vertical along the CB line from the CB neck point to the finished bottom edge. Golden Bear's start point is NOT stated (see §4).",
+      "start": "CB neck (collar seam — UNCONFIRMED for source)",
+      "end": "Finished bottom edge of waistband rib (UNCONFIRMED for source)",
+      "condition": "flat, back facing up",
+      "unit": "in (source) / cm",
+      "status": "VERIFIED_SOURCE",
+      "certainty": "KNOWN",
+      "sourceLabel": "\"Center back\"",
+      "source": {
+        "name": "Golden Bear Sportswear — Classic Fit size chart",
+        "url": "https://www.goldenbearsportswear.com/pages/size-chart",
+        "accessed": "2026-10-08",
+        "measurementType": "garment",
+        "sourceUnit": "in"
+      },
+      "baseM": {
+        "inches": 26.5,
+        "cm": 67.31,
+        "cmText": "67.31"
+      },
+      "gradePerSize": {
+        "inches": 0.5,
+        "cm": 1.27,
+        "cmText": "1.27"
+      },
+      "referenceLabel": "REFERENCE — NOT YET JACKETEK PRODUCTION APPROVED"
+    },
+    {
+      "id": "B07",
+      "area": "Body",
+      "name": "Back length from HPS",
+      "arabic": "الطول الخلفي من نقطة الكتف العليا (HPS) حتى الحافة السفلية، يُقاس على الظهر موازياً لمنتصف الظهر.",
+      "method": "From HPS straight down, parallel to CB, to the finished bottom edge (back view). Measured to reconcile B06's start point.",
+      "start": "HPS",
+      "end": "Finished bottom edge",
+      "condition": "flat, back facing up",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B08",
+      "area": "Body",
+      "name": "Front length from HPS",
+      "arabic": "الطول الأمامي: من نقطة الكتف العليا (التقاء الكتف بالياقة) نزولاً موازياً لمنتصف الأمام حتى الحافة السفلية.",
+      "method": "From HPS straight down, parallel to CF, to the finished bottom edge.",
+      "start": "HPS",
+      "end": "Finished bottom edge",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B09",
+      "area": "Body",
+      "name": "Across shoulder",
+      "arabic": "عرض الكتفين: من نقطة الكتف إلى نقطة الكتف (عند خياطة تركيب الكم) عبر الظهر.",
+      "method": "Straight line across the back from shoulder point to shoulder point (armhole seam at the shoulder). Straight vs contour NOT stated by source (see §4).",
+      "start": "Left shoulder point",
+      "end": "Right shoulder point",
+      "condition": "flat, back facing up",
+      "unit": "in (source) / cm",
+      "status": "VERIFIED_SOURCE",
+      "certainty": "KNOWN",
+      "sourceLabel": "\"Across Shoulder\"",
+      "source": {
+        "name": "Golden Bear Sportswear — Classic Fit size chart",
+        "url": "https://www.goldenbearsportswear.com/pages/size-chart",
+        "accessed": "2026-10-08",
+        "measurementType": "garment",
+        "sourceUnit": "in"
+      },
+      "baseM": {
+        "inches": 19.5,
+        "cm": 49.53,
+        "cmText": "49.53"
+      },
+      "gradePerSize": {
+        "inches": 0.75,
+        "cm": 1.905,
+        "cmText": "1.905"
+      },
+      "referenceLabel": "REFERENCE — NOT YET JACKETEK PRODUCTION APPROVED"
+    },
+    {
+      "id": "B10",
+      "area": "Body",
+      "name": "Shoulder length",
+      "arabic": "طول الكتف: من نقطة الكتف العليا (HPS) إلى نقطة الكتف عند خياطة الكم.",
+      "method": "Along the shoulder seam from HPS to shoulder point.",
+      "start": "HPS",
+      "end": "Shoulder point",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B11",
+      "area": "Body",
+      "name": "Shoulder drop",
+      "arabic": "ميل الكتف: الفرق العمودي بين مستوى نقطة الكتف العليا ومستوى نقطة الكتف.",
+      "method": "Vertical distance between the HPS level and the shoulder-point level.",
+      "start": "HPS level",
+      "end": "Shoulder point level",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B12",
+      "area": "Body",
+      "name": "Across front",
+      "arabic": "عرض الأمام: المسافة بين خياطتي تركيب الكم من الأمام، على مسافة ثابتة تحت HPS.",
+      "method": "Armhole seam to armhole seam across the front at a fixed distance below HPS (distance set by pattern maker).",
+      "start": "Left front armhole seam",
+      "end": "Right front armhole seam",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B13",
+      "area": "Body",
+      "name": "Across back",
+      "arabic": "عرض الظهر: المسافة بين خياطتي تركيب الكم من الخلف، على مسافة ثابتة تحت HPS.",
+      "method": "Armhole seam to armhole seam across the back at a fixed distance below HPS.",
+      "start": "Left back armhole seam",
+      "end": "Right back armhole seam",
+      "condition": "flat, back facing up",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B14",
+      "area": "Body",
+      "name": "Armhole depth",
+      "arabic": "عمق الإبط: المسافة العمودية من نقطة الكتف العليا (HPS) إلى مستوى نقطة الإبط.",
+      "method": "Vertical from HPS level to the armhole point (underarm) level.",
+      "start": "HPS",
+      "end": "Armhole point level",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B15",
+      "area": "Body",
+      "name": "Armhole, straight",
+      "arabic": "فتحة الإبط المستقيمة: خط مستقيم من نقطة الكتف إلى نقطة الإبط، والجاكيت مسطح.",
+      "method": "Straight line from shoulder point to armhole point, garment flat.",
+      "start": "Shoulder point",
+      "end": "Armhole point",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "B16",
+      "area": "Body",
+      "name": "Armhole, curved (along seam)",
+      "arabic": "طول خط الإبط المنحني: يُقاس على طول خياطة تركيب الكم (الأمام + الخلف).",
+      "method": "Along the armhole seam, front + back, shoulder point round to shoulder point.",
+      "start": "Shoulder point",
+      "end": "Shoulder point (full circuit)",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S01",
+      "area": "Sleeve",
+      "name": "Sleeve length from centre back",
+      "arabic": "طول الكم من منتصف الظهر: من منتصف الظهر عند الرقبة، مروراً بنقطة الكتف، على طول أعلى الكم حتى حافة الكم. (المسار ونقطة البداية والنهاية غير محددة عند المصدر.)",
+      "method": "From the CB neck point across the shoulder to the shoulder point, then down the overarm to the cuff edge. Source does not state start, path or end (see §4).",
+      "start": "CB neck point (UNCONFIRMED for source)",
+      "end": "Cuff edge (UNCONFIRMED: rib edge assumed)",
+      "condition": "flat, sleeve laid straight",
+      "unit": "in (source) / cm",
+      "status": "VERIFIED_SOURCE",
+      "certainty": "KNOWN",
+      "sourceLabel": "\"Sleeve (from center back)\"",
+      "source": {
+        "name": "Golden Bear Sportswear — Classic Fit size chart",
+        "url": "https://www.goldenbearsportswear.com/pages/size-chart",
+        "accessed": "2026-10-08",
+        "measurementType": "garment",
+        "sourceUnit": "in"
+      },
+      "baseM": {
+        "inches": 35.5,
+        "cm": 90.17,
+        "cmText": "90.17"
+      },
+      "gradePerSize": {
+        "inches": 0.75,
+        "cm": 1.905,
+        "cmText": "1.905"
+      },
+      "referenceLabel": "REFERENCE — NOT YET JACKETEK PRODUCTION APPROVED"
+    },
+    {
+      "id": "S02",
+      "area": "Sleeve",
+      "name": "Sleeve length from shoulder point (overarm)",
+      "arabic": "طول الكم من نقطة الكتف: من نقطة الكتف على طول الخط العلوي للكم حتى حافة الكم.",
+      "method": "From shoulder point along the overarm to the finished cuff edge.",
+      "start": "Shoulder point",
+      "end": "Finished cuff edge",
+      "condition": "flat, sleeve laid straight",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S03",
+      "area": "Sleeve",
+      "name": "Underarm sleeve length",
+      "arabic": "طول الكم الداخلي: من نقطة الإبط على طول خياطة الكم الداخلية حتى حافة الكم.",
+      "method": "From armhole point along the underarm seam to the finished cuff edge.",
+      "start": "Armhole point",
+      "end": "Finished cuff edge",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S04",
+      "area": "Sleeve",
+      "name": "Bicep width, 1\" below armhole",
+      "arabic": "عرض العضد: عرض الكم المسطح على بُعد 1 إنش (2.54 سم) تحت الإبط، عمودياً على خط الكم (نصف المحيط).",
+      "method": "Flat width perpendicular to the sleeve centre line, 1\" below the armhole point (half circumference).",
+      "start": "Underarm seam, 1\" below armhole point",
+      "end": "Sleeve fold opposite",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S05",
+      "area": "Sleeve",
+      "name": "Elbow width",
+      "arabic": "عرض الكوع: عرض الكم المسطح عند مستوى الكوع (على مسافة ثابتة من نقطة الكتف تُحدَّد لاحقاً).",
+      "method": "Flat width perpendicular to the sleeve line at a fixed distance from shoulder point (distance set by pattern maker).",
+      "start": "Underarm seam at elbow level",
+      "end": "Sleeve fold opposite",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S06",
+      "area": "Sleeve",
+      "name": "Sleeve width at cuff seam (above rib)",
+      "arabic": "عرض الكم عند خياطة تركيب رِب الكم (فوق الرِّب مباشرة).",
+      "method": "Flat width along the seam joining sleeve to cuff rib.",
+      "start": "Cuff seam, underarm side",
+      "end": "Cuff seam, fold side",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S07",
+      "area": "Sleeve",
+      "name": "Cuff opening, relaxed",
+      "arabic": "فتحة الكم وهي مرتخية: عرض الحافة النهائية للكم دون شد.",
+      "method": "Flat width along the finished cuff edge, relaxed.",
+      "start": "Cuff edge",
+      "end": "Cuff edge opposite",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S08",
+      "area": "Sleeve",
+      "name": "Cuff opening, extended",
+      "arabic": "فتحة الكم مشدودة: عرض الحافة النهائية للكم عند شدّها إلى أقصى امتداد.",
+      "method": "Flat width along the finished cuff edge, stretched to full extension.",
+      "start": "Cuff edge",
+      "end": "Cuff edge opposite",
+      "condition": "flat, stretched",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S09",
+      "area": "Sleeve",
+      "name": "Cuff rib height",
+      "arabic": "ارتفاع رِب الكم: من خياطة تركيب الرِّب حتى حافة الكم النهائية.",
+      "method": "From the cuff seam to the finished cuff edge.",
+      "start": "Cuff seam",
+      "end": "Finished cuff edge",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "S10",
+      "area": "Sleeve",
+      "name": "Sleeve cap height (pattern)",
+      "arabic": "ارتفاع رأس الكم: قياس على الباترون (وليس على القطعة الجاهزة) يحدده الباترونيست.",
+      "method": "Pattern measurement: from the bicep line to the top of the sleeve cap on the sleeve pattern.",
+      "start": "Bicep line (pattern)",
+      "end": "Cap top (pattern)",
+      "condition": "pattern piece",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "R01",
+      "area": "Rib",
+      "name": "Waistband rib height",
+      "arabic": "ارتفاع رِب الحزام السفلي: من خياطة التركيب حتى الحافة السفلية.",
+      "method": "From the waistband seam to the finished bottom edge, at CB.",
+      "start": "Waistband seam",
+      "end": "Finished bottom edge",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "R02",
+      "area": "Rib",
+      "name": "Waistband rib cut length",
+      "arabic": "طول قصّ رِب الحزام: يُحسب من فتحة الأسفل المعتمدة ونسبة شد الرِّب التي يحددها الباترونيست.",
+      "method": "Computed from approved bottom opening (B03/B04) and the rib-to-opening ratio set by the pattern maker.",
+      "start": "—",
+      "end": "—",
+      "condition": "cut piece",
+      "unit": "cm",
+      "status": "DERIVED_FROM_APPROVED_SPEC",
+      "certainty": "DERIVED"
+    },
+    {
+      "id": "R03",
+      "area": "Rib",
+      "name": "Cuff rib cut length",
+      "arabic": "طول قصّ رِب الكم: يُحسب من عرض الكم المعتمد عند الخياطة ونسبة الشد.",
+      "method": "Computed from approved sleeve width at cuff seam (S06) and the rib ratio.",
+      "start": "—",
+      "end": "—",
+      "condition": "cut piece",
+      "unit": "cm",
+      "status": "DERIVED_FROM_APPROVED_SPEC",
+      "certainty": "DERIVED"
+    },
+    {
+      "id": "R04",
+      "area": "Rib",
+      "name": "Collar rib cut length",
+      "arabic": "طول قصّ رِب الياقة: يُحسب من طول خط الرقبة المعتمد ونسبة الشد.",
+      "method": "Computed from approved collar neck-edge length (C03) and the rib ratio.",
+      "start": "—",
+      "end": "—",
+      "condition": "cut piece",
+      "unit": "cm",
+      "status": "DERIVED_FROM_APPROVED_SPEC",
+      "certainty": "DERIVED"
+    },
+    {
+      "id": "R05",
+      "area": "Rib",
+      "name": "Rib stripe layout (count, stripe widths, distance from edge)",
+      "arabic": "تصميم الخطوط على الرِّب: عدد الخطوط وعرض كل خط وبُعدها عن الحافة (للياقة والكم والحزام).",
+      "method": "Per rib piece: number of stripes, each stripe width and its distance from the finished edge.",
+      "start": "Finished edge",
+      "end": "Each stripe edge",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "C01",
+      "area": "Collar & neck",
+      "name": "Collar height at CB",
+      "arabic": "ارتفاع الياقة عند منتصف الظهر: من خياطة تركيب الياقة حتى حافتها الخارجية.",
+      "method": "At CB, from the collar seam to the collar's outer edge, collar standing/unfolded.",
+      "start": "Collar seam at CB",
+      "end": "Collar outer edge at CB",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "C02",
+      "area": "Collar & neck",
+      "name": "Collar height at front ends",
+      "arabic": "ارتفاع الياقة عند طرفيها الأماميين.",
+      "method": "At the collar's front end, from collar seam to outer edge.",
+      "start": "Collar seam at front end",
+      "end": "Collar outer edge at front end",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "C03",
+      "area": "Collar & neck",
+      "name": "Collar neck-edge length (attached edge)",
+      "arabic": "طول الياقة عند خط التركيب: من الطرف الأمامي إلى الطرف الأمامي الآخر على طول خياطة الرقبة.",
+      "method": "Along the collar seam from front end to front end.",
+      "start": "Left collar front end",
+      "end": "Right collar front end",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "C04",
+      "area": "Collar & neck",
+      "name": "Collar outer-edge length, relaxed",
+      "arabic": "طول الحافة الخارجية للياقة وهي مرتخية.",
+      "method": "Along the collar's outer edge from front end to front end, relaxed.",
+      "start": "Left outer corner",
+      "end": "Right outer corner",
+      "condition": "flat, relaxed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "C05",
+      "area": "Collar & neck",
+      "name": "Neck width, seam to seam",
+      "arabic": "عرض فتحة الرقبة: المسافة المستقيمة بين نقطتي الكتف العليا (HPS) عند خياطة الياقة.",
+      "method": "Straight line between left and right HPS at the collar seam.",
+      "start": "Left HPS",
+      "end": "Right HPS",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "C06",
+      "area": "Collar & neck",
+      "name": "Front neck drop",
+      "arabic": "انخفاض الرقبة الأمامي: المسافة العمودية من خط HPS إلى أدنى نقطة في خياطة الياقة عند منتصف الأمام.",
+      "method": "Vertical from the HPS line to the collar seam at CF.",
+      "start": "HPS line",
+      "end": "Collar seam at CF",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "C07",
+      "area": "Collar & neck",
+      "name": "Back neck drop",
+      "arabic": "انخفاض الرقبة الخلفي: المسافة العمودية من خط HPS إلى خياطة الياقة عند منتصف الظهر.",
+      "method": "Vertical from the HPS line to the collar seam at CB.",
+      "start": "HPS line",
+      "end": "Collar seam at CB",
+      "condition": "flat, back facing up",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "F01",
+      "area": "Front & closure",
+      "name": "Front placket / facing width (finished)",
+      "arabic": "عرض المرد الأمامي (شريط الكبسات) بعد التشطيب.",
+      "method": "Finished width of the snap placket/facing, perpendicular to the front edge.",
+      "start": "Front edge",
+      "end": "Placket inner stitch line",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "F02",
+      "area": "Front & closure",
+      "name": "Front overlap (CF to front edge)",
+      "arabic": "التراكب الأمامي: المسافة من خط منتصف الأمام إلى حافة الأمام العلوية.",
+      "method": "From the CF line to the overlapping front edge.",
+      "start": "CF line",
+      "end": "Front edge",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "F03",
+      "area": "Front & closure",
+      "name": "Snap count",
+      "arabic": "عدد الكبسات في الأمام.",
+      "method": "Number of snap sets on the front closure (count, not a length).",
+      "start": "—",
+      "end": "—",
+      "condition": "—",
+      "unit": "count",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "F04",
+      "area": "Front & closure",
+      "name": "Top snap position below neck seam",
+      "arabic": "موضع الكبسة العليا: المسافة من خياطة الياقة عند الأمام حتى مركز الكبسة.",
+      "method": "From the collar seam at the front edge down to the top snap centre.",
+      "start": "Collar seam at front edge",
+      "end": "Top snap centre",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "F05",
+      "area": "Front & closure",
+      "name": "Bottom snap position above bottom edge",
+      "arabic": "موضع الكبسة السفلى: المسافة من الحافة السفلية حتى مركز الكبسة (أو على رِب الحزام).",
+      "method": "From the finished bottom edge up to the bottom snap centre.",
+      "start": "Finished bottom edge",
+      "end": "Bottom snap centre",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "F06",
+      "area": "Front & closure",
+      "name": "Snap spacing (centre to centre)",
+      "arabic": "المسافة بين الكبسات (من المركز إلى المركز): تُحسب من عدد الكبسات وموضعي العليا والسفلى.",
+      "method": "Computed from F03–F05 (equal spacing unless the pattern maker specifies otherwise).",
+      "start": "Snap centre",
+      "end": "Next snap centre",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "DERIVED_FROM_APPROVED_SPEC",
+      "certainty": "DERIVED"
+    },
+    {
+      "id": "F07",
+      "area": "Front & closure",
+      "name": "Snap centre from front edge",
+      "arabic": "بُعد مركز الكبسة عن حافة الأمام.",
+      "method": "Perpendicular from the front edge to the snap centre.",
+      "start": "Front edge",
+      "end": "Snap centre",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "P01",
+      "area": "Pockets",
+      "name": "Pocket opening length",
+      "arabic": "طول فتحة الجيب: على طول الفتحة من طرف إلى طرف.",
+      "method": "Along the pocket opening, end to end.",
+      "start": "Opening end (top)",
+      "end": "Opening end (bottom)",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "P02",
+      "area": "Pockets",
+      "name": "Pocket welt width",
+      "arabic": "عرض شريط الجيب (الويلت).",
+      "method": "Finished welt width, perpendicular to the opening.",
+      "start": "Welt seam",
+      "end": "Welt edge",
+      "condition": "flat",
+      "unit": "cm",
+      "status": "TO_MEASURE_ON_SAMPLE",
+      "certainty": "NEEDS SAMPLE"
+    },
+    {
+      "id": "P03",
+      "area": "Pockets",
+      "name": "Pocket position below HPS (top of opening)",
+      "arabic": "موضع الجيب العمودي: من HPS حتى الطرف العلوي لفتحة الجيب.",
+      "method": "Vertical from HPS to the upper end of the pocket opening.",
+      "start": "HPS",
+      "end": "Upper end of opening",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "P04",
+      "area": "Pockets",
+      "name": "Pocket position from CF (top of opening)",
+      "arabic": "موضع الجيب الأفقي: من منتصف الأمام حتى الطرف العلوي لفتحة الجيب.",
+      "method": "Horizontal from CF to the upper end of the pocket opening.",
+      "start": "CF line",
+      "end": "Upper end of opening",
+      "condition": "flat, snapped closed",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "P05",
+      "area": "Pockets",
+      "name": "Pocket opening angle",
+      "arabic": "زاوية فتحة الجيب بالنسبة للخط العمودي.",
+      "method": "Angle of the opening from vertical (degrees).",
+      "start": "Vertical reference",
+      "end": "Opening line",
+      "condition": "flat, snapped closed",
+      "unit": "deg",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "P06",
+      "area": "Pockets",
+      "name": "Pocket bag depth",
+      "arabic": "عمق كيس الجيب الداخلي.",
+      "method": "From the opening's lower end to the bottom of the pocket bag.",
+      "start": "Opening lower end",
+      "end": "Bag bottom",
+      "condition": "flat (inside)",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "P07",
+      "area": "Pockets",
+      "name": "Pocket bag width",
+      "arabic": "عرض كيس الجيب الداخلي.",
+      "method": "Widest point of the pocket bag.",
+      "start": "Bag edge",
+      "end": "Bag edge opposite",
+      "condition": "flat (inside)",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "L01",
+      "area": "Lining",
+      "name": "Lining CB length relative to shell",
+      "arabic": "طول البطانة عند منتصف الظهر مقارنةً بالقماش الخارجي (مقدار الزيادة أو الثنية).",
+      "method": "Difference between lining CB length and shell CB length (jump/ease allowance).",
+      "start": "Lining CB neck",
+      "end": "Lining hem seam",
+      "condition": "inside out, flat",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "L02",
+      "area": "Lining",
+      "name": "Lining sleeve length relative to shell",
+      "arabic": "طول بطانة الكم مقارنةً بالكم الخارجي.",
+      "method": "Difference between lining sleeve length and shell sleeve length.",
+      "start": "Lining armhole",
+      "end": "Lining cuff seam",
+      "condition": "inside out, flat",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "L03",
+      "area": "Lining",
+      "name": "Lining chest width relative to shell",
+      "arabic": "عرض البطانة عند الصدر مقارنةً بالقماش الخارجي (مع مراعاة سماكة الحشوة إن وُجدت).",
+      "method": "Difference between lining chest and shell chest, allowing for quilt/wadding bulk.",
+      "start": "Lining side seam",
+      "end": "Lining side seam opposite",
+      "condition": "inside out, flat",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    },
+    {
+      "id": "L04",
+      "area": "Lining",
+      "name": "Inside pocket opening (if fitted)",
+      "arabic": "فتحة الجيب الداخلي في البطانة (إن وُجد — غير مقرر بعد).",
+      "method": "Opening length of an inside lining pocket. Whether one is fitted is undecided.",
+      "start": "Opening end",
+      "end": "Opening end",
+      "condition": "inside, flat",
+      "unit": "cm",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "certainty": "NEEDS PATTERN MAKER"
+    }
+  ],
+  "referenceValues": {
+    "label": "REFERENCE — NOT YET JACKETEK PRODUCTION APPROVED",
+    "classification": "PRIMARY_VERIFIED_REFERENCE",
+    "source": "https://www.goldenbearsportswear.com/pages/size-chart",
+    "values": {
+      "B01": {
+        "XS": {
+          "inches": 43.0,
+          "inchesText": "43",
+          "cm": 109.22,
+          "cmText": "109.22",
+          "basis": "base M + published grade × steps"
+        },
+        "S": {
+          "inches": 46.0,
+          "inchesText": "46",
+          "cm": 116.84,
+          "cmText": "116.84",
+          "basis": "base M + published grade × steps"
+        },
+        "M": {
+          "inches": 49.0,
+          "inchesText": "49",
+          "cm": 124.46,
+          "cmText": "124.46",
+          "basis": "published base (M)"
+        },
+        "L": {
+          "inches": 52.0,
+          "inchesText": "52",
+          "cm": 132.08,
+          "cmText": "132.08",
+          "basis": "base M + published grade × steps"
+        },
+        "XL": {
+          "inches": 55.0,
+          "inchesText": "55",
+          "cm": 139.7,
+          "cmText": "139.7",
+          "basis": "base M + published grade × steps"
+        },
+        "XXL": {
+          "inches": 58.0,
+          "inchesText": "58",
+          "cm": 147.32,
+          "cmText": "147.32",
+          "basis": "base M + published grade × steps"
+        }
+      },
+      "B09": {
+        "XS": {
+          "inches": 18.0,
+          "inchesText": "18",
+          "cm": 45.72,
+          "cmText": "45.72",
+          "basis": "base M + published grade × steps"
+        },
+        "S": {
+          "inches": 18.75,
+          "inchesText": "18¾",
+          "cm": 47.625,
+          "cmText": "47.625",
+          "basis": "base M + published grade × steps"
+        },
+        "M": {
+          "inches": 19.5,
+          "inchesText": "19½",
+          "cm": 49.53,
+          "cmText": "49.53",
+          "basis": "published base (M)"
+        },
+        "L": {
+          "inches": 20.25,
+          "inchesText": "20¼",
+          "cm": 51.435,
+          "cmText": "51.435",
+          "basis": "base M + published grade × steps"
+        },
+        "XL": {
+          "inches": 21.0,
+          "inchesText": "21",
+          "cm": 53.34,
+          "cmText": "53.34",
+          "basis": "base M + published grade × steps"
+        },
+        "XXL": {
+          "inches": 21.75,
+          "inchesText": "21¾",
+          "cm": 55.245,
+          "cmText": "55.245",
+          "basis": "base M + published grade × steps"
+        }
+      },
+      "S01": {
+        "XS": {
+          "inches": 34.0,
+          "inchesText": "34",
+          "cm": 86.36,
+          "cmText": "86.36",
+          "basis": "base M + published grade × steps"
+        },
+        "S": {
+          "inches": 34.75,
+          "inchesText": "34¾",
+          "cm": 88.265,
+          "cmText": "88.265",
+          "basis": "base M + published grade × steps"
+        },
+        "M": {
+          "inches": 35.5,
+          "inchesText": "35½",
+          "cm": 90.17,
+          "cmText": "90.17",
+          "basis": "published base (M)"
+        },
+        "L": {
+          "inches": 36.25,
+          "inchesText": "36¼",
+          "cm": 92.075,
+          "cmText": "92.075",
+          "basis": "base M + published grade × steps"
+        },
+        "XL": {
+          "inches": 37.0,
+          "inchesText": "37",
+          "cm": 93.98,
+          "cmText": "93.98",
+          "basis": "base M + published grade × steps"
+        },
+        "XXL": {
+          "inches": 37.75,
+          "inchesText": "37¾",
+          "cm": 95.885,
+          "cmText": "95.885",
+          "basis": "base M + published grade × steps"
+        }
+      },
+      "B06": {
+        "XS": {
+          "inches": 25.5,
+          "inchesText": "25½",
+          "cm": 64.77,
+          "cmText": "64.77",
+          "basis": "base M + published grade × steps"
+        },
+        "S": {
+          "inches": 26.0,
+          "inchesText": "26",
+          "cm": 66.04,
+          "cmText": "66.04",
+          "basis": "base M + published grade × steps"
+        },
+        "M": {
+          "inches": 26.5,
+          "inchesText": "26½",
+          "cm": 67.31,
+          "cmText": "67.31",
+          "basis": "published base (M)"
+        },
+        "L": {
+          "inches": 27.0,
+          "inchesText": "27",
+          "cm": 68.58,
+          "cmText": "68.58",
+          "basis": "base M + published grade × steps"
+        },
+        "XL": {
+          "inches": 27.5,
+          "inchesText": "27½",
+          "cm": 69.85,
+          "cmText": "69.85",
+          "basis": "base M + published grade × steps"
+        },
+        "XXL": {
+          "inches": 28.0,
+          "inchesText": "28",
+          "cm": 71.12,
+          "cmText": "71.12",
+          "basis": "base M + published grade × steps"
+        }
+      }
+    }
+  },
+  "secondaryVisualReference": {
+    "classification": "SECONDARY_VISUAL_REFERENCE",
+    "role": "JACKETEK visual fit reference / secondary benchmark",
+    "origin": "Size chart supplied by JACKETEK; brand, URL and measuring method not independently verified",
+    "purpose": [
+      "Confirm the preferred silhouette is numerically close to Golden Bear Classic M",
+      "Help define the JACKETEK target fit"
+    ],
+    "notFor": [
+      "Factory grading",
+      "Replacing physical sample approval",
+      "VERIFIED_SOURCE status"
+    ],
+    "sizeUsed": "M",
+    "gradingUsed": false,
+    "gradingNote": "The chart's XS–4XL progression appears irregular and is deliberately not recorded or copied.",
+    "valuesM": {
+      "chestHalfFlatCm": 61,
+      "acrossShoulderCm": 50,
+      "bodyLengthCm": 68,
+      "sleeveFromShoulderSeamCm": 51
+    },
+    "methods": {
+      "chestHalfFlatCm": "half / flat chest; height below armhole not known",
+      "acrossShoulderCm": "not stated",
+      "bodyLengthCm": "start point not known",
+      "sleeveFromShoulderSeamCm": "from shoulder seam; end point not known"
+    },
+    "comparisonWithGoldenBearM": [
+      {
+        "measurement": "Chest, half / flat",
+        "visualM_cm": 61.0,
+        "goldenBearM_cm": 62.23,
+        "goldenBearPom": "B01",
+        "differenceCm": -1.23,
+        "differencePct": -1.98,
+        "caveat": "GB value is the published circumference ÷ 2 (1\" below armhole). Where the visual chart measures its half chest (pit-to-pit at the armhole, or lower) is not known."
+      },
+      {
+        "measurement": "Across shoulder",
+        "visualM_cm": 50.0,
+        "goldenBearM_cm": 49.53,
+        "goldenBearPom": "B09",
+        "differenceCm": 0.47,
+        "differencePct": 0.95,
+        "caveat": "Neither chart states straight vs contour."
+      },
+      {
+        "measurement": "Body length",
+        "visualM_cm": 68.0,
+        "goldenBearM_cm": 67.31,
+        "goldenBearPom": "B06",
+        "differenceCm": 0.69,
+        "differencePct": 1.03,
+        "caveat": "GB is centre-back length (start point not stated). The visual chart's start point (CB collar seam, top of collar or HPS) is not known."
+      }
+    ],
+    "sleeveNotCompared": {
+      "reason": "Golden Bear measures from centre back; this chart from the shoulder seam.",
+      "arithmeticFlag": "CB sleeve − half across shoulder on Golden Bear M = 65.41 cm (arithmetic only, not a published POM). The visual chart's 51 cm is far shorter, so its sleeve method (end point, or underarm rather than overarm) must be confirmed before it informs any sleeve decision."
+    }
+  },
+  "provisionalTargetRangeM": {
+    "label": "PROVISIONAL TARGET RANGE — REQUIRES SAMPLE APPROVAL",
+    "chestHalfFlatCm": [
+      61,
+      62.2
+    ],
+    "acrossShoulderCm": [
+      49.5,
+      50
+    ],
+    "bodyLengthCm": [
+      67.3,
+      68
+    ],
+    "sleeve": null,
+    "note": "Not a production spec. Ends are the two references' M values (Golden Bear rounded to 0.1 cm). No sleeve target: the two charts measure the sleeve differently."
+  },
+  "sampleStrategy": {
+    "options": [
+      {
+        "id": "A",
+        "name": "Buy and measure Golden Bear Classic M",
+        "accuracy": "Highest for the reference itself: settles all 11 Golden Bear method questions on a real garment. Says nothing about JACKETEK materials (leather / cotton fabric), the dropped-vs-set-in question (K1), the zones or the visually preferred silhouette.",
+        "cost": "Retail price of one jacket plus international shipping and import duty (check the current price; not researched here). No pattern cost.",
+        "speed": "Depends on international shipping and customs. Measuring takes about a day once it arrives.",
+        "risk": "Low risk of wasted money, but it is an extra step: a JACKETEK prototype is still required afterwards. If Golden Bear's methods are confirmed, nothing about JACKETEK's own fit has been tested yet.",
+        "lockingValue": "Locks the 4 reference values and their methods. Helps with about 33 sample measurements only as a benchmark garment (its armhole, rib, collar, etc. are Golden Bear's, not JACKETEK's). Locks no pattern-maker decision."
+      },
+      {
+        "id": "B",
+        "name": "JACKETEK M prototype from the factory / pattern maker, built to the provisional target range using Golden Bear's measuring methods",
+        "accuracy": "Tests the real product: JACKETEK materials, construction, rib, zones and the fit on a body. The 3 main dimensions already have two independent charts within about 1.2 cm of each other, so the method ambiguities are small next to fit approval. The Golden Bear method questions stay open unless the factory documents its own methods.",
+        "cost": "One pattern plus one sample (factory quote needed; not researched here). Likely one or more revision rounds whichever option is chosen.",
+        "speed": "Removes the purchase-and-shipping step; depends on the factory's pattern and sampling lead time.",
+        "risk": "The pattern maker interprets an ambiguous method differently (e.g. body length from HPS instead of the CB collar seam). Controlled by giving them this document's method definitions and requiring a measured spec back. The sleeve has no sourced target and must be set on the fit model.",
+        "lockingValue": "Directly produces most of what v1.0 needs: the 33 sample measurements, the 15 pattern-maker decisions, rib and snap specs and the 10 zone geometries, all on the actual JACKETEK garment."
+      }
+    ],
+    "recommended": "B",
+    "recommendation": [
+      "Choose B. The Golden Bear purchase is no longer strictly necessary: the visual chart already confirms Golden Bear Classic M's chest, shoulder and length within about 1.2 cm, and the remaining unknowns are JACKETEK-specific, which only a JACKETEK prototype can answer.",
+      "Before ordering, decide K1 (set-in vs dropped shoulder) and say whether the jacket in the visual chart has a dropped shoulder. The 50 cm shoulder makes sense only for the construction it was measured on.",
+      "Give the factory this document. Require: the provisional target range for chest, shoulder and body length; Golden Bear's method definitions (§4) for every POM; and a sleeve length set on the fit model, not taken from either chart.",
+      "Require the factory to return the measured spec of the prototype using the §10 checklist, with each POM's method written down, plus the flat photos with a ruler.",
+      "Keep A as a fallback: buy a Golden Bear Classic M only if the prototype misses the target range in a way that can't be explained, or if the factory can't measure to the documented methods."
+    ]
+  },
+  "methodAmbiguities": [
+    {
+      "id": "GB-A1",
+      "pom": "B06",
+      "title": "Centre-back length: start point not stated",
+      "detail": "Header reads only \"Center back\". Could be from the CB collar seam, from the top of the collar, or from HPS. A collar is roughly a rib's height, so the choice moves the value by that amount."
+    },
+    {
+      "id": "GB-A2",
+      "pom": "B06",
+      "title": "Centre-back length: end point not stated",
+      "detail": "Assumed to be the finished bottom edge of the waistband rib (rib included). Not stated."
+    },
+    {
+      "id": "GB-A3",
+      "pom": "S01",
+      "title": "Sleeve from CB: start point not stated",
+      "detail": "\"From center back\" — CB at the collar seam is assumed; the top of the collar is also used in the trade."
+    },
+    {
+      "id": "GB-A4",
+      "pom": "S01",
+      "title": "Sleeve from CB: path not stated",
+      "detail": "Whether the tape follows the shoulder seam to the shoulder point and then the overarm, or runs straight from CB to the cuff, is not stated."
+    },
+    {
+      "id": "GB-A5",
+      "pom": "S01",
+      "title": "Sleeve from CB: end point not stated",
+      "detail": "Assumed to be the finished cuff edge (cuff rib included); a leather cuff protector edge or the cuff seam are alternatives."
+    },
+    {
+      "id": "GB-A6",
+      "pom": "B01",
+      "title": "Chest: circumference inferred, method not stated",
+      "detail": "Circumference is inferred (XS 43\" cannot be a flat half; the Semifinalist × Golden Bear chart reads \"Chest Circumference (one inch below Armhole)\"). Whether it is flat × 2 or a tape round the body, and whether snapped closed, is not stated."
+    },
+    {
+      "id": "GB-A7",
+      "pom": "B01",
+      "title": "Chest: \"1 inch below armhole\" reference",
+      "detail": "Assumed vertical 1\" below the armhole point at the side seam. Not stated whether measured on the side seam or on the sleeve seam junction."
+    },
+    {
+      "id": "GB-A8",
+      "pom": "B09",
+      "title": "Across shoulder: straight vs contour",
+      "detail": "Not stated whether straight point-to-point or following the back's curve; not stated whether measured at the seam line or the seam edge."
+    },
+    {
+      "id": "GB-A9",
+      "pom": "B09",
+      "title": "Across shoulder on raglan styles",
+      "detail": "The same Classic chart covers The Ralston (raglan sleeve), where a shoulder point/seam does not exist. The chart does not say how its shoulder is taken there."
+    },
+    {
+      "id": "GB-A10",
+      "pom": "ALL",
+      "title": "Spec vs measured garment, tolerances, version",
+      "detail": "No tolerances, no chart date/version, and no statement whether values are pattern specs or measured production garments."
+    },
+    {
+      "id": "GB-A11",
+      "pom": "ALL",
+      "title": "One chart for several constructions",
+      "detail": "Classic covers melton/leather (Albany), all-wool (Portola), all-leather (Weldon) and raglan (Ralston) with one table. Golden Bear notes \"Quilt lining adds bulk to the inside of the jacket, including the sleeves.\""
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "K1",
+      "topic": "Shoulder construction",
+      "detail": "The site describes the one fit as \"Standard Baggy Fit — roomy and relaxed, with a dropped shoulder\". Golden Bear Classic (the chosen base) is published as a set-in sleeve block (one chart also covers the raglan Ralston). A dropped shoulder changes B09, S01, armhole and sleeve cap — it cannot be read from the Golden Bear chart. Decide set-in vs dropped before the pattern maker starts."
+    },
+    {
+      "id": "K2",
+      "topic": "Materials",
+      "detail": "The configurator offers leather or \"Cotton Fabric\" for body and sleeves. Golden Bear's reference is melton wool / leather with quilted lining. No reference covers a cotton-fabric body; drape, bulk and the effect on fit must be checked on a sample in each material."
+    },
+    {
+      "id": "K3",
+      "topic": "Embroidery zones",
+      "detail": "The ten zones are positioned on the 3D reference model and are identical for all sizes. They are not physical dimensions and were not measured on a garment."
+    },
+    {
+      "id": "K4",
+      "topic": "Units",
+      "detail": "Golden Bear and the S.i. Graphics template are imperial; the configurator and production sheet are metric. This draft keeps inches as the source values and states cm as exact conversions. The factory's working unit is TBD."
+    }
+  ],
+  "fitValidation": {
+    "startingBlock": "Golden Bear Classic M",
+    "easeTarget": null,
+    "provisionalTargetRangeM": {
+      "label": "PROVISIONAL TARGET RANGE — REQUIRES SAMPLE APPROVAL",
+      "chestHalfFlatCm": [
+        61,
+        62.2
+      ],
+      "acrossShoulderCm": [
+        49.5,
+        50
+      ],
+      "bodyLengthCm": [
+        67.3,
+        68
+      ],
+      "sleeve": null,
+      "note": "Not a production spec. Ends are the two references' M values (Golden Bear rounded to 0.1 cm). No sleeve target: the two charts measure the sleeve differently."
+    },
+    "fields": [
+      {
+        "id": "FV01",
+        "field": "Fit model ID / name",
+        "unit": "text",
+        "note": "Who wore the sample.",
+        "value": null
+      },
+      {
+        "id": "FV02",
+        "field": "Wearer height",
+        "unit": "cm",
+        "note": "",
+        "value": null
+      },
+      {
+        "id": "FV03",
+        "field": "Wearer body chest",
+        "unit": "cm",
+        "note": "Body measurement, tape under the arms, relaxed breathing.",
+        "value": null
+      },
+      {
+        "id": "FV04",
+        "field": "Wearer body waist",
+        "unit": "cm",
+        "note": "",
+        "value": null
+      },
+      {
+        "id": "FV05",
+        "field": "Wearer arm length (CB neck → shoulder → wrist bone)",
+        "unit": "cm",
+        "note": "Same path as S01, on the body.",
+        "value": null
+      },
+      {
+        "id": "FV06",
+        "field": "Sample size and construction",
+        "unit": "text",
+        "note": "e.g. Golden Bear Classic M, set-in sleeve, melton/leather, quilted lining.",
+        "value": null
+      },
+      {
+        "id": "FV07",
+        "field": "Garment chest (B01, as measured)",
+        "unit": "cm",
+        "note": "From the measurement checklist.",
+        "value": null
+      },
+      {
+        "id": "FV08",
+        "field": "Chest ease = FV07 − FV03",
+        "unit": "cm",
+        "note": "Calculated on the day; no target is set in this draft.",
+        "value": null
+      },
+      {
+        "id": "FV09",
+        "field": "Shoulder impression",
+        "unit": "choice: sits at shoulder / slightly extended / dropped",
+        "note": "Where the armhole seam sits on the body.",
+        "value": null
+      },
+      {
+        "id": "FV10",
+        "field": "Sleeve volume",
+        "unit": "choice: close / classic / full / too full",
+        "note": "Bicep and elbow when the arm hangs and bends.",
+        "value": null
+      },
+      {
+        "id": "FV11",
+        "field": "Body width",
+        "unit": "choice: close / classic / roomy / baggy / too wide",
+        "note": "Front and side view, snapped closed.",
+        "value": null
+      },
+      {
+        "id": "FV12",
+        "field": "Body length",
+        "unit": "choice: short / correct / long",
+        "note": "Where the waistband sits on the body (note: at belt / below belt / hip).",
+        "value": null
+      },
+      {
+        "id": "FV13",
+        "field": "Hem behaviour",
+        "unit": "choice: flat / slight blouse / strong blouse / rides up",
+        "note": "How the body blouses over the waistband rib, standing and arms raised.",
+        "value": null
+      },
+      {
+        "id": "FV14",
+        "field": "Sleeve length",
+        "unit": "choice: short / correct / long",
+        "note": "Where the cuff sits with arms down and arms forward.",
+        "value": null
+      },
+      {
+        "id": "FV15",
+        "field": "Visual bagginess rating",
+        "unit": "1–5 (1 = fitted, 5 = very baggy)",
+        "note": "Agreed by the reviewers against the JACKETEK brief.",
+        "value": null
+      },
+      {
+        "id": "FV16",
+        "field": "Photos taken (front, side, back, arms raised, arms forward)",
+        "unit": "yes / no",
+        "note": "",
+        "value": null
+      },
+      {
+        "id": "FV17",
+        "field": "Reviewer(s)",
+        "unit": "text",
+        "note": "",
+        "value": null
+      },
+      {
+        "id": "FV18",
+        "field": "Decision",
+        "unit": "APPROVED / REVISE",
+        "note": "",
+        "value": null
+      },
+      {
+        "id": "FV19",
+        "field": "Revision notes for the pattern maker",
+        "unit": "text",
+        "note": "Which POMs change and why. Length changes recorded separately from width changes.",
+        "value": null
+      }
+    ]
+  },
+  "bom": [
+    {
+      "id": "BOM01",
+      "category": "Shell",
+      "component": "Body fabric",
+      "placement": "Body panels (fronts, back)",
+      "description": "Customer choice: leather or cotton fabric (configurator)",
+      "dataSource": "Customer order (material + colour)",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM02",
+      "category": "Shell",
+      "component": "Sleeve fabric",
+      "placement": "Sleeves",
+      "description": "Customer choice: leather or cotton fabric (configurator)",
+      "dataSource": "Customer order (material + colour)",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM03",
+      "category": "Lining",
+      "component": "Body lining",
+      "placement": "Body inside",
+      "description": "TBD (Golden Bear reference: quilted satin acetate)",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM04",
+      "category": "Lining",
+      "component": "Sleeve lining",
+      "placement": "Sleeves inside",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM05",
+      "category": "Lining",
+      "component": "Wadding / quilt batting",
+      "placement": "Between shell and lining",
+      "description": "TBD — whether JACKETEK is quilted is undecided",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM06",
+      "category": "Rib",
+      "component": "Collar rib",
+      "placement": "Collar",
+      "description": "TBD (knit structure, yarn, weight)",
+      "dataSource": "Colour: customer trim colour",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM07",
+      "category": "Rib",
+      "component": "Cuff rib",
+      "placement": "Cuffs",
+      "description": "TBD",
+      "dataSource": "Colour: customer trim colour",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM08",
+      "category": "Rib",
+      "component": "Waist rib",
+      "placement": "Waistband",
+      "description": "TBD",
+      "dataSource": "Colour: customer trim colour",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM09",
+      "category": "Rib",
+      "component": "Rib stripe yarn",
+      "placement": "Collar / cuff / waist stripes",
+      "description": "TBD — the configurator has no stripe option today",
+      "dataSource": "Undecided",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM10",
+      "category": "Hardware",
+      "component": "Snaps (cap, socket, stud, post)",
+      "placement": "Front closure",
+      "description": "TBD (type, size, metal)",
+      "dataSource": "Finish: customer (black / silver / gold / gunmetal)",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM11",
+      "category": "Hardware",
+      "component": "Zipper",
+      "placement": "Under the snap placket",
+      "description": "Not fitted (configurator ZIPPER_ENABLED = false)",
+      "dataSource": "Master (disabled)",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM12",
+      "category": "Pockets",
+      "component": "Pocketing",
+      "placement": "Pocket bags",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM13",
+      "category": "Pockets",
+      "component": "Pocket welt material",
+      "placement": "Pocket welts",
+      "description": "TBD (leather or shell fabric)",
+      "dataSource": "Undecided",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM14",
+      "category": "Thread",
+      "component": "Sewing thread — fabric seams",
+      "placement": "All fabric seams",
+      "description": "TBD (type, ticket)",
+      "dataSource": "Colour matching rule TBD",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM15",
+      "category": "Thread",
+      "component": "Sewing thread — leather seams",
+      "placement": "Leather seams / topstitch",
+      "description": "TBD",
+      "dataSource": "Colour matching rule TBD",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM16",
+      "category": "Thread",
+      "component": "Embroidery thread",
+      "placement": "Embroidery zones",
+      "description": "TBD (brand, type, weight); colours from the configurator thread palette (19)",
+      "dataSource": "Customer order (thread colours)",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM17",
+      "category": "Support",
+      "component": "Embroidery backing / stabiliser",
+      "placement": "Behind each embroidery zone",
+      "description": "TBD (per shell material)",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM18",
+      "category": "Support",
+      "component": "Interfacing — front facing / placket",
+      "placement": "Snap placket",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM19",
+      "category": "Support",
+      "component": "Interfacing — pocket welts",
+      "placement": "Welts",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM20",
+      "category": "Support",
+      "component": "Snap reinforcement",
+      "placement": "Behind each snap",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM21",
+      "category": "Patch",
+      "component": "Patch base / backing (only if a patch method is adopted)",
+      "placement": "Patches",
+      "description": "TBD — configurator models direct satin embroidery only",
+      "dataSource": "Undecided",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM22",
+      "category": "Trim",
+      "component": "Leather cuff protector / binding",
+      "placement": "Cuff edge",
+      "description": "UNKNOWN — seen on Golden Bear reference; not decided for JACKETEK",
+      "dataSource": "Undecided",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM23",
+      "category": "Trim",
+      "component": "Hanger loop",
+      "placement": "Inside neck",
+      "description": "UNKNOWN",
+      "dataSource": "Undecided",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM24",
+      "category": "Labels",
+      "component": "Main / brand label",
+      "placement": "TBD",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM25",
+      "category": "Labels",
+      "component": "Size label",
+      "placement": "TBD",
+      "description": "TBD",
+      "dataSource": "Derived from customer size",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM26",
+      "category": "Labels",
+      "component": "Care / content label",
+      "placement": "TBD",
+      "description": "TBD (content depends on customer materials)",
+      "dataSource": "Derived from customer materials",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM27",
+      "category": "Packaging",
+      "component": "Hangtag",
+      "placement": "TBD",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    },
+    {
+      "id": "BOM28",
+      "category": "Packaging",
+      "component": "Polybag / folding",
+      "placement": "—",
+      "description": "TBD",
+      "dataSource": "Master",
+      "status": "TBD",
+      "composition": null,
+      "weightOrThickness": null,
+      "width": null,
+      "supplier": null,
+      "supplierReference": null,
+      "colourReference": null,
+      "consumptionPerM": null,
+      "unit": null,
+      "notes": null
+    }
+  ],
+  "construction": [
+    {
+      "id": "CON01",
+      "operation": "Shoulder seam",
+      "fieldsRequired": "seam type (ISO 4915/4916 class), seam allowance, stitch type, SPI, topstitch",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON02",
+      "operation": "Side seam",
+      "fieldsRequired": "seam type, seam allowance, stitch type, SPI",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON03",
+      "operation": "Sleeve underarm seam",
+      "fieldsRequired": "seam type, seam allowance, stitch type, SPI",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON04",
+      "operation": "Sleeve attachment",
+      "fieldsRequired": "set-in vs dropped shoulder (OPEN — see conflict K1), seam type, allowance, topstitch",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON05",
+      "operation": "Leather seams",
+      "fieldsRequired": "seam type, needle, thread, SPI, edge finish, topstitch (no pins on leather)",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON06",
+      "operation": "Collar rib attachment",
+      "fieldsRequired": "method, stretch control, seam allowance, stitch type",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON07",
+      "operation": "Cuff rib attachment",
+      "fieldsRequired": "method, stretch control, seam allowance, stitch type",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON08",
+      "operation": "Waist rib attachment",
+      "fieldsRequired": "method, stretch control, seam allowance, stitch type",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON09",
+      "operation": "Front placket / facing",
+      "fieldsRequired": "construction, interfacing, edge stitch",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON10",
+      "operation": "Snap setting",
+      "fieldsRequired": "setting method, reinforcement, placement per F03–F07",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON11",
+      "operation": "Pocket construction",
+      "fieldsRequired": "welt type, bag attachment, bartacks",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON12",
+      "operation": "Lining construction",
+      "fieldsRequired": "bagged vs other, quilting pattern (if quilted), jump hems, attachment to rib",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON13",
+      "operation": "Embroidery application",
+      "fieldsRequired": "embroider panels before assembly vs after; hooping limits per zone; backing removal",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON14",
+      "operation": "Label placement",
+      "fieldsRequired": "main, size, care label positions",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON15",
+      "operation": "Pressing",
+      "fieldsRequired": "per material (leather vs cotton fabric), temperature, method",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    },
+    {
+      "id": "CON16",
+      "operation": "Measurement tolerances",
+      "fieldsRequired": "tolerance per POM (S.i. Graphics template has fields; no verified values)",
+      "status": "TO_SET_BY_PATTERN_MAKER",
+      "value": null,
+      "notes": null
+    }
+  ],
+  "embroideryZones": {
+    "zones": [
+      {
+        "zoneId": "leftChest",
+        "name": "Left Chest",
+        "panel": "Left front (wearer's left)",
+        "primaryAnchor": "HPS — vertical distance to zone centre (current production sheet expresses body zones as \"below HPS\")",
+        "secondaryAnchor": "CF line — horizontal distance to zone centre",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 10.0,
+          "boxHeightCm": 10.0,
+          "centreFromCentreLineCm": 11.0,
+          "towards": "wearer's left",
+          "centreBelowAnchorCm": 14.3,
+          "anchorUsedBySoftware": "HPS",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "rightChest",
+        "name": "Right Chest",
+        "panel": "Right front (wearer's right)",
+        "primaryAnchor": "HPS — vertical distance to zone centre (current production sheet expresses body zones as \"below HPS\")",
+        "secondaryAnchor": "CF line — horizontal distance to zone centre",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 10.0,
+          "boxHeightCm": 10.0,
+          "centreFromCentreLineCm": 11.0,
+          "towards": "wearer's right",
+          "centreBelowAnchorCm": 14.3,
+          "anchorUsedBySoftware": "HPS",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "mainBack",
+        "name": "Main Back",
+        "panel": "Back",
+        "primaryAnchor": "HPS — vertical distance to zone centre (alternative: CB collar seam; pattern maker to choose)",
+        "secondaryAnchor": "CB line — horizontal (zone centred on CB)",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 30.0,
+          "boxHeightCm": 26.0,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "centre",
+          "centreBelowAnchorCm": 21.3,
+          "anchorUsedBySoftware": "HPS",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "backQuote",
+        "name": "Lower Back Text (text only)",
+        "panel": "Back",
+        "primaryAnchor": "HPS — vertical distance to zone centre (alternative: CB collar seam; pattern maker to choose)",
+        "secondaryAnchor": "CB line — horizontal (zone centred on CB)",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 30.0,
+          "boxHeightCm": 7.0,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "centre",
+          "centreBelowAnchorCm": 39.8,
+          "anchorUsedBySoftware": "HPS",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "leftSleeveUpper",
+        "name": "Left Sleeve — Upper",
+        "panel": "Left sleeve, outer side",
+        "primaryAnchor": "SP (shoulder point) — distance down the sleeve to zone centre (current sheet: \"below SP\")",
+        "secondaryAnchor": "Sleeve outer centre line (overarm line) — zone centred on it; cuff seam as clearance check",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 8.4,
+          "boxHeightCm": 11.2,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "sleeve centre line",
+          "centreBelowAnchorCm": 13.5,
+          "anchorUsedBySoftware": "SP (shoulder point)",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "leftSleeveMiddle",
+        "name": "Left Sleeve — Middle",
+        "panel": "Left sleeve, outer side",
+        "primaryAnchor": "SP (shoulder point) — distance down the sleeve to zone centre (current sheet: \"below SP\")",
+        "secondaryAnchor": "Sleeve outer centre line (overarm line) — zone centred on it; cuff seam as clearance check",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 8.4,
+          "boxHeightCm": 11.2,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "sleeve centre line",
+          "centreBelowAnchorCm": 27.5,
+          "anchorUsedBySoftware": "SP (shoulder point)",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "leftSleeveLower",
+        "name": "Left Sleeve — Lower",
+        "panel": "Left sleeve, outer side",
+        "primaryAnchor": "SP (shoulder point) — distance down the sleeve to zone centre (current sheet: \"below SP\")",
+        "secondaryAnchor": "Sleeve outer centre line (overarm line) — zone centred on it; cuff seam as clearance check",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 8.4,
+          "boxHeightCm": 11.2,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "sleeve centre line",
+          "centreBelowAnchorCm": 41.5,
+          "anchorUsedBySoftware": "SP (shoulder point)",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "rightSleeveUpper",
+        "name": "Right Sleeve — Upper",
+        "panel": "Right sleeve, outer side",
+        "primaryAnchor": "SP (shoulder point) — distance down the sleeve to zone centre (current sheet: \"below SP\")",
+        "secondaryAnchor": "Sleeve outer centre line (overarm line) — zone centred on it; cuff seam as clearance check",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 8.4,
+          "boxHeightCm": 11.2,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "sleeve centre line",
+          "centreBelowAnchorCm": 13.5,
+          "anchorUsedBySoftware": "SP (shoulder point)",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "rightSleeveMiddle",
+        "name": "Right Sleeve — Middle",
+        "panel": "Right sleeve, outer side",
+        "primaryAnchor": "SP (shoulder point) — distance down the sleeve to zone centre (current sheet: \"below SP\")",
+        "secondaryAnchor": "Sleeve outer centre line (overarm line) — zone centred on it; cuff seam as clearance check",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 8.4,
+          "boxHeightCm": 11.2,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "sleeve centre line",
+          "centreBelowAnchorCm": 27.5,
+          "anchorUsedBySoftware": "SP (shoulder point)",
+          "sameForEverySize": true
+        }
+      },
+      {
+        "zoneId": "rightSleeveLower",
+        "name": "Right Sleeve — Lower",
+        "panel": "Right sleeve, outer side",
+        "primaryAnchor": "SP (shoulder point) — distance down the sleeve to zone centre (current sheet: \"below SP\")",
+        "secondaryAnchor": "Sleeve outer centre line (overarm line) — zone centred on it; cuff seam as clearance check",
+        "lockFields": {
+          "maxWidthCm": null,
+          "maxHeightCm": null,
+          "xReferenceCm": null,
+          "yReferenceCm": null
+        },
+        "orderFields": [
+          "artworkFinishedWidthCm",
+          "artworkFinishedHeightCm",
+          "customerOffsetXCm",
+          "customerOffsetYCm",
+          "threadColours",
+          "fill",
+          "outline",
+          "rotation",
+          "artworkId",
+          "productionMethod"
+        ],
+        "status": "TO_SET_BY_PATTERN_MAKER",
+        "softwareReference3D": {
+          "note": "Current configurator value on the 3D reference model — NOT a physical, measured or approved dimension.",
+          "boxWidthCm": 8.4,
+          "boxHeightCm": 11.2,
+          "centreFromCentreLineCm": 0.0,
+          "towards": "sleeve centre line",
+          "centreBelowAnchorCm": 41.5,
+          "anchorUsedBySoftware": "SP (shoulder point)",
+          "sameForEverySize": true
+        }
+      }
+    ],
+    "conversionToFactoryCm": [
+      "Inputs locked per size after physical approval: zone box W × H (cm), zone centre from the primary anchor (Y) and secondary anchor (X).",
+      "Customer data per element (already stored): artwork aspect a = width / height; inZone = { scale s ∈ [0.2, 1], x, y } (shares of the box, x → right and y → up, facing the zone).",
+      "Auto-fit size: if a ≥ W / H then w₀ = W, h₀ = W / a; else h₀ = H, w₀ = H × a.",
+      "Finished artwork size: w = w₀ × s, h = h₀ × s (cm).",
+      "Customer offset from zone centre: ΔX = x × W, ΔY = y × H (cm, facing the zone). The software already clamps x, y so the artwork stays inside the box.",
+      "Artwork centre on the garment: Y below anchor = zone Y − ΔY. Body zones: X from CF/CB = zone X ± ΔX (front: + toward wearer's left as faced; back: mirrored). Sleeve zones: ΔX runs around the sleeve from its outer centre line.",
+      "Rotation: not supported in fixed zones (always 0).",
+      "Versioning: orders store physicalSize and referencePosition computed from the 3D boxes; once physical zones are approved, each order should record which zone-spec version it was produced against, so old orders are never re-interpreted.",
+      "Open decision: zones are the same for every size today. Whether physical zone positions/boxes grade by size or stay fixed is a pattern-maker decision (no source documents graded placement)."
+    ]
+  },
+  "dataOwnership": [
+    {
+      "item": "Garment block / pattern set",
+      "owner": "FIXED_MASTER",
+      "where": "Pattern maker; derived from Golden Bear Classic M reference after sample approval"
+    },
+    {
+      "item": "Fit (one standard baggy fit)",
+      "owner": "FIXED_MASTER",
+      "where": "Config still carries a `fit` field; product decision is one fit"
+    },
+    {
+      "item": "POM spec per size + grade rules",
+      "owner": "FIXED_MASTER",
+      "where": "This document"
+    },
+    {
+      "item": "Tolerances",
+      "owner": "FIXED_MASTER",
+      "where": "TBD"
+    },
+    {
+      "item": "Embroidery zone physical boxes + anchor offsets (per size if graded)",
+      "owner": "FIXED_MASTER",
+      "where": "§8"
+    },
+    {
+      "item": "Zone acceptance rules (design/text, max characters, max lines)",
+      "owner": "FIXED_MASTER",
+      "where": "Configurator (42 chars, 4 lines)"
+    },
+    {
+      "item": "Snap count, positions, spacing",
+      "owner": "FIXED_MASTER",
+      "where": "F03–F07"
+    },
+    {
+      "item": "Rib specification (structure, height, ratio, stripes)",
+      "owner": "FIXED_MASTER",
+      "where": "R01–R05"
+    },
+    {
+      "item": "Lining, wadding, pocketing, interfacing, stabiliser",
+      "owner": "FIXED_MASTER",
+      "where": "BOM"
+    },
+    {
+      "item": "Construction methods",
+      "owner": "FIXED_MASTER",
+      "where": "§7"
+    },
+    {
+      "item": "Allowed colours, materials, thread palette, snap finishes, fonts, library designs",
+      "owner": "FIXED_MASTER",
+      "where": "Catalog lists the customer picks from"
+    },
+    {
+      "item": "Labels and packaging",
+      "owner": "FIXED_MASTER",
+      "where": "BOM"
+    },
+    {
+      "item": "Size",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.size (XS–XXL)"
+    },
+    {
+      "item": "Body colour",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.colours.body"
+    },
+    {
+      "item": "Body material",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.materials.body (leather / cotton fabric)"
+    },
+    {
+      "item": "Sleeve colour",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.colours.sleeves"
+    },
+    {
+      "item": "Sleeve material",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.materials.sleeves"
+    },
+    {
+      "item": "Trim (rib) colour",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.colours.trim"
+    },
+    {
+      "item": "Snap finish",
+      "owner": "CUSTOMER_ORDER",
+      "where": "config.buttons"
+    },
+    {
+      "item": "Selected zones",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].placement"
+    },
+    {
+      "item": "Embroidery artwork (upload / library design / front letters / colourway)",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].image"
+    },
+    {
+      "item": "Text",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].text"
+    },
+    {
+      "item": "Font",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].textStyle.fontId"
+    },
+    {
+      "item": "Embroidery colours",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].thread / image.colourway"
+    },
+    {
+      "item": "Artwork scale inside zone",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].inZone.scale"
+    },
+    {
+      "item": "Artwork offset inside zone",
+      "owner": "CUSTOMER_ORDER",
+      "where": "embroidery[].inZone.x / y"
+    },
+    {
+      "item": "Finished artwork size (cm)",
+      "owner": "DERIVED_AT_ORDER",
+      "where": "Master zone box × customer artwork aspect × scale"
+    },
+    {
+      "item": "Artwork position on garment (cm from anchors)",
+      "owner": "DERIVED_AT_ORDER",
+      "where": "Master zone anchors + customer offset"
+    },
+    {
+      "item": "Size label, care/content label content",
+      "owner": "DERIVED_AT_ORDER",
+      "where": "Customer size + materials"
+    },
+    {
+      "item": "Rib cut lengths, snap spacing for the ordered size",
+      "owner": "DERIVED_AT_ORDER",
+      "where": "Master spec for that size"
+    }
+  ],
+  "sampleChecklist": {
+    "title": "JACKETEK M SAMPLE MEASUREMENT & FIT VALIDATION",
+    "verifyAgainstReference": [
+      "B01",
+      "B06",
+      "B09",
+      "S01"
+    ],
+    "measure": [
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B07",
+      "B08",
+      "B10",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B15",
+      "B16",
+      "S02",
+      "S03",
+      "S04",
+      "S05",
+      "S06",
+      "S07",
+      "S08",
+      "S09",
+      "R01",
+      "C01",
+      "C02",
+      "C03",
+      "C04",
+      "C05",
+      "C06",
+      "C07",
+      "F01",
+      "F02",
+      "P01",
+      "P02"
+    ],
+    "fitFields": [
+      "FV01",
+      "FV02",
+      "FV03",
+      "FV04",
+      "FV05",
+      "FV06",
+      "FV07",
+      "FV08",
+      "FV09",
+      "FV10",
+      "FV11",
+      "FV12",
+      "FV13",
+      "FV14",
+      "FV15",
+      "FV16",
+      "FV17",
+      "FV18",
+      "FV19"
+    ]
+  },
+  "counts": {
+    "VERIFIED_SOURCE": 4,
+    "TO_MEASURE_ON_SAMPLE": 33,
+    "TO_SET_BY_PATTERN_MAKER": 15,
+    "DERIVED_FROM_APPROVED_SPEC": 4,
+    "total": 56
+  }
+}

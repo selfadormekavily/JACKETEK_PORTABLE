@@ -1,0 +1,469 @@
+/*
+ * Cart, checkout and order confirmation: light, warm, editorial.
+ * Raised cream surfaces, navy only as type and hairlines, crimson for the
+ * one action and the stitched accents, dusty blue as soft light.
+ */
+
+/* ---- The fitting room: one jacket on its own small lit stage ---- */
+.jk-stage {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse 80% 70% at 50% 38%, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream)) 55%, rgb(var(--brand-cream-deep)) 100%);
+  box-shadow: inset 0 0 0 1px rgb(var(--brand-navy) / 0.1);
+}
+.jk-stage__wall {
+  position: absolute;
+  inset: 0 0 24% 0;
+  background: repeating-linear-gradient(90deg, rgb(var(--brand-navy) / 0.06) 0 1px, transparent 1px 18px);
+  -webkit-mask-image: radial-gradient(ellipse 60% 80% at 50% 30%, #000, transparent 75%);
+  mask-image: radial-gradient(ellipse 60% 80% at 50% 30%, #000, transparent 75%);
+}
+.jk-stage__glow {
+  position: absolute;
+  inset: 8% 14% 18%;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--brand-dusty) / 0.6), rgb(var(--brand-dusty) / 0.2) 55%, transparent);
+  filter: blur(16px);
+  animation: jk-stage-glow 9s ease-in-out infinite alternate;
+}
+@keyframes jk-stage-glow {
+  from {
+    transform: translate3d(-3%, 2%, 0) scale(0.97);
+  }
+  to {
+    transform: translate3d(3%, -2%, 0) scale(1.03);
+  }
+}
+/* The plinth: a low cream block, lit along its top edge, on the floor. */
+.jk-stage__plinth {
+  position: absolute;
+  right: 18%;
+  bottom: 9%;
+  left: 18%;
+  height: 11%;
+  /* Lit top face (the first 22%), then the front face falling into shade. */
+  background: linear-gradient(
+    180deg,
+    rgb(255 252 245) 0%,
+    rgb(var(--brand-cream-raised)) 22%,
+    rgb(var(--brand-navy) / 0.09) 22.5%,
+    rgb(var(--brand-cream-deep)) 26%,
+    rgb(224 206 182) 100%
+  );
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--brand-navy) / 0.08),
+    0 22px 24px -16px rgb(var(--brand-navy-deep) / 0.4);
+}
+.jk-stage__plinth::before {
+  /* The jacket's own soft shadow on the plinth top. */
+  position: absolute;
+  top: -6px;
+  right: 16%;
+  left: 16%;
+  height: 12px;
+  content: "";
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgb(var(--brand-navy-deep) / 0.28), transparent);
+  filter: blur(3px);
+  transition: transform 500ms var(--ease-out-expo), opacity 500ms var(--ease-out-expo);
+}
+.jk-stage__jacket {
+  position: absolute;
+  bottom: 19%;
+  left: 50%;
+  width: auto;
+  height: 66%;
+  max-width: 76%;
+  object-fit: contain;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 18px 18px rgb(var(--brand-navy-deep) / 0.16));
+  transition: transform 600ms var(--ease-out-expo);
+}
+.jk-stage__empty {
+  position: absolute;
+  bottom: 30%;
+  left: 50%;
+  color: rgb(var(--brand-navy-soft));
+  transform: translateX(-50%);
+}
+/* Hovering a card lifts the jacket off its plinth; its shadow softens. */
+.jk-item:hover .jk-stage__jacket {
+  transform: translateX(-50%) translateY(-6px);
+}
+.jk-item:hover .jk-stage__plinth::before {
+  opacity: 0.6;
+  transform: scaleX(0.88);
+}
+.jk-stage--sm .jk-stage__plinth,
+.jk-stage--sm .jk-stage__wall {
+  display: none;
+}
+.jk-stage--sm .jk-stage__jacket {
+  bottom: 8%;
+  height: 84%;
+}
+.jk-stage--sm .jk-stage__glow {
+  inset: 10%;
+  filter: blur(8px);
+}
+
+/* A woven label sewn into the corner of the stage. */
+.jk-woven-tag {
+  position: absolute;
+  inset-inline-end: 14px;
+  bottom: 14px;
+  padding: 5px 9px 4px;
+  background:
+    repeating-linear-gradient(0deg, rgb(var(--brand-navy) / 0.05) 0 1px, transparent 1px 3px),
+    rgb(var(--brand-cream-raised));
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--brand-navy) / 0.14),
+    0 4px 8px -4px rgb(var(--brand-navy-deep) / 0.35);
+  color: rgb(var(--brand-navy));
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  outline: 1px dashed rgb(var(--brand-red) / 0.7);
+  outline-offset: -4px;
+  text-transform: uppercase;
+}
+
+/* ---- The cart item card ---- */
+.jk-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  border: 1px solid rgb(var(--brand-navy) / 0.14);
+  background:
+    linear-gradient(180deg, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream)) 100%);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 30px 60px -40px rgb(var(--brand-dusty) / 0.75),
+    0 14px 28px -24px rgb(var(--brand-navy-deep) / 0.4);
+  transition:
+    transform 450ms var(--ease-out-expo),
+    box-shadow 450ms var(--ease-out-expo);
+}
+.jk-item:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 38px 70px -40px rgb(var(--brand-dusty) / 0.85),
+    0 18px 34px -24px rgb(var(--brand-navy-deep) / 0.45);
+}
+/* A short crimson stitch along the card's top-left (top inline-start in
+   RTL): the one red accent. */
+.jk-item::before {
+  position: absolute;
+  z-index: 2;
+  top: -1px;
+  inset-inline-start: 28px;
+  width: 64px;
+  height: 0;
+  content: "";
+  border-top: 2px solid rgb(var(--brand-crimson));
+}
+.jk-item__stage {
+  min-height: 380px;
+  margin-block: 12px;
+  margin-inline: 12px 0;
+}
+.jk-item__body {
+  display: flex;
+  flex-direction: column;
+  padding-block: 30px 24px;
+  padding-inline: 34px 32px;
+}
+
+/* Patch chips: little chenille patches with a stitched inner edge. */
+.jk-patch {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 5px 11px;
+  border-radius: 3px;
+  background: rgb(var(--brand-cream));
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--brand-navy) / 0.16),
+    0 3px 6px -4px rgb(var(--brand-navy-deep) / 0.35);
+  color: rgb(var(--brand-navy));
+  font-size: 13px;
+  outline: 1px dashed rgb(var(--brand-navy) / 0.22);
+  outline-offset: -4px;
+}
+.jk-patch--strong {
+  background: rgb(var(--brand-navy));
+  color: rgb(var(--brand-cream));
+  font-weight: 600;
+  outline-color: rgb(var(--brand-cream) / 0.45);
+}
+
+.jk-stitch-rule {
+  height: 0;
+  border: 0;
+  border-top: 1.5px dashed rgb(var(--brand-red) / 0.55);
+}
+
+/* Body · Sleeves · Trim. */
+.jk-trio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 18px;
+}
+.jk-trio__item {
+  display: grid;
+  grid-template-columns: auto auto;
+  column-gap: 10px;
+  align-items: center;
+}
+.jk-trio__disc {
+  grid-row: span 2;
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  box-shadow:
+    0 0 0 1px rgb(var(--brand-navy) / 0.2),
+    0 0 0 4px rgb(var(--brand-cream-raised)),
+    0 0 0 5px rgb(var(--brand-navy) / 0.1),
+    0 6px 12px -4px rgb(var(--brand-navy-deep) / 0.4);
+  background-image: radial-gradient(circle at 32% 28%, rgb(255 255 255 / 0.3), transparent 50%);
+  transition: transform 300ms var(--ease-out-expo);
+}
+.jk-trio__item:hover .jk-trio__disc {
+  transform: scale(1.08);
+}
+.jk-trio__label {
+  color: rgb(var(--brand-navy-soft));
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.jk-trio__name {
+  color: rgb(var(--brand-navy));
+  font-size: 14px;
+}
+
+/* Quantity: a stitched outline, tactile on press. */
+.jk-stepper {
+  position: relative;
+  background: rgb(var(--brand-cream-raised));
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--brand-navy) / 0.3),
+    0 6px 12px -8px rgb(var(--brand-navy-deep) / 0.4);
+  outline: 1px dashed rgb(var(--brand-navy) / 0.28);
+  outline-offset: -5px;
+}
+.jk-stepper button:active:not(:disabled) {
+  transform: scale(0.92);
+}
+
+/* "Continue designing": a quiet invitation under the last card. */
+.jk-cart-more {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 22px 24px;
+  border: 1.5px dashed rgb(var(--brand-navy) / 0.22);
+  background: rgb(var(--brand-cream-raised) / 0.35);
+}
+.jk-cart-more__plus {
+  display: grid;
+  flex: none;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  border-radius: 9999px;
+  background: rgb(var(--brand-dusty) / 0.16);
+  color: rgb(var(--brand-navy));
+  font-size: 22px;
+  line-height: 1;
+}
+
+.jk-cart-empty {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+}
+.jk-cart-empty__stage {
+  aspect-ratio: 4 / 5;
+}
+
+/* ---- The receipt: the order summary, light ---- */
+.jk-receipt {
+  position: relative;
+  padding: 34px 28px 28px;
+  border: 1px solid rgb(var(--brand-navy) / 0.14);
+  background:
+    repeating-linear-gradient(180deg, transparent 0 27px, rgb(var(--brand-navy) / 0.025) 27px 28px),
+    linear-gradient(180deg, rgb(var(--brand-cream-raised)) 0%, rgb(var(--brand-cream)) 100%);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 30px 60px -40px rgb(var(--brand-dusty) / 0.7),
+    0 14px 28px -24px rgb(var(--brand-navy-deep) / 0.35);
+}
+/* The crimson stitch along the top edge. */
+.jk-receipt::before {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  left: 14px;
+  height: 0;
+  content: "";
+  border-top: 1.5px dashed rgb(var(--brand-crimson) / 0.75);
+}
+/* A woven tab naming the card, sewn over the top edge. */
+.jk-receipt__tab {
+  position: absolute;
+  top: -12px;
+  inset-inline-start: 24px;
+  padding: 4px 10px 3px;
+  background: rgb(var(--brand-cream-raised));
+  box-shadow:
+    inset 0 0 0 1px rgb(var(--brand-navy) / 0.16),
+    0 4px 8px -4px rgb(var(--brand-navy-deep) / 0.3);
+  color: rgb(var(--brand-navy));
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+/* The receipt's own crimson stitch already opens it: no rule above the first row. */
+.jk-receipt dl > div:first-child {
+  border-top: 0;
+}
+.jk-receipt__items + dl > div:first-child {
+  border-top: 1px dashed rgb(var(--brand-navy) / 0.3);
+}
+.jk-receipt__note {
+  margin-top: 18px;
+  padding: 10px 12px;
+  background: rgb(var(--brand-dusty) / 0.12);
+  box-shadow: inset 2px 0 0 rgb(var(--brand-dusty));
+  color: rgb(var(--brand-navy));
+  font-size: 13px;
+  line-height: 1.45;
+}
+.jk-receipt__items {
+  margin-bottom: 8px;
+}
+.jk-receipt__item {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+/* ---- Checkout progress: one quiet stitched line with knots ---- */
+.jk-progress {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  color: rgb(var(--brand-navy-soft));
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+.jk-progress__stop {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.jk-progress__stop + .jk-progress__stop::before {
+  width: clamp(18px, 4vw, 44px);
+  height: 0;
+  margin: 0 12px;
+  content: "";
+  border-top: 1.5px dashed rgb(var(--brand-navy) / 0.25);
+}
+.jk-progress__stop.is-done + .jk-progress__stop::before {
+  border-top-color: rgb(var(--brand-red) / 0.7);
+}
+.jk-progress__knot {
+  width: 7px;
+  height: 7px;
+  border-radius: 9999px;
+  box-shadow: inset 0 0 0 1.5px rgb(var(--brand-navy) / 0.35);
+}
+.jk-progress__stop.is-done .jk-progress__knot {
+  background: rgb(var(--brand-navy));
+  box-shadow: none;
+}
+.jk-progress__stop.is-current {
+  color: rgb(var(--brand-navy));
+}
+.jk-progress__stop.is-current .jk-progress__knot {
+  background: rgb(var(--brand-crimson));
+  box-shadow: 0 0 0 3px rgb(var(--brand-crimson) / 0.18);
+}
+
+/* ---- Checkout: form sections as raised cream panels ---- */
+.jk-form-panel {
+  position: relative;
+  padding: 28px 28px 30px;
+  border: 1px solid rgb(var(--brand-navy) / 0.12);
+  background: linear-gradient(180deg, rgb(var(--brand-cream-raised) / 0.85) 0%, rgb(var(--brand-cream) / 0.6) 100%);
+  box-shadow: 0 20px 40px -36px rgb(var(--brand-navy-deep) / 0.5);
+}
+/* Payment option selected: a chenille patch, lifted, ringed in crimson. */
+.jk-pay-option {
+  transition:
+    transform 300ms var(--ease-out-expo),
+    box-shadow 300ms var(--ease-out-expo),
+    background-color 300ms;
+}
+.jk-pay-option:hover {
+  transform: translateY(-1px);
+}
+.jk-pay-option.is-selected {
+  outline: 1px dashed rgb(var(--brand-crimson) / 0.55);
+  outline-offset: -6px;
+  box-shadow:
+    inset 0 0 0 1.5px rgb(var(--brand-crimson)),
+    0 14px 26px -18px rgb(var(--brand-crimson) / 0.5);
+}
+
+@media (max-width: 767px) {
+  .jk-item {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .jk-item__stage {
+    min-height: 0;
+    margin: 10px 10px 0;
+    aspect-ratio: 4 / 4.2;
+  }
+  .jk-item__body {
+    padding: 22px 20px 18px;
+  }
+  .jk-cart-empty {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .jk-cart-empty__stage {
+    max-width: 260px;
+  }
+  .jk-form-panel {
+    padding: 22px 18px 24px;
+  }
+  .jk-progress__stop + .jk-progress__stop::before {
+    margin: 0 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jk-stage__glow {
+    animation: none;
+  }
+  .jk-item,
+  .jk-item:hover,
+  .jk-item:hover .jk-stage__jacket {
+    transition: none;
+    transform: none;
+  }
+  .jk-item:hover .jk-stage__jacket {
+    transform: translateX(-50%);
+  }
+}

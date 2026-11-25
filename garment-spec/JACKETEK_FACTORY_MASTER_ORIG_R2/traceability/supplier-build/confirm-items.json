@@ -1,0 +1,56 @@
+[
+ [
+  "FC-01",
+  "Seam allowance",
+  "Seam allowance width for every seam (shoulder, side, armhole, sleeve underarm, cuff, waistband, collar, front edge, tabs, welts). Patterns are supplied as sew line only — the factory adds the confirmed allowance before cutting.",
+  "Pattern / cutting"
+ ],
+ [
+  "FC-02",
+  "Seam and stitch construction",
+  "Seam type, stitch type, stitches per cm, needle and thread for cotton shell and leather seams; seam finishing; topstitching.",
+  "Construction"
+ ],
+ [
+  "FC-03",
+  "Lining, facings, pocket bags, interfacing",
+  "Lining construction (body and sleeves; quilted or plain), lining ease and hem jumps, front facing width, back-neck facing (if used), pocket bag size, interfacing positions. Draft from the supplied shell pieces.",
+  "Pattern / construction"
+ ],
+ [
+  "FC-04",
+  "Materials",
+  "Composition, weight / thickness, width and supplier references for body fabric, sleeve leather, lining, rib, pocketing, welt material, interfacing, threads. Physical colour references (lab dips / swatches) for Black #171717 and Burgundy #64152B.",
+  "Materials"
+ ],
+ [
+  "FC-05",
+  "Knitted rib",
+  "Yarn, knit structure, gauge, stretch / recovery and knitted length that produces the relaxed lengths and stripe layout in section 8.",
+  "Materials"
+ ],
+ [
+  "FC-06",
+  "Snap fasteners",
+  "Snap type, size, alloy, gunmetal finish reference, pull strength, reinforcement and setting method (7 sets).",
+  "Trims"
+ ],
+ [
+  "FC-07",
+  "Artwork production",
+  "Method per artwork (embroidery / patch / chenille), thread brand and colour codes, backing / stabiliser, patch edge finish and attachment, digitising (stitch count, density). Pre-production strike-off of every artwork.",
+  "Artwork"
+ ],
+ [
+  "FC-08",
+  "Labels and packing",
+  "Main, size and care / content labels (content and positions), hanger loop, hangtag, folding and polybag.",
+  "Finishing"
+ ],
+ [
+  "FC-09",
+  "Tolerances and sample approval",
+  "Measurement tolerance per point of measure and the sample approval procedure (proto sample in the base size, measured against section 3).",
+  "Quality"
+ ]
+]

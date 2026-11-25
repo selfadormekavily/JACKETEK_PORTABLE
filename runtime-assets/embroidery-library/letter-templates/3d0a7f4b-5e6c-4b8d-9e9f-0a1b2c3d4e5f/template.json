@@ -1,0 +1,297 @@
+{
+ "version": 2,
+ "type": "front-letters",
+ "templateId": "3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f",
+ "libraryId": "23ff73fd-b78f-4718-9109-2b8f73076954",
+ "originalFileName": "varsity-monogram.png",
+ "asset": "/embroidery-library/assets/3d0a7f4b-5e6c-4b8d-9e9f-0a1b2c3d4e5f/full.png",
+ "style": {
+  "id": "varsity-block",
+  "name": "Varsity block",
+  "family": "varsity",
+  "approximation": false,
+  "notes": "JACKETEK test fixture (Graduate, SIL OFL)."
+ },
+ "canvas": {
+  "width": 1200,
+  "height": 1200
+ },
+ "defaultLetters": "AA",
+ "characters": "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+ "slots": [
+  {
+   "x": 60,
+   "y": 60,
+   "originalA": {
+    "file": "glyphs/A-1.png",
+    "regions": "glyphs/A-1.regions.png",
+    "x": 60,
+    "y": 60,
+    "width": 560,
+    "height": 640
+   },
+   "overlay": null
+  },
+  {
+   "x": 580,
+   "y": 500,
+   "originalA": {
+    "file": "glyphs/A-2.png",
+    "regions": "glyphs/A-2.regions.png",
+    "x": 580,
+    "y": 500,
+    "width": 560,
+    "height": 640
+   },
+   "overlay": null
+  }
+ ],
+ "glyphs": {
+  "B": {
+   "file": "glyphs/B.png",
+   "regions": "glyphs/B.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "C": {
+   "file": "glyphs/C.png",
+   "regions": "glyphs/C.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "D": {
+   "file": "glyphs/D.png",
+   "regions": "glyphs/D.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "E": {
+   "file": "glyphs/E.png",
+   "regions": "glyphs/E.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "F": {
+   "file": "glyphs/F.png",
+   "regions": "glyphs/F.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "G": {
+   "file": "glyphs/G.png",
+   "regions": "glyphs/G.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "H": {
+   "file": "glyphs/H.png",
+   "regions": "glyphs/H.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "I": {
+   "file": "glyphs/I.png",
+   "regions": "glyphs/I.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "J": {
+   "file": "glyphs/J.png",
+   "regions": "glyphs/J.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "K": {
+   "file": "glyphs/K.png",
+   "regions": "glyphs/K.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "L": {
+   "file": "glyphs/L.png",
+   "regions": "glyphs/L.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "M": {
+   "file": "glyphs/M.png",
+   "regions": "glyphs/M.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "N": {
+   "file": "glyphs/N.png",
+   "regions": "glyphs/N.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "O": {
+   "file": "glyphs/O.png",
+   "regions": "glyphs/O.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "P": {
+   "file": "glyphs/P.png",
+   "regions": "glyphs/P.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "Q": {
+   "file": "glyphs/Q.png",
+   "regions": "glyphs/Q.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "R": {
+   "file": "glyphs/R.png",
+   "regions": "glyphs/R.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "S": {
+   "file": "glyphs/S.png",
+   "regions": "glyphs/S.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "T": {
+   "file": "glyphs/T.png",
+   "regions": "glyphs/T.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "U": {
+   "file": "glyphs/U.png",
+   "regions": "glyphs/U.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "V": {
+   "file": "glyphs/V.png",
+   "regions": "glyphs/V.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "W": {
+   "file": "glyphs/W.png",
+   "regions": "glyphs/W.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "X": {
+   "file": "glyphs/X.png",
+   "regions": "glyphs/X.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "Y": {
+   "file": "glyphs/Y.png",
+   "regions": "glyphs/Y.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  },
+  "Z": {
+   "file": "glyphs/Z.png",
+   "regions": "glyphs/Z.regions.png",
+   "dx": 0,
+   "dy": 0,
+   "width": 560,
+   "height": 640
+  }
+ },
+ "colourway": {
+  "version": 2,
+  "keepOriginal": true,
+  "subject": "letters",
+  "outline": {
+   "widthShare": 0.12
+  },
+  "slots": [
+   {
+    "id": "fill",
+    "index": 1,
+    "label": "Fill",
+    "role": "Letter fill",
+    "key": "fill",
+    "defaultColor": "#64152B",
+    "defaultThread": "burgundy",
+    "method": "shading-preserving",
+    "ref": {
+     "y": 0.035224,
+     "lab": [
+      22.025,
+      33.348,
+      6.149
+     ]
+    }
+   },
+   {
+    "id": "outline",
+    "index": 2,
+    "label": "Outline",
+    "role": "Letter outline",
+    "key": "outline",
+    "defaultColor": "#F4F4F4",
+    "defaultThread": "white",
+    "method": "shading-preserving",
+    "ref": {
+     "y": 0.904661,
+     "lab": [
+      96.19,
+      0.005,
+      -0.01
+     ]
+    }
+   }
+  ]
+ }
+}

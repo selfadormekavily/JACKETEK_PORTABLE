@@ -1,0 +1,100 @@
+/*
+ * Localization / RTL adjustments for the configurator area (owned by that area's pass).
+ * Arabic-only rules key off :root[lang="ar-IQ"]; direction rules off [dir="rtl"].
+ *
+ * Layout: the shell is a CSS grid (stage | 480px panel), which follows the
+ * document direction — the panel sits at the inline end (right in LTR,
+ * left in RTL). The 3D stage, jacket and canvas are never mirrored; only
+ * the UI laid over them (step rail, hints, tags) moves to its logical side.
+ */
+
+/* ---- RTL: the stitched step rail runs down the inline-start edge ---- */
+[dir="rtl"] .jk-rail {
+  padding-left: 0;
+  padding-right: 18px;
+  border-left: 0;
+  border-right: 1.5px dashed rgb(var(--brand-navy) / 0.2);
+}
+[dir="rtl"] .jk-rail__knot {
+  left: auto;
+  right: -23px;
+}
+
+/* The open step's crimson edge sits on the reading-start side. */
+[dir="rtl"] .jk-step-open {
+  box-shadow:
+    inset -2px 0 0 rgb(var(--brand-crimson)),
+    0 16px 30px -26px rgb(var(--brand-navy-deep) / 0.5);
+}
+
+/* The panel's seam and shadow face the stage (on its right in RTL). */
+@media (min-width: 1180px), (min-width: 1024px) and (orientation: landscape) {
+  [dir="rtl"] .jk-panel {
+    box-shadow:
+      1px 0 0 rgb(var(--brand-navy) / 0.12),
+      24px 0 48px -32px rgb(var(--brand-navy-deep) / 0.45);
+  }
+}
+
+/* The woven "fitting room" tag: bottom inline-end corner of the stage. */
+[dir="rtl"] .jk-woven-tag.jk-stage-tag {
+  right: auto;
+  left: 56px;
+}
+@media (max-width: 1023px) {
+  [dir="rtl"] .jk-woven-tag.jk-stage-tag {
+    left: 20px;
+  }
+}
+
+/* ---- The Latin-only embroidery note (shown in Arabic) ---- */
+.jk-cfg-note {
+  margin-top: 2px;
+  padding: 8px 12px;
+  border-inline-start: 2px solid rgb(var(--brand-crimson));
+  background: rgb(var(--brand-navy) / 0.05);
+  color: rgb(var(--t-muted));
+  font-size: 13.5px;
+  line-height: 1.7;
+}
+
+/* ---- Arabic typography ---- */
+/* The product title: room for the shadda and dots under DARK. */
+:root[lang="ar-IQ"] .jk-cfg-title {
+  line-height: 1.3;
+  padding-block: 2px;
+}
+
+/* Small tracked-uppercase labels (list meta, edit/remove, review terms):
+   Arabic has no capitals, and tracking breaks the joins. */
+:root[lang="ar-IQ"] .jk-cfg-meta {
+  font-size: 12.5px;
+  font-weight: var(--ar-w-label);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.6;
+}
+
+/* "+ Add text" / "+ Upload image". */
+:root[lang="ar-IQ"] .jk-cfg-action {
+  font-size: 14px;
+  font-weight: var(--ar-w-label);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+/* The woven stage tag keeps its stitched outline, without tracking. */
+:root[lang="ar-IQ"] .jk-stage-tag {
+  font-size: 12.5px;
+  font-weight: var(--ar-w-strong);
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+/* Value chips: Arabic glyphs read small at 12px. */
+:root[lang="ar-IQ"] .jk-value-chip {
+  font-size: 13px;
+  line-height: 1.6;
+}

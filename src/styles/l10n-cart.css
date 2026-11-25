@@ -1,0 +1,59 @@
+/*
+ * Localization / RTL adjustments for the cart area (owned by that area's pass).
+ * Arabic-only rules key off :root[lang="ar-IQ"]; direction rules off [dir="rtl"].
+ */
+
+/* ---- RTL: direction ---- */
+
+/* The receipt note's dusty-blue edge sits at the reading start. */
+[dir="rtl"] .jk-receipt__note {
+  box-shadow: inset -2px 0 0 rgb(var(--brand-dusty));
+}
+
+/* LTR phone input inside an Arabic form: aligned with its label. */
+[dir="rtl"] .jk-form-panel input[dir="ltr"] {
+  text-align: right;
+}
+
+/* ---- Arabic typography: no capitals, no tracking (it breaks the joins) ---- */
+:root[lang="ar-IQ"] :is(.jk-woven-tag, .jk-receipt__tab, .jk-trio__label, .jk-progress) {
+  letter-spacing: 0;
+  text-transform: none;
+}
+:root[lang="ar-IQ"] .jk-woven-tag {
+  padding: 3px 9px 2px;
+  font-size: 12px;
+  line-height: 1.5;
+}
+:root[lang="ar-IQ"] .jk-receipt__tab {
+  top: -14px;
+  font-size: 12.5px;
+  font-weight: var(--ar-w-label);
+  line-height: 1.5;
+}
+:root[lang="ar-IQ"] .jk-trio__label {
+  font-size: 12px;
+  line-height: 1.5;
+}
+:root[lang="ar-IQ"] .jk-progress {
+  font-size: 13px;
+  line-height: 1.6;
+}
+:root[lang="ar-IQ"] .jk-cart-product {
+  font-size: 14px;
+  font-weight: var(--ar-w-label);
+  letter-spacing: 0;
+  text-transform: none;
+}
+:root[lang="ar-IQ"] :is(.jk-price-total, .jk-order-prepare) {
+  letter-spacing: 0;
+}
+:root[lang="ar-IQ"] .jk-order-prepare {
+  line-height: 1.5;
+}
+:root[lang="ar-IQ"] .jk-patch {
+  line-height: 1.6;
+}
+:root[lang="ar-IQ"] .jk-receipt__note {
+  line-height: 1.7;
+}
